@@ -1,0 +1,14 @@
+#N canvas 99 72 450 300 10;
+#X obj 103 194 writesf~;
+#X msg 149 139 start;
+#X msg 152 161 stop;
+#X obj 104 107 adc~;
+#X text 38 14 The readsf~ and writesf~ objects (writesf~ shown here)
+can spool sound to and from disk without interrupting Pd's real-time
+computations (using a table and soundfiler \, for example \, can stop
+Pd while the file gets read or written).;
+#X msg 144 107 open sound1.wav;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 5 0 0 0;

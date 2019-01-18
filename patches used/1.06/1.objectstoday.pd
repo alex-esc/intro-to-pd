@@ -1,0 +1,33 @@
+#N canvas 168 61 692 464 16;
+#X obj 319 299 print;
+#X text 394 303 print messages;
+#X floatatom 321 69 5 0 0 0 - - -;
+#X text 382 66 numbers;
+#X obj 319 334 tabwrite~;
+#X text 428 331 write signal to an array;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array my-array 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 318 131 graph;
+#X text 537 199 arrays;
+#X obj 318 364 clip~;
+#X text 429 364 limit values of a signal;
+#X text 403 25 1/6;
+#X text 63 25 1/4;
+#X obj 31 83 osc~;
+#X text 86 84 oscillator;
+#X obj 29 151 *~;
+#X text 83 153 signal multiplier;
+#X obj 31 192 dac~;
+#X text 85 194 signal output;
+#X obj 31 227 print~;
+#X text 104 227 signal printout;
+#X text 79 119 signal adder;
+#X obj 25 117 +~;
+#X obj 34 263 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 76 261 pushbutton;

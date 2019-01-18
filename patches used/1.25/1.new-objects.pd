@@ -1,0 +1,18 @@
+#N canvas 71 62 577 341 16;
+#X obj 71 93 loadbang;
+#X obj 70 132 soundfiler;
+#X obj 70 172 tabread4~;
+#X obj 68 265 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 69 204 mod;
+#X text 227 90 send 'bang' message on startup;
+#X text 225 131 read and write soundfiles;
+#X text 225 172 interpolating table read;
+#X text 224 205 control version of mod~ (remainder);
+#X text 224 232 toggle switch;
+#X text 95 15 new objects 1/25;
+#N canvas 13 49 450 300 window-name 0;
+#X text 144 187 comment;
+#X restore 70 294 pd window-name;
+#X text 227 270 hide stuff in a subwindow;
+#X obj 70 233 float;

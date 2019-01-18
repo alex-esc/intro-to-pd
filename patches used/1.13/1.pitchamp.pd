@@ -1,0 +1,44 @@
+#N canvas 87 138 659 432 12;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array x1-13 44100 float 2;
+#X coords 0 1 44100 -1 200 140 1;
+#X restore 387 228 graph;
+#X obj 40 152 osc~;
+#X obj 41 255 *~;
+#X obj 227 325 tabwrite~ x1-13;
+#X obj 41 315 dac~;
+#X obj 41 283 *~ 0.1;
+#X obj 227 128 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 235 159 delay 100;
+#X obj 233 294 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 48 100 880 100;
+#X msg 41 76 110 100;
+#X msg 81 210 0.95 100;
+#X msg 151 211 0 100;
+#X obj 95 243 line~;
+#X obj 41 125 line~;
+#X obj 241 186 delay 500;
+#X text 104 75 <-- ramp frequency of oscillator;
+#X text 251 124 <-- ramp frequency of oscillator and graph it;
+#X text 112 20 the line~ ramp generator used to control frequency and
+amplitude. Turn DSP on and click where the 'arrows' point below to
+test it.;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 2 0 3 0;
+#X connect 5 0 4 0;
+#X connect 5 0 4 1;
+#X connect 6 0 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 11 0;
+#X connect 7 0 15 0;
+#X connect 8 0 3 0;
+#X connect 9 0 14 0;
+#X connect 10 0 14 0;
+#X connect 11 0 13 0;
+#X connect 12 0 13 0;
+#X connect 13 0 2 1;
+#X connect 14 0 1 0;
+#X connect 15 0 12 0;

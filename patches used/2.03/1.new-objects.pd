@@ -1,0 +1,9 @@
+#N canvas 534 179 489 379 16;
+#X text 104 17 2/03:;
+#X obj 87 51 output~;
+#X text 168 55 an abstraction with controls;
+#X text 171 81 using graph-on-parent;
+#X obj 85 118 throw~;
+#X obj 85 147 catch~;
+#X text 165 121 add to signal summing bus;
+#X text 167 149 output signal summing bus;

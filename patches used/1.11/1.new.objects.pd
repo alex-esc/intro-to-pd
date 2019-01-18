@@ -1,0 +1,10 @@
+#N canvas 571 327 450 300 10;
+#X msg 51 29 123;
+#X obj 51 116 line~;
+#X obj 52 60 delay;
+#X obj 51 89 metro;
+#X text 92 62 delay;
+#X text 87 31 message;
+#X text 93 91 metronome;
+#X text 95 118 ramp generator;
+#X text 106 6 comment;

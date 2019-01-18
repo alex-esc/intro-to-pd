@@ -1,0 +1,12 @@
+#N canvas 80 60 450 300 16;
+#X text 77 28 new objects - 3/3;
+#X obj 59 97 hip~;
+#X obj 59 129 lop~;
+#X text 166 97 1-pole highpass filter;
+#X text 166 129 1-pole lowpass filter;
+#X obj 60 164 bp~;
+#X text 168 161 2-pole bandpass filter;
+#X obj 60 199 vcf~;
+#X text 168 203 "voltge control filter";
+#X obj 60 240 block~;
+#X text 170 240 change block size;

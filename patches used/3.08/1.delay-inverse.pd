@@ -1,0 +1,76 @@
+#N canvas 180 228 703 605 12;
+#X obj 161 533 output~;
+#X obj 51 172 adc~;
+#X obj 52 201 *~;
+#X obj 86 203 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 111 204 *~;
+#X obj 145 204 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 111 181 *~ 0.1;
+#X obj 111 158 osc~ 500;
+#X floatatom 111 138 5 0 0 0 - - -;
+#X obj 111 237 +~;
+#X obj 180 205 *~;
+#X obj 214 206 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 180 181 *~ 0.1;
+#X obj 180 158 noise~;
+#X obj 206 436 delwrite~ del1 10000;
+#X obj 208 462 delread~ del1 200;
+#X obj 207 489 *~;
+#X floatatom 522 317 5 0 0 0 - - -;
+#X obj 246 490 / 100;
+#X obj 160 491 +~;
+#X obj 174 338 *~;
+#X obj 211 339 / 100;
+#X obj 171 270 delwrite~ del2 10000;
+#X obj 173 296 delread~ del2 200;
+#X obj 522 339 * -1;
+#X obj 112 284 +~;
+#X obj 43 357 output~;
+#X floatatom 522 266 5 0 0 0 - - -;
+#X obj 159 439 +~;
+#X text 201 245 recirculating delay network;
+#X text 303 498 non-recirculating delay network;
+#X text 517 244 delay time;
+#X text 65 7 This patch demonstrates how a non-recirculating delay
+network cancels out a recirculating delay network. One can calculate
+teh frequency response of teh non-recirculating one directly. The one
+that cancels it out must have the inverse frequency response. The non-recirculating
+network's feed-forward gain must be theinverse of the recirculating
+one's feedback gain You may apply the two in either order -- they commute.
+;
+#X text 522 297 gain in hundredths;
+#X connect 1 0 2 0;
+#X connect 2 0 9 0;
+#X connect 3 0 2 1;
+#X connect 4 0 9 0;
+#X connect 5 0 4 1;
+#X connect 6 0 4 0;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X connect 9 0 25 0;
+#X connect 10 0 9 1;
+#X connect 11 0 10 1;
+#X connect 12 0 10 0;
+#X connect 13 0 12 0;
+#X connect 15 0 16 0;
+#X connect 16 0 19 1;
+#X connect 17 0 24 0;
+#X connect 17 0 21 0;
+#X connect 18 0 16 1;
+#X connect 19 0 0 1;
+#X connect 19 0 0 0;
+#X connect 20 0 25 1;
+#X connect 21 0 20 1;
+#X connect 23 0 20 0;
+#X connect 24 0 18 0;
+#X connect 25 0 22 0;
+#X connect 25 0 26 0;
+#X connect 25 0 26 1;
+#X connect 25 0 28 0;
+#X connect 27 0 23 0;
+#X connect 27 0 15 0;
+#X connect 28 0 14 0;
+#X connect 28 0 19 0;

@@ -1,0 +1,11 @@
+#N canvas 144 42 483 297 12;
+#X obj 91 77 exp~;
+#X obj 91 104 log~;
+#X obj 56 78 exp;
+#X obj 56 103 log;
+#X text 137 77 exponentiate etc.;
+#X obj 58 151 expr $f1;
+#X obj 60 176 expr~ $v1;
+#X text 162 154 math expressions;
+#X text 72 17 2/10: We could have \, but in the end didn't \, see the
+following objects :);

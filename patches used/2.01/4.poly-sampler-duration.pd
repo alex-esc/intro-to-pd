@@ -1,0 +1,76 @@
+#N canvas 201 176 622 601 10;
+#N canvas 13 49 450 300 soundarray 0;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array t2.01c 88200 float 2;
+#X coords 0 1 88200 -1 200 140 1 0 0;
+#X restore 203 50 graph;
+#X obj 262 274 soundfiler;
+#X obj 263 222 loadbang;
+#X text 271 194 read file;
+#X msg 260 247 read oh.wav t2.01c;
+#X connect 2 0 4 0;
+#X connect 4 0 1 0;
+#X restore 331 538 pd soundarray;
+#X floatatom 101 125 5 0 0 0 - - -;
+#X floatatom 174 170 5 0 0 0 - - -;
+#X obj 77 278 f;
+#X obj 117 276 + 1;
+#X floatatom 77 301 5 0 0 0 - - -;
+#X obj 117 296 mod 8;
+#X obj 83 358 route 0 1 2 3 4 5 6 7;
+#X obj 134 325 pack 0 0 0;
+#X obj 101 191 unpack;
+#X obj 102 215 t b f;
+#X obj 191 390 sampler-voice-with-duration;
+#X obj 30 358 print;
+#X obj 102 169 pack 0 1000;
+#X msg 158 145 36 \, 48 \, 55 \, 60 \, 64 \, 72;
+#X text 69 23 A more involved example in which the pitch and duration
+are controlled with a packed message. This patch also demonstrates
+the "route" object that permits us to distribute messages to the different
+copies ("voices") of the sampler.;
+#X text 137 123 <- pitches here;
+#X text 213 169 <- duration (defaults to 1000);
+#X text 242 152 <- or click here for a 6-note chord;
+#X text 154 187 Notes are started out with a compound message containing
+pitch and duration. First unpack the two numbers.;
+#X text 156 214 After the pitch and duration are sent to inlets 2 and
+3 of the "pack" below \, send a bang to the mod-8 counter at left.
+;
+#X text 200 316 Pack the voice number \, pitch \, and duration into
+a single message for "route" below;
+#X text 182 271 the mod-8 counter at left decides which of the 8 voices
+below will play the note.;
+#X text 219 357 split off the leading number and send the remaining
+2 to one of the voices below;
+#X text 363 390 <- click to see inside;
+#X obj 85 543 sampler-voice-with-duration;
+#X obj 100 518 sampler-voice-with-duration;
+#X obj 112 496 sampler-voice-with-duration;
+#X obj 124 473 sampler-voice-with-duration;
+#X obj 146 452 sampler-voice-with-duration;
+#X obj 175 410 sampler-voice-with-duration;
+#X obj 159 430 sampler-voice-with-duration;
+#X connect 1 0 13 0;
+#X connect 2 0 13 1;
+#X connect 3 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 8 0;
+#X connect 6 0 3 1;
+#X connect 7 0 25 0;
+#X connect 7 1 26 0;
+#X connect 7 2 27 0;
+#X connect 7 3 28 0;
+#X connect 7 4 29 0;
+#X connect 7 5 31 0;
+#X connect 7 6 30 0;
+#X connect 7 7 11 0;
+#X connect 8 0 7 0;
+#X connect 8 0 12 0;
+#X connect 9 0 10 0;
+#X connect 9 1 8 2;
+#X connect 10 0 3 0;
+#X connect 10 1 8 1;
+#X connect 13 0 9 0;
+#X connect 14 0 13 0;

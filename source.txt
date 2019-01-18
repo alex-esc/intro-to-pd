@@ -1,0 +1,42 @@
+The videos were taken from the YouTube playlist titled "Miller Puckette MUS171 Lectures" by username "sqdr"
+
+Video lectures retrieved using youtube-dl.
+
+here is a plain text version of the original source: http://pd-la.info/pd-media/miller-puckette-mus171-videos/
+
+
+Miller Puckette MUS171 Videos
+=============================
+
+Videos of Miller Puckette’s UCSD class MUS171, from the Spring of 2011.
+
+If you want these videos on a set of 4 DVD-Rs for a nominal cost (the cost of the media plus first class postage), or on a specially-designed USB stick, e-mail theron.trowbridge@gmail.com.
+
+Please download the video files and play them from your computer. There have been some problems trying to play them off this page.
+
+    Lecture 1
+    Lecture 2
+    Lecture 3
+    Lecture 4
+    Lecture 5
+    Lecture 6
+    Lecture 7
+    Lecture 8
+    Lecture 9
+    Lecture 10
+    Lecture 11
+    Lecture 12
+    Lecture 13
+    Lecture 14
+    Lecture 15
+    Lecture 16
+    Lecture 17
+    Lecture 18
+    Lecture 19
+    Lecture 20
+
+The patches used in the videos are also available for download.
+
+Transcript (English) of the lectures.
+
+These videos are licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 license.

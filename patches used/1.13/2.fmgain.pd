@@ -1,0 +1,58 @@
+#N canvas -2 134 759 455 12;
+#N canvas 5 49 450 300 (subpatch) 0;
+#X array x1-13b 250 float 1;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 2 249 -2 200 140 1 0 0;
+#X restore 409 234 graph;
+#X obj 38 193 osc~;
+#X obj 38 301 *~;
+#X obj 33 368 dac~;
+#X obj 38 329 *~ 0.1;
+#X obj 247 349 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 161 222 0.95 100;
+#X msg 180 246 0 100;
+#X obj 158 274 line~;
+#X obj 37 165 +~ 440;
+#X obj 37 134 *~;
+#X obj 200 134 line~;
+#X msg 215 109 1000;
+#X floatatom 35 78 5 0 0 0 - - -;
+#X obj 36 100 osc~;
+#X msg 216 61 5000 1000;
+#X msg 216 85 0 1000;
+#X obj 248 384 tabwrite~ x1-13b;
+#X text 65 7 frequency modulation (deep \, fast vibrato that makes
+timbral evolutions).;
+#X text 36 56 frequency of 'vibrato';
+#X text 298 57 depth (amplitude) of vibrato. In messages with two numbers
+\, the second number is a ramp time. The depth is in Hz since it describes
+deviations in frequency of the lower oscillator at left.;
+#X text 97 161 center frequency of 440 Hz. about which the vibrato
+swings.;
+#X text 84 195 the "main" oscillator;
+#X text 228 235 amplitude on and off;
+#X connect 1 0 2 0;
+#X connect 1 0 17 0;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X connect 4 0 3 1;
+#X connect 5 0 17 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 0;
+#X connect 8 0 2 1;
+#X connect 9 0 1 0;
+#X connect 10 0 9 0;
+#X connect 11 0 10 1;
+#X connect 12 0 11 0;
+#X connect 13 0 14 0;
+#X connect 14 0 10 0;
+#X connect 15 0 11 0;
+#X connect 16 0 11 0;

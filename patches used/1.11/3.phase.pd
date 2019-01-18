@@ -1,0 +1,42 @@
+#N canvas 210 174 450 300 10;
+#X obj 38 206 dac~;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array seeme2 44100 float 2;
+#X coords 0 2 44099 -2 200 140 1 0 0;
+#X restore 239 127 graph;
+#X obj 199 31 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 44 36 261.62;
+#X msg 12 36 220;
+#X msg 125 36 440;
+#X msg 92 37 330;
+#X obj 83 73 osc~;
+#X obj 149 80 osc~;
+#X floatatom 147 59 5 0 0 0 - - -;
+#X obj 81 99 *~;
+#X msg 201 84 0;
+#X obj 114 236 tabwrite~ seeme2;
+#X obj 238 81 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 200 54 delay 2000;
+#X obj 38 153 clip~ -2 2;
+#X obj 37 178 *~ 0.05;
+#X text 39 8 setting phase of an oscillator (and graphing the result)
+;
+#X connect 2 0 12 0;
+#X connect 2 0 14 0;
+#X connect 3 0 7 0;
+#X connect 4 0 7 0;
+#X connect 5 0 7 0;
+#X connect 6 0 7 0;
+#X connect 7 0 10 0;
+#X connect 8 0 10 1;
+#X connect 8 0 12 0;
+#X connect 9 0 8 0;
+#X connect 10 0 15 0;
+#X connect 11 0 8 1;
+#X connect 14 0 11 0;
+#X connect 14 0 13 0;
+#X connect 15 0 16 0;
+#X connect 16 0 0 0;
+#X connect 16 0 0 1;

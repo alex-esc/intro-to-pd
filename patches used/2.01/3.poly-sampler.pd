@@ -1,0 +1,28 @@
+#N canvas 134 266 476 386 10;
+#N canvas 14 -15 460 331 soundarray 0;
+#N canvas -3 -23 450 300 (subpatch) 0;
+#X array t2.01b 88200 float 2;
+#X coords 0 1 88200 -1 200 140 1 0 0;
+#X restore 203 50 graph;
+#X obj 25 171 soundfiler;
+#X obj 20 104 loadbang;
+#X text 28 76 read file;
+#X msg 21 151 read voice.wav t1.27c;
+#X msg 23 124 read ../1.27/oh.wav t1.27c;
+#X connect 2 0 5 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X restore 306 278 pd soundarray;
+#X floatatom 52 144 5 0 0 0 - - -;
+#X obj 53 167 sampler-voice;
+#X text 64 30 Using Pd's abstraction mechanism to make 3 "voices" of
+a sampler. The file "sampler-voice.pd" is read into the three object
+boxes. (For this to work you must download both this patch and the
+patch \, "sampler-voice.pd" into the same directory).;
+#X obj 52 217 sampler-voice;
+#X obj 54 240 sampler-voice;
+#X text 92 144 <- send a pitch (60 for original pitch) to the sampler
+;
+#X text 36 197 These won't make noise until you send them messages
+as well:;
+#X connect 1 0 2 0;

@@ -1,0 +1,12 @@
+#N canvas 154 116 450 300 16;
+#X text 77 28 new objects - 2/24;
+#X obj 59 97 delwrite~;
+#X text 165 97 create an audio delay line;
+#X obj 59 129 delread~;
+#X text 166 129 read from a delay line;
+#X obj 60 163 vd~;
+#X text 168 161 variable delay read;
+#X obj 58 203 noise~;
+#X text 168 203 white noise;
+#X obj 60 240 lop~;
+#X text 170 240 simple low-pass filter;

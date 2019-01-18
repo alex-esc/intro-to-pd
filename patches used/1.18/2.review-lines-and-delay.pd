@@ -1,0 +1,57 @@
+#N canvas 277 318 571 361 12;
+#X obj 118 309 dac~;
+#X obj 116 279 *~;
+#X obj 114 253 osc~;
+#X obj 156 280 line~;
+#X obj 113 229 line~;
+#X obj 50 68 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 102 93 del 500;
+#X msg 62 183 440;
+#X obj 183 94 del 1000;
+#X obj 257 93 del 2000;
+#X obj 110 123 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 190 123 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 257 123 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 336 94 del 3000;
+#X obj 421 92 del 3500;
+#X obj 334 122 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 418 128 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 97 18 review: controlling amplitudes and freqencies with line~
+and delay objects. (del is a synonym for delay).;
+#X msg 99 183 440 200;
+#X msg 168 184 660 200;
+#X msg 281 192 0.03 200;
+#X msg 350 193 0 200;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
+#X connect 2 0 1 0;
+#X connect 3 0 1 1;
+#X connect 4 0 2 0;
+#X connect 5 0 20 0;
+#X connect 5 0 7 0;
+#X connect 5 0 6 0;
+#X connect 5 0 8 0;
+#X connect 5 0 9 0;
+#X connect 5 0 13 0;
+#X connect 5 0 14 0;
+#X connect 6 0 10 0;
+#X connect 6 0 19 0;
+#X connect 7 0 4 0;
+#X connect 8 0 11 0;
+#X connect 8 0 18 0;
+#X connect 9 0 12 0;
+#X connect 9 0 19 0;
+#X connect 13 0 18 0;
+#X connect 13 0 15 0;
+#X connect 14 0 21 0;
+#X connect 14 0 16 0;
+#X connect 18 0 4 0;
+#X connect 19 0 4 0;
+#X connect 20 0 3 0;
+#X connect 21 0 3 0;

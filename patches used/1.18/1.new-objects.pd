@@ -1,0 +1,16 @@
+#N canvas 10 37 509 367 12;
+#X obj 88 96 phasor~;
+#X obj 88 129 cos~;
+#X obj 89 180 mtof;
+#X obj 89 209 ftom;
+#X obj 89 239 dbtorms;
+#X obj 90 267 rmstodb;
+#X obj 89 156 tabread~;
+#X text 167 98 time-varying phase;
+#X text 138 130 table lookup cosine;
+#X text 145 181 MIDI to frequency;
+#X text 169 241 dB to linear amplitude;
+#X text 193 265 ... and back;
+#X text 173 204 ... and back;
+#X text 180 157 table lookup;
+#X text 143 34 new objects 1/18;

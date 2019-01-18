@@ -1,0 +1,48 @@
+#N canvas 95 132 669 482 12;
+#X obj 51 294 dac~;
+#X obj 50 265 *~;
+#X obj 148 300 line~;
+#X obj 48 83 line~;
+#X msg 129 268 0.03 500;
+#X msg 198 268 0 500;
+#X obj 49 112 phasor~;
+#X obj 128 385 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array tab.1.18d 12 float 3;
+#A 0 375.004 689.293 539.291 875.01 710.722 510.72 382.147 703.579
+432.147 567.863 625.007 75;
+#X coords 0 1000 12 0 200 140 1 0 0;
+#X restore 394 103 graph;
+#X floatatom 47 53 5 0 0 0 - - -;
+#X obj 50 202 tabread~ tab.1.18d;
+#X obj 63 416 tabwrite~ tab.1.18d;
+#X floatatom 63 385 5 0 0 0 - - -;
+#X obj 50 174 +~;
+#X floatatom 87 175 5 0 0 0 - - -;
+#X floatatom 85 144 5 0 0 0 - - -;
+#X obj 50 143 *~;
+#X obj 49 232 osc~;
+#X text 117 10 using an array as an old-fashioned sequencer;
+#X text 88 52 cycle speed (around 1 or 2);
+#X text 124 143 notes in cycle (2 to 12);
+#X text 125 175 where in array to start (0 to 10);
+#X text 165 243 on/off;
+#X text 60 351 blast a constant into array in case all is lost (array
+range is 0-1000).;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
+#X connect 2 0 1 1;
+#X connect 3 0 6 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 6 0 16 0;
+#X connect 7 0 11 0;
+#X connect 9 0 3 0;
+#X connect 10 0 17 0;
+#X connect 12 0 11 0;
+#X connect 13 0 10 0;
+#X connect 14 0 13 1;
+#X connect 15 0 16 1;
+#X connect 16 0 13 0;
+#X connect 17 0 1 0;

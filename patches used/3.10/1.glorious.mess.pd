@@ -1,0 +1,95 @@
+#N canvas 65 55 750 521 10;
+#X obj 608 307 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 631 308 7 0 0 0 - - -;
+#X obj 608 279 env~ 512;
+#X obj 124 135 sigmund~;
+#X floatatom 124 216 7 0 0 0 - - -;
+#X obj 114 112 adc~;
+#X obj 125 238 osc~;
+#X obj 126 260 +~ 0.2;
+#X obj 126 284 cos~;
+#X obj 125 313 *~;
+#X obj 181 309 line~;
+#X obj 125 161 mtof;
+#X obj 124 186 moses 20;
+#X obj 190 193 dbtorms;
+#X obj 175 279 pack 0 12;
+#X obj 121 338 output~;
+#X obj 399 111 adc~;
+#X obj 397 168 bonk~;
+#X obj 400 132 *~ 0.03;
+#X obj 399 191 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 403 241 timer;
+#X obj 402 214 t b b;
+#X floatatom 403 263 5 0 0 0 - - -;
+#X obj 384 281 t b f;
+#X obj 396 324 metro;
+#X msg 382 301 1;
+#X obj 397 348 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 458 353 table foo 441000;
+#X obj 448 209 tabwrite~ foo;
+#X obj 396 378 tabplay~ foo;
+#X obj 396 403 output~;
+#X obj 36 259 *~;
+#X obj 15 322 output~;
+#X obj 20 214 osc~;
+#X floatatom 21 194 7 0 0 0 - - -;
+#X obj 20 172 * 0.5;
+#X obj 50 288 +~;
+#X text 58 6 Signal analysis tools: sigmund~ pitch tracker \, bonk~
+attack detector \, and env~ envelope follower.;
+#X obj 607 255 adc~;
+#X text 2 48 sigmund~ outputs pitch and envelope. At right below \,
+those are used to drive an oscillator from an audio input. At left
+\, an ovtave divider made by ring modulating the incoming sound by
+an oscillator at half its frequency.;
+#X text 382 55 An example using bonk~ to measure time between two attacks
+\, sample the cause of the most recent attack \, and replay it at the
+tempo determined by the time difference.;
+#X text 589 214 envelope follower;
+#X text 584 231 (just to be thorough);
+#X connect 2 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 11 0;
+#X connect 3 1 13 0;
+#X connect 4 0 6 0;
+#X connect 4 0 35 0;
+#X connect 5 0 3 0;
+#X connect 5 0 31 0;
+#X connect 5 0 36 1;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 15 0;
+#X connect 9 0 15 1;
+#X connect 10 0 9 1;
+#X connect 11 0 12 0;
+#X connect 12 1 4 0;
+#X connect 13 0 14 0;
+#X connect 14 0 10 0;
+#X connect 16 0 18 0;
+#X connect 16 0 28 0;
+#X connect 17 0 19 0;
+#X connect 18 0 17 0;
+#X connect 19 0 21 0;
+#X connect 19 0 28 0;
+#X connect 20 0 22 0;
+#X connect 20 0 23 0;
+#X connect 21 0 20 0;
+#X connect 21 1 20 1;
+#X connect 23 0 25 0;
+#X connect 23 1 24 1;
+#X connect 24 0 26 0;
+#X connect 25 0 24 0;
+#X connect 26 0 29 0;
+#X connect 29 0 30 0;
+#X connect 31 0 36 0;
+#X connect 33 0 31 1;
+#X connect 34 0 33 0;
+#X connect 35 0 34 0;
+#X connect 36 0 32 0;
+#X connect 36 0 32 1;
+#X connect 38 0 2 0;

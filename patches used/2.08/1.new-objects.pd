@@ -1,0 +1,17 @@
+#N canvas 240 53 489 379 12;
+#X obj 25 62 throw~;
+#X obj 25 91 catch~;
+#X text 117 60 add to signal summing bus;
+#X text 115 90 output signal summing bus;
+#X text 104 17 2/08:;
+#X obj 25 120 send~;
+#X obj 25 149 receive~;
+#X obj 22 287 random;
+#X text 117 147 ... and read from it;
+#X text 113 120 create a global named signal;
+#X text 115 287 make pseudo-random numbers;
+#X obj 27 187 inlet~;
+#X obj 26 212 outlet~;
+#X text 122 184 getting in and out of subpatches;
+#X obj 28 255 moses;
+#X text 112 255 parting of the messages;

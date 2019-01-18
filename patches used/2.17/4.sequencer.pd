@@ -1,0 +1,41 @@
+#N canvas 174 104 533 602 12;
+#X obj 15 280 qlist;
+#X obj 29 348 s name1;
+#X obj 27 374 r name1;
+#X obj 94 377 r name2;
+#X floatatom 30 322 5 0 0 0 - - -;
+#X floatatom 26 401 5 0 0 0 - - -;
+#X floatatom 94 401 5 0 0 0 - - -;
+#X msg 23 500 \; name1 67 \; name2 34;
+#X msg 24 440 \; name1 0 \; name2 0;
+#X msg 15 58 read sequence1.txt;
+#X obj 44 115 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 51 164 print;
+#X obj 44 91 r restart;
+#X msg 51 220 tempo \$1;
+#X floatatom 51 200 5 0 0 0 - - -;
+#X msg 46 137 rewind;
+#X obj 51 244 print;
+#X text 106 3 Using the qlist object for sequencing;
+#X text 153 55 read a text file;
+#X text 118 91 a receive that can be sent from the qlist;
+#X text 103 136 go back to beginning (and stop);
+#X text 104 162 print contents;
+#X text 90 188 change speed (1 for normal speed \, 2 for twice normal
+speed \, etc);
+#X text 63 112 <--- start sequencing;
+#X text 155 376 two receives the qlist can send messages to;
+#X text 105 450 by the way -- message boxes can also address objects
+by name using a semicolon as separator;
+#X connect 2 0 5 0;
+#X connect 3 0 6 0;
+#X connect 4 0 1 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 10 0;
+#X connect 13 0 0 0;
+#X connect 13 0 16 0;
+#X connect 14 0 13 0;
+#X connect 15 0 0 0;

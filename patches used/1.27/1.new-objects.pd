@@ -1,0 +1,5 @@
+#N canvas 145 148 450 300 16;
+#X obj 28 46 adc~;
+#X text 86 45 sound in;
+#X obj 27 79 hip~;
+#X text 86 82 high pass filter;
