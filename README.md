@@ -102,6 +102,12 @@ Example:
 
 	youtube-dl https://www.youtube.com/playlist?list=PLdZadTeiAR0khkY1Lk-XVNpIDuhMg8wOI
 
+## Website with more information
+
+> http://msp.ucsd.edu/syllabi/171.11w/index.htm
+
+
+
 ## License
 
 This work is licensed under Attribution-NonCommercial-ShareAlike 3.0 Unported, for more information visit [this page](https://creativecommons.org/licenses/by-nc-sa/3.0/).
