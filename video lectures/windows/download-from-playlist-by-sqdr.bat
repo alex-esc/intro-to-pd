@@ -1,0 +1,1 @@
+.\youtube-dl.exe https://www.youtube.com/playlist?list=PLdZadTeiAR0khkY1Lk-XVNpIDuhMg8wOI
