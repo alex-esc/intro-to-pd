@@ -3,6 +3,9 @@ layout: default
 title: Welcome
 ---
 
+
+# A full University course for free
+
 Learn to use pure data for creating basic computer music.
 
 Introduction to computer music - explained is divided into bite sized lessons, we include all necessary materials to self taught Pure Data or to teach this topic to newcomers; meaning we include presentations, manuals and other resources.
@@ -11,7 +14,7 @@ Introduction to computer music - explained is divided into bite sized lessons, w
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Pdobjects.svg/320px-Pdobjects.svg.png)
 
-> <a href="https://commons.wikimedia.org/wiki/User:Jancsika">Jancsika</a>, <a href="https://commons.wikimedia.org/wiki/File:Pdobjects.svg">Pdobjects</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" rel="license">CC BY-SA 3.0</a> 
+> Image credit: <a href="https://commons.wikimedia.org/wiki/User:Jancsika">Jancsika</a>, <a href="https://commons.wikimedia.org/wiki/File:Pdobjects.svg">Pdobjects</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" rel="license">CC BY-SA 3.0</a> 
 
 ## Latest Lesson
 
