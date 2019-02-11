@@ -14,7 +14,7 @@ This work is a derivative from "Introduction To Computer Music" by Miller Pucket
 [l]: https://creativecommons.org/licenses/by-nc-sa/4.0/
  
 
-{% for post in site.posts %}
+{% for post in site.posts reversed %}
 
 <div>
   {{ post.date | date: "%b %-d, %Y" }}
