@@ -2,7 +2,7 @@
 
 ## A full University course for free
 
-In 2011 Miller Puckette taught the class "Introduction To Computer Music" at the University of California from which 20 videos were recorded during his lectures, this videos were made public for anyone to see, this cource includes video lectures, a written transcription of all the lectures and examples used on the class.
+In 2011 Miller Puckette taught the class "Introduction To Computer Music" at the University of California from which 20 videos were recorded during his lectures, this videos were made public for anyone to see, this course includes video lectures, a written transcription of all the lectures and examples used on the class.
 
 On this course professor Puckette taught how to use _pure data_, an open source visual programming language for music and multimedia, pure data (abbreviated as pd) was created by the professor himself.
 
