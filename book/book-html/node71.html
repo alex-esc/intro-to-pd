@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Additive synthesis: Risset's bell</TITLE>
+<META NAME="description" CONTENT="Additive synthesis: Risset's bell">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node72.html">
+<LINK REL="previous" HREF="node70.html">
+<LINK REL="up" HREF="node68.html">
+<LINK REL="next" HREF="node72.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1604"
+  HREF="node72.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1598"
+  HREF="node68.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1592"
+  HREF="node70.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1600"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1602"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1605"
+  HREF="node72.html">Additive synthesis: spectral envelope</A>
+<B> Up:</B> <A NAME="tex2html1599"
+  HREF="node68.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1593"
+  HREF="node70.html">Transfer functions for amplitude</A>
+ &nbsp; <B>  <A NAME="tex2html1601"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1603"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00883000000000000000">
+Additive synthesis: Risset's bell</A>
+</H2>
+<A NAME="4778"></A>
+<P>
+The abstraction mechanism of Pd, which we used above to make a reusable ADSR
+generator, is also useful for making voice banks.  Here we will use
+abstractions to organize banks of oscillators for additive synthesis.  There
+are many possible ways of organizing oscillator banks besides 
+those shown here.
+
+<P>
+The simplest and most direct organization of the sinusoids is to form  
+partials to add up to a note.  The result is monophonic, in the sense that
+the patch will play only one note at a time, which, however, will consist of
+several sinusoids whose individual frequencies and amplitudes might depend both
+on those of the note we're playing, and also on their individual placement
+in a harmonic (or inharmonic) overtone series.
+
+<P>
+Example D07.additive.pd (Figure <A HREF="#fig04.16">4.16</A>) uses a bank of 11 copies
+of an abstraction named <TT>partial</TT> (Figure <A HREF="#fig04.17">4.17</A>) in an
+imitation of a well-known bell instrument by Jean-Claude Risset.  As described
+in  [<A
+ HREF="node202.html#r-dodge85">DJ85</A>, p. 94], the bell sound has 11 partials, each with its own
+relative amplitude, frequency, and duration.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig04.16"></A><A NAME="4890"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.16:</STRONG>
+A Pd realization of Jean-Claude Risset's bell instrument.  The
+bell sound is made by summing 11 sinusoids, each made by a copy of the
+<TT>partial</TT> abstraction.</CAPTION>
+<TR><TD><IMG
+ WIDTH="498" HEIGHT="389" BORDER="0"
+ SRC="img384.png"
+ ALT="\begin{figure}\psfig{file=figs/fig04.16.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig04.17"></A><A NAME="4891"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.17:</STRONG>
+The <TT>partial</TT> abstraction used by Risset's bell instrument
+from Figure <A HREF="#fig04.16">4.16</A>.</CAPTION>
+<TR><TD><IMG
+ WIDTH="487" HEIGHT="376" BORDER="0"
+ SRC="img385.png"
+ ALT="\begin{figure}\psfig{file=figs/fig04.17.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+For each note, the <TT>partial</TT> abstraction computes a simple (quartic)
+amplitude envelope consisting only of an attack and a decay segment; there is
+no sustain or release segment.  This is multiplied by a sinusoid, and the 
+product is added into a summing bus.  Two new object classes are introduced
+to implement the summing bus:
+
+<P>
+<BR><!-- MATH
+ $\fbox{ \texttt{catch\~}}$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img386.png"
+ ALT="\fbox{ \texttt{catch\~}}">:
+<A NAME="4908"></A>define and output a summing bus.  The creation argument (``sum-bus" in this example)
+gives the summing bus a name so that <TT>throw~</TT> objects below can refer
+to it.  You may have as many summing busses  (and hence <TT>catch~</TT> objects)
+as you like but they must all have different names.
+
+<P>
+<BR><!-- MATH
+ $\fbox{ \texttt{throw\~}}$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img388.png"
+ ALT="\fbox{ \texttt{throw\~}}">:
+<A NAME="4909"></A>add to a summing bus.  The creation argument selects which summing bus to
+use.
+
+<P>
+The control interface is crude: number boxes control the ``fundamental"
+frequency of the bell and its duration.  Sending a ``bang" message to 
+the <TT>s trigger</TT> object starts a note.  (The note then decays over
+the period of time controlled by the duration parameter; there is no
+separate trigger to stop the note).  There is no amplitude
+control except via the <TT>output~</TT> object.
+
+<P>
+The four arguments to each invocation of the <TT>partial</TT> abstraction specify: 
+
+<OL>
+<LI>amplitude.  The amplitude of the partial at its peak, at the
+end of the attack and the beginning of the decay of the note.
+
+<P>
+</LI>
+<LI>relative duration.  This is multiplied by the overall note duration
+(controlled in the main patch) to
+determine the duration of the decay portion of the sinusoid.  Individual partials
+may thus have different decay times, so that some partials die out faster than
+others, under the main patch's overall control.
+
+<P>
+</LI>
+<LI>relative frequency.  As with the relative duration, this controls each
+partial's frequency as a multiple of the overall frequency controlled in the
+main patch.
+
+<P>
+</LI>
+<LI>detune.  A frequency in Hertz to be added to the product of the global
+frequency and the relative frequency.
+
+<P>
+</LI>
+</OL>
+Inside the <TT>partial</TT> abstraction, the amplitude is simply taken
+directly from the ``$1" argument (multiplying by 0.1 to adjust for
+the high individual amplitudes); the duration is calculated from the
+<TT>r duration</TT> object, multiplying it by the ``$2" argument.
+The frequency is computed as <IMG
+ WIDTH="48" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img390.png"
+ ALT="$fp+d$"> where <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.png"
+ ALT="$f$"> is the global frequency (from
+the <TT>r frequency</TT> object), <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$p$"> is the relative frequency of the
+partial, and <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$"> is the detune frequency.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1604"
+  HREF="node72.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1598"
+  HREF="node68.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1592"
+  HREF="node70.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1600"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1602"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1605"
+  HREF="node72.html">Additive synthesis: spectral envelope</A>
+<B> Up:</B> <A NAME="tex2html1599"
+  HREF="node68.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1593"
+  HREF="node70.html">Transfer functions for amplitude</A>
+ &nbsp; <B>  <A NAME="tex2html1601"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1603"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

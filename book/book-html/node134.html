@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Non-recirculating filter, second form</TITLE>
+<META NAME="description" CONTENT="Non-recirculating filter, second form">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node135.html">
+<LINK REL="previous" HREF="node133.html">
+<LINK REL="up" HREF="node132.html">
+<LINK REL="next" HREF="node135.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2581"
+  HREF="node135.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2575"
+  HREF="node132.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2569"
+  HREF="node133.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2577"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2579"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2582"
+  HREF="node135.html">Elementary recirculating filter</A>
+<B> Up:</B> <A NAME="tex2html2576"
+  HREF="node132.html">Elementary filters</A>
+<B> Previous:</B> <A NAME="tex2html2570"
+  HREF="node133.html">Elementary non-recirculating filter</A>
+ &nbsp; <B>  <A NAME="tex2html2578"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2580"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001222000000000000000"></A>
+<A NAME="sect8.secondform"></A>
+<BR>
+Non-recirculating filter, second form
+</H2>
+
+<P>
+Sometimes we will need a variant of the filter above, shown in Figure
+<A HREF="#fig08.10">8.10</A>, called the
+<I>elementary non-recirculating filter, second form</I>.
+Instead of multiplying the delay output by <IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.png"
+ ALT="$Q$"> we multiply the direct signal
+by its
+<A NAME="10166"></A><I>complex conjugate</I>
+<IMG
+ WIDTH="16" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img872.png"
+ ALT="$\overline{Q}$">.  If
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+A = a+bi = r \cdot (\cos(\alpha) + i \sin(\alpha))
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="238" HEIGHT="28" BORDER="0"
+ SRC="img873.png"
+ ALT="\begin{displaymath}
+A = a+bi = r \cdot (\cos(\alpha) + i \sin(\alpha))
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+is any complex number, its complex conjugate is defined as:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\overline{A} = a-bi = r \cdot (\cos(\alpha) - i \sin(\alpha))
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="238" HEIGHT="28" BORDER="0"
+ SRC="img874.png"
+ ALT="\begin{displaymath}
+\overline{A} = a-bi = r \cdot (\cos(\alpha) - i \sin(\alpha))
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Graphically this reflects points of the complex plane up and down across the
+real axis.  The transfer function of the new filter is
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+H(Z) = \overline{Q} - {Z^{-1}}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="120" HEIGHT="28" BORDER="0"
+ SRC="img875.png"
+ ALT="\begin{displaymath}
+H(Z) = \overline{Q} - {Z^{-1}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+This gives rise to the same frequency response as before since
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+|\overline{Q} - {Z^{-1}}| = |Q - \overline{Z^{-1}}| = |Q- Z|
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="232" HEIGHT="28" BORDER="0"
+ SRC="img876.png"
+ ALT="\begin{displaymath}
+\vert\overline{Q} - {Z^{-1}}\vert = \vert Q - \overline{Z^{-1}}\vert = \vert Q- Z\vert
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Here we use the fact that <!-- MATH
+ $\overline{Z} = {Z^{-1}}$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img877.png"
+ ALT="$\overline{Z} = {Z^{-1}}$">, for any unit complex
+number <IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$Z$">, as can be verified by writing out <IMG
+ WIDTH="27" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img878.png"
+ ALT="$Z\overline{Z}$"> in either
+polar or rectangular form.
+
+<P>
+Although the two forms of the elementary non-recirculating filter have the same
+frequency response, their phase responses are different; this will
+occasionally lead us to prefer the second form.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig08.10"></A><A NAME="10180"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 8.10:</STRONG>
+The elementary non-recirculating filter, second form.</CAPTION>
+<TR><TD><IMG
+ WIDTH="121" HEIGHT="168" BORDER="0"
+ SRC="img879.png"
+ ALT="\begin{figure}\psfig{file=figs/fig08.10.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2581"
+  HREF="node135.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2575"
+  HREF="node132.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2569"
+  HREF="node133.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2577"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2579"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2582"
+  HREF="node135.html">Elementary recirculating filter</A>
+<B> Up:</B> <A NAME="tex2html2576"
+  HREF="node132.html">Elementary filters</A>
+<B> Previous:</B> <A NAME="tex2html2570"
+  HREF="node133.html">Elementary non-recirculating filter</A>
+ &nbsp; <B>  <A NAME="tex2html2578"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2580"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

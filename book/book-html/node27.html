@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Wavetable Oscillator</TITLE>
+<META NAME="description" CONTENT="The Wavetable Oscillator">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node28.html">
+<LINK REL="previous" HREF="node26.html">
+<LINK REL="up" HREF="node26.html">
+<LINK REL="next" HREF="node28.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html946"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html940"
+  HREF="node26.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html934"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html942"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html944"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html947"
+  HREF="node28.html">Sampling</A>
+<B> Up:</B> <A NAME="tex2html941"
+  HREF="node26.html">Wavetables and samplers</A>
+<B> Previous:</B> <A NAME="tex2html935"
+  HREF="node26.html">Wavetables and samplers</A>
+ &nbsp; <B>  <A NAME="tex2html943"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html945"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00610000000000000000"></A>
+<A NAME="sect2.oscillator"></A>
+<BR>
+The Wavetable Oscillator
+</H1>
+
+<P>
+Figure <A HREF="node26.html#fig02.02">2.2</A> suggests an easy way to synthesize any desired fixed
+waveform at any desired frequency, using the block diagram shown in Figure
+<A HREF="#fig02.03">2.3</A>.  The upper block is an oscillator--not the sinusoidal
+oscillator we saw earlier, but one that produces sawtooth waves instead.  Its
+output values, as indicated at the left of the block, should range from <IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img179.png"
+ ALT="$0$"> to
+the wavetable size <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$">.  This is used as an index into the wavetable lookup
+block (introduced in Figure <A HREF="node26.html#fig02.01">2.1</A>), resulting in a periodic waveform.
+Figure <A HREF="#fig02.03">2.3</A> (part b) adds an envelope generator and a multiplier to control
+the output amplitude in the same way as for the sinusoidal oscillator shown in
+Figure <A HREF="node12.html#fig01.07">1.7</A> (Page <A HREF="node12.html#fig01.07"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="file:/usr/local/share/lib/latex2html/icons/crossref.png"></A>).  Often, one uses a wavetable with (RMS or peak) amplitude 1, so that
+the amplitude of the output is just the magnitude of the envelope generator's
+output.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig02.03"></A><A NAME="2190"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.3:</STRONG>
+Block diagrams: (a) for a wavetable lookup oscillator; (b) with
+amplitude control by an envelope generator.</CAPTION>
+<TR><TD><IMG
+ WIDTH="427" HEIGHT="346" BORDER="0"
+ SRC="img183.png"
+ ALT="\begin{figure}\psfig{file=figs/fig02.03.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Wavetable oscillators are often used to synthesize sounds with specified,
+static spectra.  To do this, you can pre-compute <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$"> samples of any waveform
+of period <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$"> (angular frequency <IMG
+ WIDTH="42" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img184.png"
+ ALT="$2\pi/N$">) by adding up the elements of the
+Fourier Series (Page <A HREF="node14.html#sect1.fourier"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="file:/usr/local/share/lib/latex2html/icons/crossref.png"></A>).  The computation involved in 
+setting up the wavetable at first might be significant, but this may be done
+in advance of the synthesis process, which might take place in real time.
+
+<P>
+While direct additive synthesis of complex waveforms, as shown in Chapter 1,
+is in principle infinitely flexible as a technique for producing time-varying
+timbres, wavetable synthesis is much less expensive in terms of computation
+but requires switching wavetables to change the timbre.  An intermediate
+technique, more flexible and expensive than simple wavetable synthesis but
+less flexible and less expensive than additive synthesis, is to create
+time-varying mixtures between a small number of fixed wavetables.  If the
+number of wavetables is only two, this is in effect a cross-fade between
+the two waveforms, as diagrammed in Figure <A HREF="#fig02.04">2.4</A>.  Suppose we wish to
+use some signal  <!-- MATH
+ $0 \le x[n] \le 1$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img185.png"
+ ALT="$0 \le x[n] \le 1$"> to control the relative strengths of the two
+waveforms, so that, if <IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img186.png"
+ ALT="$x[n] = 0$">, we get the first one and if  <IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img187.png"
+ ALT="$x[n] = 1$"> we
+get the second.  Denoting the two signals to be cross-faded by <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$y[n]$"> and
+<IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img167.png"
+ ALT="$z[n]$">, we compute the signal
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+(1 - x[n])y[n] + x[n]z[n]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="164" HEIGHT="28" BORDER="0"
+ SRC="img188.png"
+ ALT="\begin{displaymath}
+(1 - x[n])y[n] + x[n]z[n]
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+or, equivalently and usually more efficient to calculate,
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+y[n] + x[n](z[n]-y[n])
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="158" HEIGHT="28" BORDER="0"
+ SRC="img189.png"
+ ALT="\begin{displaymath}
+y[n] + x[n](z[n]-y[n])
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+This computation is diagrammed in Figure <A HREF="#fig02.04">2.4</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig02.04"></A><A NAME="2198"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.4:</STRONG>
+Block diagram for cross-fading between two wavetables.</CAPTION>
+<TR><TD><IMG
+ WIDTH="316" HEIGHT="353" BORDER="0"
+ SRC="img190.png"
+ ALT="\begin{figure}\psfig{file=figs/fig02.04.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+When using this technique to cross-fade between wavetable oscillators, it might
+be desirable to keep the phases of corresponding partials the same across the
+wavetables, so that their amplitudes combine additively when they are mixed. On
+the other hand, if arbitrary wavetables are used (borrowed, for instance, from
+a recorded sound) there will be a phasing effect as the different waveforms are
+mixed.
+
+<P>
+This scheme can be extended in a daisy chain to move along a continuous path
+between a succession of timbres.  Alternatively, or in combination with
+daisy-chaining, cross-fading may be used to interpolate between two different
+timbres, for example as a function of musical dynamic.  To do this you
+would prepare two or even several waveforms of a single synthetic voice
+played at
+different dynamics, and interpolate between successive ones as a function
+of the output dynamic you want.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html946"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html940"
+  HREF="node26.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html934"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html942"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html944"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html947"
+  HREF="node28.html">Sampling</A>
+<B> Up:</B> <A NAME="tex2html941"
+  HREF="node26.html">Wavetables and samplers</A>
+<B> Previous:</B> <A NAME="tex2html935"
+  HREF="node26.html">Wavetables and samplers</A>
+ &nbsp; <B>  <A NAME="tex2html943"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html945"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

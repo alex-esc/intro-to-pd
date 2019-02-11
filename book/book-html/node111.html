@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Artificial reverberation</TITLE>
+<META NAME="description" CONTENT="Artificial reverberation">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node113.html">
+<LINK REL="previous" HREF="node110.html">
+<LINK REL="up" HREF="node104.html">
+<LINK REL="next" HREF="node112.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2213"
+  HREF="node112.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2207"
+  HREF="node104.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2201"
+  HREF="node110.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2209"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2211"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2214"
+  HREF="node112.html">Controlling reverberators</A>
+<B> Up:</B> <A NAME="tex2html2208"
+  HREF="node104.html">Time shifts and delays</A>
+<B> Previous:</B> <A NAME="tex2html2202"
+  HREF="node110.html">Power conservation and complex</A>
+ &nbsp; <B>  <A NAME="tex2html2210"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2212"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001160000000000000000">
+Artificial reverberation</A>
+</H1>
+
+<P>
+Artificial reverberation is widely used to improve the sound of recordings, but
+has a wide range of other musical applications [<A
+ HREF="node202.html#r-dodge85">DJ85</A>, pp.289-340].
+Reverberation in real, natural spaces arises from a complicated pattern of
+sound reflections off the walls and other objects that define the space.  It is
+a great oversimplification to imitate this process using recirculating,
+discrete delay networks.  Nonetheless, modeling reverberation using
+recirculating delay lines can, with much work, be made to yield good results.
+
+<P>
+The central idea is to idealize any room (or other reverberant space) as a
+collection of parallel delay lines that models the memory of the air inside the
+room.  At each point on the walls of the room, many straight-line paths
+terminate, each carrying sound to that point; the sound then reflects into many
+other paths, each one originating at that point, and leading eventually to some
+other point on a wall.
+
+<P>
+Although the wall (and the air we passed through to get to the wall) absorbs
+some of the sound, some portion of the incident power is reflected and makes
+it to another wall.  If most of the energy recirculates, the room reverberates
+for a long time; if all of it does, the reverberation lasts forever.  If at
+any frequency the walls reflect more energy overall than they receive, the
+sound will feed back unstably; this never happens in real rooms (conservation
+of energy prevents it), but it can happen in an artificial reverberator if it
+is not designed correctly.
+
+<P>
+To make an artificial reverberator using a delay network, we must
+fill two competing demands simultaneously.  First, the delay lines must
+be long enough to prevent
+<A NAME="8091"></A><I>coloration</I> in the output as a result of comb filtering.
+(Even if we move beyond the simple comb filter
+of Section <A HREF="node109.html#sect7.recirculatingcomb">7.4</A>, the frequency response will tend to
+have peaks and
+valleys whose spacing varies inversely with total delay time.)  On the other
+hand, we should not hear individual echoes; the
+<A NAME="8094"></A><I>echo density</I> should ideally be at least one thousand per second.
+
+<P>
+In pursuit of these aims, we assemble some number of delay lines and
+connect their outputs back to their inputs.  The feedback path--the connection
+from the outputs back to the inputs of the delays--should have an aggregate
+gain that varies gently as a function of frequency, and never exceeds one for
+any frequency.  A good starting point is to give the feedback path a flat
+frequency response and a gain slightly less than one; this is done using
+rotation matrices.
+
+<P>
+Ideally this is all we should need to do, but in reality we will not always
+want to use the thousands of delay lines it would take to model the paths
+between every possible pair of points on the walls.  In practice we
+usually use between four and sixteen delay lines to model the room.  This
+simplification sometimes reduces the echo density below what we would wish,
+so we might use more delay lines at the input of the recirculating network
+to increase the density.
+
+<P>
+Figure <A HREF="#fig07.15">7.15</A> shows a simple reverberator design that uses this
+principle.  The incoming sound, shown as two separate signals in this example,
+is first thickened by progressively delaying one of the two signals and then
+intermixing them using a rotation matrix.  At each stage the number of 
+echoes of the original signal is doubled; typically we would use between 6 and 8
+stages to make between 64 and 256 echos, all with a total delay of between 30
+and 80 milliseconds.  The figure shows three such stages. 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig07.15"></A><A NAME="8099"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 7.15:</STRONG>
+Reverberator design using power-preserving transformations and
+recirculating delays.</CAPTION>
+<TR><TD><IMG
+ WIDTH="248" HEIGHT="453" BORDER="0"
+ SRC="img773.png"
+ ALT="\begin{figure}\psfig{file=figs/fig07.15.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Next comes the recirculating part of the reverberator.  After the initial
+thickening, the input signal is fed into a bank of parallel delay
+lines, and their outputs are again mixed using a rotation matrix.  The
+mixed outputs are attenuated by a gain <IMG
+ WIDTH="40" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img774.png"
+ ALT="$g \le 1$">, and fed back into the
+delay lines to make a recirculating network.
+
+<P>
+The value <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$g$"> controls
+the reverberation time.  If the average length of the recirculating delay lines
+is <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$">, then any incoming sound is attenuated by a factor of <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$g$"> after a
+time delay of <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$">.  After time <IMG
+ WIDTH="9" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img82.png"
+ ALT="$t$"> the signal has recirculated <IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img775.png"
+ ALT="$t/d$"> times,
+losing <!-- MATH
+ $20 {\log_{10}} (g)$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img776.png"
+ ALT="$20 {\log_{10}} (g)$"> decibels each time around, so the total gain, in
+decibels, is:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+20 {t\over d} {\log_{10}} (g)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="80" HEIGHT="38" BORDER="0"
+ SRC="img777.png"
+ ALT="\begin{displaymath}
+20 {t\over d} {\log_{10}} (g)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The usual measure of reverberation time (RT) is the time at which the gain drops
+by sixty decibels:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+20 {\mathrm{RT}\over d} {\log_{10}}( g ) = -60
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="144" HEIGHT="39" BORDER="0"
+ SRC="img778.png"
+ ALT="\begin{displaymath}
+20 {\mathrm{RT}\over d} {\log_{10}}( g ) = -60
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\mathrm{RT} = {{-3d} \over {{\log_{10}}(g) }}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="100" HEIGHT="43" BORDER="0"
+ SRC="img779.png"
+ ALT="\begin{displaymath}
+\mathrm{RT} = {{-3d} \over {{\log_{10}}(g) }}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+If <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$g$"> is one, this formula gives <IMG
+ WIDTH="19" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img305.png"
+ ALT="$\infty$">, since the logarithm of one is zero.
+
+<P>
+The framework shown above is the basis for many modern reverberator designs.
+Many extensions of this underlying design have been proposed.  The most
+important next step would be to introduce filters in the recirculation path so
+that high frequencies can be made to decay more rapidly than low ones; this is
+readily accomplished with a very simple low-pass filter, but we will not work
+this out here, having not yet developed the needed filter theory.
+
+<P>
+In general, to use this framework to design a reverberator involves making many
+complicated choices of delay times, gains, and filter coefficients.  Mountains
+of literature have been published on this topic; Barry Blesser has published a
+good overview [<A
+ HREF="node202.html#r-blesser01">Ble01</A>]. Much more is known about reverberator design
+and tuning that has not been published; precise designs are often kept secret
+for commercial reasons.   In general, the design process involves painstaking
+and lengthy tuning by trial, error, and critical listening.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html2215"
+  HREF="node112.html">Controlling reverberators</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2213"
+  HREF="node112.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2207"
+  HREF="node104.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2201"
+  HREF="node110.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2209"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2211"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2214"
+  HREF="node112.html">Controlling reverberators</A>
+<B> Up:</B> <A NAME="tex2html2208"
+  HREF="node104.html">Time shifts and delays</A>
+<B> Previous:</B> <A NAME="tex2html2202"
+  HREF="node110.html">Power conservation and complex</A>
+ &nbsp; <B>  <A NAME="tex2html2210"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2212"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

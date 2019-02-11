@@ -1,0 +1,343 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Order of execution and lower limits on delay times</TITLE>
+<META NAME="description" CONTENT="Order of execution and lower limits on delay times">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node121.html">
+<LINK REL="previous" HREF="node119.html">
+<LINK REL="up" HREF="node116.html">
+<LINK REL="next" HREF="node121.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2347"
+  HREF="node121.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2341"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2335"
+  HREF="node119.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2343"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2345"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2348"
+  HREF="node121.html">Order of execution in</A>
+<B> Up:</B> <A NAME="tex2html2342"
+  HREF="node116.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2336"
+  HREF="node119.html">Variable delay line</A>
+ &nbsp; <B>  <A NAME="tex2html2344"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2346"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0011104000000000000000">
+Order of execution and lower limits on delay times</A>
+</H2>
+
+<P>
+When using delays (as well as other state-sharing tilde objects in Pd), the
+order in which the writing and and reading operations are
+done can affect the outcome of the computation.  Although the tilde objects
+in a patch may have a complicated topology of audio connections, in reality
+Pd executes them all in a sequential order, one after the other, to compute
+each block of audio output.  This linear order is guaranteed to be compatible
+with the audio interconnections, in the sense that no tilde object's computation
+is done until all its inputs, for that same block, have been computed.
+
+<P>
+Figure <A HREF="#fig07.26">7.26</A> shows two examples of tilde object topologies and their
+translation into a sequence of computation.  In part (a) there are four
+tilde objects, and because of the connections, the object <TT>a~</TT> must
+produce its output before either of <TT>b~</TT> or <TT>c~</TT> can run;
+and
+both of those in turn are used in the computation of <TT>d~</TT>.  So the
+possible orderings of these four objects are ``a-b-c-d" and
+``a-c-b-d".  These
+two orderings will have exactly the same result unless the computation of
+<TT>b~</TT> and <TT>c~</TT> somehow affect each other's output (as
+delay operations might, for example).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig07.26"></A><A NAME="8233"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 7.26:</STRONG>
+Order of execution of tilde objects in Pd: (a), an acyclic network.
+The objects may be executed in either the order ``a-b-c-d" or ``a-c-b-d".  In
+part (b), there is a cycle, and there is thus no compatible linear ordering of
+the objects because each one would need to be run before the other.</CAPTION>
+<TR><TD><IMG
+ WIDTH="273" HEIGHT="155" BORDER="0"
+ SRC="img827.png"
+ ALT="\begin{figure}\psfig{file=figs/fig07.26.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Part (b) of the figure shows a cycle of tilde objects.  This network cannot
+be sorted into a compatible sequential order, since each of <TT>a~</TT> and
+<TT>b~</TT> requires the other's output to be computed first.  In general,
+a sequential ordering of the tilde objects is possible if and only if there
+are no cycles anywhere in the network of tilde objects and their audio
+signal interconnections.  Pd reports an error when such a cycle appears.
+(Note that the situation for <I>control</I> interconnections between objects
+is more complicated and flexible; see the Pd documentation for details.)
+
+<P>
+To see the effect of the order of computation on a
+<TT>delwrite~</TT>/<TT>delread~</TT> pair, we can write explicitly the input
+and output signals in the two possible orders, with the minimum possible
+delay.  If the write operation comes first, at a block starting at sample
+number <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$">, the operation can be written as:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x[N], \ldots, x[N+B-1] \longrightarrow \fbox{\texttt{delwrite\~}}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="279" HEIGHT="29" BORDER="0"
+ SRC="img828.png"
+ ALT="\begin{displaymath}
+x[N], \ldots, x[N+B-1] \longrightarrow \fbox{\texttt{delwrite\~}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img311.png"
+ ALT="$B$"> is the block size (as in Section <A HREF="node42.html#sect3.control">3.2</A>).
+Having put those particular samples into the delay line, a following
+<TT>delread~</TT> is able to read the same values out:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\fbox{\texttt{delread\~}} \longrightarrow x[N], \ldots, x[N+B-1]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="270" HEIGHT="29" BORDER="0"
+ SRC="img829.png"
+ ALT="\begin{displaymath}
+\fbox{\texttt{delread\~}} \longrightarrow x[N], \ldots, x[N+B-1]
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+On the other hand, suppose the <TT>delread~</TT> object comes before the 
+<TT>delwrite~</TT>.  Then the samples <!-- MATH
+ $x[N], \ldots, x[N+B-1]$
+ -->
+<IMG
+ WIDTH="163" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img830.png"
+ ALT="$x[N], \ldots, x[N+B-1]$"> have not
+yet been stored in the delay line, so the most recent samples that
+may be read belong to the previous block:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\fbox{\texttt{delread\~}} \longrightarrow x[N-B], \ldots, x[N-1]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="270" HEIGHT="29" BORDER="0"
+ SRC="img831.png"
+ ALT="\begin{displaymath}
+\fbox{\texttt{delread\~}} \longrightarrow x[N-B], \ldots, x[N-1]
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x[N], \ldots, x[N+B-1] \longrightarrow \fbox{\texttt{delwrite\~}}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="279" HEIGHT="29" BORDER="0"
+ SRC="img828.png"
+ ALT="\begin{displaymath}
+x[N], \ldots, x[N+B-1] \longrightarrow \fbox{\texttt{delwrite\~}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Here the minimum delay we can possibly obtain is the block size <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img311.png"
+ ALT="$B$">.  So the
+minimum delay is either <IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img179.png"
+ ALT="$0$"> or <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img311.png"
+ ALT="$B$">, depending on the order in which the
+<TT>delread~</TT> and <TT>delwrite~</TT>objects are sorted into a sequence of
+execution.
+
+<P>
+Looking back at the patches of Figures <A HREF="node118.html#fig07.24">7.24</A> and <A HREF="node119.html#fig07.25">7.25</A>, which
+both feature recirculating delays, the <TT>delread~</TT> or <TT>vd~</TT> object must be placed
+earlier in the sequence than the <TT>delwrite~</TT> object.  This is true of any
+design in which a delay's output is fed back into its input.  The minimum
+possible delay is <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img311.png"
+ ALT="$B$"> samples.  For a (typical) sample rate of 44100 Hertz and
+block size of 64 samples, this comes to 1.45 milliseconds.  This might not
+sound at first like a very important restriction.  But if you are trying to tune
+a recirculating comb filter to a specific pitch, the highest you can get only
+comes to about 690 Hertz.  To get shorter recirculating delays you must increase
+the sample rate or decrease the block size.
+
+<P>
+Example G04.control.blocksize.pd (Figure <A HREF="#fig07.27">7.27</A>) shows how the block size can be
+controlled in Pd using
+a new object:  
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig07.27"></A><A NAME="8407"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 7.27:</STRONG>
+A patch using block size control to lower the loop delay below
+the normal 64 samples: (a) the main patch; (b) the ``delay-writer" subpatch
+with a <TT>block~</TT> object and a recirculating delay network.</CAPTION>
+<TR><TD><IMG
+ WIDTH="558" HEIGHT="252" BORDER="0"
+ SRC="img832.png"
+ ALT="\begin{figure}\psfig{file=figs/fig07.27.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><!-- MATH
+ $\fbox{ \texttt{block\~}}$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img833.png"
+ ALT="\fbox{ \texttt{block\~}}">,
+<BR><!-- MATH
+ $\fbox{ \texttt{switch\~}}$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img834.png"
+ ALT="\fbox{ \texttt{switch\~}}">:
+<A NAME="8427"></A><A NAME="8428"></A>Set the local block size of the patch window the object sits in.  Block sizes
+are normally powers of two.  The <TT>switch~</TT> object, in addition, can be used to
+turn audio computation within the window on and off, using control messages.
+Additional creation arguments can set the local sample rate and specify
+overlapping computations (demonstrated in Chapter <A HREF="node163.html#chapter-fft">9</A>).
+
+<P>
+In part (a) of the figure (the main patch), a rectangular pulse is sent
+to the <TT>pd delay-writer</TT> subpatch, whose output is then returned to the
+main patch.  Part (b) shows the contents of the subpatch,
+which sends the pulses into
+a recirculating delay.  The <TT>block~</TT> object specifies that, in this
+subpatch, signal computation uses a block size (<IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img311.png"
+ ALT="$B$">) of only one.  So the
+minimum achievable delay is one sample instead of the default 64.
+
+<P>
+Putting a pulse (or other excitation signal) into a recirculating comb filter
+to make a pitch is sometimes called
+<A NAME="8260"></A><I>Karplus-Strong synthesis</I>,
+having been described in a paper by them [<A
+ HREF="node202.html#r-karplus83">KS83</A>], although the idea
+seems to be older.  It shows up for example in Paul Lansky's 1979 piece,
+<I>Six Fantasies on a Poem by Thomas Campion</I>.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2347"
+  HREF="node121.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2341"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2335"
+  HREF="node119.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2343"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2345"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2348"
+  HREF="node121.html">Order of execution in</A>
+<B> Up:</B> <A NAME="tex2html2342"
+  HREF="node116.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2336"
+  HREF="node119.html">Variable delay line</A>
+ &nbsp; <B>  <A NAME="tex2html2344"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2346"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

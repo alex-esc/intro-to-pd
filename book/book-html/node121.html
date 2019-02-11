@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Order of execution in non-recirculating delay lines</TITLE>
+<META NAME="description" CONTENT="Order of execution in non-recirculating delay lines">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node122.html">
+<LINK REL="previous" HREF="node120.html">
+<LINK REL="up" HREF="node116.html">
+<LINK REL="next" HREF="node122.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2361"
+  HREF="node122.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2355"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2349"
+  HREF="node120.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2357"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2359"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2362"
+  HREF="node122.html">Non-recirculating comb filter as</A>
+<B> Up:</B> <A NAME="tex2html2356"
+  HREF="node116.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2350"
+  HREF="node120.html">Order of execution and</A>
+ &nbsp; <B>  <A NAME="tex2html2358"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2360"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0011105000000000000000">
+Order of execution in non-recirculating delay lines</A>
+</H2>
+
+<P>
+In non-recirculating delay networks, it should be possible to place the
+operation of writing into the delay line earlier in the sequence than that
+of reading it.   There should thus be no lower limit on the length of the
+delay line (except whatever is imposed by the interpolation scheme; see
+Section <A HREF="node113.html#sect7-fractional">7.7</A>).  In languages such as Csound, the sequence
+of unit generator computation is (mostly) explicit, so this is easy to
+specify.  In graphical patching environments, however, the order is
+implicit and another approach must be taken to ensuring that, for example,
+a <TT>delwrite~</TT> object is computed before the corresponding 
+<TT>delread~</TT> object.  One way of accomplishing this is shown in example
+G05.execution.order.pd (Figure <A HREF="#fig07.28">7.28</A>).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig07.28"></A><A NAME="8410"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 7.28:</STRONG>
+Using subpatches to ensure that delay lines are written before they
+are read in non-recirculating networks:
+(a) the <TT>delwrite~</TT> and <TT>vd~</TT> objects might be executed in either
+the ``right" or the ``wrong" order; (b) the <TT>delwrite~</TT> object is inside the
+<TT>pd delay-writer</TT>
+subpatch and the <TT>vd~</TT> object is inside the <TT>pd delay-reader</TT> one.
+Because of the audio connection between the two subpatches, the order of
+execution of the read/write pair is forced to be the correct one.</CAPTION>
+<TR><TD><IMG
+ WIDTH="490" HEIGHT="241" BORDER="0"
+ SRC="img837.png"
+ ALT="\begin{figure}\psfig{file=figs/fig07.28.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+In part (a) of the figure, the connections in the patch do not determine which
+order the two delay operations appear in the sorted sequence of tilde object
+computation; the <TT>delwrite~</TT> object could be computed either before or
+after the <TT>vd~</TT> object.  If we wish to make sure the writing operation
+happens before the reading operation, we can proceed as in part (b) of the
+figure and put the two operations in subpatches, connecting the two via
+audio signals so that the first subpatch must be computed before the
+second one.  (Audio computation in subpatches is done atomically, in the sense
+that the entire subpatch contents are considered as the audio computation for
+the subpatch as a whole.  So everything in the one subpatch happens before
+anything in the second one.)
+
+<P>
+In this example, the ``right"
+and the ``wrong" way to make the comb filter have audibly different results.
+For delays less than 64 samples, the right hand side of the patch (using
+subpatches) gives the correct result, but the left hand side can't produce
+delays below the 64 sample block size.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2361"
+  HREF="node122.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2355"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2349"
+  HREF="node120.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2357"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2359"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2362"
+  HREF="node122.html">Non-recirculating comb filter as</A>
+<B> Up:</B> <A NAME="tex2html2356"
+  HREF="node116.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2350"
+  HREF="node120.html">Order of execution and</A>
+ &nbsp; <B>  <A NAME="tex2html2358"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2360"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

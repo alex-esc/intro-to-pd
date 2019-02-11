@@ -1,0 +1,427 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Variable and fractional shifts</TITLE>
+<META NAME="description" CONTENT="Variable and fractional shifts">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node114.html">
+<LINK REL="previous" HREF="node111.html">
+<LINK REL="up" HREF="node104.html">
+<LINK REL="next" HREF="node114.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2240"
+  HREF="node114.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2234"
+  HREF="node104.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2228"
+  HREF="node112.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2236"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2238"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2241"
+  HREF="node114.html">Fidelity of interpolating delay</A>
+<B> Up:</B> <A NAME="tex2html2235"
+  HREF="node104.html">Time shifts and delays</A>
+<B> Previous:</B> <A NAME="tex2html2229"
+  HREF="node112.html">Controlling reverberators</A>
+ &nbsp; <B>  <A NAME="tex2html2237"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2239"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001170000000000000000"></A>
+<A NAME="sect7-fractional"></A>
+<BR>
+Variable and fractional shifts
+</H1>
+
+<P>
+Like any audio synthesis or processing technique, delay networks become much
+more powerful and interesting if their characteristics can be made to change 
+over time.  The gain parameters (such as <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$g$"> in the recirculating comb filter)
+may be controlled by envelope generators, varying them while avoiding clicks or
+other artifacts.  The delay times (such as <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$"> before) are not so easy to vary
+smoothly for two reasons.
+
+<P>
+First, we have only defined time shifts for integer values of <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$">, since for
+fractional values of <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$"> an expression such as <IMG
+ WIDTH="58" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img781.png"
+ ALT="$x[n-d]$"> is not determined if
+<IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.png"
+ ALT="$x[n]$"> is only defined for integer values of <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.png"
+ ALT="$n$">.  To make fractional delays
+we will have to introduce some suitable interpolation scheme.  And if we
+wish to vary <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$"> smoothly over time, it will not give good results simply
+to hop from one integer to the next.
+
+<P>
+Second, even once we have achieved perfectly smoothly changing delay
+times, the artifacts caused by varying delay time become noticeable even at very
+small relative rates of change; while in most cases you may ramp an amplitude
+control between any two values over 30 milliseconds without trouble, changing a
+delay by only one sample out of every hundred makes a very noticeable shift
+in pitch--indeed, one frequently will vary a delay deliberately
+in order to hear the artifacts, only incidentally passing from one specific
+delay time value to another one.
+
+<P>
+The first matter (fractional delays) can be dealt with using an
+interpolation scheme, in exactly the same way as for wavetable lookup
+(Section <A HREF="node31.html#sect2.interpolation">2.5</A>).  For example, suppose we want
+a delay of <IMG
+ WIDTH="53" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img782.png"
+ ALT="$d=1.5$"> samples.  For each <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.png"
+ ALT="$n$"> we must estimate a value for
+<IMG
+ WIDTH="70" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img783.png"
+ ALT="$x[n-1.5]$">.
+We could do this using standard four-point interpolation, putting a cubic
+polynomial through the four ``known" points (0, x[n]), (1, x[n-1]), (2, x[n-2]),
+(3, x[n-3]), and then evaluating the polynomial at the point 1.5.  Doing
+this repeatedly for each value of <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.png"
+ ALT="$n$"> gives the delayed signal.
+
+<P>
+This four-point interpolation scheme can be used for any delay of at least one
+sample.  Delays of less than one sample can't be calculated this way because we
+need two input points at least as recent as the desired delay.  They were
+available in the above example, but for a delay time of 0.5 samples, for
+instance, we would need the value of <IMG
+ WIDTH="58" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img784.png"
+ ALT="$x[n+1]$">, which is in the future.
+
+<P>
+The accuracy of the estimate could be further improved by using higher-order
+interpolation schemes.  However, there is a trade-off between quality and
+computational efficiency.  Furthermore, if we move to higher-order
+interpolation schemes, the minimum possible delay time will increase, causing
+trouble in some situations.
+
+<P>
+The second matter to consider is the artifacts--whether wanted
+or unwanted--that arise from changing delay lines.  In
+general, a discontinuous change in delay time will give rise to a
+discontinuous change in the output signal, since it is in effect
+interrupted at one point and made to jump to another.  If the input is
+a sinusoid, the result is a discontinuous phase change.
+
+<P>
+If it is desired to change the delay line occasionally between fixed delay
+times (for instance, at the beginnings of musical notes), then we can use the
+techniques for managing sporadic discontinuities that were introduced in
+Section <A HREF="node61.html#sect4.declick">4.3</A>.  In effect these techniques all work by muting
+the output in one way or another.  On the other hand, if it is
+desired that the delay time change continuously--while we are listening
+to the output--then we must take into account the artifacts that
+result from the changes.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig07.17"></A><A NAME="8124"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 7.17:</STRONG>
+A variable length delay line, whose output is the input from some
+previous time.  The output samples can't be newer than the input samples, nor
+older than the length <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$D$"> of the delay line.  The slope of the input/output
+curve controls the momentary transposition of the output.</CAPTION>
+<TR><TD><IMG
+ WIDTH="447" HEIGHT="405" BORDER="0"
+ SRC="img785.png"
+ ALT="\begin{figure}\psfig{file=figs/fig07.17.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Figure <A HREF="#fig07.17">7.17</A> shows the relationship between input and output time in a
+variable delay line.  The delay line is assumed to have a fixed maximum length
+<IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$D$">.  At each sample of output (corresponding to a point on the horizontal
+axis), we output one (possibly interpolated) sample of the delay line's input. 
+The vertical axis shows which sample (integer or fractional) to use from the
+input signal. Letting <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.png"
+ ALT="$n$"> denote the output sample number, the vertical axis
+shows the quantity <IMG
+ WIDTH="59" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img786.png"
+ ALT="$n - d[n]$">, where <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img787.png"
+ ALT="$d[n]$"> is the (time-varying) delay in
+samples. If we denote the input sample location by:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+y[n] = n - d[n]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="102" HEIGHT="28" BORDER="0"
+ SRC="img788.png"
+ ALT="\begin{displaymath}
+y[n] = n - d[n]
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+then the output of the delay line is:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+z[n] = x[y[n]]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="91" HEIGHT="28" BORDER="0"
+ SRC="img168.png"
+ ALT="\begin{displaymath}
+z[n] = x[y[n]]
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where the signal <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img243.png"
+ ALT="$x$"> is evaluated at the point <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$y[n]$">, interpolating
+appropriately in case <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$y[n]$"> is not an integer.  This is exactly the formula
+for wavetable lookup (Page <A HREF="node26.html#chapter-wavetable"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="file:/usr/local/share/lib/latex2html/icons/crossref.png"></A>).  We can use all the
+properties of wavetable lookup of recorded sounds to predict the behavior
+of variable delay lines.
+
+<P>
+There remains one difference between delay lines and wavetables:
+the material in the delay line is constantly being refreshed.  Not only
+can we not read into the future, but, if the
+the delay line is <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$D$"> samples in length, we can't read further than <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$D$"> samples
+into the past either:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+0 < d[n] < D
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="89" HEIGHT="28" BORDER="0"
+ SRC="img789.png"
+ ALT="\begin{displaymath}
+0 &lt; d[n] &lt; D
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+or, negating this and adding <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.png"
+ ALT="$n$"> to each side,
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+n > y[n] > n - D.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="124" HEIGHT="28" BORDER="0"
+ SRC="img790.png"
+ ALT="\begin{displaymath}
+n &gt; y[n] &gt; n - D.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+This last relationship appears as the region between the two diagonal lines
+in Figure <A HREF="#fig07.17">7.17</A>; the function <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$y[n]$"> must stay within this strip.
+
+<P>
+Returning to Section <A HREF="node28.html#sect2.sampling">2.2</A>, we can use the Momentary
+Transposition Formulas for wavetables to calculate the transposition <IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img318.png"
+ ALT="$t[n]$"> of
+the output.  This gives the Momentary Transposition Formula for delay lines:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+t[n] = y[n] - y[n-1] = 1 - (d[n] - d[n-1])
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="306" HEIGHT="28" BORDER="0"
+ SRC="img791.png"
+ ALT="\begin{displaymath}
+t[n] = y[n] - y[n-1] = 1 - (d[n] - d[n-1])
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<A NAME="eq.momentarydel"></A>If <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img787.png"
+ ALT="$d[n]$"> does not change with <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.png"
+ ALT="$n$">, the transposition factor is <IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img262.png"
+ ALT="$1$"> and the
+sound emerges from the delay line at the same speed as it went in.  But if the
+delay time is increasing as a function of <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.png"
+ ALT="$n$">, the resulting sound is transposed
+downward, and if <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img787.png"
+ ALT="$d[n]$"> decreases, upward.
+
+<P>
+This is called the
+<A NAME="8132"></A><I>Doppler effect</I>, and it occurs in nature as well.
+The air that sound travels through can sometimes be thought of as a delay
+line.   Changing the length of the delay line corresponds to moving the
+listener toward or away from a stationary sound source; the Doppler effect
+from the changing path length works precisely the same in the delay line as it
+would be in the physical air.
+
+<P>
+Returning to Figure <A HREF="#fig07.17">7.17</A>, we can predict that there is no pitch
+shift at the beginning, but then when the slope of the path decreases the
+pitch will drop for an interval of time before going back to the original
+pitch (when the slope returns to one).  The delay time can be manipulated
+to give any desired transposition, but the greater the transposition, the
+less long we can maintain it before we run off the bottom or the top of the
+diagonal region.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2240"
+  HREF="node114.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2234"
+  HREF="node104.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2228"
+  HREF="node112.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2236"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2238"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2241"
+  HREF="node114.html">Fidelity of interpolating delay</A>
+<B> Up:</B> <A NAME="tex2html2235"
+  HREF="node104.html">Time shifts and delays</A>
+<B> Previous:</B> <A NAME="tex2html2229"
+  HREF="node112.html">Controlling reverberators</A>
+ &nbsp; <B>  <A NAME="tex2html2237"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2239"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

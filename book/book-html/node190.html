@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Parabolic wave</TITLE>
+<META NAME="description" CONTENT="Parabolic wave">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node191.html">
+<LINK REL="previous" HREF="node189.html">
+<LINK REL="up" HREF="node188.html">
+<LINK REL="next" HREF="node191.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3414"
+  HREF="node191.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3408"
+  HREF="node188.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3402"
+  HREF="node189.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3410"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html3412"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3415"
+  HREF="node191.html">Square and symmetric triangle</A>
+<B> Up:</B> <A NAME="tex2html3409"
+  HREF="node188.html">Fourier series of the</A>
+<B> Previous:</B> <A NAME="tex2html3403"
+  HREF="node189.html">Sawtooth wave</A>
+ &nbsp; <B>  <A NAME="tex2html3411"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3413"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001432000000000000000">
+Parabolic wave</A>
+</H2>
+The same analysis, with some differences in sign and normalization, works
+for parabolic waves.  First we compute the difference:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+p[n] - p[n-1] = {
+        {
+            {{({n\over N} - {1\over 2})}^2} -
+            {{({{n-1}\over N} - {1\over 2})}^2}
+    } \over {
+        2
+    }}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="285" HEIGHT="46" BORDER="0"
+ SRC="img1326.png"
+ ALT="\begin{displaymath}
+p[n] - p[n-1] = {
+{
+{{({n\over N} - {1\over 2})}^2} -
+{{({{n-1}\over N} - {1\over 2})}^2}
+} \over {
+2
+}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+= {
+        {
+            {{({n\over N} - {N\over {2N}})}^2} -
+            {{({{n}\over N} - {{N - 2}\over {2N}})}^2}
+    } \over {
+        2
+    }}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="199" HEIGHT="46" BORDER="0"
+ SRC="img1327.png"
+ ALT="\begin{displaymath}
+= {
+{
+{{({n\over N} - {N\over {2N}})}^2} -
+{{({{n}\over N} - {{N - 2}\over {2N}})}^2}
+} \over {
+2
+}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+= {
+        {
+            {{{2n}\over {N^2}} - {1\over {N}}} + {1\over {N^2}}
+    } \over {
+        2
+    }}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="115" HEIGHT="43" BORDER="0"
+ SRC="img1328.png"
+ ALT="\begin{displaymath}
+= {
+{
+{{{2n}\over {N^2}} - {1\over {N}}} + {1\over {N^2}}
+} \over {
+2
+}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\approx - s[n] / N .
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="77" HEIGHT="28" BORDER="0"
+ SRC="img1329.png"
+ ALT="\begin{displaymath}
+\approx - s[n] / N .
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+So (again for <IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1317.png"
+ ALT="$k \neq 0$">, small compared to <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$">) we get:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\cal FT}\{ p[n] \} (k) \approx
+    {{-1} \over N} \cdot {{-iN} \over {2 \pi k}} \cdot {\cal FT}\{ s[n] \} (k)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="281" HEIGHT="39" BORDER="0"
+ SRC="img1330.png"
+ ALT="\begin{displaymath}
+{\cal FT}\{ p[n] \} (k) \approx
+{{-1} \over N} \cdot {{-iN} \over {2 \pi k}} \cdot {\cal FT}\{ s[n] \} (k)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\approx {{-1} \over N} \cdot {{-iN} \over {2 \pi k}}
+    \cdot {{-iN} \over {2 \pi k}}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="134" HEIGHT="39" BORDER="0"
+ SRC="img1331.png"
+ ALT="\begin{displaymath}
+\approx {{-1} \over N} \cdot {{-iN} \over {2 \pi k}}
+\cdot {{-iN} \over {2 \pi k}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+= {N \over {4 {\pi ^2} {k^2}}}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="59" HEIGHT="39" BORDER="0"
+ SRC="img1332.png"
+ ALT="\begin{displaymath}
+= {N \over {4 {\pi ^2} {k^2}}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and as before we get the Fourier series:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+p[n] \approx {1 \over {2 {\pi^2}}} \left [
+        {\cos ( \omega n )}
+        + {{\cos ( 2 \omega n)} \over 4}
+        + {{\cos ( 3 \omega n)} \over 9}
+        + \cdots
+    \right ]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="354" HEIGHT="45" BORDER="0"
+ SRC="img1333.png"
+ ALT="\begin{displaymath}
+p[n] \approx {1 \over {2 {\pi^2}}} \left [
+{\cos ( \omega ...
+...\over 4}
++ {{\cos ( 3 \omega n)} \over 9}
++ \cdots
+\right ]
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><HR>
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

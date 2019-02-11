@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Time-varying complex comb filter: shakers</TITLE>
+<META NAME="description" CONTENT="Time-varying complex comb filter: shakers">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node124.html">
+<LINK REL="previous" HREF="node122.html">
+<LINK REL="up" HREF="node116.html">
+<LINK REL="next" HREF="node124.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2389"
+  HREF="node124.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2383"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2377"
+  HREF="node122.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2385"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2387"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2390"
+  HREF="node124.html">Reverberator</A>
+<B> Up:</B> <A NAME="tex2html2384"
+  HREF="node116.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2378"
+  HREF="node122.html">Non-recirculating comb filter as</A>
+ &nbsp; <B>  <A NAME="tex2html2386"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2388"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0011107000000000000000">
+Time-varying complex comb filter: shakers</A>
+</H2>
+
+<P>
+Example G07.shaker.pd (Figure <A HREF="#fig07.30">7.30</A>) shows a different way of extending the
+idea of a comb filter.  Here we combine the input signal at four different
+time shifts (instead of two, as in the original non-recirculating comb filter), 
+each at a different positive or negative gain.  To do this, we insert the
+input signal into a delay line and tap it at three different points; the
+fourth ``tap" is the original, un-delayed signal.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig07.30"></A><A NAME="8287"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 7.30:</STRONG>
+A ``shaker", a four-tap comb filter with randomly varying gains
+on the taps.</CAPTION>
+<TR><TD><IMG
+ WIDTH="591" HEIGHT="386" BORDER="0"
+ SRC="img845.png"
+ ALT="\begin{figure}\psfig{file=figs/fig07.30.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+As a way of thinking about the frequency response of a four-tap comb filter,
+we consider first what happens when two of the four gains are close to zero.
+Then we end up with a simple non-recirculating comb filter, with the slight
+complication that the gains of the two delayed copies may be different.  If they
+are both of the same sign, we get the same peaks and valleys as predicted
+in Section <A HREF="node108.html#sect7.network">7.3</A>, only with the valleys between peaks possibly
+more shallow.  If they are opposite in sign, the valleys become peaks and
+the peaks become valleys.
+
+<P>
+Depending on which two taps we supposed were nonzero, the peaks and valleys are
+spaced by different amounts; the delay times are chosen so that 6 different
+delay times can arise in this way, ranging between 6 and 30 milliseconds.  In
+the general case in which all the gains are non-zero, we can imagine the
+frequency response function varying continuously between these extremes, giving
+a succession of complicated patterns.  This has the effect of raising and
+lowering the amplitudes of the partials of the incoming signal, all
+independently of the others, in a complicated pattern, to give a steadily
+time-varying timbre.
+
+<P>
+The right-hand side of the patch takes care of changing the gains of the
+input signal and its three time-shifted copies.  Each time the <TT>metro</TT> object
+fires, a counter is incremented (the <TT>f</TT>, <TT>+ 1</TT>, and 
+<TT>mod 4</TT> objects).  This controls which of the amplitudes will be changed.
+The amplitude itself is computed by making a random number and normalizing it to
+lie between -0.7 and 1.3 in value.  The random value and the index are packed
+(along with a third value, a time interval) and this triple goes to the
+<TT>route</TT> object.  The first element of the triple (the
+counter) selects which output to send the other two values to; as a result,
+one of the four possible <TT>line~</TT> objects gets a message to ramp to
+a new value.
+
+<P>
+If the time variation is done quickly enough, there is also a modulation
+effect on the original signal; in this situation the straight line segments
+used in this example should be replaced by modulating signals with more
+controllable frequency content, for instance using filters (the
+subject of Chapter 8).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2389"
+  HREF="node124.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2383"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2377"
+  HREF="node122.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2385"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2387"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2390"
+  HREF="node124.html">Reverberator</A>
+<B> Up:</B> <A NAME="tex2html2384"
+  HREF="node116.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2378"
+  HREF="node122.html">Non-recirculating comb filter as</A>
+ &nbsp; <B>  <A NAME="tex2html2386"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2388"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

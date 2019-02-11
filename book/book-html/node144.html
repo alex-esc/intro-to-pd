@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Peaking and stop-band filter</TITLE>
+<META NAME="description" CONTENT="Peaking and stop-band filter">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node145.html">
+<LINK REL="previous" HREF="node143.html">
+<LINK REL="up" HREF="node139.html">
+<LINK REL="next" HREF="node145.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2730"
+  HREF="node145.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2724"
+  HREF="node139.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2718"
+  HREF="node143.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2726"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2728"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2731"
+  HREF="node145.html">Butterworth filters</A>
+<B> Up:</B> <A NAME="tex2html2725"
+  HREF="node139.html">Designing filters</A>
+<B> Previous:</B> <A NAME="tex2html2719"
+  HREF="node143.html">Band-pass filter</A>
+ &nbsp; <B>  <A NAME="tex2html2727"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2729"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001235000000000000000"></A>
+<A NAME="sect8.peaking"></A>
+<BR>
+Peaking and stop-band filter
+</H2>
+
+<P>
+In the same way, a peaking filter is obtained from a shelving filter by rotating the
+pole and the zero, and by providing a conjugate pole and zero, as shown in
+Figure <A HREF="#fig08.16">8.16</A>.  If the desired center frequency is <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.png"
+ ALT="$\omega $">, and
+the radii of the pole and zero (as for the shelving filter) are
+<IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$p$"> and <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.png"
+ ALT="$q$">, then we place the the upper pole and zero at
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{P_1} = p \cdot (\cos \omega + i \sin \omega)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="164" HEIGHT="28" BORDER="0"
+ SRC="img925.png"
+ ALT="\begin{displaymath}
+{P_1} = p \cdot (\cos \omega + i \sin \omega)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{Q_1} = q \cdot (\cos \omega + i \sin \omega)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="166" HEIGHT="28" BORDER="0"
+ SRC="img926.png"
+ ALT="\begin{displaymath}
+{Q_1} = q \cdot (\cos \omega + i \sin \omega)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+As a special case, placing the zero on the unit circle gives a stop-band filter;
+in this case the gain at the center frequency is zero.  This is analogous
+to the one-pole, one-zero high-pass filter above.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig08.16"></A><A NAME="10371"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 8.16:</STRONG>
+A peaking filter: (a) pole-zero diagram; (b)
+frequency response.  Here the filter is set to attenuate by 6 decibels at
+the center frequency.</CAPTION>
+<TR><TD><IMG
+ WIDTH="536" HEIGHT="245" BORDER="0"
+ SRC="img927.png"
+ ALT="\begin{figure}\psfig{file=figs/fig08.16.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

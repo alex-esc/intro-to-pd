@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Using a wavetable as a sampler</TITLE>
+<META NAME="description" CONTENT="Using a wavetable as a sampler">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node36.html">
+<LINK REL="previous" HREF="node34.html">
+<LINK REL="up" HREF="node32.html">
+<LINK REL="next" HREF="node36.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1064"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1058"
+  HREF="node32.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1052"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1060"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1062"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1065"
+  HREF="node36.html">Looping samplers</A>
+<B> Up:</B> <A NAME="tex2html1059"
+  HREF="node32.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1053"
+  HREF="node34.html">Wavetable lookup in general</A>
+ &nbsp; <B>  <A NAME="tex2html1061"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1063"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00663000000000000000">
+Using a wavetable as a sampler</A>
+</H2>
+
+<P>
+Example B04.sampler.pd (Figure <A HREF="#fig02.14">2.14</A>) shows how to use a wavetable as a
+sampler.  In this example the index into the sample (the wavetable) is controlled
+by mousing on a number box at top.  A convenient scaling for the number box is
+hundredths of a second; to convert to samples (as the input of 
+<TT>tabread4~</TT> requires) we multiply by 44100 samples/sec times 0.01 sec to get 441 samples
+per unit, before applying <TT>pack</TT> and <TT>line~</TT> in much the same way
+as they were used in the previous example.  
+The transposition you hear depends on how quickly you mouse up and down.
+This example has introduced one new object class:
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig02.14"></A><A NAME="2430"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.14:</STRONG>
+A sampler with mouse-controlled index: B04.sampler.pd.</CAPTION>
+<TR><TD><IMG
+ WIDTH="336" HEIGHT="468" BORDER="0"
+ SRC="img279.png"
+ ALT="\begin{figure}\psfig{file=figs/fig02.14.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $\mathrm{hip}\sim$\  }$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img280.png"
+ ALT="\fbox{ $\mathrm{hip}\sim$\ }">:
+<A NAME="2558"></A>simple high-pass (low-cut) filter.  The creation argument gives the roll-off
+frequency in cycles per second.  We use it here to eliminate the constant
+(zero-frequency)
+output when the input sits in a single sample (whenever you aren't actively
+changing the wavetable reading location with the mouse).  Filters are discussed
+in Chapter <A HREF="node127.html#chapter-filter">8</A>.
+
+<P>
+The <TT>pack</TT>  and <TT>line~</TT>  in this example are not included merely to
+make the sound more continuous, but are essential to making the sound
+intelligible at all.  If the index into the wavetable lookup simply changed
+every time the mouse moved a pixel (say, twenty to fifty times a second) the
+overwhelming majority of samples would get the same index as the previous
+sample (the other 44000+ samples, not counting the ones where the mouse
+moved.)  So the speed of precession would almost always be zero.  Instead of
+changing transpositions, you would hear 20 to 50 cycles-per-second grit. (Try
+it to find out what that sounds like!)
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1064"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1058"
+  HREF="node32.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1052"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1060"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1062"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1065"
+  HREF="node36.html">Looping samplers</A>
+<B> Up:</B> <A NAME="tex2html1059"
+  HREF="node32.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1053"
+  HREF="node34.html">Wavetable lookup in general</A>
+ &nbsp; <B>  <A NAME="tex2html1061"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1063"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

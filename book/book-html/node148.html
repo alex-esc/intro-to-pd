@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Time-varying coefficients</TITLE>
+<META NAME="description" CONTENT="Time-varying coefficients">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node149.html">
+<LINK REL="previous" HREF="node147.html">
+<LINK REL="up" HREF="node139.html">
+<LINK REL="next" HREF="node149.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2786"
+  HREF="node149.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2780"
+  HREF="node139.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2774"
+  HREF="node147.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2782"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2784"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2787"
+  HREF="node149.html">Impulse responses of recirculating</A>
+<B> Up:</B> <A NAME="tex2html2781"
+  HREF="node139.html">Designing filters</A>
+<B> Previous:</B> <A NAME="tex2html2775"
+  HREF="node147.html">Butterworth band-pass filter</A>
+ &nbsp; <B>  <A NAME="tex2html2783"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2785"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001239000000000000000"></A>
+<A NAME="sect8.timevarying"></A>
+<BR>
+Time-varying coefficients
+</H2>
+
+<P>
+In some recursive filter designs, changing the coefficients of the filter can
+inject energy into the system.  A physical analogue is a child on a swing set. 
+The child oscillates back and forth at the resonant frequency of the system,
+and pushing or pulling the child injects or extracts energy smoothly.  However,
+if you decide to shorten the chain or move the swing set itself, you may inject
+an unpredictable amount of energy into the system.  The same thing can happen
+when you change the coefficients in a resonant recirculating filter.
+
+<P>
+The simple one-zero and one-pole filters used here don't have this
+difficulty; if the feedback or feed-forward gain is changed smoothly (in the
+sense of an amplitude envelope) the output will behave smoothly as well.
+But one subtlety arises when trying to normalize a recursive filter's output
+when the feedback gain is close to one. For example, suppose we have a one-pole
+low-pass filter with gain 0.99 (for a cutoff frequency of 0.01 radians, or 70
+Hertz at the usual sample rate).  To normalize this for unit DC gain we multiply
+by 0.01.  Suppose now we wish to double the cutoff frequency by changing the
+gain slightly to 0.98.  This is fine except that the normalizing factor
+suddenly doubles.  If we multiply the filter's output by the normalizing
+factor, the output will suddenly, although perhaps only momentarily, jump by a
+factor of two.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig08.21"></A><A NAME="10472"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 8.21:</STRONG>
+Normalizing a recirculating elementary filter: 
+(a) correctly, by multiplying in the normalization factor at the input; (b)
+incorrectly, multiplying at the output.</CAPTION>
+<TR><TD><IMG
+ WIDTH="387" HEIGHT="255" BORDER="0"
+ SRC="img973.png"
+ ALT="\begin{figure}\psfig{file=figs/fig08.21.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The trick is to normalize at the <I>input</I> of the filter, not the output.
+Figure <A HREF="#fig08.21">8.21</A> (part a) shows a complex recirculating filter, with
+feedback gain <IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img880.png"
+ ALT="$P$">, normalized at the input by <IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img974.png"
+ ALT="$1-\vert P\vert$"> so that the peak gain
+is one.  Part (b) shows the wrong way to do it, multiplying at the output.
+
+<P>
+Things get more complicated when several elementary recirculating filters are
+put in series, since the correct normalizing factor is in general a function of
+all the coefficients.  One possible approach, if such a filter is required to
+change rapidly, is to normalize each input separately as if it were acting
+alone, then multiplying the output, finally, by whatever further correction
+is needed.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2786"
+  HREF="node149.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2780"
+  HREF="node139.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2774"
+  HREF="node147.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2782"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2784"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2787"
+  HREF="node149.html">Impulse responses of recirculating</A>
+<B> Up:</B> <A NAME="tex2html2781"
+  HREF="node139.html">Designing filters</A>
+<B> Previous:</B> <A NAME="tex2html2775"
+  HREF="node147.html">Butterworth band-pass filter</A>
+ &nbsp; <B>  <A NAME="tex2html2783"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2785"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

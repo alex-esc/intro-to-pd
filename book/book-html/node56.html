@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MIDI-style synthesizer</TITLE>
+<META NAME="description" CONTENT="MIDI-style synthesizer">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="previous" HREF="node55.html">
+<LINK REL="up" HREF="node50.html">
+<LINK REL="next" HREF="node57.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1375"
+  HREF="node57.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1369"
+  HREF="node50.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1365"
+  HREF="node55.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1371"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1373"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1376"
+  HREF="node57.html">Exercises</A>
+<B> Up:</B> <A NAME="tex2html1370"
+  HREF="node50.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1366"
+  HREF="node55.html">Analog-style sequencer</A>
+ &nbsp; <B>  <A NAME="tex2html1372"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1374"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION007106000000000000000">
+MIDI-style synthesizer</A>
+</H2>
+
+<P>
+Example C10.monophonic.synth.pd  (Figure <A HREF="#fig03.16">3.16</A>) also implements a monophonic,
+note-oriented synthesizer, but in this case oriented toward MIDI
+controllability.  Here the tasks of envelope generation and sequencing pitches
+are handled using control streams instead of audio signals.  New 
+control objects are needed for this example:
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig03.16"></A><A NAME="3787"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.16:</STRONG>
+A MIDI-style monophonic synthesizer.</CAPTION>
+<TR><TD><IMG
+ WIDTH="496" HEIGHT="459" BORDER="0"
+ SRC="img351.png"
+ ALT="\begin{figure}\psfig{file=figs/fig03.16.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $\mathrm{notein}$}$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.png"
+ ALT="\fbox{ $\mathrm{notein}$}">:
+<A NAME="3851"></A>MIDI note input.  Three outlets give the pitch, velocity, and channel of
+incoming MIDI note-on and note-off events (with note-off events appearing as
+velocity-zero note-on events).  The outputs appear in Pd's customary
+right-to-left order.
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $\mathrm{stripnote}$}$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img353.png"
+ ALT="\fbox{ $\mathrm{stripnote}$}">:
+<A NAME="3852"></A>filter out note-off messages.  This passes
+(pitch, velocity) pairs through whenever the velocity is nonzero, dropping
+the others.  Unlike <TT>notein</TT>, <TT>stripnote</TT> does not
+directly use hardware MIDI input or output.
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $\mathrm{trigger}$}$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img354.png"
+ ALT="\fbox{ $\mathrm{trigger}$}">,
+<BR><!-- MATH
+ $\fbox{ $\mathrm{t}$}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img355.png"
+ ALT="\fbox{ $\mathrm{t}$}">:
+<A NAME="3853"></A>copy a message to outlets in right to left order, with type conversion.  The
+creation arguments (``b" and ``f" in this example) specify two outlets, one
+giving ``bang" messages, the other ``float" (i.e., numbers).  One outlet
+is created for each creation argument.  The outputs appear in Pd's standard
+right-to-left order.
+
+<P>
+The patch's control objects feed frequencies to the <TT>phasor~</TT> object
+whenever a MIDI note-on message is received.   Controlling the amplitude (via
+the <TT>line~</TT> object) is more difficult.  When a note-on message is
+received, the <TT>sel 0</TT> object outputs the velocity at right (because
+the input failed to match 0); this is divided by the maximum MIDI velocity of
+127 and packed into a message for <TT>line~</TT> with a time of 100 msec.
+
+<P>
+However, when a note-off is received, it is only appropriate to stop the sound
+if the note-off pitch actually matches the pitch the instrument is playing.
+For example, suppose the messages received are ``60 127", ``72 127",
+``60 0", and ``72 0".  When the note-on at pitch 72 arrives the pitch should
+change to 72, and then the ``60 0" message should be ignored, with the note
+playing until the ``72 0" message.
+
+<P>
+To accomplish this, first we store the velocity in the upper <TT>float</TT> object.  Second, when the pitch arrives, it too is stored (the lower
+<TT>float</TT> object) and then the velocity is tested against zero (the
+``bang" outlet of <TT>t b f</TT> recalls the velocity which is sent to 
+<TT>sel 0</TT>). If this is zero, the second step is to recall the pitch and
+test it (the <TT>select</TT> object) against the most recently received
+note-on pitch.   Only if these are equal (so that ``bang" appears at the
+left-hand-side outlet of <TT>select</TT>) does the message ``0 1000" go to the
+<TT>line~</TT> object.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1375"
+  HREF="node57.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1369"
+  HREF="node50.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1365"
+  HREF="node55.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1371"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1373"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1376"
+  HREF="node57.html">Exercises</A>
+<B> Up:</B> <A NAME="tex2html1370"
+  HREF="node50.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1366"
+  HREF="node55.html">Analog-style sequencer</A>
+ &nbsp; <B>  <A NAME="tex2html1372"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1374"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

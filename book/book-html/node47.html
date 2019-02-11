@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Audio signals as control</TITLE>
+<META NAME="description" CONTENT="Audio signals as control">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node48.html">
+<LINK REL="previous" HREF="node46.html">
+<LINK REL="up" HREF="node40.html">
+<LINK REL="next" HREF="node48.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1245"
+  HREF="node48.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1239"
+  HREF="node40.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1233"
+  HREF="node46.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1241"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1243"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1246"
+  HREF="node48.html">Operations on control streams</A>
+<B> Up:</B> <A NAME="tex2html1240"
+  HREF="node40.html">Audio and control computations</A>
+<B> Previous:</B> <A NAME="tex2html1234"
+  HREF="node46.html">Event detection</A>
+ &nbsp; <B>  <A NAME="tex2html1242"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1244"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00770000000000000000"></A>
+<A NAME="sect3.analog"></A>
+<BR>
+Audio signals as control
+</H1>
+
+<P>
+From the tradition of analog synthesis comes an elegant, old-fashioned approach
+to control problems that can be used as an alternative to the control
+streams we have been concerned with so far in this chapter.  Instead, or
+in addition to using control streams, we can use audio signals themselves to
+control the production of other audio signals.  Two specific techniques from
+analog synthesis lend themselves well to this treatment: analog sequencing
+and sample-and-hold.
+
+<P>
+The analog sequencer [<A
+ HREF="node202.html#r-strange72">Str95</A>, pp. 70-79]
+[<A
+ HREF="node202.html#r-chamberlin80">Cha80</A>, pp. 93,304-308]
+was often used to set off a regularly or semi-regularly
+repeating sequence of sounds.  The sequencer itself typically put out a
+repeating sequence of voltages, along with a trigger signal which pulsed at
+each transition between voltages.  One used the voltages for pitches or
+timbral parameters, and the trigger to control one or more envelope generators.
+Getting looped sequences of predetermined values in digital audio practice is
+as simple as sending a <TT>phasor~</TT> object into a non-interpolating table
+lookup.  If you want, say, four values in the sequence, scale the 
+<TT>phasor~</TT> output to take values from 0 to <IMG
+ WIDTH="60" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img332.png"
+ ALT="$3.999\ldots$"> so that the
+first fourth of the cycle reads point 0 of the table and so on.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig03.08"></A><A NAME="3656"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.8:</STRONG>
+Multiplying and wrapping a sawtooth wave to generate a higher
+frequency.</CAPTION>
+<TR><TD><IMG
+ WIDTH="585" HEIGHT="515" BORDER="0"
+ SRC="img333.png"
+ ALT="\begin{figure}\psfig{file=figs/fig03.08.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+To get repeated triggering, the first step is to synthesize another sawtooth
+that runs in synchrony with the <TT>phasor~</TT> output but four times
+as fast.  This is done using a variant of the technique of Figure
+<A HREF="node29.html#fig02.08">2.8</A>, in which we used an adder and a wraparound operator to get
+a desired phase shift.  Figure <A HREF="#fig03.08">3.8</A> shows the effect of multiplying
+a sawtooth wave by an integer, then wrapping around to get a sawtooth at
+a multiple of the original frequency.
+
+<P>
+From there is is easy to get to a repeated envelope shape by wavetable lookup
+for example (using an interpolating table lookup this time, unlike the
+sequence voltages).  All the waveform generation and altering techniques
+used for making pitched sounds can also be brought to use here.
+
+<P>
+The other standard control technique from analog synthesizer control is the
+sample and hold unit [<A
+ HREF="node202.html#r-strange72">Str95</A>, pp. 80-83]
+[<A
+ HREF="node202.html#r-chamberlin80">Cha80</A>, p. 92].  This takes an incoming signal, picks out certain
+instantaneous values from it, and ``freezes" those values for its output. The
+particular values to pick out are selected by a secondary, ``trigger" input. 
+At points in time specified by the trigger input a new, single value is taken
+from the primary input and is output continuously until the next time point,
+when it is replaced by a new value of the primary input.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig03.09"></A><A NAME="3665"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.9:</STRONG>
+Sample and hold (``S/H"), using falling edges of the trigger signal.</CAPTION>
+<TR><TD><IMG
+ WIDTH="535" HEIGHT="416" BORDER="0"
+ SRC="img334.png"
+ ALT="\begin{figure}\psfig{file=figs/fig03.09.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+In digital audio it is often useful to sample a new value on falling edges
+of the trigger signal, i.e., whenever the current value
+of the trigger signal is smaller than its previous value, as shown in
+Figure <A HREF="#fig03.09">3.9</A>.  This is especially convenient for
+use with a sawtooth trigger, when we wish to sample signals in
+synchrony with an oscillator-driven process.  Pd's sample and hold object
+was previously introduced in the context of sampling
+(Example B08.sampler.nodoppler.pd, Page <A HREF="node36.html#fig02.15"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="file:/usr/local/share/lib/latex2html/icons/crossref.png"></A>).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1245"
+  HREF="node48.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1239"
+  HREF="node40.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1233"
+  HREF="node46.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1241"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1243"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1246"
+  HREF="node48.html">Operations on control streams</A>
+<B> Up:</B> <A NAME="tex2html1240"
+  HREF="node40.html">Audio and control computations</A>
+<B> Previous:</B> <A NAME="tex2html1234"
+  HREF="node46.html">Event detection</A>
+ &nbsp; <B>  <A NAME="tex2html1242"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1244"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Shelving filter</TITLE>
+<META NAME="description" CONTENT="Shelving filter">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node143.html">
+<LINK REL="previous" HREF="node141.html">
+<LINK REL="up" HREF="node139.html">
+<LINK REL="next" HREF="node143.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2702"
+  HREF="node143.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2696"
+  HREF="node139.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2690"
+  HREF="node141.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2698"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2700"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2703"
+  HREF="node143.html">Band-pass filter</A>
+<B> Up:</B> <A NAME="tex2html2697"
+  HREF="node139.html">Designing filters</A>
+<B> Previous:</B> <A NAME="tex2html2691"
+  HREF="node141.html">One-pole, one-zero high-pass filter</A>
+ &nbsp; <B>  <A NAME="tex2html2699"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2701"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001233000000000000000"></A>
+<A NAME="sect8.shelving"></A>
+<BR>
+Shelving filter
+</H2>
+
+<P>
+Generalizing the one-zero, one-pole filter above, suppose we place the
+zero at a point <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.png"
+ ALT="$q$">, a real number close to, but less than, one.  The
+pole, at the point <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$p$">, is similarly situated, and might be either
+greater than or less than <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.png"
+ ALT="$q$">, i.e., to the right or left, respectively,
+but with both <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.png"
+ ALT="$q$"> and <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$p$"> within the unit circle.  This situation is
+diagrammed in Figure <A HREF="#fig08.14">8.14</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig08.14"></A><A NAME="10346"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 8.14:</STRONG>
+One-pole, one-zero shelving filter: (a) pole-zero diagram; (b)
+frequency response.</CAPTION>
+<TR><TD><IMG
+ WIDTH="540" HEIGHT="380" BORDER="0"
+ SRC="img914.png"
+ ALT="\begin{figure}\psfig{file=figs/fig08.14.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+At points of the circle far from <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$p$"> and <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.png"
+ ALT="$q$">, the effects of the pole and the
+zero are nearly inverse (the distances to them are nearly equal), so the filter
+passes those frequencies nearly unaltered.  In the neighborhood of <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$p$"> and
+<IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.png"
+ ALT="$q$">, on the other hand, the filter will have a gain greater or less than one
+depending on which of <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$p$"> or <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.png"
+ ALT="$q$"> is closer to the circle.  This configuration
+therefore acts as a low-frequency shelving filter.  (To make a high-frequency
+shelving filter we do the same thing, only placing <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$p$"> and <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.png"
+ ALT="$q$"> close to -1
+instead of 1.)
+
+<P>
+To find the parameters of a shelving filter given a desired
+transition frequency <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.png"
+ ALT="$\omega $"> (in angular units) and low-frequency
+gain <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$g$">, first we choose an average distance <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$">, as pictured in the figure,
+from the pole and the zero to the edge of the circle.  For small values of <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$">,
+the region of influence is about <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$"> radians, so
+simply set <IMG
+ WIDTH="43" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img915.png"
+ ALT="$d = \omega$"> to get the desired transition frequency.
+
+<P>
+Then put the pole at <!-- MATH
+ $p = 1 - d / \sqrt{g}$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img916.png"
+ ALT="$p = 1 - d / \sqrt{g}$"> and the zero at 
+<!-- MATH
+ $q = 1 - d \sqrt{g}$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.png"
+ ALT="$q = 1 - d \sqrt{g}$">.  The gain at zero frequency is then
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{{1-q} \over {1-p}} = g
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="67" HEIGHT="41" BORDER="0"
+ SRC="img918.png"
+ ALT="\begin{displaymath}
+{{1-q} \over {1-p}} = g
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+as desired.  For example, in the figure, <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$"> is 0.25 radians and <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$g$"> is 2.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2702"
+  HREF="node143.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2696"
+  HREF="node139.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2690"
+  HREF="node141.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2698"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2700"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2703"
+  HREF="node143.html">Band-pass filter</A>
+<B> Up:</B> <A NAME="tex2html2697"
+  HREF="node139.html">Designing filters</A>
+<B> Previous:</B> <A NAME="tex2html2691"
+  HREF="node141.html">One-pole, one-zero high-pass filter</A>
+ &nbsp; <B>  <A NAME="tex2html2699"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2701"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

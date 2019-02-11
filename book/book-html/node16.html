@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Quick Introduction to Pd</TITLE>
+<META NAME="description" CONTENT="Quick Introduction to Pd">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node17.html">
+<LINK REL="previous" HREF="node15.html">
+<LINK REL="up" HREF="node15.html">
+<LINK REL="next" HREF="node17.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html779"
+  HREF="node17.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html773"
+  HREF="node15.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html767"
+  HREF="node15.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html775"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html777"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html780"
+  HREF="node17.html">How to find and</A>
+<B> Up:</B> <A NAME="tex2html774"
+  HREF="node15.html">About the Software Examples</A>
+<B> Previous:</B> <A NAME="tex2html768"
+  HREF="node15.html">About the Software Examples</A>
+ &nbsp; <B>  <A NAME="tex2html776"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html778"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00581000000000000000">
+Quick Introduction to Pd</A>
+</H2>
+
+<P>
+Pd documents are called 
+<A NAME="1211"></A><I>patches</I>.  They correspond roughly to the
+boxes in the abstract block diagrams shown earlier in this chapter, but in
+detail they
+are quite different, because Pd is an implementation
+environment, not a specification language.
+
+<P>
+A Pd patch, such as the ones shown in 
+Figure <A HREF="#fig01.10">1.10</A>, consists of a collection of
+<A NAME="1214"></A><I>boxes</I>
+connected in a network.   
+The border of a box tells you how its text is interpreted and how the box
+functions.  In part (a) of the figure we see three types of boxes.  From
+top to bottom they are:
+
+<UL>
+<LI>a 
+<A NAME="1217"></A><A NAME="1218"></A><I>message box</I>. 
+Message boxes, with a flag-shaped border, interpret the text as a message to
+send whenever the box is
+activated (by an incoming message or with a pointing device).  The message in this
+case consists simply of the number ``21".
+
+<P>
+</LI>
+<LI>an
+<A NAME="1220"></A><A NAME="1221"></A><I>object box</I>.
+Object boxes have a rectangular border; they interpret the text to create
+objects
+when you load a patch.  Object boxes may hold hundreds of different
+classes of objects--including oscillators, envelope generators, and other
+signal processing modules to be introduced later--depending on the text
+inside.  In this example, the box holds an adder.  In most Pd patches, the
+majority of boxes are of type ``object".  The first word typed into an object
+box specifies its
+<A NAME="1223"></A><I>class</I>,
+which in this case is just ``+".  Any additional (blank-space-separated) words
+appearing in the box are called
+<A NAME="1225"></A><A NAME="1226"></A><I>creation arguments</I>,
+which specify the initial state of the object when it is created.
+
+<P>
+</LI>
+<LI>a
+<A NAME="1228"></A><A NAME="1229"></A><I>number box</I>. 
+Number boxes are a particular type of
+<A NAME="1231"></A><A NAME="1232"></A><I>GUI box</I>.  Others include push buttons and
+toggle switches; these will come up later in the examples.
+The number box
+has a punched-card-shaped border, with a nick out of its top right corner.
+Whereas the appearance
+of an object or message box is fixed when a patch is running, a number box's
+contents (the text) changes to reflect the current value held by the box. You
+can also use a number box as a control by clicking and dragging up and down, or
+by typing values in it.
+
+<P>
+</LI>
+</UL>
+In Figure 
+<A HREF="#fig01.10">1.10</A> (part a) the message box, when clicked, sends the message ``21" to an
+object box which adds 13 to it.  The lines connecting the boxes carry data
+from one box to the next; outputs of boxes are on the bottom and inputs on top.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig01.10"></A><A NAME="1238"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.10:</STRONG>
+(a) three types of boxes in Pd (message, object, and GUI); (b) a simple patch to output a
+sinusoid.</CAPTION>
+<TR><TD><IMG
+ WIDTH="500" HEIGHT="206" BORDER="0"
+ SRC="img144.png"
+ ALT="\begin{figure}\psfig{file=figs/fig01.10.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Figure <A HREF="#fig01.10">1.10</A> (part b) shows a Pd patch which
+makes a sinusoid with controllable frequency and amplitude.  The connecting
+patch lines are of two types here; the thin ones are for carrying sporadic
+<A NAME="1242"></A><I>messages</I>,
+and the thicker ones (connecting the oscillator, the multiplier, and the output
+<TT>dac~</TT> object) carry digital audio signals.  Since Pd is a real-time
+program, the audio signals flow in a continuous stream.  On the other hand, the
+sporadic messages appear at specific but possibly unpredictable instants in
+time.
+
+<P>
+Whether a connection carries messages or signals depends on the box
+the connection comes from; so, for instance, the <TT>+</TT> 
+object outputs messages, but the <TT>*~</TT> object
+outputs a signal.  The inputs of a given object may or may not accept
+signals (but they always accept messages, even if only to convert them to
+signals).  As a convention, object boxes with signal inputs or outputs  
+are all named with a trailing tilde (``<TT>~</TT>") as in ``<TT>*~</TT>"
+and ``<TT>osc~</TT>".
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html779"
+  HREF="node17.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html773"
+  HREF="node15.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html767"
+  HREF="node15.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html775"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html777"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html780"
+  HREF="node17.html">How to find and</A>
+<B> Up:</B> <A NAME="tex2html774"
+  HREF="node15.html">About the Software Examples</A>
+<B> Previous:</B> <A NAME="tex2html768"
+  HREF="node15.html">About the Software Examples</A>
+ &nbsp; <B>  <A NAME="tex2html776"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html778"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

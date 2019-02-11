@@ -1,0 +1,305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Waveshaping using Chebychev polynomials</TITLE>
+<META NAME="description" CONTENT="Waveshaping using Chebychev polynomials">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node85.html">
+<LINK REL="previous" HREF="node83.html">
+<LINK REL="up" HREF="node80.html">
+<LINK REL="next" HREF="node85.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1802"
+  HREF="node85.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1796"
+  HREF="node80.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1790"
+  HREF="node83.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1798"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1800"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1803"
+  HREF="node85.html">Waveshaping using an exponential</A>
+<B> Up:</B> <A NAME="tex2html1797"
+  HREF="node80.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1791"
+  HREF="node83.html">Waveshaping and difference tones</A>
+ &nbsp; <B>  <A NAME="tex2html1799"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1801"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00954000000000000000">
+Waveshaping using Chebychev polynomials</A>
+</H2>
+<A NAME="sect5.chebychev"></A>
+<P>
+Example E05.chebychev.pd (Figure <A HREF="#fig05.12">5.12</A>) demonstrates how you can use waveshaping
+to generate pure harmonics.  We'll limit ourselves to a specific example here
+in which we would like
+to generate the pure fifth harmonic,
+
+<DIV ALIGN="CENTER"><A NAME="fig05.12"></A><A NAME="5829"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.12:</STRONG>
+Using Chebychev polynomials as waveshaping transfer functions.</CAPTION>
+<TR><TD><IMG
+ WIDTH="411" HEIGHT="313" BORDER="0"
+ SRC="img494.png"
+ ALT="\begin{figure}\psfig{file=figs/fig05.12.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\cos(5 \omega n)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="60" HEIGHT="28" BORDER="0"
+ SRC="img495.png"
+ ALT="\begin{displaymath}
+\cos(5 \omega n)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+by waveshaping a sinusoid
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x[n] = \cos(\omega n)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="100" HEIGHT="28" BORDER="0"
+ SRC="img453.png"
+ ALT="\begin{displaymath}
+x[n] = \cos (\omega n)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+We
+need to find a suitable transfer function <IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img460.png"
+ ALT="$f(x)$">.  First we recall
+the formula for the waveshaping function <IMG
+ WIDTH="71" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img496.png"
+ ALT="$f(x) = x^5$">
+(Page <A HREF="node78.html#eq-waveshaping"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="file:/usr/local/share/lib/latex2html/icons/crossref.png"></A>), which gives first,
+third and fifth harmonics:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+16 {x^5} = \cos (5 \omega n) + 5 \cos(3 \omega n) + 10 \cos(\omega n)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="296" HEIGHT="28" BORDER="0"
+ SRC="img497.png"
+ ALT="\begin{displaymath}
+16 {x^5} = \cos (5 \omega n) + 5 \cos(3 \omega n) + 10 \cos(\omega n)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Next we add a suitable multiple of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img498.png"
+ ALT="$x^3$"> to
+cancel the third harmonic:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+16 {x^5} - 20 {x^3} = \cos (5 \omega n) - 5 \cos(\omega n)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="248" HEIGHT="28" BORDER="0"
+ SRC="img499.png"
+ ALT="\begin{displaymath}
+16 {x^5} - 20 {x^3} = \cos (5 \omega n) - 5 \cos(\omega n)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and then a multiple of <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img243.png"
+ ALT="$x$"> to cancel the first harmonic:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+16 {x^5} - 20 {x^3} + 5 x = \cos (5 \omega n)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="201" HEIGHT="28" BORDER="0"
+ SRC="img500.png"
+ ALT="\begin{displaymath}
+16 {x^5} - 20 {x^3} + 5 x = \cos (5 \omega n)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+So for our waveshaping function we choose
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+f(x) = 16 {x^5} - 20 {x^3} + 5 x
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="170" HEIGHT="28" BORDER="0"
+ SRC="img501.png"
+ ALT="\begin{displaymath}
+f(x) = 16 {x^5} - 20 {x^3} + 5 x
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+This procedure allows us to isolate any desired harmonic; the resulting
+functions <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.png"
+ ALT="$f$"> are known as
+<A NAME="5840"></A><I>Chebychev polynomials</I> [<A
+ HREF="node202.html#r-lebrun79">Leb79</A>].
+
+<P>
+To incorporate this in a waveshaping instrument, we simply build a patch
+that works as in Figure <A HREF="node78.html#fig05.05">5.5</A>, computing the expression
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x[n] = f( a[n] \cos(\omega n))
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="151" HEIGHT="28" BORDER="0"
+ SRC="img502.png"
+ ALT="\begin{displaymath}
+x[n] = f( a[n] \cos(\omega n))
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img503.png"
+ ALT="$a[n]$"> is a suitable
+<A NAME="5844"></A><I>index</I>
+which may vary as a function of the sample number <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.png"
+ ALT="$n$">.  When <IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$a$"> happens to
+be one in value, out comes the pure fifth harmonic.  Other values of <IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$a$">
+give varying spectra which, in general, have first and third harmonics as
+well as the fifth.
+
+<P>
+By suitably combining Chebychev polynomials we can fix any desired
+superposition of components in the output waveform (again, as long as
+the waveshaping index is one).  But the real
+promise of waveshaping--that by simply changing the index we can
+manufacture spectra that evolve in interesting but controllable ways--is
+not addressed, at least directly, in the Chebychev picture.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1802"
+  HREF="node85.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1796"
+  HREF="node80.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1790"
+  HREF="node83.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1798"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1800"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1803"
+  HREF="node85.html">Waveshaping using an exponential</A>
+<B> Up:</B> <A NAME="tex2html1797"
+  HREF="node80.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1791"
+  HREF="node83.html">Waveshaping and difference tones</A>
+ &nbsp; <B>  <A NAME="tex2html1799"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1801"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

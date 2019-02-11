@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Single sideband modulation</TITLE>
+<META NAME="description" CONTENT="Single sideband modulation">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node160.html">
+<LINK REL="previous" HREF="node158.html">
+<LINK REL="up" HREF="node155.html">
+<LINK REL="next" HREF="node160.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2945"
+  HREF="node160.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2939"
+  HREF="node155.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2933"
+  HREF="node158.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2941"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2943"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2946"
+  HREF="node160.html">Using elementary filters directly:</A>
+<B> Up:</B> <A NAME="tex2html2940"
+  HREF="node155.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2934"
+  HREF="node158.html">Envelope followers</A>
+ &nbsp; <B>  <A NAME="tex2html2942"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2944"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001254000000000000000">
+Single sideband modulation</A>
+</H2>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig08.31"></A><A NAME="10628"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 8.31:</STRONG>
+Using an all-pass filter network to
+make a frequency shifter.
+</CAPTION>
+<TR><TD><IMG
+ WIDTH="506" HEIGHT="289" BORDER="0"
+ SRC="img1026.png"
+ ALT="\begin{figure}\psfig{file=figs/fig08.31.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+As described in Section <A HREF="node154.html#sect8.singlesideband">8.4.3</A>, a pair of all-pass filters
+can be constructed to give roughly <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$\pi /2$"> phase difference for positive
+frequencies and <IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.png"
+ ALT="$-\pi/2$"> for negative ones.  The design of these pairs is
+beyond the scope of this discussion (see, for instance, [<A
+ HREF="node202.html#r-mitra93">Reg93</A>]) but
+Pd does provide an abstraction, <TT>hilbert~</TT>, to do this.  Example
+H09.ssb.modulation.pd, shown in Figure <A HREF="#fig08.31">8.31</A>, demonstrates how to use the
+<TT>hilbert~</TT> abstraction to do signal sideband modulation.  The
+Hilbert transform dates to the analog era [<A
+ HREF="node202.html#r-strange72">Str95</A>, pp.129-132].
+
+<P>
+The two outputs of <TT>hilbert~</TT>, considered as the real and imaginary parts
+of a complex-valued signal, are multiplied by a complex sinusoid (at
+right in the figure), and the real part is output.  The components of the
+resulting signal are those of the input shifted by a (positive or negative)
+frequency specified in the number box.
+
+<P>
+<BR><HR>
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

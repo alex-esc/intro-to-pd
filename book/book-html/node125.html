@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Pitch shifter</TITLE>
+<META NAME="description" CONTENT="Pitch shifter">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="previous" HREF="node124.html">
+<LINK REL="up" HREF="node116.html">
+<LINK REL="next" HREF="node126.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2415"
+  HREF="node126.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2409"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2405"
+  HREF="node124.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2411"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2413"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2416"
+  HREF="node126.html">Exercises</A>
+<B> Up:</B> <A NAME="tex2html2410"
+  HREF="node116.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2406"
+  HREF="node124.html">Reverberator</A>
+ &nbsp; <B>  <A NAME="tex2html2412"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2414"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0011109000000000000000">
+Pitch shifter</A>
+</H2>
+
+<P>
+Example G09.pitchshift.pd (Figure <A HREF="#fig07.33">7.33</A>) shows a realization of the pitch shifter
+described in Section <A HREF="node115.html#sect7.pitchshift">7.9</A>.  A delay line (defined and written
+elsewhere in the patch) is read using two <TT>vd~</TT> objects.  The delay
+times vary between a minimum delay (provided as the ``delay" control) and the
+minimum plus a window size (the ``window" control.)
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig07.33"></A><A NAME="8317"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 7.33:</STRONG>
+A pitch shifter using two variable taps into a delay
+line.</CAPTION>
+<TR><TD><IMG
+ WIDTH="443" HEIGHT="518" BORDER="0"
+ SRC="img849.png"
+ ALT="\begin{figure}\psfig{file=figs/fig07.33.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The desired pitch shift in half-tones (<IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img194.png"
+ ALT="$h$">) is first converted into a 
+transposition factor
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+t = {2 ^ {h/12}} = {e ^ {\log(2)/12 \cdot h}} \approx {e ^ {0.05776 h}}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="232" HEIGHT="24" BORDER="0"
+ SRC="img850.png"
+ ALT="\begin{displaymath}
+t = {2 ^ {h/12}} = {e ^ {\log(2)/12 \cdot h}} \approx {e ^ {0.05776 h}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+(called ``speed change" in the patch).  The computation labeled ``tape
+head rotation speed" is the same as the formula for <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.png"
+ ALT="$f$"> given on Page
+<A HREF="node115.html#sect7.psformula"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="file:/usr/local/share/lib/latex2html/icons/crossref.png"></A>.  Here the positive interval (seven half-steps)
+gives rise to a transposition factor greater than one, and therefore to a
+negative value for <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.png"
+ ALT="$f$">.
+
+<P>
+Once <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.png"
+ ALT="$f$"> is calculated, the production of the two phased sawtooth signals and
+the corresponding envelopes parallels exactly that of 
+the overlapping sample looper (example B10.sampler.overlap.pd, Page 
+<A HREF="node37.html#sect2.example.overlap"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="file:/usr/local/share/lib/latex2html/icons/crossref.png"></A>).  The minimum delay
+is added to each of the two sawtooth signals to make delay inputs for the
+<TT>vd~</TT> objects, whose outputs are multiplied by the corresponding
+envelopes and summed.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2415"
+  HREF="node126.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2409"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2405"
+  HREF="node124.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2411"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2413"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2416"
+  HREF="node126.html">Exercises</A>
+<B> Up:</B> <A NAME="tex2html2410"
+  HREF="node116.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2406"
+  HREF="node124.html">Reverberator</A>
+ &nbsp; <B>  <A NAME="tex2html2412"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2414"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

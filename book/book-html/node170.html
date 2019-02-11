@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Fourier transform of a sinusoid</TITLE>
+<META NAME="description" CONTENT="Fourier transform of a sinusoid">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="previous" HREF="node169.html">
+<LINK REL="up" HREF="node167.html">
+<LINK REL="next" HREF="node171.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3116"
+  HREF="node171.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3110"
+  HREF="node167.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3106"
+  HREF="node169.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3112"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html3114"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3117"
+  HREF="node171.html">Fourier analysis of non-periodic</A>
+<B> Up:</B> <A NAME="tex2html3111"
+  HREF="node167.html">Properties of Fourier transforms</A>
+<B> Previous:</B> <A NAME="tex2html3107"
+  HREF="node169.html">Shifts and phase changes</A>
+ &nbsp; <B>  <A NAME="tex2html3113"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3115"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001323000000000000000">
+Fourier transform of a sinusoid</A>
+</H2>
+
+<P>
+We can use the phase shift formula above to find the Fourier transform of
+any complex sinusoid <IMG
+ WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1115.png"
+ ALT="${Z^n}$"> with frequency <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$\alpha $">, simply by setting
+<IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1077.png"
+ ALT="$X[n]=1$"> in the formula and using the Fourier transform for DC: 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\cal FT} \left \{ {Z^n} \right \} (k) =
+    {\cal FT} \left \{ 1 \right \}(k - {{\alpha } \over {\omega}})
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="218" HEIGHT="35" BORDER="0"
+ SRC="img1116.png"
+ ALT="\begin{displaymath}
+{\cal FT} \left \{ {Z^n} \right \} (k) =
+{\cal FT} \left \{ 1 \right \}(k - {{\alpha } \over {\omega}})
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+= \left [ \cos(\Phi(k)) + i \sin(\Phi(k))\right ]
+    {D_N}(k - {{\alpha } \over {\omega}})
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="265" HEIGHT="35" BORDER="0"
+ SRC="img1117.png"
+ ALT="\begin{displaymath}
+= \left [ \cos(\Phi(k)) + i \sin(\Phi(k))\right ]
+{D_N}(k - {{\alpha } \over {\omega}})
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1118.png"
+ ALT="${D_N}$"> is the Dirichlet kernel and <IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1119.png"
+ ALT="$\Phi$"> is an ugly phase term:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\Phi(k) = - \pi \cdot (k - {{\alpha } \over {\omega}}) \cdot (N-1)/N
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="228" HEIGHT="35" BORDER="0"
+ SRC="img1120.png"
+ ALT="\begin{displaymath}
+\Phi(k) = - \pi \cdot (k - {{\alpha } \over {\omega}}) \cdot (N-1)/N
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig09.03"></A><A NAME="12484"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9.3:</STRONG>
+Fourier transforms of complex sinusoids, with <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$"> = 100: (a)
+with frequency <IMG
+ WIDTH="21" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img59.png"
+ ALT="$2\omega $"> ; (b) with frequency <IMG
+ WIDTH="34" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.png"
+ ALT="$1.5\omega $">.  (The effect of
+the phase winding term is not shown.)
+</CAPTION>
+<TR><TD><IMG
+ WIDTH="423" HEIGHT="384" BORDER="0"
+ SRC="img1121.png"
+ ALT="\begin{figure}\psfig{file=figs/fig09.03.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+If the sinusoid's frequency <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$\alpha $"> is an integer multiple of the fundamental
+frequency <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.png"
+ ALT="$\omega $">, the Dirichlet kernel is shifted to the left or right by an
+integer.  In this case the zero crossings of the Dirichlet kernel line up with
+integer values of <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$">, so that only one partial is nonzero.  This is pictured
+in Figure <A HREF="#fig09.03">9.3</A> (part a).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig09.04"></A><A NAME="12490"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9.4:</STRONG>
+A complex sinusoid with frequency <!-- MATH
+ $\alpha=1.5\omega=3\pi/N$
+ -->
+<IMG
+ WIDTH="126" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$\alpha =1.5\omega =3\pi /N$">, forced to
+repeat every <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$"> samples.  (<IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$"> is arbitrarily set to 100; only the real
+part is shown.)
+</CAPTION>
+<TR><TD><IMG
+ WIDTH="440" HEIGHT="136" BORDER="0"
+ SRC="img1122.png"
+ ALT="\begin{figure}\psfig{file=figs/fig09.04.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Part (b) shows the result when the frequency <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$\alpha $"> falls halfway between two
+integers.  The partials have amplitudes falling off roughly as <IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img72.png"
+ ALT="$1/k$"> in both
+directions, measured from the actual frequency <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$\alpha $">.  That the energy
+should be spread over many partials, when after all we started with a single
+sinusoid, might seem surprising at first.  However, as shown in Figure
+<A HREF="#fig09.04">9.4</A>, the signal repeats at a period <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$"> which disagrees with the
+frequency of the sinusoid.  As a result there is a discontinuity at the
+beginning of each period, and energy is flung over a wide range
+of frequencies.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3116"
+  HREF="node171.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3110"
+  HREF="node167.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3106"
+  HREF="node169.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3112"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html3114"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3117"
+  HREF="node171.html">Fourier analysis of non-periodic</A>
+<B> Up:</B> <A NAME="tex2html3111"
+  HREF="node167.html">Properties of Fourier transforms</A>
+<B> Previous:</B> <A NAME="tex2html3107"
+  HREF="node169.html">Shifts and phase changes</A>
+ &nbsp; <B>  <A NAME="tex2html3113"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3115"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

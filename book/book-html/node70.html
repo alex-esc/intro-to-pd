@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Transfer functions for amplitude control</TITLE>
+<META NAME="description" CONTENT="Transfer functions for amplitude control">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node71.html">
+<LINK REL="previous" HREF="node69.html">
+<LINK REL="up" HREF="node68.html">
+<LINK REL="next" HREF="node71.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1590"
+  HREF="node71.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1584"
+  HREF="node68.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1578"
+  HREF="node69.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1586"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1588"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1591"
+  HREF="node71.html">Additive synthesis: Risset's bell</A>
+<B> Up:</B> <A NAME="tex2html1585"
+  HREF="node68.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1579"
+  HREF="node69.html">ADSR envelope generator</A>
+ &nbsp; <B>  <A NAME="tex2html1587"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1589"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00882000000000000000">
+Transfer functions for amplitude control</A>
+</H2>
+
+<P>
+Section <A HREF="node60.html#sect4.curved">4.2</A> described using ADSR envelopes to control
+amplitude, for which exponential or quartic-curve segments often give more
+natural-sounding results than linear ones.  Patches D03.envelope.dB.pd and D04.envelope.quartic.pd (the latter shown in Figure <A HREF="#fig04.15">4.15</A>)
+demonstrate the use of decibel and quartic segments.  In addition to amplitude,
+in Example D04.envelope.quartic.pd the frequency of a sound is also controlled, using linear
+and quartic shapes, for comparison.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig04.15"></A><A NAME="4770"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.15:</STRONG>
+Linear and quartic transfer functions for changing amplitude and
+pitch.</CAPTION>
+<TR><TD><IMG
+ WIDTH="349" HEIGHT="369" BORDER="0"
+ SRC="img382.png"
+ ALT="\begin{figure}\psfig{file=figs/fig04.15.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Since converting decibels to linear amplitude units is a costly operation
+(at least when compared to an oscillator or a ramp generator), Example D03.envelope.dB.pd uses table lookup to implement the necessary transfer function.  This has the
+advantage of efficiency, but the disadvantage that we must decide on the
+range of admissible values in advance (here from 0 to 120 dB).
+
+<P>
+For a
+quartic segment as in Example D04.envelope.quartic.pd no table lookup is required; 
+we simply square the <TT>line~</TT> object's output signal twice in succession.
+To compensate for raising the output to the fourth power, the target values
+sent to the <TT>line~</TT> object must be the fourth root of the desired
+ones.  Thus, messages to ramp the frequency or amplitude are first unpacked to
+separate the target and time interval, the target's fourth root is taken
+(via two square roots in succession), and the two are then sent to the
+<TT>line~</TT> object.  Here we have made use of one new Pd object:
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $\mathrm{unpack}$}$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img383.png"
+ ALT="\fbox{ $\mathrm{unpack}$}">:
+<A NAME="4907"></A>unpack a list of numbers (and/or symbols) and distribute them to separate
+outlets.  As usual the outputs appear in right-to-left order.  The number of
+outlets and their types are determined by the creation arguments.  (See also
+<TT>pack</TT>, Page <A HREF="node34.html#pdpack"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="file:/usr/local/share/lib/latex2html/icons/crossref.png"></A>).
+
+<P>
+The next two patches, D05.envelope.pitch.pd and D06.envelope.portamento.pd, use an ADSR envelope generator
+to make a pitch envelope and a simple <TT>line~</TT> object, also controlling
+pitch, to make portamento.  In both cases exponential segments are desirable,
+and they are calculated using table lookup.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1590"
+  HREF="node71.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1584"
+  HREF="node68.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1578"
+  HREF="node69.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1586"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1588"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1591"
+  HREF="node71.html">Additive synthesis: Risset's bell</A>
+<B> Up:</B> <A NAME="tex2html1585"
+  HREF="node68.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1579"
+  HREF="node69.html">ADSR envelope generator</A>
+ &nbsp; <B>  <A NAME="tex2html1587"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1589"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

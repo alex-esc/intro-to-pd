@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Synthesizing a sinusoid</TITLE>
+<META NAME="description" CONTENT="Synthesizing a sinusoid">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node13.html">
+<LINK REL="previous" HREF="node11.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node13.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html721"
+  HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html715"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html709"
+  HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html717"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html719"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html722"
+  HREF="node13.html">Superposing Signals</A>
+<B> Up:</B> <A NAME="tex2html716"
+  HREF="node7.html">Sinusoids, amplitude and frequency</A>
+<B> Previous:</B> <A NAME="tex2html710"
+  HREF="node11.html">Frequency</A>
+ &nbsp; <B>  <A NAME="tex2html718"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html720"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00550000000000000000"></A>
+<A NAME="sect1.synth"></A>
+<BR>
+Synthesizing a sinusoid
+</H1>
+
+<P>
+In most widely used audio synthesis and processing packages (Csound, Max/MSP,
+and Pd, for instance), the audio operations are specified as
+networks of
+<A NAME="1112"></A><I>unit generators</I>[<A
+ HREF="node202.html#r-mathews69">Mat69</A>] which pass audio signals among themselves.  The user of
+the software package specifies the network, sometimes called a
+<A NAME="1115"></A><I>patch</I>,
+which essentially corresponds to the synthesis algorithm to be used, and then
+worries about how to control the various unit generators in time. In this
+section, we'll use abstract block diagrams to describe patches, but in the
+``examples" section (Page <A HREF="node18.html#sect1.examples"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="file:/usr/local/share/lib/latex2html/icons/crossref.png"></A>), we'll choose a
+specific implementation environment and show some of the software-dependent
+details.
+
+<P>
+To show how to produce a sinusoid with time-varying amplitude we'll need to
+introduce two unit generators.  First we need a pure sinusoid which is
+made with an
+<A NAME="1118"></A><I>oscillator</I>.  Figure <A HREF="#fig01.05">1.5</A> (part a) shows a pictorial
+representation of
+a sinusoidal oscillator as an icon.  The input is a frequency (in cycles per second), and
+the output is a sinusoid of peak amplitude one.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig01.05"></A><A NAME="1123"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.5:</STRONG>
+Block diagrams for (a) a sinusoidal oscillator; (b) controlling the
+amplitude using a multiplier and an amplitude signal <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$y[n]$">.</CAPTION>
+<TR><TD><IMG
+ WIDTH="311" HEIGHT="266" BORDER="0"
+ SRC="img117.png"
+ ALT="\begin{figure}\psfig{file=figs/fig01.05.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Figure <A HREF="#fig01.05">1.5</A> (part b) shows how to multiply the output of a sinusoidal
+oscillator by an appropriate scale factor <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$y[n]$"> to control its amplitude. 
+Since the oscillator's peak amplitude is 1, the peak amplitude of the product
+is about <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$y[n]$">, assuming <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$y[n]$"> changes slowly enough and doesn't become
+negative in value.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig01.06"></A><A NAME="1351"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.6:</STRONG>
+Two amplitude functions (parts a, c), and (parts b, d), the result of
+multiplying them by
+the pure sinusoid of Figure <A HREF="node7.html#fig01.01">1.1</A>.</CAPTION>
+<TR><TD><IMG
+ WIDTH="474" HEIGHT="528" BORDER="0"
+ SRC="img118.png"
+ ALT="\begin{figure}\psfig{file=figs/fig01.06.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Figure <A HREF="#fig01.06">1.6</A> shows how the sinusoid of Figure <A HREF="node7.html#fig01.01">1.1</A> is
+affected by amplitude change by two different controlling signals <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$y[n]$">. 
+The controlling signal shown in part (a) has a discontinuity, and so
+therefore does the resulting amplitude-controlled sinusoid shown in (b).  
+Parts (c) and (d) show a more gently-varying possibility for <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$y[n]$"> and the
+result.  Intuition suggests that the result shown in (b) won't sound like an
+amplitude-varying sinusoid, but instead like a sinusoid interrupted by 
+an audible ``pop" after which it continues more quietly.  In general, for
+reasons that can't be explained in this chapter, amplitude control signals
+<IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$y[n]$"> which ramp smoothly from one value to another are less likely to give
+rise to parasitic results (such as that ``pop") than are abruptly changing
+ones.
+
+<P>
+For now we can state two general rules without justifying them.  First, pure
+sinusoids are the signals most sensitive to the parasitic effects of
+quick amplitude change.  So when you want to test an amplitude transition, if
+it works for sinusoids it will probably work for other signals as well. 
+Second, depending on the signal whose amplitude you are changing, the amplitude
+control will need between 0 and 30 milliseconds of ``ramp" time--zero for the
+most forgiving signals (such as white noise), and 30 for the least (such as a
+sinusoid).  All this also depends in a complicated way on listening levels and
+the acoustic context.
+
+<P>
+Suitable amplitude control functions <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$y[n]$"> may be made using an
+<A NAME="1134"></A><I>envelope generator</I>.  
+Figure <A HREF="#fig01.07">1.7</A> shows a network in which an envelope generator is used to
+control the amplitude of an oscillator. Envelope generators vary widely in
+design, but we will focus on the simplest
+kind, which generates line segments as shown in Figure <A HREF="#fig01.06">1.6</A> (part c).
+If a
+line segment is specified to ramp between two output values <IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$a$"> and <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$b$"> over
+<IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$"> samples starting at sample number <IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img86.png"
+ ALT="$M$">, the output is:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+y[n] = a + (b - a) {{n-M} \over N}, \hspace{0.1in} M \le n \le M+N-1.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="342" HEIGHT="39" BORDER="0"
+ SRC="img119.png"
+ ALT="\begin{displaymath}
+y[n] = a + (b - a) {{n-M} \over N}, \hspace{0.1in} M \le n \le M+N-1.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The output may have any number of segments such as this, laid end to end,
+over the entire range of sample numbers <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.png"
+ ALT="$n$">; flat, horizontal segments can be
+made by setting <IMG
+ WIDTH="39" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img120.png"
+ ALT="$a=b$">.
+
+<P>
+In addition to changing amplitudes of sounds, amplitude control is often used,
+especially in real-time applications, simply to turn sounds on and off: to turn
+one off, ramp the amplitude smoothly to zero. Most software synthesis packages
+also provide ways to actually stop modules from computing samples at all, but
+here we'll use amplitude control instead.
+
+<P>
+The envelope generator dates from the analog era
+[<A
+ HREF="node202.html#r-strange72">Str95</A>, p.64] [<A
+ HREF="node202.html#r-chamberlin80">Cha80</A>, p.90], as does the rest of
+Figure <A HREF="#fig01.07">1.7</A>; oscillators with controllable frequency were called
+voltage-controlled oscillators or VCOs, and the multiplication step was
+done using a voltage-controlled amplifier or VCA
+[<A
+ HREF="node202.html#r-strange72">Str95</A>, pp.34-35] [<A
+ HREF="node202.html#r-chamberlin80">Cha80</A>, pp.84-89].
+Envelope generators are described in more detail in Section <A HREF="node59.html#sect4.adsr">4.1</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig01.07"></A><A NAME="1148"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.7:</STRONG>
+Using an envelope generator to control amplitude.</CAPTION>
+<TR><TD><IMG
+ WIDTH="173" HEIGHT="225" BORDER="0"
+ SRC="img121.png"
+ ALT="\begin{figure}\psfig{file=figs/fig01.07.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html721"
+  HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html715"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html709"
+  HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html717"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html719"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html722"
+  HREF="node13.html">Superposing Signals</A>
+<B> Up:</B> <A NAME="tex2html716"
+  HREF="node7.html">Sinusoids, amplitude and frequency</A>
+<B> Previous:</B> <A NAME="tex2html710"
+  HREF="node11.html">Frequency</A>
+ &nbsp; <B>  <A NAME="tex2html718"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html720"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

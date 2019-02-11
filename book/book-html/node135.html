@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Elementary recirculating filter</TITLE>
+<META NAME="description" CONTENT="Elementary recirculating filter">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node136.html">
+<LINK REL="previous" HREF="node134.html">
+<LINK REL="up" HREF="node132.html">
+<LINK REL="next" HREF="node136.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2595"
+  HREF="node136.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2589"
+  HREF="node132.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2583"
+  HREF="node134.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2591"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2593"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2596"
+  HREF="node136.html">Compound filters</A>
+<B> Up:</B> <A NAME="tex2html2590"
+  HREF="node132.html">Elementary filters</A>
+<B> Previous:</B> <A NAME="tex2html2584"
+  HREF="node134.html">Non-recirculating filter, second form</A>
+ &nbsp; <B>  <A NAME="tex2html2592"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2594"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001223000000000000000"></A>
+<A NAME="sect8.recirculating"></A>
+<BR>
+Elementary recirculating filter
+</H2>
+
+<P>
+The
+<A NAME="10185"></A><A NAME="10186"></A><I>elementary recirculating filter</I> is the recirculating comb filter of
+Figure <A HREF="node109.html#fig07.07">7.7</A> with a
+complex-valued feedback gain <IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img880.png"
+ ALT="$P$"> as shown in Figure <A HREF="#fig08.11">8.11</A> (part
+a).  By the same analysis as before, feeding this network a sinusoid whose
+<IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.png"
+ ALT="$n$">th sample is <IMG
+ WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img653.png"
+ ALT="$Z^n$"> gives an output of:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{{1} \over {1 - P {Z^{-1}}}} {Z^n}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="91" HEIGHT="40" BORDER="0"
+ SRC="img881.png"
+ ALT="\begin{displaymath}
+{{1} \over {1 - P {Z^{-1}}}} {Z^n}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+so the transfer function is
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+H(Z) = {{1} \over {1 - P {Z^{-1}}}}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="131" HEIGHT="40" BORDER="0"
+ SRC="img882.png"
+ ALT="\begin{displaymath}
+H(Z) = {{1} \over {1 - P {Z^{-1}}}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The recirculating filter is stable when <IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img883.png"
+ ALT="$\vert P\vert &lt; 1$">; when, instead, <IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img884.png"
+ ALT="$\vert P\vert&gt; 1$"> the
+output grows exponentially as the delayed sample recirculates.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig08.11"></A><A NAME="10197"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 8.11:</STRONG>
+The elementary recirculating filter: (a) block diagram; (b)
+frequency response.</CAPTION>
+<TR><TD><IMG
+ WIDTH="454" HEIGHT="259" BORDER="0"
+ SRC="img885.png"
+ ALT="\begin{figure}\psfig{file=figs/fig08.11.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The transfer function is thus just the inverse of that of the non-recirculating
+filter (first form).  If you put the two in series with <IMG
+ WIDTH="49" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img886.png"
+ ALT="$P=Q$">, the output
+theoretically equals the input.  (This analysis only demonstrates it for
+sinusoidal inputs; that it follows for other signals as well can be verified by
+working out the impulse response of the combined network).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2595"
+  HREF="node136.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2589"
+  HREF="node132.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2583"
+  HREF="node134.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2591"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2593"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2596"
+  HREF="node136.html">Compound filters</A>
+<B> Up:</B> <A NAME="tex2html2590"
+  HREF="node132.html">Elementary filters</A>
+<B> Previous:</B> <A NAME="tex2html2584"
+  HREF="node134.html">Non-recirculating filter, second form</A>
+ &nbsp; <B>  <A NAME="tex2html2592"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2594"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

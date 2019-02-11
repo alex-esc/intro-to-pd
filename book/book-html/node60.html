@@ -1,0 +1,317 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Linear and Curved Amplitude Shapes</TITLE>
+<META NAME="description" CONTENT="Linear and Curved Amplitude Shapes">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node61.html">
+<LINK REL="previous" HREF="node59.html">
+<LINK REL="up" HREF="node58.html">
+<LINK REL="next" HREF="node61.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1445"
+  HREF="node61.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1439"
+  HREF="node58.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1433"
+  HREF="node59.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1441"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1443"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1446"
+  HREF="node61.html">Continuous and discontinuous control</A>
+<B> Up:</B> <A NAME="tex2html1440"
+  HREF="node58.html">Automation and voice management</A>
+<B> Previous:</B> <A NAME="tex2html1434"
+  HREF="node59.html">Envelope Generators</A>
+ &nbsp; <B>  <A NAME="tex2html1442"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1444"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00820000000000000000"></A>
+<A NAME="sect4.curved"></A>
+<BR>
+Linear and Curved Amplitude Shapes
+</H1>
+
+<P>
+Suppose you wish to fade a signal in over a period of ten seconds--that is,
+you wish to multiply it by an amplitude-controlling signal <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$y[n]$"> which rises
+from 0 to 1 in value over <IMG
+ WIDTH="31" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img358.png"
+ ALT="$10R$"> samples, where <IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$R$"> is the sample rate.  The
+most obvious choice would be a linear ramp: <!-- MATH
+ $y[n] = n/(10R)$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img359.png"
+ ALT="$y[n] = n/(10R)$">.  But this will
+not turn out to yield a smooth increase in perceived loudness.  Over the first
+second <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$y[n]$"> rises from <IMG
+ WIDTH="31" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.png"
+ ALT="$-\infty$"> dB to -20 dB, over the next four by another
+14 dB, and over the remaining five, only by the remaining 6 dB.  Over most of
+the ten second period the rise in amplitude will be barely perceptible.
+
+<P>
+Another possibility would be to ramp <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$y[n]$"> exponentially, so that it rises at
+a constant rate in dB.  You would have to fix the initial amplitude to be
+inaudible, say 0 dB (if we fix unity at 100 dB).   Now we have the opposite
+problem: for the first five seconds the amplitude control will rise from 0 dB
+(inaudible) to 50 dB (pianissimo); this part of the fade-in should only have
+taken up the first second or so.
+
+<P>
+A more natural progression would perhaps have been to regard the fade-in
+as a timed succession of dynamics, 0-ppp-pp-p-mp-mf-f-ff-fff,
+with each step taking roughly one second.
+
+<P>
+A fade-in ideally should obey some scale in between logarithmic and linear.  A
+somewhat arbitrary choice, but useful in practice, is the quartic curve:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+y[n] = {{ \left ( {{n} \over {N}} \right ) } ^ 4} ,
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="97" HEIGHT="39" BORDER="0"
+ SRC="img360.png"
+ ALT="\begin{displaymath}
+y[n] = {{ \left ( {{n} \over {N}} \right ) } ^ 4} ,
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$"> is the number of samples to fade in over (in the example above, it's
+<IMG
+ WIDTH="31" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img358.png"
+ ALT="$10R$">).  So, after the first second of the ten we would have risen to -80 dB,
+after five seconds to -24 dB, and after nine, about -4 dB.
+
+<P>
+Figure <A HREF="#fig04.03">4.3</A> shows three amplitude transfer functions:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{f_1} (x) = x \hspace{0.2in} \mathrm{(linear),}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="144" HEIGHT="28" BORDER="0"
+ SRC="img361.png"
+ ALT="\begin{displaymath}
+{f_1} (x) = x \hspace{0.2in} \mathrm{(linear),}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\ \ \ \ \ \ \ %
+    {f_2} (x) = 10^{2(x-1)} \hspace{0.2in}\mathrm{(dB\ to\ linear),}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="236" HEIGHT="28" BORDER="0"
+ SRC="img362.png"
+ ALT="\begin{displaymath}
+\ \ \ \ \ \ \ %
+{f_2} (x) = 10^{2(x-1)} \hspace{0.2in}\mathrm{(dB\ to\ linear),}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{f_3} (x) = {x^4} \hspace{0.2in}\mathrm{(quartic).}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="161" HEIGHT="28" BORDER="0"
+ SRC="img363.png"
+ ALT="\begin{displaymath}
+{f_3} (x) = {x^4} \hspace{0.2in}\mathrm{(quartic).}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The second function converts from dB to linear, arranged so that the input
+range, from 0 to 1, corresponds to 40 dB.  (This input range of 40 dB
+corresponds to a reasonable dynamic range, allowing
+5 dB for each of 8 steps in dynamic.)  The quartic curve imitates the
+exponential (dB) curve fairly well for higher amplitudes, but drops off more
+rapidly
+for small amplitudes, reaching true zero at right (whereas the exponential curve
+only goes down to <IMG
+ WIDTH="43" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img364.png"
+ ALT="$1/100$">). 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig04.03"></A><A NAME="4616"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.3:</STRONG>
+Three amplitude transfer functions.  The horizontal axis is in linear,
+logarithmic, or fourth-root units depending on the curve.</CAPTION>
+<TR><TD><IMG
+ WIDTH="628" HEIGHT="388" BORDER="0"
+ SRC="img365.png"
+ ALT="\begin{figure}\psfig{file=figs/fig04.03.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+We can think of the three curves as showing
+transfer functions, from an abstract control (ranging from 0 to 1) to a
+linear amplitude.  After we choose a suitable transfer function <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.png"
+ ALT="$f$">, we
+can compute a corresponding amplitude control signal; if we wish to ramp
+over <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$"> samples from silence to unity gain, the control signal would be:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+y[n] = f(n/N) .
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="104" HEIGHT="28" BORDER="0"
+ SRC="img366.png"
+ ALT="\begin{displaymath}
+y[n] = f(n/N) .
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+A block diagram for this is shown in Figure <A HREF="#fig04.04">4.4</A>.  Here we are
+introducing a new type of block to represent the application of a
+<A NAME="4620"></A>
+<I>transfer function</I>.  For now we won't worry about its implementation;
+depending on the function desired, this might be best done arithmetically or
+using table lookup.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig04.04"></A><A NAME="4624"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.4:</STRONG>
+Using a transfer function to alter the shape of amplitude curves.</CAPTION>
+<TR><TD><IMG
+ WIDTH="296" HEIGHT="227" BORDER="0"
+ SRC="img367.png"
+ ALT="\begin{figure}\psfig{file=figs/fig04.04.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1445"
+  HREF="node61.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1439"
+  HREF="node58.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1433"
+  HREF="node59.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1441"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1443"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1446"
+  HREF="node61.html">Continuous and discontinuous control</A>
+<B> Up:</B> <A NAME="tex2html1440"
+  HREF="node58.html">Automation and voice management</A>
+<B> Previous:</B> <A NAME="tex2html1434"
+  HREF="node59.html">Envelope Generators</A>
+ &nbsp; <B>  <A NAME="tex2html1442"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1444"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

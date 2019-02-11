@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Sinusoidal waveshaping: evenness and oddness</TITLE>
+<META NAME="description" CONTENT="Sinusoidal waveshaping: evenness and oddness">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node87.html">
+<LINK REL="previous" HREF="node85.html">
+<LINK REL="up" HREF="node80.html">
+<LINK REL="next" HREF="node87.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1830"
+  HREF="node87.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1824"
+  HREF="node80.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1818"
+  HREF="node85.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1826"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1828"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1831"
+  HREF="node87.html">Phase modulation and FM</A>
+<B> Up:</B> <A NAME="tex2html1825"
+  HREF="node80.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1819"
+  HREF="node85.html">Waveshaping using an exponential</A>
+ &nbsp; <B>  <A NAME="tex2html1827"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1829"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00956000000000000000">
+Sinusoidal waveshaping: evenness and oddness</A>
+</H2>
+<A NAME="sect5.bessel"></A>
+<P>
+Another interesting class of waveshaping transfer functions is the sinusoids:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+f(x) = \cos(x + \phi)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="122" HEIGHT="28" BORDER="0"
+ SRC="img526.png"
+ ALT="\begin{displaymath}
+f(x) = \cos(x + \phi)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+which include the cosine and sine functions (got by choosing <IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img162.png"
+ ALT="$\phi=0$"> and
+<IMG
+ WIDTH="72" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img527.png"
+ ALT="$\phi=-\pi/2$">, respectively).  These functions, one being even and the
+other odd, give rise to even and odd harmonic spectra, which turn out to be:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\cos(a \cos(\omega n)) = {J_0}(a) 
+    	- 2 {J_2}(a) \cos(2 \omega n) 
+    	+ 2 {J_4}(a) \cos(4 \omega n) 
+	- 2 {J_6}(a) \cos(6 \omega n) \pm \cdots
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="553" HEIGHT="28" BORDER="0"
+ SRC="img528.png"
+ ALT="\begin{displaymath}
+\cos(a \cos(\omega n)) = {J_0}(a)
+- 2 {J_2}(a) \cos(2 \om...
+...a) \cos(4 \omega n)
+- 2 {J_6}(a) \cos(6 \omega n) \pm \cdots
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\sin(a \cos(\omega n)) =
+    2 {J_1}(a) \cos(\omega n)
+    - 2{J_3}(a) \cos(3 \omega n) 
+    + 2{J_5}(a) \cos(5 \omega n) \mp  \cdots
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="512" HEIGHT="28" BORDER="0"
+ SRC="img529.png"
+ ALT="\begin{displaymath}
+\sin(a \cos(\omega n)) =
+2 {J_1}(a) \cos(\omega n)
+- 2{J_3}(a) \cos(3 \omega n)
++ 2{J_5}(a) \cos(5 \omega n) \mp \cdots
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The functions <IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img530.png"
+ ALT="${J_k}(a)$"> are the 
+<A NAME="5889"></A><I>Bessel functions</I>
+of the first kind, which
+engineers sometimes use to solve problems about vibrations or heat flow on
+discs.  For other values of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.png"
+ ALT="$\phi$">, we can expand the expression for <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.png"
+ ALT="$f$">:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+f(x) = \cos(x) \cos(\phi) - \sin(x) \sin(\phi)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="243" HEIGHT="28" BORDER="0"
+ SRC="img531.png"
+ ALT="\begin{displaymath}
+f(x) = \cos(x) \cos(\phi) - \sin(x) \sin(\phi)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+so the result is a mix between the even and the odd harmonics, with <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.png"
+ ALT="$\phi$">
+controlling the relative amplitudes of the two.  This is demonstrated in Patch
+E07.evenodd.pd, shown in Figure <A HREF="#fig05.14">5.14</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig05.14"></A><A NAME="5894"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.14:</STRONG>
+Using an additive offset to a cosine transfer function to alter the
+symmetry between even and odd.  With no offset the symmetry is even.  For odd symmetry, a quarter cycle is added
+to the phase.  Smaller offsets give a mixture of even and odd.</CAPTION>
+<TR><TD><IMG
+ WIDTH="234" HEIGHT="171" BORDER="0"
+ SRC="img532.png"
+ ALT="\begin{figure}\psfig{file=figs/fig05.14.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1830"
+  HREF="node87.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1824"
+  HREF="node80.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1818"
+  HREF="node85.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1826"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1828"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1831"
+  HREF="node87.html">Phase modulation and FM</A>
+<B> Up:</B> <A NAME="tex2html1825"
+  HREF="node80.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1819"
+  HREF="node85.html">Waveshaping using an exponential</A>
+ &nbsp; <B>  <A NAME="tex2html1827"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1829"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

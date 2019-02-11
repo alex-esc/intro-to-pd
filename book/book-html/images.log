@@ -1,0 +1,8391 @@
+This is TeX, Version 3.14159 (Web2C 7.4.5) (format=latex 2004.3.25)  30 DEC 2006 00:19
+**./images.tex
+(./images.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, n
+ohyphenation, loaded.
+
+(/usr/share/texmf/tex/generic/misc/psfig.sty
+\@unused=\write3
+\ps@stream=\read1
+\p@intvaluex=\dimen102
+\p@intvaluey=\dimen103
+psfig/tex 1.10-dvips
+) (/usr/share/texmf/tex/latex/base/book.cls
+Document Class: book 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/bk10.clo
+File: bk10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen104
+) (/usr/share/texmf/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/share/texmf/tex/latex/html/html.sty
+Package: html 1999/07/19 v1.38 hypertext commands for latex2html (nd, hws, rrm)
+
+\c@lpart=\count88
+\c@lchapter=\count89
+\c@lsection=\count90
+\c@lsubsection=\count91
+\c@lsubsubsection=\count92
+\c@lparagraph=\count93
+\c@lsubparagraph=\count94
+\c@lsubsubparagraph=\count95
+\ptrfile=\write4
+) (/usr/share/texmf/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+\@indexfile=\write5
+\openout5 = `images.idx'.
+
+Writing index file images.idx
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+(/usr/share/texmf/tex/latex/config/color.cfg
+File: color.cfg 2001/08/31 v1.1 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 125.
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+) (/usr/share/texmf/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)) (/usr/share/texmf/tex/latex/base/inputenc.sty
+Package: inputenc 2001/07/10 v0.99a Input encoding file 
+(/usr/share/texmf/tex/latex/base/latin1.def
+File: latin1.def 2001/07/10 v0.99a Input encoding file 
+))
+\sizebox=\box26
+\lthtmlwrite=\write6
+(./images.aux
+
+LaTeX Warning: Label `fig06.11' multiply defined.
+
+)
+\openout1 = `images.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+(/home/msp/papers/book/book.aux
+
+LaTeX Warning: Label `eq-realsinusoid' multiply defined.
+
+
+LaTeX Warning: Label `fig01.01' multiply defined.
+
+
+LaTeX Warning: Label `sect1.amplitude' multiply defined.
+
+
+LaTeX Warning: Label `fig01.02' multiply defined.
+
+
+LaTeX Warning: Label `fig01.03' multiply defined.
+
+
+LaTeX Warning: Label `fig01.04' multiply defined.
+
+
+LaTeX Warning: Label `eq-pitchmidi' multiply defined.
+
+
+LaTeX Warning: Label `fig01.05' multiply defined.
+
+
+LaTeX Warning: Label `sect1.synth' multiply defined.
+
+
+LaTeX Warning: Label `fig01.06' multiply defined.
+
+
+LaTeX Warning: Label `sect1.combine' multiply defined.
+
+
+LaTeX Warning: Label `fig01.07' multiply defined.
+
+
+LaTeX Warning: Label `eq-meanpowersum' multiply defined.
+
+
+LaTeX Warning: Label `sect1.fourier' multiply defined.
+
+
+LaTeX Warning: Label `eq-fourierseries' multiply defined.
+
+
+LaTeX Warning: Label `r-intervals' multiply defined.
+
+
+LaTeX Warning: Label `fig01.08' multiply defined.
+
+
+LaTeX Warning: Label `fig01.09' multiply defined.
+
+
+LaTeX Warning: Label `fig01.10' multiply defined.
+
+
+LaTeX Warning: Label `sect1.examples' multiply defined.
+
+
+LaTeX Warning: Label `fig01.11' multiply defined.
+
+
+LaTeX Warning: Label `fig01.12' multiply defined.
+
+
+LaTeX Warning: Label `sect1.ex.3' multiply defined.
+
+
+LaTeX Warning: Label `sec1.triad' multiply defined.
+
+
+LaTeX Warning: Label `fig01.13' multiply defined.
+
+
+LaTeX Warning: Label `fig01.14' multiply defined.
+
+
+LaTeX Warning: Label `fig01.15' multiply defined.
+
+
+LaTeX Warning: Label `chapter-wavetable' multiply defined.
+
+
+LaTeX Warning: Label `fig02.01' multiply defined.
+
+
+LaTeX Warning: Label `sect2.oscillator' multiply defined.
+
+
+LaTeX Warning: Label `fig02.02' multiply defined.
+
+
+LaTeX Warning: Label `fig02.03' multiply defined.
+
+
+LaTeX Warning: Label `fig02.04' multiply defined.
+
+
+LaTeX Warning: Label `sect2.sampling' multiply defined.
+
+
+LaTeX Warning: Label `sect2.transpositionformula' multiply defined.
+
+
+LaTeX Warning: Label `sect2.momentaryformula' multiply defined.
+
+
+LaTeX Warning: Label `fig02.05' multiply defined.
+
+
+LaTeX Warning: Label `sect2.enveloping' multiply defined.
+
+
+LaTeX Warning: Label `fig02.06' multiply defined.
+
+
+LaTeX Warning: Label `sect2.stretching' multiply defined.
+
+
+LaTeX Warning: Label `fig02.07' multiply defined.
+
+
+LaTeX Warning: Label `fig02.08' multiply defined.
+
+
+LaTeX Warning: Label `fig02.09' multiply defined.
+
+
+LaTeX Warning: Label `fig02.10' multiply defined.
+
+
+LaTeX Warning: Label `sect2.interpolation' multiply defined.
+
+
+LaTeX Warning: Label `fig02.11' multiply defined.
+
+
+LaTeX Warning: Label `tab02.1' multiply defined.
+
+
+LaTeX Warning: Label `fig02.12' multiply defined.
+
+
+LaTeX Warning: Label `fig02.13' multiply defined.
+
+
+LaTeX Warning: Label `pdpack' multiply defined.
+
+
+LaTeX Warning: Label `fig02.14' multiply defined.
+
+
+LaTeX Warning: Label `sect2.example.loop' multiply defined.
+
+
+LaTeX Warning: Label `fig02.15' multiply defined.
+
+
+LaTeX Warning: Label `sect2.example.overlap' multiply defined.
+
+
+LaTeX Warning: Label `fig02.16' multiply defined.
+
+
+LaTeX Warning: Label `sect3.sampling' multiply defined.
+
+
+LaTeX Warning: Label `fig03.01' multiply defined.
+
+
+LaTeX Warning: Label `sect3.control' multiply defined.
+
+
+LaTeX Warning: Label `fig03.02' multiply defined.
+
+
+LaTeX Warning: Label `fig03.03' multiply defined.
+
+
+LaTeX Warning: Label `sect3.controlstreams' multiply defined.
+
+
+LaTeX Warning: Label `fig03.04' multiply defined.
+
+
+LaTeX Warning: Label `fig03.05' multiply defined.
+
+
+LaTeX Warning: Label `fig03.06' multiply defined.
+
+
+LaTeX Warning: Label `fig03.07' multiply defined.
+
+
+LaTeX Warning: Label `sect3.analog' multiply defined.
+
+
+LaTeX Warning: Label `fig03.08' multiply defined.
+
+
+LaTeX Warning: Label `fig03.09' multiply defined.
+
+
+LaTeX Warning: Label `fig03.10' multiply defined.
+
+
+LaTeX Warning: Label `fig03.11' multiply defined.
+
+
+LaTeX Warning: Label `fig03.12' multiply defined.
+
+
+LaTeX Warning: Label `fig03.13' multiply defined.
+
+
+LaTeX Warning: Label `fig03.14' multiply defined.
+
+
+LaTeX Warning: Label `sect3.noloopsampler' multiply defined.
+
+
+LaTeX Warning: Label `fig03.15' multiply defined.
+
+
+LaTeX Warning: Label `fig03.16' multiply defined.
+
+
+LaTeX Warning: Label `sect4.adsr' multiply defined.
+
+
+LaTeX Warning: Label `fig04.01' multiply defined.
+
+
+LaTeX Warning: Label `fig04.02' multiply defined.
+
+
+LaTeX Warning: Label `sect4.curved' multiply defined.
+
+
+LaTeX Warning: Label `fig04.03' multiply defined.
+
+
+LaTeX Warning: Label `fig04.04' multiply defined.
+
+
+LaTeX Warning: Label `sect4.declick' multiply defined.
+
+
+LaTeX Warning: Label `fig04.05' multiply defined.
+
+
+LaTeX Warning: Label `sect4.muting' multiply defined.
+
+
+LaTeX Warning: Label `fig04.06' multiply defined.
+
+
+LaTeX Warning: Label `fig04.07' multiply defined.
+
+
+LaTeX Warning: Label `sect4.polyphony' multiply defined.
+
+
+LaTeX Warning: Label `sect4.voicealloc' multiply defined.
+
+
+LaTeX Warning: Label `fig04.08' multiply defined.
+
+
+LaTeX Warning: Label `sect4.tags' multiply defined.
+
+
+LaTeX Warning: Label `fig04.09' multiply defined.
+
+
+LaTeX Warning: Label `fig04.10' multiply defined.
+
+
+LaTeX Warning: Label `sect4.encapsulation' multiply defined.
+
+
+LaTeX Warning: Label `fig04.11' multiply defined.
+
+
+LaTeX Warning: Label `fig04.12' multiply defined.
+
+
+LaTeX Warning: Label `fig04.13' multiply defined.
+
+
+LaTeX Warning: Label `fig04.14' multiply defined.
+
+
+LaTeX Warning: Label `fig04.15' multiply defined.
+
+
+LaTeX Warning: Label `fig04.16' multiply defined.
+
+
+LaTeX Warning: Label `fig04.17' multiply defined.
+
+
+LaTeX Warning: Label `fig04.18' multiply defined.
+
+
+LaTeX Warning: Label `fig04.19' multiply defined.
+
+
+LaTeX Warning: Label `fig04.20' multiply defined.
+
+
+LaTeX Warning: Label `fig04.21' multiply defined.
+
+
+LaTeX Warning: Label `chapter-modulation' multiply defined.
+
+
+LaTeX Warning: Label `sect5-spectra' multiply defined.
+
+
+LaTeX Warning: Label `fig05.01' multiply defined.
+
+
+LaTeX Warning: Label `sect5.ringmod' multiply defined.
+
+
+LaTeX Warning: Label `eq-cosinemultiplication' multiply defined.
+
+
+LaTeX Warning: Label `fig05.02' multiply defined.
+
+
+LaTeX Warning: Label `fig05.03' multiply defined.
+
+
+LaTeX Warning: Label `fig05.04' multiply defined.
+
+
+LaTeX Warning: Label `sect5.waveshaping' multiply defined.
+
+
+LaTeX Warning: Label `fig05.05' multiply defined.
+
+
+LaTeX Warning: Label `fig05.06' multiply defined.
+
+
+LaTeX Warning: Label `fig05.07' multiply defined.
+
+
+LaTeX Warning: Label `eq-waveshaping' multiply defined.
+
+
+LaTeX Warning: Label `sect5.FM' multiply defined.
+
+
+LaTeX Warning: Label `fig05.08' multiply defined.
+
+
+LaTeX Warning: Label `sect5.octave' multiply defined.
+
+
+LaTeX Warning: Label `fig05.09' multiply defined.
+
+
+LaTeX Warning: Label `fig05.10' multiply defined.
+
+
+LaTeX Warning: Label `fig05.11' multiply defined.
+
+
+LaTeX Warning: Label `fig05.12' multiply defined.
+
+
+LaTeX Warning: Label `sect5.chebychev' multiply defined.
+
+
+LaTeX Warning: Label `sect5.example.expon' multiply defined.
+
+
+LaTeX Warning: Label `sect5.bessel' multiply defined.
+
+
+LaTeX Warning: Label `sect5.example.fm' multiply defined.
+
+
+LaTeX Warning: Label `fig05.13' multiply defined.
+
+
+LaTeX Warning: Label `fig05.14' multiply defined.
+
+
+LaTeX Warning: Label `fig05.15' multiply defined.
+
+
+LaTeX Warning: Label `fig05.16' multiply defined.
+
+
+LaTeX Warning: Label `chapter-paf' multiply defined.
+
+
+LaTeX Warning: Label `fig06.01' multiply defined.
+
+
+LaTeX Warning: Label `sect6.model' multiply defined.
+
+
+LaTeX Warning: Label `fig06.02' multiply defined.
+
+
+LaTeX Warning: Label `fig06.03' multiply defined.
+
+
+LaTeX Warning: Label `sect6.pulse' multiply defined.
+
+
+LaTeX Warning: Label `fig06.04' multiply defined.
+
+
+LaTeX Warning: Label `fig06.05' multiply defined.
+
+
+LaTeX Warning: Label `fig06.06' multiply defined.
+
+
+LaTeX Warning: Label `sect6.carrier' multiply defined.
+
+
+LaTeX Warning: Label `fig06.07' multiply defined.
+
+
+LaTeX Warning: Label `sect6.paf' multiply defined.
+
+
+LaTeX Warning: Label `fig06.08' multiply defined.
+
+
+LaTeX Warning: Label `fig06.09' multiply defined.
+
+
+LaTeX Warning: Label `fig06.10' multiply defined.
+
+
+LaTeX Warning: Label `fig06.11' multiply defined.
+
+
+LaTeX Warning: Label `fig06.11' multiply defined.
+
+
+LaTeX Warning: Label `fig06.12' multiply defined.
+
+
+LaTeX Warning: Label `fig06.13' multiply defined.
+
+
+LaTeX Warning: Label `fig06.14' multiply defined.
+
+
+LaTeX Warning: Label `fig06.15' multiply defined.
+
+
+LaTeX Warning: Label `fig06.16' multiply defined.
+
+
+LaTeX Warning: Label `fig06.17' multiply defined.
+
+
+LaTeX Warning: Label `fig06.18' multiply defined.
+
+
+LaTeX Warning: Label `chapter-delay' multiply defined.
+
+
+LaTeX Warning: Label `fig07.01' multiply defined.
+
+
+LaTeX Warning: Label `sect7.complex' multiply defined.
+
+
+LaTeX Warning: Label `fig07.02' multiply defined.
+
+
+LaTeX Warning: Label `sect7.phase' multiply defined.
+
+
+LaTeX Warning: Label `sect7.network' multiply defined.
+
+
+LaTeX Warning: Label `fig07.03' multiply defined.
+
+
+LaTeX Warning: Label `fig07.04' multiply defined.
+
+
+LaTeX Warning: Label `fig07.05' multiply defined.
+
+
+LaTeX Warning: Label `fig07.06' multiply defined.
+
+
+LaTeX Warning: Label `sect7.recirculatingcomb' multiply defined.
+
+
+LaTeX Warning: Label `fig07.07' multiply defined.
+
+
+LaTeX Warning: Label `fig07.08' multiply defined.
+
+
+LaTeX Warning: Label `fig07.09' multiply defined.
+
+
+LaTeX Warning: Label `fig07.10' multiply defined.
+
+
+LaTeX Warning: Label `fig07.11' multiply defined.
+
+
+LaTeX Warning: Label `fig07.12' multiply defined.
+
+
+LaTeX Warning: Label `fig07.13' multiply defined.
+
+
+LaTeX Warning: Label `fig07.14' multiply defined.
+
+
+LaTeX Warning: Label `fig07.15' multiply defined.
+
+
+LaTeX Warning: Label `sect7-fractional' multiply defined.
+
+
+LaTeX Warning: Label `fig07.16' multiply defined.
+
+
+LaTeX Warning: Label `fig07.17' multiply defined.
+
+
+LaTeX Warning: Label `eq.momentarydel' multiply defined.
+
+
+LaTeX Warning: Label `fig07.18' multiply defined.
+
+
+LaTeX Warning: Label `sect7.pitchshift' multiply defined.
+
+
+LaTeX Warning: Label `fig07.19' multiply defined.
+
+
+LaTeX Warning: Label `fig07.20' multiply defined.
+
+
+LaTeX Warning: Label `fig07.21' multiply defined.
+
+
+LaTeX Warning: Label `sect7.psformula' multiply defined.
+
+
+LaTeX Warning: Label `fig07.22' multiply defined.
+
+
+LaTeX Warning: Label `fig07.23' multiply defined.
+
+
+LaTeX Warning: Label `fig07.24' multiply defined.
+
+
+LaTeX Warning: Label `fig07.25' multiply defined.
+
+
+LaTeX Warning: Label `fig07.26' multiply defined.
+
+
+LaTeX Warning: Label `fig07.27' multiply defined.
+
+
+LaTeX Warning: Label `fig07.28' multiply defined.
+
+
+LaTeX Warning: Label `fig07.29' multiply defined.
+
+
+LaTeX Warning: Label `fig07.30' multiply defined.
+
+
+LaTeX Warning: Label `fig07.31' multiply defined.
+
+
+LaTeX Warning: Label `fig07.32' multiply defined.
+
+
+LaTeX Warning: Label `fig07.33' multiply defined.
+
+
+LaTeX Warning: Label `chapter-filter' multiply defined.
+
+
+LaTeX Warning: Label `fig08.01' multiply defined.
+
+
+LaTeX Warning: Label `fig08.02' multiply defined.
+
+
+LaTeX Warning: Label `fig08.03' multiply defined.
+
+
+LaTeX Warning: Label `sect8.bandpassdef' multiply defined.
+
+
+LaTeX Warning: Label `fig08.04' multiply defined.
+
+
+LaTeX Warning: Label `sect8.equalizing' multiply defined.
+
+
+LaTeX Warning: Label `fig08.05' multiply defined.
+
+
+LaTeX Warning: Label `fig08.06' multiply defined.
+
+
+LaTeX Warning: Label `fig08.07' multiply defined.
+
+
+LaTeX Warning: Label `sect8.nonrecirculating' multiply defined.
+
+
+LaTeX Warning: Label `fig08.08' multiply defined.
+
+
+LaTeX Warning: Label `fig08.09' multiply defined.
+
+
+LaTeX Warning: Label `sect8.secondform' multiply defined.
+
+
+LaTeX Warning: Label `fig08.10' multiply defined.
+
+
+LaTeX Warning: Label `sect8.recirculating' multiply defined.
+
+
+LaTeX Warning: Label `fig08.11' multiply defined.
+
+
+LaTeX Warning: Label `fig08.12' multiply defined.
+
+
+LaTeX Warning: Label `sect08.low-pass' multiply defined.
+
+
+LaTeX Warning: Label `fig08.13' multiply defined.
+
+
+LaTeX Warning: Label `sect08.highpass' multiply defined.
+
+
+LaTeX Warning: Label `fig08.14' multiply defined.
+
+
+LaTeX Warning: Label `sect8.shelving' multiply defined.
+
+
+LaTeX Warning: Label `fig08.15' multiply defined.
+
+
+LaTeX Warning: Label `sect8.twopolebandpass' multiply defined.
+
+
+LaTeX Warning: Label `fig08.16' multiply defined.
+
+
+LaTeX Warning: Label `sect8.peaking' multiply defined.
+
+
+LaTeX Warning: Label `fig08.17' multiply defined.
+
+
+LaTeX Warning: Label `fig08.18' multiply defined.
+
+
+LaTeX Warning: Label `fig08.19' multiply defined.
+
+
+LaTeX Warning: Label `sect8.timevarying' multiply defined.
+
+
+LaTeX Warning: Label `fig08.20' multiply defined.
+
+
+LaTeX Warning: Label `fig08.21' multiply defined.
+
+
+LaTeX Warning: Label `fig08.22' multiply defined.
+
+
+LaTeX Warning: Label `fig08.23' multiply defined.
+
+
+LaTeX Warning: Label `sect08.subtractive' multiply defined.
+
+
+LaTeX Warning: Label `fig08.24' multiply defined.
+
+
+LaTeX Warning: Label `fig08.25' multiply defined.
+
+
+LaTeX Warning: Label `sect8.envelopefollower' multiply defined.
+
+
+LaTeX Warning: Label `fig08.26' multiply defined.
+
+
+LaTeX Warning: Label `fig08.27' multiply defined.
+
+
+LaTeX Warning: Label `sect8.singlesideband' multiply defined.
+
+
+LaTeX Warning: Label `fig08.28' multiply defined.
+
+
+LaTeX Warning: Label `fig08.29' multiply defined.
+
+
+LaTeX Warning: Label `sect8.heterodyning' multiply defined.
+
+
+LaTeX Warning: Label `fig08.30' multiply defined.
+
+
+LaTeX Warning: Label `fig08.31' multiply defined.
+
+
+LaTeX Warning: Label `fig08.32' multiply defined.
+
+
+LaTeX Warning: Label `fig08.33' multiply defined.
+
+
+LaTeX Warning: Label `chapter-fourier' multiply defined.
+
+
+LaTeX Warning: Label `chapter-fft' multiply defined.
+
+
+LaTeX Warning: Label `sect9-IFT' multiply defined.
+
+
+LaTeX Warning: Label `fig09.01' multiply defined.
+
+
+LaTeX Warning: Label `sect9.shift' multiply defined.
+
+
+LaTeX Warning: Label `fig09.02' multiply defined.
+
+
+LaTeX Warning: Label `fig09.03' multiply defined.
+
+
+LaTeX Warning: Label `fig09.04' multiply defined.
+
+
+LaTeX Warning: Label `fig09.05' multiply defined.
+
+
+LaTeX Warning: Label `fig09.06' multiply defined.
+
+
+LaTeX Warning: Label `fig09.07' multiply defined.
+
+
+LaTeX Warning: Label `fig09.08' multiply defined.
+
+
+LaTeX Warning: Label `fig09.09' multiply defined.
+
+
+LaTeX Warning: Label `sect9.phase' multiply defined.
+
+
+LaTeX Warning: Label `fig09.10' multiply defined.
+
+
+LaTeX Warning: Label `fig09.11' multiply defined.
+
+
+LaTeX Warning: Label `fig09.12' multiply defined.
+
+
+LaTeX Warning: Label `sect9.phaserelationship' multiply defined.
+
+
+LaTeX Warning: Label `sect9-bash' multiply defined.
+
+
+LaTeX Warning: Label `fig09.13' multiply defined.
+
+
+LaTeX Warning: Label `fig09.14' multiply defined.
+
+
+LaTeX Warning: Label `fig09.15' multiply defined.
+
+
+LaTeX Warning: Label `fig09.16' multiply defined.
+
+
+LaTeX Warning: Label `fig09.17' multiply defined.
+
+
+LaTeX Warning: Label `fig09.18' multiply defined.
+
+
+LaTeX Warning: Label `chapter-waveforms' multiply defined.
+
+
+LaTeX Warning: Label `fig10.01' multiply defined.
+
+
+LaTeX Warning: Label `fig10.02' multiply defined.
+
+
+LaTeX Warning: Label `fig10.03' multiply defined.
+
+
+LaTeX Warning: Label `fig10.04' multiply defined.
+
+
+LaTeX Warning: Label `fig10.05' multiply defined.
+
+
+LaTeX Warning: Label `sect10.spectra' multiply defined.
+
+
+LaTeX Warning: Label `fig10.06' multiply defined.
+
+
+LaTeX Warning: Label `fig10.07' multiply defined.
+
+
+LaTeX Warning: Label `sect10.gentriangle' multiply defined.
+
+
+LaTeX Warning: Label `fig10.08' multiply defined.
+
+
+LaTeX Warning: Label `fig10.09' multiply defined.
+
+
+LaTeX Warning: Label `fig10.10' multiply defined.
+
+
+LaTeX Warning: Label `fig10.11' multiply defined.
+
+
+LaTeX Warning: Label `fig10.12' multiply defined.
+
+
+LaTeX Warning: Label `fig10.13' multiply defined.
+
+
+LaTeX Warning: Label `fig10.14' multiply defined.
+
+
+LaTeX Warning: Label `r-ballora03' multiply defined.
+
+
+LaTeX Warning: Label `r-blesser01' multiply defined.
+
+
+LaTeX Warning: Label `r-boulanger00' multiply defined.
+
+
+LaTeX Warning: Label `r-chamberlin80' multiply defined.
+
+
+LaTeX Warning: Label `r-chowning73' multiply defined.
+
+
+LaTeX Warning: Label `r-chowning89' multiply defined.
+
+
+LaTeX Warning: Label `r-dodge85' multiply defined.
+
+
+LaTeX Warning: Label `r-dolson97' multiply defined.
+
+
+LaTeX Warning: Label `r-grey77' multiply defined.
+
+
+LaTeX Warning: Label `r-hartmann87' multiply defined.
+
+
+LaTeX Warning: Label `r-karplus83' multiply defined.
+
+
+LaTeX Warning: Label `r-lebrun77' multiply defined.
+
+
+LaTeX Warning: Label `r-lebrun79' multiply defined.
+
+
+LaTeX Warning: Label `r-mathews69' multiply defined.
+
+
+LaTeX Warning: Label `r-moore90' multiply defined.
+
+
+LaTeX Warning: Label `r-parks87' multiply defined.
+
+
+LaTeX Warning: Label `r-puckette95a' multiply defined.
+
+
+LaTeX Warning: Label `r-puckette95b' multiply defined.
+
+
+LaTeX Warning: Label `r-puckette01a' multiply defined.
+
+
+LaTeX Warning: Label `r-puckette05' multiply defined.
+
+
+LaTeX Warning: Label `r-mitra93' multiply defined.
+
+
+LaTeX Warning: Label `r-risset69' multiply defined.
+
+
+LaTeX Warning: Label `r-rossing02' multiply defined.
+
+
+LaTeX Warning: Label `r-roads01' multiply defined.
+
+
+LaTeX Warning: Label `r-schottstaedt87' multiply defined.
+
+
+LaTeX Warning: Label `r-smith03' multiply defined.
+
+
+LaTeX Warning: Label `r-steiglitz96' multiply defined.
+
+
+LaTeX Warning: Label `r-strawn85' multiply defined.
+
+
+LaTeX Warning: Label `r-strange72' multiply defined.
+
+)
+
+latex2htmlLength hsize=349.0pt
+
+latex2htmlLength vsize=627.36243pt
+
+latex2htmlLength hoffset=0.0pt
+
+latex2htmlLength voffset=0.0pt
+
+latex2htmlLength topmargin=0.0pt
+
+latex2htmlLength topskip=0.00003pt
+
+latex2htmlLength headheight=0.0pt
+
+latex2htmlLength headsep=0.0pt
+
+latex2htmlLength parskip=0.0pt plus 1.0pt
+
+latex2htmlLength oddsidemargin=35.0pt
+
+latex2htmlLength evensidemargin=89.0pt
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 147.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 147.
+l2hSize :tex2html_wrap_inline19209:9.57217pt::9.57217pt::13.8334pt.
+[1
+
+
+
+]
+l2hSize :tex2html_wrap_inline19212:8.0pt::8.0pt::17.31955pt.
+[2
+
+
+]
+l2hSize :tex2html_wrap_inline19215:6.83331pt::0.0pt::9.625pt.
+[3
+
+
+]
+l2hSize :tex2html_wrap_inline19218:6.45831pt::0.0pt::5.78592pt.
+[4
+
+
+]
+l2hSize :tex2html_wrap_inline19221:8.0pt::8.0pt::16.55911pt.
+[5
+
+
+]
+l2hSize :tex2html_wrap_inline19223:8.0pt::8.0pt::21.55913pt.
+[6
+
+
+]
+l2hSize :tex2html_wrap_inline19227:6.45831pt::0.0pt::6.93407pt.
+[7
+
+
+]
+l2hSize :tex2html_wrap_inline19229:7.44444pt::7.44444pt::6.68405pt.
+[8
+
+
+]
+l2hSize :tex2html_wrap_inline19231:7.44444pt::7.44444pt::44.78455pt.
+[9
+
+
+]
+l2hSize :tex2html_wrap_inline19233:7.44444pt::7.44444pt::26.45131pt.
+[10
+
+
+]
+l2hSize :tex2html_wrap_inline19235:7.44444pt::7.44444pt::24.80553pt.
+[11
+
+
+]
+l2hSize :tex2html_wrap_inline19237:7.44444pt::7.44444pt::26.45131pt.
+[12
+
+
+]
+l2hSize :tex2html_wrap_inline19239:6.45831pt::0.0pt::25.2673pt.
+[13
+
+
+]
+l2hSize :tex2html_wrap_inline19248:8.0pt::8.0pt::14.25009pt.
+[14
+
+
+]
+l2hSize :tex2html_wrap_inline19251:8.64003pt::8.64003pt::43.49998pt.
+[15
+
+
+]
+l2hSize :tex2html_wrap_inline19254:6.45831pt::0.0pt::11.5591pt.
+[16
+
+
+]
+l2hSize :tex2html_wrap_inline19257:8.0pt::8.0pt::100.52777pt.
+[17
+
+
+]
+l2hSize :tex2html_wrap_inline19259:6.45831pt::0.0pt::24.11916pt.
+[18
+
+
+]
+l2hSize :tex2html_wrap_inline19261:6.45831pt::0.0pt::24.11916pt.
+[19
+
+
+]
+l2hSize :tex2html_wrap_inline19269:6.83331pt::0.0pt::8.0417pt.
+[20
+
+
+]
+l2hSize :tex2html_wrap_inline19273:6.94444pt::0.0pt::4.79169pt.
+[21
+
+
+]
+l2hSize :tex2html_wrap_inline19280:8.0pt::8.0pt::31.93051pt.
+[22
+
+
+]
+l2hSize :tex2html_wrap_inline19282:6.83331pt::0.0pt::8.00005pt.
+[23
+
+
+]
+l2hSize :tex2html_wrap_inline19289:7.96227pt::0.0pt::19.99658pt.
+[24
+
+
+]
+l2hSize :tex2html_wrap_inline19291:6.83331pt::0.0pt::9.625pt.
+[25
+
+
+]
+l2hSize :tex2html_wrap_inline19295:8.0pt::8.0pt::15.70493pt.
+[26
+
+
+]
+l2hSize :tex2html_wrap_inline19302:6.45831pt::0.0pt::7.08334pt.
+[27
+
+
+]
+l2hSize :tex2html_wrap_inline19305:6.94444pt::0.0pt::5.7049pt.
+[28
+
+
+]
+l2hSize :tex2html_wrap_inline19307:6.95831pt::6.95831pt::5.6285pt.
+[29
+
+
+]
+l2hSize :tex2html_wrap_inline19311:8.0pt::8.0pt::15.18057pt.
+[30
+
+
+]
+l2hSize :tex2html_wrap_inline19313:6.83331pt::0.0pt::11.33337pt.
+[31
+
+
+]
+l2hSize :tex2html_wrap_inline19323:6.95831pt::6.95831pt::31.73953pt.
+[32
+
+
+]
+l2hSize :tex2html_wrap_inline19325:8.0pt::8.0pt::40.62848pt.
+[33
+
+
+]
+l2hSize :tex2html_wrap_inline19329:8.0pt::8.0pt::34.86456pt.
+[34
+
+
+]
+l2hSize :tex2html_wrap_inline19331:9.85pt::9.85pt::163.06349pt.
+[35
+
+
+]
+l2hSize :tex2html_wrap_inline19335:6.83331pt::0.0pt::8.17018pt.
+[36
+
+
+]
+l2hSize :tex2html_wrap_inline19338:6.95831pt::6.95831pt::8.59727pt.
+[37
+
+
+]
+l2hSize :tex2html_wrap_inline19340:6.95831pt::6.95831pt::8.59727pt.
+[38
+
+
+]
+l2hSize :tex2html_wrap_inline19342:6.95831pt::6.95831pt::8.59727pt.
+[39
+
+
+]
+l2hSize :tex2html_wrap_inline19347:6.83331pt::0.0pt::9.05698pt.
+[40
+
+
+]
+l2hSize :tex2html_wrap_inline19350:6.45831pt::0.0pt::6.55908pt.
+[41
+
+
+]
+l2hSize :tex2html_wrap_inline19353:7.33331pt::7.33331pt::8.40558pt.
+[42
+
+
+]
+l2hSize :tex2html_wrap_inline19355:7.33331pt::7.33331pt::34.51662pt.
+[43
+
+
+]
+l2hSize :tex2html_wrap_inline19367:8.0pt::8.0pt::32.08374pt.
+[44
+
+
+]
+l2hSize :tex2html_wrap_inline19371:6.45831pt::0.0pt::31.40044pt.
+[45
+
+
+]
+l2hSize :tex2html_wrap_inline19374:8.0pt::8.0pt::36.07635pt.
+[46
+
+
+]
+l2hSize :tex2html_wrap_inline19376:7.44444pt::7.44444pt::26.07632pt.
+[47
+
+
+]
+l2hSize :tex2html_wrap_inline19378:8.0pt::8.0pt::46.07639pt.
+[48
+
+
+]
+l2hSize :tex2html_wrap_inline19380:8.0pt::8.0pt::46.07639pt.
+[49
+
+
+]
+l2hSize :tex2html_wrap_inline19382:7.44444pt::7.44444pt::25.01729pt.
+[50
+
+
+]
+l2hSize :tex2html_wrap_inline19389:8.64003pt::8.64003pt::56.62848pt.
+[51
+
+
+]
+l2hSize :tex2html_wrap_inline19395:8.0pt::8.0pt::16.55911pt.
+[52
+
+
+]
+l2hSize :tex2html_wrap_inline19398:6.83331pt::0.0pt::34.4201pt.
+[53
+
+
+]
+l2hSize :tex2html_wrap_inline19400:6.83331pt::0.0pt::34.4201pt.
+[54
+
+
+]
+l2hSize :tex2html_wrap_inline19402:8.0pt::8.0pt::39.97568pt.
+[55
+
+
+]
+l2hSize :tex2html_wrap_inline19404:8.0pt::8.0pt::26.55914pt.
+[56
+
+
+]
+l2hSize :tex2html_wrap_inline19410:6.95831pt::6.95831pt::5.53128pt.
+[57
+
+
+]
+l2hSize :tex2html_wrap_inline19413:6.94444pt::0.0pt::6.02087pt.
+[58
+
+
+]
+l2hSize :tex2html_wrap_inline19421:6.45831pt::0.0pt::12.08336pt.
+[59
+
+
+]
+l2hSize :tex2html_wrap_inline19423:6.45831pt::0.0pt::19.86116pt.
+[60
+
+
+]
+l2hSize :tex2html_wrap_inline19428:8.0pt::8.0pt::77.59013pt.
+[61
+
+
+]
+l2hSize :tex2html_wrap_inline19437:7.33331pt::7.33331pt::16.36392pt.
+[62
+
+
+]
+l2hSize :tex2html_wrap_inline19439:6.83331pt::0.0pt::37.95827pt.
+[63
+
+
+]
+l2hSize :tex2html_wrap_inline19443:8.0pt::8.0pt::31.50931pt.
+[64
+
+
+]
+! You can't use `\spacefactor' in math mode.
+\@->\spacefactor 
+                 \@m 
+l.531 $\@
+         mathrm {fft}\sim $%
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+Missing character: There is no ^^e8 in font cmex10!
+l2hSize :tex2html_wrap_inline19446:7.44444pt::7.44444pt::63.6194pt.
+[65
+
+
+]
+l2hSize :tex2html_wrap_inline19449:8.0pt::8.0pt::27.2859pt.
+[66
+
+
+]
+l2hSize :tex2html_wrap_inline19451:8.0pt::8.0pt::22.72227pt.
+[67
+
+
+]
+l2hSize :tex2html_wrap_inline19453:8.0pt::8.0pt::43.79172pt.
+[68
+
+
+]
+l2hSize :tex2html_wrap_inline19458:8.0pt::8.0pt::27.95836pt.
+[69
+
+
+]
+l2hSize :tex2html_wrap_inline19460:8.0pt::8.0pt::57.08327pt.
+[70
+
+
+]
+l2hSize :tex2html_wrap_inline19464:8.0pt::8.0pt::55.41661pt.
+[71
+
+
+]
+l2hSize :tex2html_wrap_inline19466:8.0pt::8.0pt::16.0209pt.
+[72
+
+
+]
+l2hSize :tex2html_wrap_inline19468:8.64003pt::8.64003pt::20.50703pt.
+[73
+
+
+]
+l2hSize :displaymath1490:14.5pt::0.0pt::349.0pt.
+[74
+
+
+]
+l2hSize :tex2html_wrap_inline1530:6.45831pt::0.0pt::6.50238pt.
+[75
+
+
+]
+l2hSize :displaymath1491:14.5pt::0.0pt::349.0pt.
+[76
+
+
+]
+l2hSize :tex2html_wrap_inline1536:7.44444pt::7.44444pt::6.45837pt.
+[77
+
+
+]
+l2hSize :tex2html_wrap_inline1540:7.44444pt::7.44444pt::31.26617pt.
+[78
+
+
+]
+l2hSize :tex2html_wrap_inline1542:6.45831pt::0.0pt::24.83562pt.
+[79
+
+
+]
+l2hSize :tex2html_wrap_inline1546:8.0pt::8.0pt::17.77322pt.
+[80
+
+
+]
+psfig: searching figs/fig01.01.ps for bounding box
+psfig: including figs/fig01.01.ps 
+l2hSize :figure1026:226.84749pt::0.0pt::294.09875pt.
+[81
+
+
+]
+l2hSize :tex2html_wrap_inline1550:6.45831pt::0.0pt::4.11115pt.
+[82
+
+
+]
+l2hSize :tex2html_wrap_inline1554:6.83331pt::0.0pt::31.11687pt.
+[83
+
+
+]
+l2hSize :tex2html_wrap_inline1556:8.0pt::8.0pt::36.11688pt.
+[84
+
+
+]
+l2hSize :displaymath1492:21.4579pt::0.0pt::349.0pt.
+[85
+
+
+]
+l2hSize :tex2html_wrap_inline1566:6.83331pt::0.0pt::11.29169pt.
+[86
+
+
+]
+l2hSize :displaymath1493:14.5pt::0.0pt::349.0pt.
+[87
+
+
+]
+l2hSize :displaymath1494:14.86108pt::0.0pt::349.0pt.
+[88
+
+
+]
+l2hSize :displaymath1495:14.56187pt::0.0pt::349.0pt.
+[89
+
+
+]
+l2hSize :tex2html_wrap_inline1572:8.0pt::8.0pt::35.58229pt.
+[90
+
+
+]
+l2hSize :displaymath1496:21.06903pt::0.0pt::349.0pt.
+[91
+
+
+]
+l2hSize :tex2html_wrap_inline1576:9.7666pt::9.7666pt::27.95839pt.
+[92
+
+
+]
+psfig: searching figs/fig01.02.ps for bounding box
+psfig: including figs/fig01.02.ps 
+l2hSize :figure1057:221.82875pt::0.0pt::254.9525pt.
+[93
+
+
+]
+l2hSize :tex2html_wrap_inline1582:9.57217pt::9.57217pt::24.11931pt.
+[94
+
+
+]
+l2hSize :displaymath1497:14.5pt::0.0pt::349.0pt.
+[95
+
+
+]
+l2hSize :tex2html_wrap_inline1588:6.95831pt::6.95831pt::10.27205pt.
+[96
+
+
+]
+l2hSize :tex2html_wrap_inline1590:9.57217pt::9.57217pt::18.83342pt.
+[97
+
+
+]
+l2hSize :tex2html_wrap_inline1592:8.0pt::8.0pt::15.50008pt.
+[98
+
+
+]
+psfig: searching figs/fig01.03.ps for bounding box
+psfig: including figs/fig01.03.ps 
+l2hSize :figure1073:195.73125pt::0.0pt::302.12875pt.
+[99
+
+
+]
+l2hSize :tex2html_wrap_inline1598:8.0pt::8.0pt::25.2721pt.
+[100
+
+
+]
+l2hSize :tex2html_wrap_inline1600:8.0pt::8.0pt::30.27211pt.
+[101
+
+
+]
+l2hSize :tex2html_wrap_inline1602:6.95831pt::6.95831pt::18.27785pt.
+[102
+
+
+]
+l2hSize :displaymath1498:13.49998pt::0.0pt::349.0pt.
+[103
+
+
+]
+psfig: searching figs/fig01.04.ps for bounding box
+psfig: including figs/fig01.04.ps 
+l2hSize :figure1088:198.74251pt::0.0pt::303.1325pt.
+[104
+
+
+]
+l2hSize :tex2html_wrap_inline1608:6.95831pt::6.95831pt::24.09486pt.
+[105
+
+
+]
+l2hSize :tex2html_wrap_inline1610:6.95831pt::6.95831pt::5.76163pt.
+[106
+
+
+]
+l2hSize :tex2html_wrap_inline1612:8.0pt::8.0pt::30.25694pt.
+[107
+
+
+]
+l2hSize :tex2html_wrap_inline1622:8.0pt::8.0pt::41.81487pt.
+[108
+
+
+]
+l2hSize :tex2html_wrap_inline1626:7.33331pt::7.33331pt::49.86095pt.
+[109
+
+
+]
+l2hSize :tex2html_wrap_inline1638:8.87892pt::0.0pt::22.05566pt.
+[110
+
+
+]
+l2hSize :tex2html_wrap_inline1640:6.45831pt::0.0pt::9.28017pt.
+[111
+
+
+]
+l2hSize :tex2html_wrap_inline1642:7.44444pt::7.44444pt::6.47229pt.
+[112
+
+
+]
+l2hSize :displaymath1499:14.5pt::0.0pt::349.0pt.
+[113
+
+
+]
+l2hSize :displaymath1500:13.94444pt::0.0pt::349.0pt.
+[114
+
+
+]
+l2hSize :tex2html_wrap_inline1644:6.45831pt::0.0pt::32.61342pt.
+[115
+
+
+]
+l2hSize :tex2html_wrap_inline1646:7.44444pt::7.44444pt::52.58339pt.
+[116
+
+
+]
+psfig: searching figs/fig01.05.ps for bounding box
+psfig: including figs/fig01.05.ps 
+l2hSize :figure1121:195.73125pt::0.0pt::283.0575pt.
+[117
+
+
+]
+psfig: searching figs/fig01.06.ps for bounding box
+psfig: including figs/fig01.06.ps 
+l2hSize :figure1127:389.455pt::0.0pt::329.23001pt.
+[118
+
+
+]
+l2hSize :displaymath1501:21.4579pt::0.0pt::349.0pt.
+[119
+
+
+]
+l2hSize :tex2html_wrap_inline1674:6.94444pt::0.0pt::23.4108pt.
+[120
+
+
+]
+psfig: searching figs/fig01.07.ps for bounding box
+psfig: including figs/fig01.07.ps 
+l2hSize :figure1146:176.65999pt::0.0pt::236.88501pt.
+[121
+
+
+]
+l2hSize :tex2html_wrap_inline1680:8.0pt::8.0pt::30.51619pt.
+[122
+
+
+]
+l2hSize :tex2html_wrap_inline1682:7.44444pt::7.44444pt::24.35411pt.
+[123
+
+
+]
+l2hSize :tex2html_wrap_inline1684:6.94444pt::0.0pt::13.52089pt.
+[124
+
+
+]
+l2hSize :tex2html_wrap_inline1686:8.14003pt::0.0pt::10.507pt.
+[125
+
+
+]
+l2hSize :displaymath1502:14.86108pt::0.0pt::349.0pt.
+[126
+
+
+]
+l2hSize :displaymath1503:14.5pt::0.0pt::349.0pt.
+[127
+
+
+]
+l2hSize :tex2html_wrap_inline1694:7.33331pt::7.33331pt::49.86095pt.
+[128
+
+
+]
+l2hSize :displaymath1504:14.5pt::0.0pt::349.0pt.
+[129
+
+
+]
+l2hSize :displaymath1505:22.12459pt::0.0pt::349.0pt.
+[130
+
+
+]
+l2hSize :displaymath1506:14.5pt::0.0pt::349.0pt.
+[131
+
+
+]
+l2hSize :displaymath1507:14.5pt::0.0pt::349.0pt.
+[132
+
+
+]
+l2hSize :tex2html_wrap_inline1698:9.57217pt::9.57217pt::19.1193pt.
+[133
+
+
+]
+l2hSize :tex2html_wrap_inline1700:6.45831pt::0.0pt::10.78593pt.
+[134
+
+
+]
+l2hSize :tex2html_wrap_inline1704:6.45831pt::0.0pt::6.00351pt.
+[135
+
+
+]
+l2hSize :displaymath1508:14.5pt::0.0pt::349.0pt.
+[136
+
+
+]
+l2hSize :tex2html_wrap_inline1708:6.45831pt::0.0pt::11.00352pt.
+[137
+
+
+]
+l2hSize :tex2html_wrap_inline1716:8.0pt::8.0pt::23.14243pt.
+[138
+
+
+]
+l2hSize :tex2html_wrap_inline1720:8.0pt::8.0pt::28.66327pt.
+[139
+
+
+]
+l2hSize :displaymath1509:14.86108pt::0.0pt::349.0pt.
+[140
+
+
+]
+l2hSize :tex2html_wrap_inline1730:6.95831pt::6.95831pt::39.2221pt.
+[141
+
+
+]
+psfig: searching figs/fig01.08.ps for bounding box
+psfig: including figs/fig01.08.ps 
+l2hSize :figure1194:258.96751pt::0.0pt::306.14374pt.
+[142
+
+
+]
+psfig: searching figs/fig01.09.ps for bounding box
+psfig: including figs/fig01.09.ps 
+l2hSize :figure1200:273.02pt::0.0pt::343.2825pt.
+[143
+
+
+]
+psfig: searching figs/fig01.10.ps for bounding box
+psfig: including figs/fig01.10.ps 
+l2hSize :figure1236:157.58876pt::0.0pt::353.32pt.
+[144
+
+
+]
+psfig: searching figs/fig01.11.ps for bounding box
+psfig: including figs/fig01.11.ps 
+l2hSize :figure1254:421.575pt::0.0pt::387.44751pt.
+[145
+
+
+]
+l2hSize :tex2html_wrap_inline1994:8.20554pt::8.20554pt::34.57776pt.
+[146
+
+
+]
+l2hSize :tex2html_wrap_inline2000:8.55278pt::8.55278pt::29.5222pt.
+[147
+
+
+]
+l2hSize :tex2html_wrap_inline2006:10.84444pt::10.84444pt::36.18889pt.
+[148
+
+
+]
+psfig: searching figs/fig01.12.ps for bounding box
+psfig: including figs/fig01.12.ps 
+l2hSize :figure1271:238.8925pt::0.0pt::364.36124pt.
+[149
+
+
+]
+l2hSize :tex2html_wrap_inline2026:10.84444pt::10.84444pt::46.82788pt.
+[150
+
+
+]
+l2hSize :tex2html_wrap_inline2028:10.84444pt::10.84444pt::57.38339pt.
+[151
+
+
+]
+l2hSize :tex2html_wrap_inline2040:10.84444pt::10.84444pt::36.74445pt.
+[152
+
+
+]
+psfig: searching figs/fig01.13.ps for bounding box
+psfig: including figs/fig01.13.ps 
+l2hSize :figure1294:135.50624pt::0.0pt::381.42499pt.
+[153
+
+
+]
+l2hSize :tex2html_wrap_inline2070:10.84444pt::10.84444pt::31.4112pt.
+[154
+
+
+]
+l2hSize :tex2html_wrap_inline2072:10.84444pt::10.84444pt::30.9112pt.
+[155
+
+
+]
+l2hSize :tex2html_wrap_inline2080:10.57858pt::10.57858pt::40.10559pt.
+[156
+
+
+]
+l2hSize :tex2html_wrap_inline2082:8.20554pt::8.20554pt::14.55002pt.
+[157
+
+
+]
+l2hSize :tex2html_wrap_inline2090:10.84444pt::10.84444pt::30.13338pt.
+[158
+
+
+]
+l2hSize :tex2html_wrap_inline2092:8.20554pt::8.20554pt::17.91112pt.
+[159
+
+
+]
+psfig: searching figs/fig01.14.ps for bounding box
+psfig: including figs/fig01.14.ps 
+l2hSize :figure1320:210.78749pt::0.0pt::316.18124pt.
+[160
+
+
+]
+psfig: searching figs/fig01.15.ps for bounding box
+psfig: including figs/fig01.15.ps 
+l2hSize :figure1328:140.52501pt::0.0pt::280.04625pt.
+[161
+
+
+]
+l2hSize :tex2html_wrap_inline1776:7.44444pt::7.44444pt::24.79161pt.
+[162
+
+
+]
+l2hSize :tex2html_wrap_inline1778:8.0pt::8.0pt::41.47566pt.
+[163
+
+
+]
+l2hSize :tex2html_wrap_inline1780:6.45831pt::0.0pt::29.83563pt.
+[164
+
+
+]
+l2hSize :tex2html_wrap_inline1782:8.0pt::8.0pt::90.12253pt.
+[165
+
+
+]
+l2hSize :tex2html_wrap_inline2726:7.33331pt::7.33331pt::68.40492pt.
+[166
+
+
+]
+l2hSize :tex2html_wrap_inline2734:8.0pt::8.0pt::17.14825pt.
+[167
+
+
+]
+l2hSize :displaymath2656:14.5pt::0.0pt::349.0pt.
+[168
+
+
+]
+psfig: searching figs/fig02.01.ps for bounding box
+psfig: including figs/fig02.01.ps 
+l2hSize :figure2154:140.52501pt::0.0pt::249.93375pt.
+[169
+
+
+]
+l2hSize :tex2html_wrap_inline2740:7.33331pt::7.33331pt::49.06935pt.
+[170
+
+
+]
+l2hSize :tex2html_wrap_inline2746:7.33331pt::7.33331pt::26.84715pt.
+[171
+
+
+]
+l2hSize :displaymath2657:37.00037pt::0.0pt::349.0pt.
+[172
+
+
+]
+l2hSize :tex2html_wrap_inline2754:8.0pt::8.0pt::26.20844pt.
+[173
+
+
+]
+l2hSize :tex2html_wrap_inline2758:8.0pt::8.0pt::16.31721pt.
+[174
+
+
+]
+l2hSize :tex2html_wrap_inline2760:8.0pt::8.0pt::16.14592pt.
+[175
+
+
+]
+l2hSize :tex2html_wrap_inline2762:8.0pt::8.0pt::16.31721pt.
+[176
+
+
+]
+l2hSize :tex2html_wrap_inline2764:8.0pt::8.0pt::16.14592pt.
+[177
+
+
+]
+l2hSize :tex2html_wrap_inline2768:8.0pt::8.0pt::58.11098pt.
+[178
+
+
+]
+l2hSize :tex2html_wrap_inline2774:6.45831pt::0.0pt::5.50005pt.
+[179
+
+
+]
+l2hSize :tex2html_wrap_inline2776:6.45831pt::0.0pt::10.50006pt.
+[180
+
+
+]
+l2hSize :tex2html_wrap_inline2778:8.0pt::8.0pt::23.17023pt.
+[181
+
+
+]
+psfig: searching figs/fig02.02.ps for bounding box
+psfig: including figs/fig02.02.ps 
+l2hSize :figure2174:494.84874pt::0.0pt::318.18875pt.
+[182
+
+
+]
+psfig: searching figs/fig02.03.ps for bounding box
+psfig: including figs/fig02.03.ps 
+l2hSize :figure2188:232.87001pt::0.0pt::299.1175pt.
+[183
+
+
+]
+l2hSize :tex2html_wrap_inline2802:8.0pt::8.0pt::25.12852pt.
+[184
+
+
+]
+l2hSize :tex2html_wrap_inline2804:8.0pt::8.0pt::54.4397pt.
+[185
+
+
+]
+l2hSize :tex2html_wrap_inline2806:8.0pt::8.0pt::36.10646pt.
+[186
+
+
+]
+l2hSize :tex2html_wrap_inline2808:8.0pt::8.0pt::36.10646pt.
+[187
+
+
+]
+l2hSize :displaymath2658:14.5pt::0.0pt::349.0pt.
+[188
+
+
+]
+l2hSize :displaymath2659:14.5pt::0.0pt::349.0pt.
+[189
+
+
+]
+psfig: searching figs/fig02.04.ps for bounding box
+psfig: including figs/fig02.04.ps 
+l2hSize :figure2196:243.91124pt::0.0pt::253.94876pt.
+[190
+
+
+]
+l2hSize :tex2html_wrap_inline2826:8.0pt::8.0pt::24.02777pt.
+[191
+
+
+]
+l2hSize :tex2html_wrap_inline2828:8.0pt::8.0pt::28.26743pt.
+[192
+
+
+]
+l2hSize :tex2html_wrap_inline2834:8.0pt::8.0pt::32.44441pt.
+[193
+
+
+]
+l2hSize :tex2html_wrap_inline2836:6.94444pt::0.0pt::6.26161pt.
+[194
+
+
+]
+l2hSize :displaymath2660:14.5pt::0.0pt::349.0pt.
+[195
+
+
+]
+l2hSize :displaymath2661:25.00023pt::0.0pt::349.0pt.
+[196
+
+
+]
+l2hSize :displaymath2662:23.50351pt::0.0pt::349.0pt.
+[197
+
+
+]
+l2hSize :displaymath2663:25.44795pt::0.0pt::349.0pt.
+[198
+
+
+]
+l2hSize :tex2html_wrap_inline2844:8.0pt::8.0pt::14.92831pt.
+[199
+
+
+]
+l2hSize :displaymath2664:14.5pt::0.0pt::349.0pt.
+[200
+
+
+]
+l2hSize :displaymath2665:14.5pt::0.0pt::349.0pt.
+[201
+
+
+]
+l2hSize :tex2html_wrap_inline2850:8.0pt::8.0pt::3.27782pt.
+[202
+
+
+]
+l2hSize :tex2html_wrap_inline2852:8.0pt::8.0pt::36.65512pt.
+[203
+
+
+]
+l2hSize :tex2html_wrap_inline2854:8.0pt::8.0pt::47.75467pt.
+[204
+
+
+]
+l2hSize :displaymath2666:14.5pt::0.0pt::349.0pt.
+[205
+
+
+]
+l2hSize :tex2html_wrap_inline2856:8.0pt::8.0pt::41.65514pt.
+[206
+
+
+]
+l2hSize :displaymath2667:14.5pt::0.0pt::349.0pt.
+[207
+
+
+]
+l2hSize :tex2html_wrap_inline2872:6.45831pt::0.0pt::5.18753pt.
+[208
+
+
+]
+l2hSize :tex2html_wrap_inline2874:8.0pt::8.0pt::40.77429pt.
+[209
+
+
+]
+l2hSize :tex2html_wrap_inline2880:6.94444pt::0.0pt::3.6806pt.
+[210
+
+
+]
+l2hSize :tex2html_wrap_inline2894:7.44444pt::7.44444pt::20.59024pt.
+[211
+
+
+]
+l2hSize :tex2html_wrap_inline2898:8.0pt::8.0pt::23.27788pt.
+[212
+
+
+]
+l2hSize :tex2html_wrap_inline2904:8.0pt::8.0pt::22.96536pt.
+[213
+
+
+]
+l2hSize :tex2html_wrap_inline2906:8.0pt::8.0pt::15.18756pt.
+[214
+
+
+]
+l2hSize :tex2html_wrap_inline2910:8.0pt::8.0pt::30.59027pt.
+[215
+
+
+]
+l2hSize :tex2html_wrap_inline2912:8.0pt::8.0pt::30.59027pt.
+[216
+
+
+]
+psfig: searching figs/fig02.05.ps for bounding box
+psfig: including figs/fig02.05.ps 
+l2hSize :figure2230:277.03499pt::0.0pt::244.91501pt.
+[217
+
+
+]
+psfig: searching figs/fig02.06.ps for bounding box
+psfig: including figs/fig02.06.ps 
+l2hSize :figure2241:214.8025pt::0.0pt::322.20375pt.
+[218
+
+
+]
+psfig: searching figs/fig02.07.ps for bounding box
+psfig: including figs/fig02.07.ps 
+l2hSize :figure2247:306.14375pt::0.0pt::232.87pt.
+[219
+
+
+]
+psfig: searching figs/fig02.08.ps for bounding box
+psfig: including figs/fig02.08.ps 
+l2hSize :figure2254:273.02pt::0.0pt::398.48874pt.
+[220
+
+
+]
+psfig: searching figs/fig02.09.ps for bounding box
+psfig: including figs/fig02.09.ps 
+l2hSize :figure2269:222.8325pt::0.0pt::392.46625pt.
+[221
+
+
+]
+l2hSize :displaymath2668:14.5pt::0.0pt::349.0pt.
+[222
+
+
+]
+l2hSize :tex2html_wrap_inline2934:8.0pt::8.0pt::21.55913pt.
+[223
+
+
+]
+l2hSize :tex2html_wrap_inline2936:8.0pt::8.0pt::26.24548pt.
+[224
+
+
+]
+l2hSize :displaymath2669:18.85951pt::0.0pt::349.0pt.
+[225
+
+
+]
+l2hSize :tex2html_wrap_inline2940:8.0pt::8.0pt::18.14241pt.
+[226
+
+
+]
+l2hSize :displaymath2670:14.5pt::0.0pt::349.0pt.
+[227
+
+
+]
+l2hSize :displaymath2671:14.5pt::0.0pt::349.0pt.
+[228
+
+
+]
+l2hSize :displaymath2672:14.5pt::0.0pt::349.0pt.
+[229
+
+
+]
+l2hSize :displaymath2673:14.5pt::0.0pt::349.0pt.
+[230
+
+
+]
+l2hSize :displaymath2674:14.5pt::0.0pt::349.0pt.
+[231
+
+
+]
+l2hSize :displaymath2675:13.94444pt::0.0pt::349.0pt.
+[232
+
+
+]
+l2hSize :tex2html_wrap_inline2944:6.95831pt::6.95831pt::14.68756pt.
+[233
+
+
+]
+l2hSize :tex2html_wrap_inline2946:6.95831pt::6.95831pt::18.67369pt.
+[234
+
+
+]
+l2hSize :tex2html_wrap_inline2952:6.95831pt::6.95831pt::18.67369pt.
+[235
+
+
+]
+l2hSize :displaymath2676:18.85951pt::0.0pt::349.0pt.
+[236
+
+
+]
+l2hSize :tex2html_wrap_inline2956:6.95831pt::6.95831pt::9.31372pt.
+[237
+
+
+]
+l2hSize :tex2html_wrap_inline2958:6.95831pt::6.95831pt::9.31372pt.
+[238
+
+
+]
+l2hSize :tex2html_wrap_inline2960:6.45831pt::0.0pt::12.16664pt.
+[239
+
+
+]
+l2hSize :displaymath2677:13.94444pt::0.0pt::349.0pt.
+[240
+
+
+]
+l2hSize :tex2html_wrap_inline2968:8.0pt::8.0pt::16.47232pt.
+[241
+
+
+]
+psfig: searching figs/fig02.10.ps for bounding box
+psfig: including figs/fig02.10.ps 
+l2hSize :figure2340:230.8625pt::0.0pt::331.23749pt.
+[242
+
+
+]
+l2hSize :tex2html_wrap_inline2978:6.45831pt::0.0pt::6.2153pt.
+[243
+
+
+]
+l2hSize :tex2html_wrap_inline2980:6.95831pt::6.95831pt::10.70143pt.
+[244
+
+
+]
+l2hSize :displaymath2678:14.5pt::0.0pt::349.0pt.
+[245
+
+
+]
+l2hSize :tex2html_wrap_inline2982:6.95831pt::6.95831pt::23.72453pt.
+[246
+
+
+]
+l2hSize :tex2html_wrap_inline2988:6.95831pt::6.95831pt::10.70143pt.
+[247
+
+
+]
+l2hSize :tex2html_wrap_inline2992:8.0pt::8.0pt::15.10419pt.
+[248
+
+
+]
+l2hSize :displaymath2679:14.5pt::0.0pt::349.0pt.
+[249
+
+
+]
+l2hSize :displaymath2680:14.5pt::0.0pt::349.0pt.
+[250
+
+
+]
+l2hSize :displaymath2681:14.5pt::0.0pt::349.0pt.
+[251
+
+
+]
+l2hSize :tex2html_wrap_inline2994:6.95831pt::6.95831pt::23.72453pt.
+[252
+
+
+]
+psfig: searching figs/fig02.11.ps for bounding box
+psfig: including figs/fig02.11.ps 
+l2hSize :figure2372:342.27875pt::0.0pt::333.245pt.
+[253
+
+
+]
+l2hSize :displaymath2682:14.5pt::0.0pt::349.0pt.
+[254
+
+
+]
+l2hSize :displaymath2683:14.5pt::0.0pt::349.0pt.
+[255
+
+
+]
+l2hSize :displaymath2684:14.5pt::0.0pt::349.0pt.
+[256
+
+
+]
+l2hSize :tex2html_wrap_inline3000:7.44444pt::7.44444pt::47.94432pt.
+[257
+
+
+]
+l2hSize :tex2html_wrap_inline3006:7.44444pt::7.44444pt::44.59013pt.
+[258
+
+
+]
+l2hSize :tex2html_wrap_inline3008:6.94444pt::0.0pt::24.35411pt.
+[259
+
+
+]
+l2hSize :tex2html_wrap_inline3020:8.0pt::8.0pt::36.84718pt.
+[260
+
+
+]
+l2hSize :tex2html_wrap_inline3032:7.33331pt::7.33331pt::26.84715pt.
+[261
+
+
+]
+l2hSize :tex2html_wrap_inline3036:6.45831pt::0.0pt::5.50005pt.
+[262
+
+
+]
+l2hSize :tex2html_wrap_inline3040:7.33331pt::7.33331pt::26.84715pt.
+[263
+
+
+]
+l2hSize :displaymath2685:14.5pt::0.0pt::349.0pt.
+[264
+
+
+]
+l2hSize :tex2html_wrap_inline3044:7.33331pt::7.33331pt::26.84715pt.
+[265
+
+
+]
+l2hSize :displaymath2686:14.5pt::0.0pt::349.0pt.
+[266
+
+
+]
+l2hSize :tex2html_wrap_inline3052:6.45831pt::0.0pt::24.83562pt.
+[267
+
+
+]
+l2hSize :tex2html_wrap_inline3064:7.33331pt::7.33331pt::26.84715pt.
+[268
+
+
+]
+l2hSize :tex2html_wrap_inline3068:6.45831pt::0.0pt::5.50005pt.
+[269
+
+
+]
+l2hSize :tex2html_wrap_inline3070:7.33331pt::7.33331pt::26.84715pt.
+[270
+
+
+]
+l2hSize :displaymath2687:14.5pt::0.0pt::349.0pt.
+[271
+
+
+]
+psfig: searching figs/fig02.12.ps for bounding box
+psfig: including figs/fig02.12.ps 
+l2hSize :figure2398:150.5625pt::0.0pt::368.37625pt.
+[272
+
+
+]
+l2hSize :tex2html_wrap_inline3366:10.84444pt::10.84444pt::54.30005pt.
+[273
+
+
+]
+l2hSize :tex2html_wrap_inline3076:7.1428pt::7.1428pt::30.31831pt.
+[274
+
+
+]
+psfig: searching figs/fig02.13.ps for bounding box
+psfig: including figs/fig02.13.ps 
+l2hSize :figure2410:458.71376pt::0.0pt::299.1175pt.
+[275
+
+
+]
+l2hSize :tex2html_wrap_inline3386:10.84444pt::10.84444pt::62.88339pt.
+[276
+
+
+]
+l2hSize :tex2html_wrap_inline3392:10.84444pt::10.84444pt::60.93892pt.
+[277
+
+
+]
+l2hSize :tex2html_wrap_inline3402:10.84444pt::10.84444pt::33.96672pt.
+[278
+
+
+]
+psfig: searching figs/fig02.14.ps for bounding box
+psfig: including figs/fig02.14.ps 
+l2hSize :figure2428:318.18875pt::0.0pt::265.99374pt.
+[279
+
+
+]
+l2hSize :tex2html_wrap_inline3424:10.84444pt::10.84444pt::38.41112pt.
+[280
+
+
+]
+psfig: searching figs/fig02.15.ps for bounding box
+psfig: including figs/fig02.15.ps 
+l2hSize :figure2441:358.33876pt::0.0pt::353.32pt.
+[281
+
+
+]
+l2hSize :tex2html_wrap_inline3444:8.20554pt::8.20554pt::37.91109pt.
+[282
+
+
+]
+l2hSize :tex2html_wrap_inline3100:8.0pt::8.0pt::24.33691pt.
+[283
+
+
+]
+l2hSize :tex2html_wrap_inline3458:10.84444pt::10.84444pt::66.24452pt.
+[284
+
+
+]
+psfig: searching figs/fig02.16.ps for bounding box
+psfig: including figs/fig02.16.ps 
+l2hSize :figure2464:477.78499pt::0.0pt::397.485pt.
+[285
+
+
+]
+l2hSize :tex2html_wrap_inline3478:10.84444pt::10.84444pt::53.55011pt.
+[286
+
+
+]
+l2hSize :tex2html_wrap_inline3484:8.20554pt::8.20554pt::33.16116pt.
+[287
+
+
+]
+l2hSize :tex2html_wrap_inline3490:8.20554pt::8.20554pt::39.55002pt.
+[288
+
+
+]
+l2hSize :tex2html_wrap_inline3496:10.84444pt::10.84444pt::44.02222pt.
+[289
+
+
+]
+l2hSize :tex2html_wrap_inline3498:8.20554pt::8.20554pt::28.46663pt.
+[290
+
+
+]
+l2hSize :tex2html_wrap_inline3500:10.57858pt::10.57858pt::53.99443pt.
+[291
+
+
+]
+l2hSize :tex2html_wrap_inline3502:8.20554pt::8.20554pt::28.43886pt.
+[292
+
+
+]
+l2hSize :tex2html_wrap_inline3140:6.45831pt::0.0pt::4.82759pt.
+[293
+
+
+]
+l2hSize :displaymath2688:13.94444pt::0.0pt::349.0pt.
+[294
+
+
+]
+l2hSize :displaymath2689:23.50351pt::0.0pt::349.0pt.
+[295
+
+
+]
+l2hSize :tex2html_wrap_inline3148:6.45831pt::0.0pt::20.50009pt.
+[296
+
+
+]
+l2hSize :tex2html_wrap_inline3150:6.83331pt::0.0pt::46.50348pt.
+[297
+
+
+]
+l2hSize :displaymath3946:14.5pt::0.0pt::349.0pt.
+[298
+
+
+]
+l2hSize :tex2html_wrap_inline3972:8.0pt::8.0pt::36.19444pt.
+[299
+
+
+]
+l2hSize :tex2html_wrap_inline3984:8.0pt::8.0pt::18.17021pt.
+[300
+
+
+]
+l2hSize :tex2html_wrap_inline3992:6.95831pt::6.95831pt::25.36453pt.
+[301
+
+
+]
+l2hSize :displaymath3947:14.5pt::0.0pt::349.0pt.
+[302
+
+
+]
+l2hSize :displaymath3948:14.5pt::0.0pt::349.0pt.
+[303
+
+
+]
+l2hSize :displaymath3949:14.5pt::0.0pt::349.0pt.
+[304
+
+
+]
+l2hSize :tex2html_wrap_inline4006:6.45831pt::0.0pt::10.50005pt.
+[305
+
+
+]
+psfig: searching figs/fig03.01.ps for bounding box
+psfig: including figs/fig03.01.ps 
+l2hSize :figure3562:87.32625pt::0.0pt::236.88501pt.
+[306
+
+
+]
+l2hSize :tex2html_wrap_inline4024:8.0pt::8.0pt::17.8612pt.
+[307
+
+
+]
+l2hSize :displaymath3950:25.00023pt::0.0pt::349.0pt.
+[308
+
+
+]
+l2hSize :tex2html_wrap_inline4030:8.0pt::8.0pt::16.50241pt.
+[309
+
+
+]
+psfig: searching figs/fig03.02.ps for bounding box
+psfig: including figs/fig03.02.ps 
+l2hSize :figure3582:189.70876pt::0.0pt::353.32pt.
+[310
+
+
+]
+l2hSize :tex2html_wrap_inline4036:6.83331pt::0.0pt::8.58684pt.
+[311
+
+
+]
+l2hSize :tex2html_wrap_inline4038:6.83331pt::0.0pt::26.92007pt.
+[312
+
+
+]
+l2hSize :tex2html_wrap_inline4040:7.33331pt::7.33331pt::53.0312pt.
+[313
+
+
+]
+psfig: searching figs/fig03.03.ps for bounding box
+psfig: including figs/fig03.03.ps 
+l2hSize :figure3590:63.23625pt::0.0pt::195.73126pt.
+[314
+
+
+]
+l2hSize :displaymath3951:14.5pt::0.0pt::349.0pt.
+[315
+
+
+]
+l2hSize :displaymath3952:14.5pt::0.0pt::349.0pt.
+[316
+
+
+]
+l2hSize :displaymath3953:14.5pt::0.0pt::349.0pt.
+[317
+
+
+]
+l2hSize :tex2html_wrap_inline4048:8.0pt::8.0pt::15.66907pt.
+[318
+
+
+]
+l2hSize :displaymath3954:14.5pt::0.0pt::349.0pt.
+[319
+
+
+]
+l2hSize :tex2html_wrap_inline4054:8.0pt::8.0pt::21.257pt.
+[320
+
+
+]
+psfig: searching figs/fig03.04.ps for bounding box
+psfig: including figs/fig03.04.ps 
+l2hSize :figure3607:344.28624pt::0.0pt::370.38376pt.
+[321
+
+
+]
+l2hSize :tex2html_wrap_inline4058:8.0pt::8.0pt::13.00003pt.
+[322
+
+
+]
+l2hSize :tex2html_wrap_inline4064:8.0pt::8.0pt::41.62503pt.
+[323
+
+
+]
+l2hSize :tex2html_wrap_inline4070:7.44444pt::7.44444pt::43.13876pt.
+[324
+
+
+]
+l2hSize :displaymath3955:14.5pt::0.0pt::349.0pt.
+[325
+
+
+]
+l2hSize :displaymath3956:13.94444pt::0.0pt::349.0pt.
+[326
+
+
+]
+l2hSize :displaymath3957:13.94444pt::0.0pt::349.0pt.
+[327
+
+
+]
+psfig: searching figs/fig03.05.ps for bounding box
+psfig: including figs/fig03.05.ps 
+l2hSize :figure3614:137.51375pt::0.0pt::237.88876pt.
+[328
+
+
+]
+l2hSize :tex2html_wrap_inline4084:7.33331pt::7.33331pt::26.81133pt.
+[329
+
+
+]
+psfig: searching figs/fig03.06.ps for bounding box
+psfig: including figs/fig03.06.ps 
+l2hSize :figure3625:136.51pt::0.0pt::240.9pt.
+[330
+
+
+]
+psfig: searching figs/fig03.07.ps for bounding box
+psfig: including figs/fig03.07.ps 
+l2hSize :figure3640:364.36125pt::0.0pt::300.12125pt.
+[331
+
+
+]
+l2hSize :tex2html_wrap_inline4092:6.45831pt::0.0pt::36.61111pt.
+[332
+
+
+]
+psfig: searching figs/fig03.08.ps for bounding box
+psfig: including figs/fig03.08.ps 
+l2hSize :figure3654:331.2375pt::0.0pt::376.40625pt.
+[333
+
+
+]
+psfig: searching figs/fig03.09.ps for bounding box
+psfig: including figs/fig03.09.ps 
+l2hSize :figure3663:276.03125pt::0.0pt::349.305pt.
+[334
+
+
+]
+psfig: searching figs/fig03.10.ps for bounding box
+psfig: including figs/fig03.10.ps 
+l2hSize :figure3678:259.97125pt::0.0pt::238.8925pt.
+[335
+
+
+]
+psfig: searching figs/fig03.11.ps for bounding box
+psfig: including figs/fig03.11.ps 
+l2hSize :figure3688:354.32375pt::0.0pt::225.84375pt.
+[336
+
+
+]
+psfig: searching figs/fig03.12.ps for bounding box
+psfig: including figs/fig03.12.ps 
+l2hSize :figure3703:171.64125pt::0.0pt::236.88501pt.
+[337
+
+
+]
+l2hSize :tex2html_wrap_inline4370:10.84444pt::10.84444pt::26.74448pt.
+[338
+
+
+]
+l2hSize :tex2html_wrap_inline4372:10.84444pt::10.84444pt::36.88338pt.
+[339
+
+
+]
+l2hSize :tex2html_wrap_inline4380:10.57858pt::10.57858pt::32.57784pt.
+[340
+
+
+]
+l2hSize :tex2html_wrap_inline4390:8.20554pt::8.20554pt::39.63338pt.
+[341
+
+
+]
+l2hSize :tex2html_wrap_inline4396:10.84444pt::10.84444pt::37.91113pt.
+[342
+
+
+]
+l2hSize :tex2html_wrap_inline4398:10.84444pt::10.84444pt::25.13335pt.
+[343
+
+
+]
+psfig: searching figs/fig03.13.ps for bounding box
+psfig: including figs/fig03.13.ps 
+l2hSize :figure3739:467.74751pt::0.0pt::321.20001pt.
+[344
+
+
+]
+l2hSize :tex2html_wrap_inline4428:10.84444pt::10.84444pt::26.18893pt.
+[345
+
+
+]
+l2hSize :tex2html_wrap_inline4442:10.84444pt::10.84444pt::42.02225pt.
+[346
+
+
+]
+psfig: searching figs/fig03.14.ps for bounding box
+psfig: including figs/fig03.14.ps 
+l2hSize :figure3760:295.1025pt::0.0pt::358.33875pt.
+[347
+
+
+]
+l2hSize :tex2html_wrap_inline4476:10.84444pt::10.84444pt::59.63339pt.
+[348
+
+
+]
+l2hSize :tex2html_wrap_inline4484:8.20554pt::8.20554pt::36.32776pt.
+[349
+
+
+]
+psfig: searching figs/fig03.15.ps for bounding box
+psfig: including figs/fig03.15.ps 
+l2hSize :figure3775:450.68375pt::0.0pt::330.23375pt.
+[350
+
+
+]
+psfig: searching figs/fig03.16.ps for bounding box
+psfig: including figs/fig03.16.ps 
+l2hSize :figure3785:305.14pt::0.0pt::335.2525pt.
+[351
+
+
+]
+l2hSize :tex2html_wrap_inline4514:10.57858pt::10.57858pt::37.85564pt.
+[352
+
+
+]
+l2hSize :tex2html_wrap_inline4520:10.57858pt::10.57858pt::49.60565pt.
+[353
+
+
+]
+l2hSize :tex2html_wrap_inline4526:10.57858pt::10.57858pt::39.57785pt.
+[354
+
+
+]
+l2hSize :tex2html_wrap_inline4528:10.05078pt::10.05078pt::14.52225pt.
+[355
+
+
+]
+psfig: searching figs/fig04.01.ps for bounding box
+psfig: including figs/fig04.01.ps 
+l2hSize :figure4581:133.49875pt::0.0pt::217.81375pt.
+[356
+
+
+]
+psfig: searching figs/fig04.02.ps for bounding box
+psfig: including figs/fig04.02.ps 
+l2hSize :figure4591:349.30501pt::0.0pt::225.84375pt.
+[357
+
+
+]
+l2hSize :tex2html_wrap_inline5047:6.83331pt::0.0pt::18.17021pt.
+[358
+
+
+]
+l2hSize :tex2html_wrap_inline5051:8.0pt::8.0pt::67.10312pt.
+[359
+
+
+]
+l2hSize :displaymath5035:21.3985pt::0.0pt::349.0pt.
+[360
+
+
+]
+l2hSize :displaymath5036:14.5pt::0.0pt::349.0pt.
+[361
+
+
+]
+l2hSize :displaymath5037:14.5pt::0.0pt::349.0pt.
+[362
+
+
+]
+l2hSize :displaymath5038:14.5pt::0.0pt::349.0pt.
+[363
+
+
+]
+l2hSize :tex2html_wrap_inline5063:8.0pt::8.0pt::25.5001pt.
+[364
+
+
+]
+psfig: searching figs/fig04.03.ps for bounding box
+psfig: including figs/fig04.03.ps 
+l2hSize :figure4614:270.00874pt::0.0pt::420.57126pt.
+[365
+
+
+]
+l2hSize :displaymath5039:14.5pt::0.0pt::349.0pt.
+[366
+
+
+]
+psfig: searching figs/fig04.04.ps for bounding box
+psfig: including figs/fig04.04.ps 
+l2hSize :figure4622:176.65999pt::0.0pt::236.88501pt.
+[367
+
+
+]
+psfig: searching figs/fig04.05.ps for bounding box
+psfig: including figs/fig04.05.ps 
+l2hSize :figure4637:232.87001pt::0.0pt::220.82501pt.
+[368
+
+
+]
+psfig: searching figs/fig04.06.ps for bounding box
+psfig: including figs/fig04.06.ps 
+l2hSize :figure4651:110.41249pt::0.0pt::232.87pt.
+[369
+
+
+]
+psfig: searching figs/fig04.07.ps for bounding box
+psfig: including figs/fig04.07.ps 
+l2hSize :figure4657:264.99pt::0.0pt::198.7425pt.
+[370
+
+
+]
+psfig: searching figs/fig04.08.ps for bounding box
+psfig: including figs/fig04.08.ps 
+l2hSize :figure4669:214.8025pt::0.0pt::117.43875pt.
+[371
+
+
+]
+psfig: searching figs/fig04.09.ps for bounding box
+psfig: including figs/fig04.09.ps 
+l2hSize :figure4680:262.9825pt::0.0pt::132.495pt.
+[372
+
+
+]
+psfig: searching figs/fig04.10.ps for bounding box
+psfig: including figs/fig04.10.ps 
+l2hSize :figure4686:149.55875pt::0.0pt::258.9675pt.
+[373
+
+
+]
+l2hSize :tex2html_wrap_inline5349:10.84444pt::10.84444pt::30.07784pt.
+[374
+
+
+]
+l2hSize :tex2html_wrap_inline5351:10.84444pt::10.84444pt::40.63335pt.
+[375
+
+
+]
+l2hSize :tex2html_wrap_inline5359:10.84444pt::10.84444pt::39.5223pt.
+[376
+
+
+]
+l2hSize :tex2html_wrap_inline5361:10.84444pt::10.84444pt::50.0778pt.
+[377
+
+
+]
+psfig: searching figs/fig04.11.ps for bounding box
+psfig: including figs/fig04.11.ps 
+l2hSize :figure4726:161.60374pt::0.0pt::282.05374pt.
+[378
+
+
+]
+psfig: searching figs/fig04.12.ps for bounding box
+psfig: including figs/fig04.12.ps 
+l2hSize :figure4742:163.61125pt::0.0pt::288.07626pt.
+[379
+
+
+]
+psfig: searching figs/fig04.13.ps for bounding box
+psfig: including figs/fig04.13.ps 
+l2hSize :figure4751:123.46126pt::0.0pt::334.24875pt.
+[380
+
+
+]
+psfig: searching figs/fig04.14.ps for bounding box
+psfig: including figs/fig04.14.ps 
+l2hSize :figure4759:287.0725pt::0.0pt::378.41376pt.
+[381
+
+
+]
+psfig: searching figs/fig04.15.ps for bounding box
+psfig: including figs/fig04.15.ps 
+l2hSize :figure4768:251.94125pt::0.0pt::245.91876pt.
+[382
+
+
+]
+l2hSize :tex2html_wrap_inline5433:10.84444pt::10.84444pt::41.74454pt.
+[383
+
+
+]
+psfig: searching figs/fig04.16.ps for bounding box
+psfig: including figs/fig04.16.ps 
+l2hSize :figure4783:257.96376pt::0.0pt::331.23749pt.
+[384
+
+
+]
+psfig: searching figs/fig04.17.ps for bounding box
+psfig: including figs/fig04.17.ps 
+l2hSize :figure4788:254.9525pt::0.0pt::326.21875pt.
+[385
+
+
+]
+l2hSize :tex2html_wrap_inline5463:10.01111pt::10.01111pt::42.13307pt.
+[386
+
+
+]
+l2hSize :tex2html_wrap_inline5465:10.84444pt::10.84444pt::40.91112pt.
+[387
+
+
+]
+l2hSize :tex2html_wrap_inline5469:10.01111pt::10.01111pt::42.13307pt.
+[388
+
+
+]
+l2hSize :tex2html_wrap_inline5471:10.84444pt::10.84444pt::43.3pt.
+[389
+
+
+]
+l2hSize :tex2html_wrap_inline5145:7.44444pt::7.44444pt::28.93054pt.
+[390
+
+
+]
+psfig: searching figs/fig04.18.ps for bounding box
+psfig: including figs/fig04.18.ps 
+l2hSize :figure4819:264.99pt::0.0pt::345.29001pt.
+[391
+
+
+]
+psfig: searching figs/fig04.19.ps for bounding box
+psfig: including figs/fig04.19.ps 
+l2hSize :figure4824:277.03499pt::0.0pt::374.39874pt.
+[392
+
+
+]
+psfig: searching figs/fig04.20.ps for bounding box
+psfig: including figs/fig04.20.ps 
+l2hSize :figure4837:387.4475pt::0.0pt::309.155pt.
+[393
+
+
+]
+psfig: searching figs/fig04.21.ps for bounding box
+psfig: including figs/fig04.21.ps 
+l2hSize :figure4842:416.55626pt::0.0pt::364.36124pt.
+[394
+
+
+]
+l2hSize :tex2html_wrap_inline5531:10.84444pt::10.84444pt::29.80008pt.
+[395
+
+
+]
+l2hSize :tex2html_wrap_inline5535:10.84444pt::10.84444pt::21.05005pt.
+[396
+
+
+]
+l2hSize :tex2html_wrap_inline5539:10.84444pt::10.84444pt::29.66118pt.
+[397
+
+
+]
+l2hSize :tex2html_wrap_inline5545:10.01111pt::10.01111pt::52.63298pt.
+[398
+
+
+]
+l2hSize :tex2html_wrap_inline5547:10.84444pt::10.84444pt::48.96678pt.
+[399
+
+
+]
+l2hSize :tex2html_wrap_inline5167:8.0pt::8.0pt::44.45718pt.
+[400
+
+
+]
+l2hSize :tex2html_wrap_inline5169:6.95831pt::6.95831pt::13.27785pt.
+[401
+
+
+]
+psfig: searching figs/fig05.01.ps for bounding box
+psfig: including figs/fig05.01.ps 
+l2hSize :figure5597:279.0425pt::0.0pt::284.06125pt.
+[402
+
+
+]
+l2hSize :tex2html_wrap_inline6147:6.45831pt::0.0pt::52.1663pt.
+[403
+
+
+]
+l2hSize :displaymath6003:14.5pt::0.0pt::349.0pt.
+[404
+
+
+]
+l2hSize :tex2html_wrap_inline6149:6.45831pt::0.0pt::45.49973pt.
+[405
+
+
+]
+l2hSize :tex2html_wrap_inline6151:6.94444pt::0.0pt::43.73927pt.
+[406
+
+
+]
+l2hSize :tex2html_wrap_inline6153:6.94444pt::0.0pt::53.18675pt.
+[407
+
+
+]
+l2hSize :displaymath6004:14.5pt::0.0pt::349.0pt.
+[408
+
+
+]
+l2hSize :tex2html_wrap_inline6155:8.0pt::8.0pt::15.78595pt.
+[409
+
+
+]
+l2hSize :tex2html_wrap_inline6159:7.44444pt::7.44444pt::44.70815pt.
+[410
+
+
+]
+l2hSize :displaymath6005:21.43695pt::0.0pt::349.0pt.
+[411
+
+
+]
+l2hSize :displaymath6006:14.5pt::0.0pt::349.0pt.
+[412
+
+
+]
+l2hSize :displaymath6007:14.5pt::0.0pt::349.0pt.
+[413
+
+
+]
+l2hSize :displaymath6008:21.43695pt::0.0pt::349.0pt.
+[414
+
+
+]
+l2hSize :tex2html_wrap_inline6163:7.44444pt::7.44444pt::25.34023pt.
+[415
+
+
+]
+psfig: searching figs/fig05.02.ps for bounding box
+psfig: including figs/fig05.02.ps 
+l2hSize :figure5647:115.43126pt::0.0pt::233.87375pt.
+[416
+
+
+]
+l2hSize :displaymath6009:14.5pt::0.0pt::349.0pt.
+[417
+
+
+]
+psfig: searching figs/fig05.03.ps for bounding box
+psfig: including figs/fig05.03.ps 
+l2hSize :figure5653:522.95375pt::0.0pt::277.035pt.
+[418
+
+
+]
+l2hSize :tex2html_wrap_inline6195:7.44444pt::7.44444pt::25.34023pt.
+[419
+
+
+]
+l2hSize :tex2html_wrap_inline6199:7.44444pt::7.44444pt::43.67346pt.
+[420
+
+
+]
+l2hSize :displaymath6010:14.5pt::0.0pt::349.0pt.
+[421
+
+
+]
+l2hSize :tex2html_wrap_inline6201:7.44444pt::7.44444pt::25.34023pt.
+[422
+
+
+]
+l2hSize :displaymath6011:14.5pt::0.0pt::349.0pt.
+[423
+
+
+]
+l2hSize :displaymath6012:14.5pt::0.0pt::349.0pt.
+[424
+
+
+]
+l2hSize :tex2html_wrap_inline6209:6.95831pt::6.95831pt::13.56372pt.
+[425
+
+
+]
+l2hSize :tex2html_wrap_inline6211:6.95831pt::6.95831pt::13.56372pt.
+[426
+
+
+]
+l2hSize :tex2html_wrap_inline6213:7.44444pt::7.44444pt::23.5156pt.
+[427
+
+
+]
+l2hSize :displaymath6013:14.5pt::0.0pt::349.0pt.
+[428
+
+
+]
+l2hSize :displaymath6014:13.94444pt::0.0pt::349.0pt.
+[429
+
+
+]
+l2hSize :tex2html_wrap_inline6229:6.45831pt::0.0pt::12.16664pt.
+[430
+
+
+]
+psfig: searching figs/fig05.04.ps for bounding box
+psfig: including figs/fig05.04.ps 
+l2hSize :figure5667:293.09499pt::0.0pt::296.10626pt.
+[431
+
+
+]
+psfig: searching figs/fig05.05.ps for bounding box
+psfig: including figs/fig05.05.ps 
+l2hSize :figure5679:180.675pt::0.0pt::232.87pt.
+[432
+
+
+]
+psfig: searching figs/fig05.06.ps for bounding box
+psfig: including figs/fig05.06.ps 
+l2hSize :figure5691:259.97125pt::0.0pt::327.2225pt.
+[433
+
+
+]
+l2hSize :displaymath6015:14.5pt::0.0pt::349.0pt.
+[434
+
+
+]
+l2hSize :displaymath6017:22.76462pt::0.0pt::349.0pt.
+[435
+
+
+]
+psfig: searching figs/fig05.07.ps for bounding box
+psfig: including figs/fig05.07.ps 
+l2hSize :figure5699:259.97125pt::0.0pt::321.20001pt.
+[436
+
+
+]
+l2hSize :displaymath6018:14.5pt::0.0pt::349.0pt.
+[437
+
+
+]
+l2hSize :displaymath6019:22.76462pt::0.0pt::349.0pt.
+[438
+
+
+]
+l2hSize :displaymath6020:22.76462pt::0.0pt::349.0pt.
+[439
+
+
+]
+l2hSize :displaymath6021:14.5pt::0.0pt::349.0pt.
+[440
+
+
+]
+l2hSize :displaymath6022:14.5pt::0.0pt::349.0pt.
+[441
+
+
+]
+l2hSize :tex2html_wrap_inline6257:8.64003pt::8.64003pt::46.02782pt.
+[442
+
+
+]
+l2hSize :displaymath6024:14.5pt::0.0pt::349.0pt.
+[443
+
+
+]
+l2hSize :displaymath6025:14.5pt::0.0pt::349.0pt.
+[444
+
+
+]
+l2hSize :displaymath6026:14.5pt::0.0pt::349.0pt.
+[445
+
+
+]
+l2hSize :displaymath6027:14.5pt::0.0pt::349.0pt.
+[446
+
+
+]
+l2hSize :tex2html_wrap_inline6269:8.0pt::8.0pt::37.4491pt.
+[447
+
+
+]
+l2hSize :displaymath6028:14.5pt::0.0pt::349.0pt.
+[448
+
+
+]
+l2hSize :displaymath6029:14.5pt::0.0pt::349.0pt.
+[449
+
+
+]
+l2hSize :tex2html_wrap_inline6277:8.0pt::8.0pt::34.2524pt.
+[450
+
+
+]
+l2hSize :displaymath6030:14.5pt::0.0pt::349.0pt.
+[451
+
+
+]
+l2hSize :displaymath6031:14.5pt::0.0pt::349.0pt.
+[452
+
+
+]
+l2hSize :displaymath6032:14.5pt::0.0pt::349.0pt.
+[453
+
+
+]
+l2hSize :displaymath6033:21.06903pt::0.0pt::349.0pt.
+[454
+
+
+]
+l2hSize :displaymath6034:21.06903pt::0.0pt::349.0pt.
+[455
+
+
+]
+l2hSize :displaymath6035:21.06903pt::0.0pt::349.0pt.
+[456
+
+
+]
+l2hSize :displaymath6036:21.06903pt::0.0pt::349.0pt.
+[457
+
+
+]
+l2hSize :tex2html_wrap_inline6287:7.44444pt::7.44444pt::10.31606pt.
+[458
+
+
+]
+l2hSize :displaymath6037:14.5pt::0.0pt::349.0pt.
+[459
+
+
+]
+l2hSize :tex2html_wrap_inline6295:8.0pt::8.0pt::19.96536pt.
+[460
+
+
+]
+l2hSize :displaymath6038:14.5pt::0.0pt::349.0pt.
+[461
+
+
+]
+l2hSize :displaymath6039:14.5pt::0.0pt::349.0pt.
+[462
+
+
+]
+l2hSize :tex2html_wrap_inline6303:6.95831pt::6.95831pt::14.32068pt.
+[463
+
+
+]
+l2hSize :tex2html_wrap_inline6305:6.95831pt::6.95831pt::10.79831pt.
+[464
+
+
+]
+l2hSize :tex2html_wrap_inline6307:8.0pt::8.0pt::40.58763pt.
+[465
+
+
+]
+l2hSize :tex2html_wrap_inline6309:8.0pt::8.0pt::40.58763pt.
+[466
+
+
+]
+l2hSize :tex2html_wrap_inline6313:6.45831pt::0.0pt::5.2894pt.
+[467
+
+
+]
+l2hSize :displaymath6040:14.5pt::0.0pt::349.0pt.
+[468
+
+
+]
+l2hSize :tex2html_wrap_inline6327:6.45831pt::0.0pt::24.11916pt.
+[469
+
+
+]
+psfig: searching figs/fig05.08.ps for bounding box
+psfig: including figs/fig05.08.ps 
+l2hSize :figure5777:324.21126pt::0.0pt::334.24875pt.
+[470
+
+
+]
+l2hSize :displaymath6041:14.5pt::0.0pt::349.0pt.
+[471
+
+
+]
+l2hSize :displaymath6042:14.5pt::0.0pt::349.0pt.
+[472
+
+
+]
+l2hSize :tex2html_wrap_inline6339:8.0pt::8.0pt::60.18056pt.
+[473
+
+
+]
+l2hSize :tex2html_wrap_inline6341:8.0pt::8.0pt::59.06946pt.
+[474
+
+
+]
+l2hSize :displaymath6043:14.5pt::0.0pt::349.0pt.
+[475
+
+
+]
+l2hSize :displaymath6044:14.5pt::0.0pt::349.0pt.
+[476
+
+
+]
+l2hSize :displaymath6045:13.94444pt::0.0pt::349.0pt.
+[477
+
+
+]
+l2hSize :displaymath6046:13.94444pt::0.0pt::349.0pt.
+[478
+
+
+]
+l2hSize :displaymath6047:13.49998pt::0.0pt::349.0pt.
+[479
+
+
+]
+l2hSize :displaymath6048:13.94444pt::0.0pt::349.0pt.
+[480
+
+
+]
+l2hSize :tex2html_wrap_inline6349:6.94444pt::0.0pt::11.52435pt.
+[481
+
+
+]
+l2hSize :tex2html_wrap_inline6351:6.45831pt::0.0pt::14.78365pt.
+[482
+
+
+]
+l2hSize :tex2html_wrap_inline6357:6.94444pt::0.0pt::20.30449pt.
+[483
+
+
+]
+l2hSize :tex2html_wrap_inline6359:7.44444pt::7.44444pt::39.75806pt.
+[484
+
+
+]
+l2hSize :tex2html_wrap_inline6361:6.95831pt::6.95831pt::39.49498pt.
+[485
+
+
+]
+psfig: searching figs/fig05.09.ps for bounding box
+psfig: including figs/fig05.09.ps 
+l2hSize :figure5790:450.68375pt::0.0pt::310.15875pt.
+[486
+
+
+]
+psfig: searching figs/fig05.10.ps for bounding box
+psfig: including figs/fig05.10.ps 
+l2hSize :figure5801:254.9525pt::0.0pt::262.9825pt.
+[487
+
+
+]
+l2hSize :tex2html_wrap_inline6685:10.01111pt::10.01111pt::47.38303pt.
+[488
+
+
+]
+l2hSize :tex2html_wrap_inline6687:10.84444pt::10.84444pt::41.74448pt.
+[489
+
+
+]
+psfig: searching figs/fig05.11.ps for bounding box
+psfig: including figs/fig05.11.ps 
+l2hSize :figure5815:188.705pt::0.0pt::276.03125pt.
+[490
+
+
+]
+l2hSize :tex2html_wrap_inline6703:10.01111pt::10.01111pt::36.88312pt.
+[491
+
+
+]
+l2hSize :tex2html_wrap_inline6705:10.84444pt::10.84444pt::33.41112pt.
+[492
+
+
+]
+l2hSize :tex2html_wrap_inline6379:6.95831pt::6.95831pt::57.50475pt.
+[493
+
+
+]
+psfig: searching figs/fig05.12.ps for bounding box
+psfig: including figs/fig05.12.ps 
+l2hSize :figure5827:214.8025pt::0.0pt::293.095pt.
+[494
+
+
+]
+l2hSize :displaymath6049:14.5pt::0.0pt::349.0pt.
+[495
+
+
+]
+l2hSize :tex2html_wrap_inline6387:8.64003pt::8.64003pt::43.49998pt.
+[496
+
+
+]
+l2hSize :displaymath6051:14.5pt::0.0pt::349.0pt.
+[497
+
+
+]
+l2hSize :tex2html_wrap_inline6389:8.14003pt::0.0pt::10.70143pt.
+[498
+
+
+]
+l2hSize :displaymath6052:14.5pt::0.0pt::349.0pt.
+[499
+
+
+]
+l2hSize :displaymath6053:14.5pt::0.0pt::349.0pt.
+[500
+
+
+]
+l2hSize :displaymath6054:14.5pt::0.0pt::349.0pt.
+[501
+
+
+]
+l2hSize :displaymath6055:14.5pt::0.0pt::349.0pt.
+[502
+
+
+]
+l2hSize :tex2html_wrap_inline6395:8.0pt::8.0pt::17.34384pt.
+[503
+
+
+]
+l2hSize :tex2html_wrap_inline6403:8.99002pt::8.99002pt::43.93402pt.
+[504
+
+
+]
+l2hSize :displaymath6056:14.5pt::0.0pt::349.0pt.
+[505
+
+
+]
+l2hSize :tex2html_wrap_inline6409:8.49002pt::0.0pt::11.13547pt.
+[506
+
+
+]
+l2hSize :tex2html_wrap_inline6411:7.44444pt::7.44444pt::9.88202pt.
+[507
+
+
+]
+l2hSize :tex2html_wrap_inline6413:7.44444pt::7.44444pt::15.16791pt.
+[508
+
+
+]
+l2hSize :tex2html_wrap_inline6415:8.64003pt::8.64003pt::19.65404pt.
+[509
+
+
+]
+l2hSize :tex2html_wrap_inline6421:6.95831pt::6.95831pt::42.4524pt.
+[510
+
+
+]
+l2hSize :tex2html_wrap_inline6425:6.95831pt::6.95831pt::42.4524pt.
+[511
+
+
+]
+l2hSize :tex2html_wrap_inline6429:6.95831pt::6.95831pt::42.4524pt.
+[512
+
+
+]
+l2hSize :displaymath6057:13.94444pt::0.0pt::349.0pt.
+[513
+
+
+]
+l2hSize :tex2html_wrap_inline6435:7.44444pt::7.44444pt::28.21526pt.
+[514
+
+
+]
+l2hSize :tex2html_wrap_inline6437:7.44444pt::7.44444pt::28.21526pt.
+[515
+
+
+]
+l2hSize :tex2html_wrap_inline6439:8.0pt::8.0pt::38.21529pt.
+[516
+
+
+]
+l2hSize :tex2html_wrap_inline6441:8.0pt::8.0pt::38.21529pt.
+[517
+
+
+]
+l2hSize :displaymath6058:21.06903pt::0.0pt::349.0pt.
+[518
+
+
+]
+l2hSize :displaymath6059:14.5pt::0.0pt::349.0pt.
+[519
+
+
+]
+l2hSize :tex2html_wrap_inline6443:6.45831pt::0.0pt::31.26733pt.
+[520
+
+
+]
+l2hSize :tex2html_wrap_inline6445:6.6428pt::0.0pt::10.19102pt.
+[521
+
+
+]
+l2hSize :tex2html_wrap_inline6453:6.6428pt::0.0pt::9.99394pt.
+[522
+
+
+]
+l2hSize :displaymath6060:23.50351pt::0.0pt::349.0pt.
+[523
+
+
+]
+l2hSize :tex2html_wrap_inline6457:6.45831pt::0.0pt::16.34143pt.
+[524
+
+
+]
+psfig: searching figs/fig05.13.ps for bounding box
+psfig: including figs/fig05.13.ps 
+l2hSize :figure5874:338.26375pt::0.0pt::289.08pt.
+[525
+
+
+]
+l2hSize :displaymath6061:14.5pt::0.0pt::349.0pt.
+[526
+
+
+]
+l2hSize :tex2html_wrap_inline6461:8.0pt::8.0pt::43.62848pt.
+[527
+
+
+]
+l2hSize :displaymath6062:14.5pt::0.0pt::349.0pt.
+[528
+
+
+]
+l2hSize :displaymath6063:14.5pt::0.0pt::349.0pt.
+[529
+
+
+]
+l2hSize :tex2html_wrap_inline6463:8.0pt::8.0pt::24.02902pt.
+[530
+
+
+]
+l2hSize :displaymath6064:14.5pt::0.0pt::349.0pt.
+[531
+
+
+]
+psfig: searching figs/fig05.14.ps for bounding box
+psfig: including figs/fig05.14.ps 
+l2hSize :figure5892:154.5775pt::0.0pt::249.93375pt.
+[532
+
+
+]
+l2hSize :displaymath6065:14.5pt::0.0pt::349.0pt.
+[533
+
+
+]
+psfig: searching figs/fig05.15.ps for bounding box
+psfig: including figs/fig05.15.ps 
+l2hSize :figure5901:180.675pt::0.0pt::335.2525pt.
+[534
+
+
+]
+l2hSize :displaymath6066:14.5pt::0.0pt::349.0pt.
+[535
+
+
+]
+l2hSize :displaymath6067:14.5pt::0.0pt::349.0pt.
+[536
+
+
+]
+l2hSize :displaymath6068:18.85951pt::0.0pt::349.0pt.
+[537
+
+
+]
+l2hSize :displaymath6069:14.5pt::0.0pt::349.0pt.
+[538
+
+
+]
+l2hSize :displaymath6070:21.06903pt::0.0pt::349.0pt.
+[539
+
+
+]
+psfig: searching figs/fig05.16.ps for bounding box
+psfig: including figs/fig05.16.ps 
+l2hSize :figure5919:305.14pt::0.0pt::301.125pt.
+[540
+
+
+]
+l2hSize :tex2html_wrap_inline6489:6.95831pt::6.95831pt::11.34691pt.
+[541
+
+
+]
+l2hSize :displaymath6071:14.86108pt::0.0pt::349.0pt.
+[542
+
+
+]
+l2hSize :tex2html_wrap_inline6491:6.95831pt::6.95831pt::16.80066pt.
+[543
+
+
+]
+l2hSize :tex2html_wrap_inline6493:8.0pt::8.0pt::72.99701pt.
+[544
+
+
+]
+l2hSize :displaymath6072:21.06903pt::0.0pt::349.0pt.
+[545
+
+
+]
+l2hSize :displaymath6073:14.86108pt::0.0pt::349.0pt.
+[546
+
+
+]
+l2hSize :tex2html_wrap_inline6495:8.0pt::8.0pt::46.12975pt.
+[547
+
+
+]
+l2hSize :tex2html_wrap_inline6497:8.0pt::8.0pt::47.07991pt.
+[548
+
+
+]
+l2hSize :tex2html_wrap_inline6499:6.45831pt::0.0pt::8.27783pt.
+[549
+
+
+]
+l2hSize :displaymath6074:14.86108pt::0.0pt::349.0pt.
+[550
+
+
+]
+psfig: searching figs/fig06.01.ps for bounding box
+psfig: including figs/fig06.01.ps 
+l2hSize :figure6802:192.71999pt::0.0pt::326.21875pt.
+[551
+
+
+]
+l2hSize :displaymath7115:14.5pt::0.0pt::349.0pt.
+[552
+
+
+]
+l2hSize :tex2html_wrap_inline7157:8.0pt::8.0pt::67.7478pt.
+[553
+
+
+]
+psfig: searching figs/fig06.02.ps for bounding box
+psfig: including figs/fig06.02.ps 
+l2hSize :figure6816:275.02751pt::0.0pt::260.975pt.
+[554
+
+
+]
+l2hSize :displaymath7116:14.5pt::0.0pt::349.0pt.
+[555
+
+
+]
+l2hSize :tex2html_wrap_inline7167:7.44444pt::7.44444pt::53.02072pt.
+[556
+
+
+]
+l2hSize :tex2html_wrap_inline7169:6.83331pt::0.0pt::7.73268pt.
+[557
+
+
+]
+psfig: searching figs/fig06.03.ps for bounding box
+psfig: including figs/fig06.03.ps 
+l2hSize :figure6826:270.00874pt::0.0pt::259.97125pt.
+[558
+
+
+]
+l2hSize :displaymath7117:14.5pt::0.0pt::349.0pt.
+[559
+
+
+]
+l2hSize :tex2html_wrap_inline7185:6.95831pt::6.95831pt::14.11781pt.
+[560
+
+
+]
+l2hSize :displaymath7118:14.5pt::0.0pt::349.0pt.
+[561
+
+
+]
+l2hSize :tex2html_wrap_inline7195:8.0pt::8.0pt::19.2501pt.
+[562
+
+
+]
+l2hSize :tex2html_wrap_inline7203:8.0pt::8.0pt::42.98958pt.
+[563
+
+
+]
+l2hSize :displaymath7119:14.5pt::0.0pt::349.0pt.
+[564
+
+
+]
+l2hSize :displaymath7120:12.0pt::0.0pt::349.0pt.
+[565
+
+
+]
+l2hSize :tex2html_wrap_inline7207:8.14003pt::0.0pt::32.89694pt.
+[566
+
+
+]
+l2hSize :displaymath7121:18.85951pt::0.0pt::349.0pt.
+[567
+
+
+]
+l2hSize :displaymath7122:14.5pt::0.0pt::349.0pt.
+[568
+
+
+]
+l2hSize :displaymath7123:21.90236pt::0.0pt::349.0pt.
+[569
+
+
+]
+l2hSize :displaymath7124:25.00023pt::0.0pt::349.0pt.
+[570
+
+
+]
+l2hSize :tex2html_wrap_inline7211:6.83331pt::0.0pt::8.36252pt.
+[571
+
+
+]
+l2hSize :tex2html_wrap_inline7221:8.0pt::8.0pt::39.79167pt.
+[572
+
+
+]
+l2hSize :tex2html_wrap_inline7229:8.0pt::8.0pt::34.48128pt.
+[573
+
+
+]
+l2hSize :displaymath7125:14.5pt::0.0pt::349.0pt.
+[574
+
+
+]
+l2hSize :tex2html_wrap_inline7233:6.45831pt::0.0pt::13.0857pt.
+[575
+
+
+]
+l2hSize :tex2html_wrap_inline7235:6.95831pt::6.95831pt::14.33688pt.
+[576
+
+
+]
+l2hSize :displaymath7126:21.06903pt::0.0pt::349.0pt.
+[577
+
+
+]
+l2hSize :tex2html_wrap_inline7247:8.0pt::8.0pt::100.52777pt.
+[578
+
+
+]
+psfig: searching figs/fig06.04.ps for bounding box
+psfig: including figs/fig06.04.ps 
+l2hSize :figure6861:275.02751pt::0.0pt::305.14pt.
+[579
+
+
+]
+l2hSize :tex2html_wrap_inline7255:8.0pt::8.0pt::15.78595pt.
+[580
+
+
+]
+l2hSize :displaymath7127:14.5pt::0.0pt::349.0pt.
+[581
+
+
+]
+l2hSize :tex2html_wrap_inline7261:7.33331pt::7.33331pt::15.03908pt.
+[582
+
+
+]
+psfig: searching figs/fig06.05.ps for bounding box
+psfig: including figs/fig06.05.ps 
+l2hSize :figure6872:176.65999pt::0.0pt::258.9675pt.
+[583
+
+
+]
+psfig: searching figs/fig06.06.ps for bounding box
+psfig: including figs/fig06.06.ps 
+l2hSize :figure6883:453.69499pt::0.0pt::327.2225pt.
+[584
+
+
+]
+psfig: searching figs/fig06.07.ps for bounding box
+psfig: including figs/fig06.07.ps 
+l2hSize :figure6892:105.39375pt::0.0pt::251.94125pt.
+[585
+
+
+]
+l2hSize :tex2html_wrap_inline7267:6.95831pt::6.95831pt::10.74123pt.
+[586
+
+
+]
+l2hSize :tex2html_wrap_inline7269:8.0pt::8.0pt::22.38164pt.
+[587
+
+
+]
+l2hSize :tex2html_wrap_inline7271:8.0pt::8.0pt::22.32455pt.
+[588
+
+
+]
+l2hSize :displaymath7128:14.5pt::0.0pt::349.0pt.
+[589
+
+
+]
+l2hSize :tex2html_wrap_inline7273:6.95831pt::6.95831pt::40.90956pt.
+[590
+
+
+]
+l2hSize :displaymath7129:14.5pt::0.0pt::349.0pt.
+[591
+
+
+]
+l2hSize :tex2html_wrap_inline7281:6.95831pt::6.95831pt::5.32294pt.
+[592
+
+
+]
+l2hSize :tex2html_wrap_inline7283:8.0pt::8.0pt::22.38164pt.
+[593
+
+
+]
+l2hSize :tex2html_wrap_inline7305:8.0pt::8.0pt::18.56374pt.
+[594
+
+
+]
+l2hSize :tex2html_wrap_inline7315:8.0pt::8.0pt::36.89697pt.
+[595
+
+
+]
+l2hSize :displaymath7130:14.5pt::0.0pt::349.0pt.
+[596
+
+
+]
+l2hSize :displaymath7131:14.5pt::0.0pt::349.0pt.
+[597
+
+
+]
+l2hSize :displaymath7132:29.22772pt::0.0pt::349.0pt.
+[598
+
+
+]
+psfig: searching figs/fig06.08.ps for bounding box
+psfig: including figs/fig06.08.ps 
+l2hSize :figure6917:453.69499pt::0.0pt::322.20375pt.
+[599
+
+
+]
+l2hSize :tex2html_wrap_inline7349:8.0pt::8.0pt::28.24455pt.
+[600
+
+
+]
+l2hSize :displaymath7133:18.85951pt::0.0pt::349.0pt.
+[601
+
+
+]
+l2hSize :tex2html_wrap_inline7361:7.44444pt::7.44444pt::23.24303pt.
+[602
+
+
+]
+l2hSize :tex2html_wrap_inline7371:6.95831pt::6.95831pt::22.54509pt.
+[603
+
+
+]
+psfig: searching figs/fig06.09.ps for bounding box
+psfig: including figs/fig06.09.ps 
+l2hSize :figure6926:220.825pt::0.0pt::326.21875pt.
+[604
+
+
+]
+l2hSize :tex2html_wrap_inline7393:8.0pt::8.0pt::37.42703pt.
+[605
+
+
+]
+l2hSize :tex2html_wrap_inline7403:7.44444pt::7.44444pt::22.01384pt.
+[606
+
+
+]
+psfig: searching figs/fig06.10.ps for bounding box
+psfig: including figs/fig06.10.ps 
+l2hSize :figure6937:316.18126pt::0.0pt::321.20001pt.
+[607
+
+
+]
+psfig: searching figs/fig06.11.ps for bounding box
+psfig: including figs/fig06.11.ps 
+l2hSize :figure6943:187.70125pt::0.0pt::268.00125pt.
+[608
+
+
+]
+psfig: searching figs/fig06.11.ps for bounding box
+psfig: including figs/fig06.11.ps 
+l2hSize :figure6948:177.23831pt::0.0pt::349.0pt.
+[609
+
+
+]
+psfig: searching figs/fig06.12.ps for bounding box
+psfig: including figs/fig06.12.ps 
+l2hSize :figure6960:287.0725pt::0.0pt::309.155pt.
+[610
+
+
+]
+psfig: searching figs/fig06.13.ps for bounding box
+psfig: including figs/fig06.13.ps 
+l2hSize :figure6965:291.08751pt::0.0pt::254.9525pt.
+[611
+
+
+]
+l2hSize :tex2html_wrap_inline7407:6.95831pt::6.95831pt::21.05565pt.
+[612
+
+
+]
+l2hSize :tex2html_wrap_inline7409:6.45831pt::0.0pt::13.27785pt.
+[613
+
+
+]
+psfig: searching figs/fig06.14.ps for bounding box
+psfig: including figs/fig06.14.ps 
+l2hSize :figure6974:200.75pt::0.0pt::314.17374pt.
+[614
+
+
+]
+psfig: searching figs/fig06.15.ps for bounding box
+psfig: including figs/fig06.15.ps 
+l2hSize :figure6984:258.96751pt::0.0pt::257.96375pt.
+[615
+
+
+]
+psfig: searching figs/fig06.16.ps for bounding box
+psfig: including figs/fig06.16.ps 
+l2hSize :figure6992:222.8325pt::0.0pt::367.3725pt.
+[616
+
+
+]
+l2hSize :tex2html_wrap_inline7427:6.95831pt::6.95831pt::40.2037pt.
+[617
+
+
+]
+l2hSize :tex2html_wrap_inline7431:6.95831pt::6.95831pt::9.31372pt.
+[618
+
+
+]
+l2hSize :tex2html_wrap_inline7433:6.95831pt::6.95831pt::40.90956pt.
+[619
+
+
+]
+l2hSize :tex2html_wrap_inline7435:8.0pt::8.0pt::63.98608pt.
+[620
+
+
+]
+psfig: searching figs/fig06.17.ps for bounding box
+psfig: including figs/fig06.17.ps 
+l2hSize :figure7003:354.32375pt::0.0pt::330.23375pt.
+[621
+
+
+]
+psfig: searching figs/fig06.18.ps for bounding box
+psfig: including figs/fig06.18.ps 
+l2hSize :figure7013:188.705pt::0.0pt::329.23001pt.
+[622
+
+
+]
+l2hSize :tex2html_wrap_inline7715:10.84444pt::10.84444pt::34.2445pt.
+[623
+
+
+]
+l2hSize :displaymath8550:12.83333pt::0.0pt::349.0pt.
+[624
+
+
+]
+l2hSize :tex2html_wrap_inline8722:9.1555pt::9.1555pt::38.38956pt.
+[625
+
+
+]
+l2hSize :displaymath8551:14.5pt::0.0pt::349.0pt.
+[626
+
+
+]
+l2hSize :displaymath8552:14.5pt::0.0pt::349.0pt.
+[627
+
+
+]
+psfig: searching figs/fig07.01.ps for bounding box
+psfig: including figs/fig07.01.ps 
+l2hSize :figure7770:150.5625pt::0.0pt::316.18124pt.
+[628
+
+
+]
+l2hSize :tex2html_wrap_inline8744:8.0pt::8.0pt::13.59727pt.
+[629
+
+
+]
+l2hSize :tex2html_wrap_inline8746:8.0pt::8.0pt::22.29979pt.
+[630
+
+
+]
+l2hSize :displaymath8553:14.56187pt::0.0pt::349.0pt.
+[631
+
+
+]
+l2hSize :tex2html_wrap_inline8748:8.0pt::8.0pt::22.19295pt.
+[632
+
+
+]
+l2hSize :displaymath8554:25.00023pt::0.0pt::349.0pt.
+[633
+
+
+]
+l2hSize :tex2html_wrap_inline8756:6.94444pt::0.0pt::5.47226pt.
+[634
+
+
+]
+l2hSize :displaymath8555:14.5pt::0.0pt::349.0pt.
+[635
+
+
+]
+l2hSize :displaymath8556:14.5pt::0.0pt::349.0pt.
+[636
+
+
+]
+l2hSize :tex2html_wrap_inline8762:7.44444pt::7.44444pt::46.61974pt.
+[637
+
+
+]
+l2hSize :displaymath8557:14.5pt::0.0pt::349.0pt.
+[638
+
+
+]
+l2hSize :tex2html_wrap_inline8776:7.33331pt::7.33331pt::11.81256pt.
+[639
+
+
+]
+l2hSize :tex2html_wrap_inline8778:7.33331pt::7.33331pt::11.81256pt.
+[640
+
+
+]
+l2hSize :displaymath8558:14.5pt::0.0pt::349.0pt.
+[641
+
+
+]
+l2hSize :displaymath8559:14.5pt::0.0pt::349.0pt.
+[642
+
+
+]
+l2hSize :displaymath8560:14.5pt::0.0pt::349.0pt.
+[643
+
+
+]
+l2hSize :displaymath8561:14.5pt::0.0pt::349.0pt.
+[644
+
+
+]
+l2hSize :tex2html_wrap_inline8780:8.0pt::8.0pt::60.639pt.
+[645
+
+
+]
+l2hSize :tex2html_wrap_inline8782:6.59525pt::0.0pt::3.94516pt.
+[646
+
+
+]
+l2hSize :displaymath8562:14.5pt::0.0pt::349.0pt.
+[647
+
+
+]
+l2hSize :tex2html_wrap_inline8786:7.33331pt::7.33331pt::23.12509pt.
+[648
+
+
+]
+l2hSize :tex2html_wrap_inline8788:6.95831pt::6.95831pt::18.49545pt.
+[649
+
+
+]
+l2hSize :tex2html_wrap_inline8790:7.44444pt::7.44444pt::31.08331pt.
+[650
+
+
+]
+psfig: searching figs/fig07.02.ps for bounding box
+psfig: including figs/fig07.02.ps 
+l2hSize :figure7827:149.55875pt::0.0pt::323.20749pt.
+[651
+
+
+]
+l2hSize :displaymath8564:14.5pt::0.0pt::349.0pt.
+[652
+
+
+]
+l2hSize :tex2html_wrap_inline8808:6.83331pt::0.0pt::13.48503pt.
+[653
+
+
+]
+l2hSize :tex2html_wrap_inline8810:6.45831pt::0.0pt::13.0857pt.
+[654
+
+
+]
+l2hSize :displaymath8565:14.5pt::0.0pt::349.0pt.
+[655
+
+
+]
+l2hSize :displaymath8566:21.06903pt::0.0pt::349.0pt.
+[656
+
+
+]
+l2hSize :displaymath8567:13.94444pt::0.0pt::349.0pt.
+[657
+
+
+]
+l2hSize :displaymath8568:14.5pt::0.0pt::349.0pt.
+[658
+
+
+]
+l2hSize :displaymath8569:13.94444pt::0.0pt::349.0pt.
+[659
+
+
+]
+l2hSize :tex2html_wrap_inline8826:7.44444pt::7.44444pt::31.26617pt.
+[660
+
+
+]
+l2hSize :displaymath8570:14.5pt::0.0pt::349.0pt.
+[661
+
+
+]
+l2hSize :displaymath8571:14.5pt::0.0pt::349.0pt.
+[662
+
+
+]
+l2hSize :tex2html_wrap_inline8838:8.64003pt::8.64003pt::67.01384pt.
+[663
+
+
+]
+l2hSize :tex2html_wrap_inline8840:8.64003pt::8.64003pt::49.51381pt.
+[664
+
+
+]
+l2hSize :displaymath8572:14.5pt::0.0pt::349.0pt.
+[665
+
+
+]
+l2hSize :displaymath8573:14.5pt::0.0pt::349.0pt.
+[666
+
+
+]
+l2hSize :tex2html_wrap_inline8848:8.0pt::8.0pt::33.86456pt.
+[667
+
+
+]
+l2hSize :tex2html_wrap_inline8850:8.0pt::8.0pt::42.46024pt.
+[668
+
+
+]
+l2hSize :tex2html_wrap_inline8852:8.0pt::8.0pt::21.12738pt.
+[669
+
+
+]
+l2hSize :tex2html_wrap_inline8854:6.83331pt::0.0pt::9.56946pt.
+[670
+
+
+]
+l2hSize :displaymath8574:14.5pt::0.0pt::349.0pt.
+[671
+
+
+]
+l2hSize :tex2html_wrap_inline8860:6.83331pt::0.0pt::8.52782pt.
+[672
+
+
+]
+l2hSize :tex2html_wrap_inline8878:7.33331pt::7.33331pt::38.26389pt.
+[673
+
+
+]
+l2hSize :displaymath8575:14.5pt::0.0pt::349.0pt.
+[674
+
+
+]
+l2hSize :displaymath8576:14.5pt::0.0pt::349.0pt.
+[675
+
+
+]
+l2hSize :tex2html_wrap_inline8884:8.49002pt::0.0pt::18.95459pt.
+[676
+
+
+]
+l2hSize :tex2html_wrap_inline8888:7.44444pt::7.44444pt::20.06601pt.
+[677
+
+
+]
+l2hSize :tex2html_wrap_inline8890:8.0pt::8.0pt::42.10948pt.
+[678
+
+
+]
+psfig: searching figs/fig07.03.ps for bounding box
+psfig: including figs/fig07.03.ps 
+l2hSize :figure7865:168.62999pt::0.0pt::348.30124pt.
+[679
+
+
+]
+l2hSize :tex2html_wrap_inline8900:8.0pt::8.0pt::18.37506pt.
+[680
+
+
+]
+psfig: searching figs/fig07.04.ps for bounding box
+psfig: including figs/fig07.04.ps 
+l2hSize :figure7880:189.70876pt::0.0pt::367.3725pt.
+[681
+
+
+]
+l2hSize :tex2html_wrap_inline8910:8.0pt::8.0pt::16.77089pt.
+[682
+
+
+]
+l2hSize :tex2html_wrap_inline8912:8.0pt::8.0pt::16.77089pt.
+[683
+
+
+]
+l2hSize :displaymath8577:14.5pt::0.0pt::349.0pt.
+[684
+
+
+]
+l2hSize :displaymath8578:12.0pt::0.0pt::349.0pt.
+[685
+
+
+]
+l2hSize :displaymath8579:14.5pt::0.0pt::349.0pt.
+[686
+
+
+]
+l2hSize :displaymath8580:12.83333pt::0.0pt::349.0pt.
+[687
+
+
+]
+psfig: searching figs/fig07.05.ps for bounding box
+psfig: including figs/fig07.05.ps 
+l2hSize :figure7896:162.6075pt::0.0pt::334.24875pt.
+[688
+
+
+]
+l2hSize :tex2html_wrap_inline8944:8.0pt::8.0pt::41.23271pt.
+[689
+
+
+]
+l2hSize :tex2html_wrap_inline8946:8.0pt::8.0pt::40.12161pt.
+[690
+
+
+]
+l2hSize :tex2html_wrap_inline8954:8.87892pt::0.0pt::20.78793pt.
+[691
+
+
+]
+l2hSize :tex2html_wrap_inline8956:8.87892pt::0.0pt::27.03795pt.
+[692
+
+
+]
+l2hSize :tex2html_wrap_inline8962:8.49002pt::0.0pt::12.70457pt.
+[693
+
+
+]
+l2hSize :tex2html_wrap_inline8964:8.49002pt::0.0pt::18.95459pt.
+[694
+
+
+]
+l2hSize :tex2html_wrap_inline8966:8.49002pt::0.0pt::12.70457pt.
+[695
+
+
+]
+l2hSize :displaymath8581:14.5pt::0.0pt::349.0pt.
+[696
+
+
+]
+l2hSize :tex2html_wrap_inline8970:8.0pt::8.0pt::30.06604pt.
+[697
+
+
+]
+l2hSize :displaymath8582:12.83333pt::0.0pt::349.0pt.
+[698
+
+
+]
+l2hSize :displaymath8583:14.5pt::0.0pt::349.0pt.
+[699
+
+
+]
+l2hSize :displaymath8584:14.5pt::0.0pt::349.0pt.
+[700
+
+
+]
+l2hSize :displaymath8585:14.5pt::0.0pt::349.0pt.
+[701
+
+
+]
+psfig: searching figs/fig07.06.ps for bounding box
+psfig: including figs/fig07.06.ps 
+l2hSize :figure7926:117.43875pt::0.0pt::312.16626pt.
+[702
+
+
+]
+l2hSize :tex2html_wrap_inline8980:6.94444pt::0.0pt::12.28821pt.
+[703
+
+
+]
+l2hSize :tex2html_wrap_inline8988:8.0pt::8.0pt::21.76398pt.
+[704
+
+
+]
+l2hSize :tex2html_wrap_inline8990:8.0pt::8.0pt::36.6805pt.
+[705
+
+
+]
+l2hSize :tex2html_wrap_inline8994:8.0pt::8.0pt::36.6805pt.
+[706
+
+
+]
+l2hSize :tex2html_wrap_inline8996:6.95831pt::6.95831pt::60.24986pt.
+[707
+
+
+]
+psfig: searching figs/fig07.07.ps for bounding box
+psfig: including figs/fig07.07.ps 
+l2hSize :figure7938:155.58125pt::0.0pt::299.1175pt.
+[708
+
+
+]
+psfig: searching figs/fig07.08.ps for bounding box
+psfig: including figs/fig07.08.ps 
+l2hSize :figure7946:189.70876pt::0.0pt::367.3725pt.
+[709
+
+
+]
+l2hSize :displaymath8586:14.5pt::0.0pt::349.0pt.
+[710
+
+
+]
+l2hSize :displaymath8587:14.5pt::0.0pt::349.0pt.
+[711
+
+
+]
+l2hSize :displaymath8588:14.5pt::0.0pt::349.0pt.
+[712
+
+
+]
+l2hSize :tex2html_wrap_inline9014:8.99002pt::8.99002pt::24.08305pt.
+[713
+
+
+]
+l2hSize :displaymath8589:14.5pt::0.0pt::349.0pt.
+[714
+
+
+]
+l2hSize :displaymath8590:13.94444pt::0.0pt::349.0pt.
+[715
+
+
+]
+l2hSize :displaymath8591:23.01347pt::0.0pt::349.0pt.
+[716
+
+
+]
+l2hSize :tex2html_wrap_inline9022:8.0pt::8.0pt::20.08574pt.
+[717
+
+
+]
+l2hSize :displaymath8592:14.5pt::0.0pt::349.0pt.
+[718
+
+
+]
+l2hSize :displaymath8593:14.5pt::0.0pt::349.0pt.
+[719
+
+
+]
+l2hSize :tex2html_wrap_inline9028:8.0pt::8.0pt::68.1713pt.
+[720
+
+
+]
+l2hSize :displaymath8594:13.94444pt::0.0pt::349.0pt.
+[721
+
+
+]
+l2hSize :displaymath8595:23.56903pt::0.0pt::349.0pt.
+[722
+
+
+]
+psfig: searching figs/fig07.09.ps for bounding box
+psfig: including figs/fig07.09.ps 
+l2hSize :figure7974:255.95625pt::0.0pt::309.155pt.
+[723
+
+
+]
+psfig: searching figs/fig07.10.ps for bounding box
+psfig: including figs/fig07.10.ps 
+l2hSize :figure7979:117.43875pt::0.0pt::312.16626pt.
+[724
+
+
+]
+l2hSize :tex2html_wrap_inline9054:8.0pt::8.0pt::29.54169pt.
+[725
+
+
+]
+l2hSize :displaymath8596:12.0pt::0.0pt::349.0pt.
+[726
+
+
+]
+l2hSize :tex2html_wrap_inline9062:8.0pt::8.0pt::92.94432pt.
+[727
+
+
+]
+l2hSize :displaymath8597:23.01347pt::0.0pt::349.0pt.
+[728
+
+
+]
+l2hSize :tex2html_wrap_inline9064:6.83331pt::0.0pt::16.7767pt.
+[729
+
+
+]
+l2hSize :tex2html_wrap_inline9066:8.0pt::8.0pt::25.48462pt.
+[730
+
+
+]
+l2hSize :tex2html_wrap_inline9072:8.99002pt::8.99002pt::27.37473pt.
+[731
+
+
+]
+l2hSize :tex2html_wrap_inline9074:9.57217pt::9.57217pt::13.8334pt.
+[732
+
+
+]
+l2hSize :tex2html_wrap_inline9082:6.95831pt::6.95831pt::22.85065pt.
+[733
+
+
+]
+l2hSize :displaymath8598:14.5pt::0.0pt::349.0pt.
+[734
+
+
+]
+l2hSize :displaymath8599:14.5pt::0.0pt::349.0pt.
+[735
+
+
+]
+l2hSize :tex2html_wrap_inline9100:6.94444pt::0.0pt::24.03813pt.
+[736
+
+
+]
+psfig: searching figs/fig07.11.ps for bounding box
+psfig: including figs/fig07.11.ps 
+l2hSize :figure8001:130.4875pt::0.0pt::274.02374pt.
+[737
+
+
+]
+l2hSize :displaymath8600:18.50009pt::0.0pt::349.0pt.
+[738
+
+
+]
+l2hSize :displaymath8601:14.5pt::0.0pt::349.0pt.
+[739
+
+
+]
+l2hSize :tex2html_wrap_inline9114:8.0pt::8.0pt::22.25935pt.
+[740
+
+
+]
+l2hSize :tex2html_wrap_inline9116:8.0pt::8.0pt::22.20148pt.
+[741
+
+
+]
+l2hSize :tex2html_wrap_inline9124:8.0pt::8.0pt::40.49992pt.
+[742
+
+
+]
+l2hSize :displaymath8602:14.5pt::0.0pt::349.0pt.
+[743
+
+
+]
+l2hSize :tex2html_wrap_inline9128:8.0pt::8.0pt::50.84482pt.
+[744
+
+
+]
+psfig: searching figs/fig07.12.ps for bounding box
+psfig: including figs/fig07.12.ps 
+l2hSize :figure8022:210.78749pt::0.0pt::288.07626pt.
+[745
+
+
+]
+l2hSize :tex2html_wrap_inline9132:8.0pt::8.0pt::22.25935pt.
+[746
+
+
+]
+l2hSize :displaymath8603:14.5pt::0.0pt::349.0pt.
+[747
+
+
+]
+l2hSize :displaymath8604:14.5pt::0.0pt::349.0pt.
+[748
+
+
+]
+l2hSize :tex2html_wrap_inline9134:6.95831pt::6.95831pt::13.9595pt.
+[749
+
+
+]
+l2hSize :displaymath8605:14.5pt::0.0pt::349.0pt.
+[750
+
+
+]
+l2hSize :displaymath8606:14.5pt::0.0pt::349.0pt.
+[751
+
+
+]
+l2hSize :tex2html_wrap_inline9138:8.0pt::8.0pt::31.50014pt.
+[752
+
+
+]
+l2hSize :tex2html_wrap_inline9140:8.0pt::8.0pt::33.12505pt.
+[753
+
+
+]
+l2hSize :displaymath8607:14.5pt::0.0pt::349.0pt.
+[754
+
+
+]
+l2hSize :tex2html_wrap_inline9144:7.33331pt::7.33331pt::58.97275pt.
+[755
+
+
+]
+l2hSize :tex2html_wrap_inline9146:7.33331pt::7.33331pt::56.3062pt.
+[756
+
+
+]
+l2hSize :displaymath8608:12.0pt::0.0pt::349.0pt.
+[757
+
+
+]
+l2hSize :tex2html_wrap_inline9154:8.0pt::8.0pt::42.04161pt.
+[758
+
+
+]
+l2hSize :displaymath8609:14.5pt::0.0pt::349.0pt.
+[759
+
+
+]
+l2hSize :displaymath8610:14.5pt::0.0pt::349.0pt.
+[760
+
+
+]
+l2hSize :tex2html_wrap_inline9158:9.85pt::9.85pt::61.1816pt.
+[761
+
+
+]
+l2hSize :tex2html_wrap_inline9160:6.45831pt::0.0pt::22.84831pt.
+[762
+
+
+]
+l2hSize :tex2html_wrap_inline9164:9.85pt::9.85pt::163.06349pt.
+[763
+
+
+]
+psfig: searching figs/fig07.13.ps for bounding box
+psfig: including figs/fig07.13.ps 
+l2hSize :figure8060:214.8025pt::0.0pt::299.1175pt.
+[764
+
+
+]
+psfig: searching figs/fig07.14.ps for bounding box
+psfig: including figs/fig07.14.ps 
+l2hSize :figure8067:198.74251pt::0.0pt::287.07251pt.
+[765
+
+
+]
+l2hSize :tex2html_wrap_inline9172:6.95831pt::6.95831pt::39.11452pt.
+[766
+
+
+]
+l2hSize :tex2html_wrap_inline9174:6.95831pt::6.95831pt::37.48961pt.
+[767
+
+
+]
+l2hSize :tex2html_wrap_inline9176:6.95831pt::6.95831pt::41.2957pt.
+[768
+
+
+]
+l2hSize :tex2html_wrap_inline9178:7.09525pt::7.09525pt::5.19052pt.
+[769
+
+
+]
+l2hSize :tex2html_wrap_inline9194:6.45831pt::0.0pt::7.92828pt.
+[770
+
+
+]
+l2hSize :tex2html_wrap_inline9196:7.44444pt::7.44444pt::42.37782pt.
+[771
+
+
+]
+l2hSize :tex2html_wrap_inline9212:8.0pt::8.0pt::44.29974pt.
+[772
+
+
+]
+psfig: searching figs/fig07.15.ps for bounding box
+psfig: including figs/fig07.15.ps 
+l2hSize :figure8097:306.14375pt::0.0pt::309.155pt.
+[773
+
+
+]
+l2hSize :tex2html_wrap_inline9214:6.95831pt::6.95831pt::23.96173pt.
+[774
+
+
+]
+l2hSize :tex2html_wrap_inline9226:8.0pt::8.0pt::14.31602pt.
+[775
+
+
+]
+l2hSize :tex2html_wrap_inline9228:8.0pt::8.0pt::44.79527pt.
+[776
+
+
+]
+l2hSize :displaymath8611:20.77538pt::0.0pt::349.0pt.
+[777
+
+
+]
+l2hSize :displaymath8612:21.4579pt::0.0pt::349.0pt.
+[778
+
+
+]
+l2hSize :displaymath8613:24.06903pt::0.0pt::349.0pt.
+[779
+
+
+]
+psfig: searching figs/fig07.16.ps for bounding box
+psfig: including figs/fig07.16.ps 
+l2hSize :figure8112:321.2pt::0.0pt::315.17749pt.
+[780
+
+
+]
+l2hSize :tex2html_wrap_inline9254:8.0pt::8.0pt::35.20023pt.
+[781
+
+
+]
+l2hSize :tex2html_wrap_inline9262:6.94444pt::0.0pt::31.81593pt.
+[782
+
+
+]
+l2hSize :tex2html_wrap_inline9266:8.0pt::8.0pt::42.77318pt.
+[783
+
+
+]
+l2hSize :tex2html_wrap_inline9270:8.0pt::8.0pt::34.99538pt.
+[784
+
+
+]
+psfig: searching figs/fig07.17.ps for bounding box
+psfig: including figs/fig07.17.ps 
+l2hSize :figure8122:273.02pt::0.0pt::311.1625pt.
+[785
+
+
+]
+l2hSize :tex2html_wrap_inline9278:8.0pt::8.0pt::35.4873pt.
+[786
+
+
+]
+l2hSize :tex2html_wrap_inline9280:8.0pt::8.0pt::17.26282pt.
+[787
+
+
+]
+l2hSize :displaymath8614:14.5pt::0.0pt::349.0pt.
+[788
+
+
+]
+l2hSize :displaymath8616:14.5pt::0.0pt::349.0pt.
+[789
+
+
+]
+l2hSize :displaymath8617:14.5pt::0.0pt::349.0pt.
+[790
+
+
+]
+l2hSize :displaymath8618:14.5pt::0.0pt::349.0pt.
+[791
+
+
+]
+l2hSize :displaymath8619:22.12459pt::0.0pt::349.0pt.
+[792
+
+
+]
+l2hSize :tex2html_wrap_inline9312:6.45831pt::0.0pt::13.27785pt.
+[793
+
+
+]
+l2hSize :displaymath8620:14.5pt::0.0pt::349.0pt.
+[794
+
+
+]
+l2hSize :tex2html_wrap_inline9314:8.0pt::8.0pt::24.54869pt.
+[795
+
+
+]
+l2hSize :displaymath8621:22.12459pt::0.0pt::349.0pt.
+[796
+
+
+]
+l2hSize :tex2html_wrap_inline9316:8.0pt::8.0pt::36.47565pt.
+[797
+
+
+]
+psfig: searching figs/fig07.18.ps for bounding box
+psfig: including figs/fig07.18.ps 
+l2hSize :figure8141:127.47624pt::0.0pt::308.15125pt.
+[798
+
+
+]
+psfig: searching figs/fig07.19.ps for bounding box
+psfig: including figs/fig07.19.ps 
+l2hSize :figure8149:258.96751pt::0.0pt::270.00876pt.
+[799
+
+
+]
+l2hSize :displaymath8622:14.5pt::0.0pt::349.0pt.
+[800
+
+
+]
+l2hSize :tex2html_wrap_inline9318:7.44444pt::7.44444pt::10.19102pt.
+[801
+
+
+]
+l2hSize :displaymath8623:14.5pt::0.0pt::349.0pt.
+[802
+
+
+]
+l2hSize :tex2html_wrap_inline9324:6.95831pt::6.95831pt::29.59138pt.
+[803
+
+
+]
+l2hSize :tex2html_wrap_inline9326:6.95831pt::6.95831pt::29.59138pt.
+[804
+
+
+]
+psfig: searching figs/fig07.20.ps for bounding box
+psfig: including figs/fig07.20.ps 
+l2hSize :figure8157:251.94125pt::0.0pt::260.975pt.
+[805
+
+
+]
+psfig: searching figs/fig07.21.ps for bounding box
+psfig: including figs/fig07.21.ps 
+l2hSize :figure8163:280.04625pt::0.0pt::277.035pt.
+[806
+
+
+]
+l2hSize :tex2html_wrap_inline9330:7.44444pt::7.44444pt::10.19102pt.
+[807
+
+
+]
+l2hSize :tex2html_wrap_inline9332:7.44444pt::7.44444pt::27.10066pt.
+[808
+
+
+]
+l2hSize :tex2html_wrap_inline9342:8.0pt::8.0pt::19.14246pt.
+[809
+
+
+]
+l2hSize :tex2html_wrap_inline9346:8.0pt::8.0pt::19.14246pt.
+[810
+
+
+]
+l2hSize :displaymath8624:21.56903pt::0.0pt::349.0pt.
+[811
+
+
+]
+l2hSize :displaymath8625:21.56903pt::0.0pt::349.0pt.
+[812
+
+
+]
+l2hSize :displaymath8626:21.56903pt::0.0pt::349.0pt.
+[813
+
+
+]
+psfig: searching figs/fig07.22.ps for bounding box
+psfig: including figs/fig07.22.ps 
+l2hSize :figure8181:245.91875pt::0.0pt::240.9pt.
+[814
+
+
+]
+l2hSize :displaymath8627:22.12459pt::0.0pt::349.0pt.
+[815
+
+
+]
+l2hSize :tex2html_wrap_inline9372:8.0pt::8.0pt::23.17023pt.
+[816
+
+
+]
+l2hSize :tex2html_wrap_inline9374:8.0pt::8.0pt::23.17023pt.
+[817
+
+
+]
+psfig: searching figs/fig07.23.ps for bounding box
+psfig: including figs/fig07.23.ps 
+l2hSize :figure8192:212.795pt::0.0pt::329.23001pt.
+[818
+
+
+]
+l2hSize :tex2html_wrap_inline9840:10.01111pt::10.01111pt::57.88293pt.
+[819
+
+
+]
+l2hSize :tex2html_wrap_inline9842:10.84444pt::10.84444pt::52.88336pt.
+[820
+
+
+]
+l2hSize :tex2html_wrap_inline9846:10.01111pt::10.01111pt::52.63298pt.
+[821
+
+
+]
+l2hSize :tex2html_wrap_inline9848:10.84444pt::10.84444pt::49.55003pt.
+[822
+
+
+]
+psfig: searching figs/fig07.24.ps for bounding box
+psfig: including figs/fig07.24.ps 
+l2hSize :figure8206:206.7725pt::0.0pt::394.47375pt.
+[823
+
+
+]
+psfig: searching figs/fig07.25.ps for bounding box
+psfig: including figs/fig07.25.ps 
+l2hSize :figure8213:283.05751pt::0.0pt::354.32376pt.
+[824
+
+
+]
+l2hSize :tex2html_wrap_inline9876:10.01111pt::10.01111pt::26.38321pt.
+[825
+
+
+]
+l2hSize :tex2html_wrap_inline9878:10.84444pt::10.84444pt::28.6889pt.
+[826
+
+
+]
+psfig: searching figs/fig07.26.ps for bounding box
+psfig: including figs/fig07.26.ps 
+l2hSize :figure8231:118.44249pt::0.0pt::293.095pt.
+[827
+
+
+]
+l2hSize :displaymath8628:15.4pt::0.0pt::349.0pt.
+[828
+
+
+]
+l2hSize :displaymath8629:15.4pt::0.0pt::349.0pt.
+[829
+
+
+]
+l2hSize :tex2html_wrap_inline9392:8.0pt::8.0pt::101.04482pt.
+[830
+
+
+]
+l2hSize :displaymath8630:15.4pt::0.0pt::349.0pt.
+[831
+
+
+]
+psfig: searching figs/fig07.27.ps for bounding box
+psfig: including figs/fig07.27.ps 
+l2hSize :figure8247:175.65625pt::0.0pt::368.37625pt.
+[832
+
+
+]
+l2hSize :tex2html_wrap_inline9924:10.01111pt::10.01111pt::42.13307pt.
+[833
+
+
+]
+l2hSize :tex2html_wrap_inline9926:10.01111pt::10.01111pt::47.38303pt.
+[834
+
+
+]
+l2hSize :tex2html_wrap_inline9928:10.84444pt::10.84444pt::40.91115pt.
+[835
+
+
+]
+l2hSize :tex2html_wrap_inline9930:10.84444pt::10.84444pt::45.41112pt.
+[836
+
+
+]
+psfig: searching figs/fig07.28.ps for bounding box
+psfig: including figs/fig07.28.ps 
+l2hSize :figure8267:174.65251pt::0.0pt::349.305pt.
+[837
+
+
+]
+psfig: searching figs/fig07.29.ps for bounding box
+psfig: including figs/fig07.29.ps 
+l2hSize :figure8276:254.9525pt::0.0pt::346.29376pt.
+[838
+
+
+]
+l2hSize :tex2html_wrap_inline9408:8.0pt::8.0pt::60.39244pt.
+[839
+
+
+]
+l2hSize :tex2html_wrap_inline9412:8.0pt::8.0pt::44.25018pt.
+[840
+
+
+]
+l2hSize :tex2html_wrap_inline9416:8.0pt::8.0pt::29.25014pt.
+[841
+
+
+]
+l2hSize :tex2html_wrap_inline9418:7.44444pt::7.44444pt::54.5278pt.
+[842
+
+
+]
+l2hSize :tex2html_wrap_inline9420:7.44444pt::7.44444pt::36.88889pt.
+[843
+
+
+]
+l2hSize :tex2html_wrap_inline9422:7.44444pt::7.44444pt::11.4723pt.
+[844
+
+
+]
+psfig: searching figs/fig07.30.ps for bounding box
+psfig: including figs/fig07.30.ps 
+l2hSize :figure8285:261.97874pt::0.0pt::387.44751pt.
+[845
+
+
+]
+psfig: searching figs/fig07.31.ps for bounding box
+psfig: including figs/fig07.31.ps 
+l2hSize :figure8299:526.96875pt::0.0pt::377.41pt.
+[846
+
+
+]
+l2hSize :tex2html_wrap_inline9428:9.85pt::9.85pt::25.50009pt.
+[847
+
+
+]
+psfig: searching figs/fig07.32.ps for bounding box
+psfig: including figs/fig07.32.ps 
+l2hSize :figure8305:115.43126pt::0.0pt::313.17pt.
+[848
+
+
+]
+psfig: searching figs/fig07.33.ps for bounding box
+psfig: including figs/fig07.33.ps 
+l2hSize :figure8315:342.27875pt::0.0pt::299.1175pt.
+[849
+
+
+]
+l2hSize :displaymath8632:12.0pt::0.0pt::349.0pt.
+[850
+
+
+]
+l2hSize :displaymath8633:15.81671pt::0.0pt::349.0pt.
+[851
+
+
+]
+psfig: searching figs/fig08.01.ps for bounding box
+psfig: including figs/fig08.01.ps 
+l2hSize :figure10050:157.58876pt::0.0pt::287.07251pt.
+[852
+
+
+]
+l2hSize :tex2html_wrap_inline11087:8.0pt::8.0pt::23.98611pt.
+[853
+
+
+]
+l2hSize :tex2html_wrap_inline11095:8.0pt::8.0pt::38.13736pt.
+[854
+
+
+]
+psfig: searching figs/fig08.02.ps for bounding box
+psfig: including figs/fig08.02.ps 
+l2hSize :figure10068:239.89626pt::0.0pt::347.2975pt.
+[855
+
+
+]
+psfig: searching figs/fig08.03.ps for bounding box
+psfig: including figs/fig08.03.ps 
+l2hSize :figure10090:248.93001pt::0.0pt::343.2825pt.
+[856
+
+
+]
+psfig: searching figs/fig08.04.ps for bounding box
+psfig: including figs/fig08.04.ps 
+l2hSize :figure10100:181.67876pt::0.0pt::220.82501pt.
+[857
+
+
+]
+psfig: searching figs/fig08.05.ps for bounding box
+psfig: including figs/fig08.05.ps 
+l2hSize :figure10113:187.70125pt::0.0pt::262.9825pt.
+[858
+
+
+]
+psfig: searching figs/fig08.06.ps for bounding box
+psfig: including figs/fig08.06.ps 
+l2hSize :figure10122:187.70125pt::0.0pt::262.9825pt.
+[859
+
+
+]
+psfig: searching figs/fig08.07.ps for bounding box
+psfig: including figs/fig08.07.ps 
+l2hSize :figure10136:158.59251pt::0.0pt::299.1175pt.
+[860
+
+
+]
+l2hSize :tex2html_wrap_inline11117:8.0pt::8.0pt::49.79161pt.
+[861
+
+
+]
+l2hSize :displaymath10951:14.5pt::0.0pt::349.0pt.
+[862
+
+
+]
+l2hSize :displaymath10952:14.5pt::0.0pt::349.0pt.
+[863
+
+
+]
+l2hSize :displaymath10953:14.5pt::0.0pt::349.0pt.
+[864
+
+
+]
+l2hSize :displaymath10954:14.5pt::0.0pt::349.0pt.
+[865
+
+
+]
+l2hSize :tex2html_wrap_inline11133:8.64003pt::8.64003pt::26.6834pt.
+[866
+
+
+]
+l2hSize :tex2html_wrap_inline11139:8.64003pt::8.64003pt::49.46112pt.
+[867
+
+
+]
+psfig: searching figs/fig08.08.ps for bounding box
+psfig: including figs/fig08.08.ps 
+l2hSize :figure10151:265.99376pt::0.0pt::292.09125pt.
+[868
+
+
+]
+l2hSize :tex2html_wrap_inline11157:6.45831pt::0.0pt::26.8506pt.
+[869
+
+
+]
+l2hSize :tex2html_wrap_inline11159:6.95831pt::6.95831pt::22.51155pt.
+[870
+
+
+]
+psfig: searching figs/fig08.09.ps for bounding box
+psfig: including figs/fig08.09.ps 
+l2hSize :figure10157:163.61125pt::0.0pt::245.91876pt.
+[871
+
+
+]
+l2hSize :tex2html_wrap_inline11171:9.3332pt::9.3332pt::8.40558pt.
+[872
+
+
+]
+l2hSize :displaymath10955:14.5pt::0.0pt::349.0pt.
+[873
+
+
+]
+l2hSize :displaymath10956:14.5pt::0.0pt::349.0pt.
+[874
+
+
+]
+l2hSize :displaymath10957:14.5pt::0.0pt::349.0pt.
+[875
+
+
+]
+l2hSize :displaymath10958:14.5pt::0.0pt::349.0pt.
+[876
+
+
+]
+l2hSize :tex2html_wrap_inline11173:8.8332pt::0.0pt::39.65274pt.
+[877
+
+
+]
+l2hSize :tex2html_wrap_inline11177:8.8332pt::0.0pt::15.58337pt.
+[878
+
+
+]
+psfig: searching figs/fig08.10.ps for bounding box
+psfig: including figs/fig08.10.ps 
+l2hSize :figure10178:123.46126pt::0.0pt::299.1175pt.
+[879
+
+
+]
+l2hSize :tex2html_wrap_inline11179:6.83331pt::0.0pt::8.30907pt.
+[880
+
+
+]
+l2hSize :displaymath10959:21.90236pt::0.0pt::349.0pt.
+[881
+
+
+]
+l2hSize :displaymath10960:21.90236pt::0.0pt::349.0pt.
+[882
+
+
+]
+l2hSize :tex2html_wrap_inline11185:8.0pt::8.0pt::32.19788pt.
+[883
+
+
+]
+l2hSize :tex2html_wrap_inline11187:8.0pt::8.0pt::32.19788pt.
+[884
+
+
+]
+psfig: searching figs/fig08.11.ps for bounding box
+psfig: including figs/fig08.11.ps 
+l2hSize :figure10195:192.71999pt::0.0pt::324.21124pt.
+[885
+
+
+]
+l2hSize :tex2html_wrap_inline11189:7.33331pt::7.33331pt::29.54784pt.
+[886
+
+
+]
+l2hSize :tex2html_wrap_inline11191:7.33331pt::7.33331pt::47.23288pt.
+[887
+
+
+]
+l2hSize :tex2html_wrap_inline11193:7.33331pt::7.33331pt::44.96866pt.
+[888
+
+
+]
+l2hSize :displaymath10961:25.26462pt::0.0pt::349.0pt.
+[889
+
+
+]
+l2hSize :tex2html_wrap_inline11199:8.8332pt::0.0pt::8.30907pt.
+[890
+
+
+]
+l2hSize :displaymath10962:14.5pt::0.0pt::349.0pt.
+[891
+
+
+]
+l2hSize :displaymath10963:14.5pt::0.0pt::349.0pt.
+[892
+
+
+]
+l2hSize :displaymath10964:14.5pt::0.0pt::349.0pt.
+[893
+
+
+]
+l2hSize :displaymath10965:14.5pt::0.0pt::349.0pt.
+[894
+
+
+]
+l2hSize :displaymath10966:12.83333pt::0.0pt::349.0pt.
+[895
+
+
+]
+l2hSize :displaymath10967:12.0pt::0.0pt::349.0pt.
+[896
+
+
+]
+l2hSize :displaymath10968:14.5pt::0.0pt::349.0pt.
+[897
+
+
+]
+l2hSize :tex2html_wrap_inline11207:7.33331pt::7.33331pt::11.73486pt.
+[898
+
+
+]
+l2hSize :tex2html_wrap_inline11209:7.33331pt::7.33331pt::10.24945pt.
+[899
+
+
+]
+l2hSize :displaymath10969:12.83333pt::0.0pt::349.0pt.
+[900
+
+
+]
+l2hSize :displaymath10970:25.00023pt::0.0pt::349.0pt.
+[901
+
+
+]
+l2hSize :displaymath10971:25.00023pt::0.0pt::349.0pt.
+[902
+
+
+]
+l2hSize :displaymath10972:26.13824pt::0.0pt::349.0pt.
+[903
+
+
+]
+l2hSize :displaymath10973:31.13734pt::0.0pt::349.0pt.
+[904
+
+
+]
+l2hSize :displaymath10974:26.13824pt::0.0pt::349.0pt.
+[905
+
+
+]
+l2hSize :displaymath10975:26.13824pt::0.0pt::349.0pt.
+[906
+
+
+]
+l2hSize :tex2html_wrap_inline11235:9.3332pt::9.3332pt::18.40561pt.
+[907
+
+
+]
+psfig: searching figs/fig08.12.ps for bounding box
+psfig: including figs/fig08.12.ps 
+l2hSize :figure10318:214.8025pt::0.0pt::365.36499pt.
+[908
+
+
+]
+l2hSize :tex2html_wrap_inline11243:8.0pt::8.0pt::40.53127pt.
+[909
+
+
+]
+l2hSize :tex2html_wrap_inline11247:6.95831pt::6.95831pt::22.75343pt.
+[910
+
+
+]
+l2hSize :tex2html_wrap_inline11255:6.95831pt::6.95831pt::42.66997pt.
+[911
+
+
+]
+l2hSize :displaymath10976:24.70906pt::0.0pt::349.0pt.
+[912
+
+
+]
+psfig: searching figs/fig08.13.ps for bounding box
+psfig: including figs/fig08.13.ps 
+l2hSize :figure10336:177.66374pt::0.0pt::388.45126pt.
+[913
+
+
+]
+psfig: searching figs/fig08.14.ps for bounding box
+psfig: including figs/fig08.14.ps 
+l2hSize :figure10344:250.9375pt::0.0pt::352.31625pt.
+[914
+
+
+]
+l2hSize :tex2html_wrap_inline11311:6.94444pt::0.0pt::25.62143pt.
+[915
+
+
+]
+l2hSize :tex2html_wrap_inline11313:8.0pt::8.0pt::59.75336pt.
+[916
+
+
+]
+l2hSize :tex2html_wrap_inline11315:7.5305pt::7.5305pt::54.545pt.
+[917
+
+
+]
+l2hSize :displaymath10977:23.01347pt::0.0pt::349.0pt.
+[918
+
+
+]
+l2hSize :tex2html_wrap_inline11329:7.44444pt::7.44444pt::42.27068pt.
+[919
+
+
+]
+l2hSize :tex2html_wrap_inline11333:7.17859pt::7.17859pt::60.0005pt.
+[920
+
+
+]
+l2hSize :displaymath10978:14.5pt::0.0pt::349.0pt.
+[921
+
+
+]
+l2hSize :displaymath10979:14.5pt::0.0pt::349.0pt.
+[922
+
+
+]
+psfig: searching figs/fig08.15.ps for bounding box
+psfig: including figs/fig08.15.ps 
+l2hSize :figure10359:177.66374pt::0.0pt::361.35pt.
+[923
+
+
+]
+l2hSize :displaymath10980:14.5pt::0.0pt::349.0pt.
+[924
+
+
+]
+l2hSize :displaymath10981:14.5pt::0.0pt::349.0pt.
+[925
+
+
+]
+l2hSize :displaymath10982:14.5pt::0.0pt::349.0pt.
+[926
+
+
+]
+psfig: searching figs/fig08.16.ps for bounding box
+psfig: including figs/fig08.16.ps 
+l2hSize :figure10369:176.65999pt::0.0pt::353.32pt.
+[927
+
+
+]
+l2hSize :displaymath10983:26.84395pt::0.0pt::349.0pt.
+[928
+
+
+]
+l2hSize :tex2html_wrap_inline11361:6.45831pt::0.0pt::23.62263pt.
+[929
+
+
+]
+l2hSize :tex2html_wrap_inline11365:6.45831pt::0.0pt::28.62263pt.
+[930
+
+
+]
+l2hSize :displaymath10984:25.26462pt::0.0pt::349.0pt.
+[931
+
+
+]
+l2hSize :displaymath10985:21.06903pt::0.0pt::349.0pt.
+[932
+
+
+]
+l2hSize :tex2html_wrap_inline11381:8.0pt::8.0pt::36.32637pt.
+[933
+
+
+]
+l2hSize :displaymath10986:23.59795pt::0.0pt::349.0pt.
+[934
+
+
+]
+l2hSize :displaymath10987:14.5pt::0.0pt::349.0pt.
+[935
+
+
+]
+psfig: searching figs/fig08.17.ps for bounding box
+psfig: including figs/fig08.17.ps 
+l2hSize :figure10391:198.74251pt::0.0pt::344.28625pt.
+[936
+
+
+]
+psfig: searching figs/fig08.18.ps for bounding box
+psfig: including figs/fig08.18.ps 
+l2hSize :figure10397:176.65999pt::0.0pt::379.41751pt.
+[937
+
+
+]
+l2hSize :displaymath10989:14.5pt::0.0pt::349.0pt.
+[938
+
+
+]
+l2hSize :tex2html_wrap_inline11405:8.0pt::8.0pt::23.48965pt.
+[939
+
+
+]
+l2hSize :tex2html_wrap_inline11413:8.0pt::8.0pt::47.37846pt.
+[940
+
+
+]
+l2hSize :tex2html_wrap_inline11415:6.83331pt::0.0pt::26.37494pt.
+[941
+
+
+]
+l2hSize :displaymath10990:25.13823pt::0.0pt::349.0pt.
+[942
+
+
+]
+l2hSize :tex2html_wrap_inline11417:8.0pt::8.0pt::32.30687pt.
+[943
+
+
+]
+l2hSize :displaymath10991:14.5pt::0.0pt::349.0pt.
+[944
+
+
+]
+l2hSize :tex2html_wrap_inline11427:6.83331pt::0.0pt::7.00697pt.
+[945
+
+
+]
+l2hSize :displaymath10992:14.5pt::0.0pt::349.0pt.
+[946
+
+
+]
+l2hSize :displaymath10993:24.70906pt::0.0pt::349.0pt.
+[947
+
+
+]
+l2hSize :displaymath10994:23.59795pt::0.0pt::349.0pt.
+[948
+
+
+]
+l2hSize :tex2html_wrap_inline11453:7.09525pt::7.09525pt::11.72296pt.
+[949
+
+
+]
+l2hSize :displaymath10995:26.13408pt::0.0pt::349.0pt.
+[950
+
+
+]
+psfig: searching figs/fig08.19.ps for bounding box
+psfig: including figs/fig08.19.ps 
+l2hSize :figure10438:176.65999pt::0.0pt::320.19626pt.
+[951
+
+
+]
+l2hSize :tex2html_wrap_inline11473:8.64003pt::8.64003pt::56.62848pt.
+[952
+
+
+]
+l2hSize :displaymath10996:22.40236pt::0.0pt::349.0pt.
+[953
+
+
+]
+l2hSize :tex2html_wrap_inline11485:8.0pt::8.0pt::38.3194pt.
+[954
+
+
+]
+l2hSize :tex2html_wrap_inline11487:8.0pt::8.0pt::53.875pt.
+[955
+
+
+]
+l2hSize :tex2html_wrap_inline11493:8.8332pt::0.0pt::8.0417pt.
+[956
+
+
+]
+l2hSize :tex2html_wrap_inline11495:8.8332pt::0.0pt::11.33337pt.
+[957
+
+
+]
+l2hSize :tex2html_wrap_inline11497:6.83331pt::0.0pt::7.20834pt.
+[958
+
+
+]
+l2hSize :displaymath10997:14.5pt::0.0pt::349.0pt.
+[959
+
+
+]
+l2hSize :tex2html_wrap_inline11507:8.64003pt::8.64003pt::41.309pt.
+[960
+
+
+]
+l2hSize :tex2html_wrap_inline11511:8.0pt::8.0pt::54.87854pt.
+[961
+
+
+]
+l2hSize :displaymath10998:18.85951pt::0.0pt::349.0pt.
+[962
+
+
+]
+l2hSize :tex2html_wrap_inline11521:6.45831pt::0.0pt::11.5024pt.
+[963
+
+
+]
+l2hSize :tex2html_wrap_inline11531:8.0pt::8.0pt::90.03818pt.
+[964
+
+
+]
+l2hSize :tex2html_wrap_inline11533:8.0pt::8.0pt::45.65968pt.
+[965
+
+
+]
+l2hSize :tex2html_wrap_inline11535:8.0pt::8.0pt::37.97577pt.
+[966
+
+
+]
+l2hSize :tex2html_wrap_inline11541:8.0pt::8.0pt::62.14233pt.
+[967
+
+
+]
+l2hSize :displaymath10999:27.03914pt::0.0pt::349.0pt.
+[968
+
+
+]
+l2hSize :displaymath11000:22.40236pt::0.0pt::349.0pt.
+[969
+
+
+]
+l2hSize :displaymath11001:25.91492pt::0.0pt::349.0pt.
+[970
+
+
+]
+l2hSize :tex2html_wrap_inline11553:8.64003pt::8.64003pt::49.60521pt.
+[971
+
+
+]
+psfig: searching figs/fig08.20.ps for bounding box
+psfig: including figs/fig08.20.ps 
+l2hSize :figure10463:176.65999pt::0.0pt::379.41751pt.
+[972
+
+
+]
+psfig: searching figs/fig08.21.ps for bounding box
+psfig: including figs/fig08.21.ps 
+l2hSize :figure10470:185.69374pt::0.0pt::316.18124pt.
+[973
+
+
+]
+l2hSize :tex2html_wrap_inline11561:8.0pt::8.0pt::31.08679pt.
+[974
+
+
+]
+l2hSize :tex2html_wrap_inline11563:8.0pt::8.0pt::33.72456pt.
+[975
+
+
+]
+l2hSize :displaymath11002:25.54192pt::0.0pt::349.0pt.
+[976
+
+
+]
+l2hSize :tex2html_wrap_inline11571:6.45831pt::0.0pt::5.1563pt.
+[977
+
+
+]
+l2hSize :tex2html_wrap_inline11575:6.45831pt::0.0pt::24.83562pt.
+[978
+
+
+]
+psfig: searching figs/fig08.22.ps for bounding box
+psfig: including figs/fig08.22.ps 
+l2hSize :figure10485:334.24875pt::0.0pt::311.1625pt.
+[979
+
+
+]
+l2hSize :tex2html_wrap_inline11591:8.0pt::8.0pt::15.15633pt.
+[980
+
+
+]
+l2hSize :displaymath11003:23.56903pt::0.0pt::349.0pt.
+[981
+
+
+]
+l2hSize :tex2html_wrap_inline11615:7.33331pt::7.33331pt::26.6423pt.
+[982
+
+
+]
+l2hSize :displaymath11004:24.29112pt::0.0pt::349.0pt.
+[983
+
+
+]
+l2hSize :tex2html_wrap_inline11621:9.3332pt::9.3332pt::18.3091pt.
+[984
+
+
+]
+psfig: searching figs/fig08.23.ps for bounding box
+psfig: including figs/fig08.23.ps 
+l2hSize :figure10509:178.6675pt::0.0pt::275.0275pt.
+[985
+
+
+]
+psfig: searching figs/fig08.24.ps for bounding box
+psfig: including figs/fig08.24.ps 
+l2hSize :figure10520:293.09499pt::0.0pt::329.23001pt.
+[986
+
+
+]
+psfig: searching figs/fig08.25.ps for bounding box
+psfig: including figs/fig08.25.ps 
+l2hSize :figure10526:242.90749pt::0.0pt::316.18124pt.
+[987
+
+
+]
+l2hSize :displaymath11005:14.5pt::0.0pt::349.0pt.
+[988
+
+
+]
+l2hSize :tex2html_wrap_inline11645:8.64003pt::8.64003pt::22.25935pt.
+[989
+
+
+]
+psfig: searching figs/fig08.26.ps for bounding box
+psfig: including figs/fig08.26.ps 
+l2hSize :figure10537:175.65625pt::0.0pt::316.18124pt.
+[990
+
+
+]
+l2hSize :displaymath11006:14.5pt::0.0pt::349.0pt.
+[991
+
+
+]
+l2hSize :displaymath11007:22.76462pt::0.0pt::349.0pt.
+[992
+
+
+]
+l2hSize :tex2html_wrap_inline11647:6.45831pt::0.0pt::11.93408pt.
+[993
+
+
+]
+l2hSize :tex2html_wrap_inline11649:8.64003pt::8.64003pt::20.27208pt.
+[994
+
+
+]
+l2hSize :displaymath11008:14.5pt::0.0pt::349.0pt.
+[995
+
+
+]
+l2hSize :tex2html_wrap_inline11651:8.64003pt::8.64003pt::49.0498pt.
+[996
+
+
+]
+psfig: searching figs/fig08.27.ps for bounding box
+psfig: including figs/fig08.27.ps 
+l2hSize :figure10549:220.825pt::0.0pt::303.1325pt.
+[997
+
+
+]
+l2hSize :tex2html_wrap_inline11655:8.64003pt::8.64003pt::54.98604pt.
+[998
+
+
+]
+l2hSize :tex2html_wrap_inline11657:10.03891pt::10.03891pt::78.9583pt.
+[999
+
+
+]
+l2hSize :tex2html_wrap_inline11659:8.0pt::8.0pt::33.02629pt.
+[1000
+
+
+]
+l2hSize :displaymath11009:14.5pt::0.0pt::349.0pt.
+[1001
+
+
+]
+l2hSize :displaymath11010:14.5pt::0.0pt::349.0pt.
+[1002
+
+
+]
+l2hSize :displaymath11011:14.5pt::0.0pt::349.0pt.
+[1003
+
+
+]
+l2hSize :tex2html_wrap_inline11665:6.95831pt::6.95831pt::14.86115pt.
+[1004
+
+
+]
+l2hSize :displaymath11012:14.5pt::0.0pt::349.0pt.
+[1005
+
+
+]
+l2hSize :tex2html_wrap_inline11683:7.33331pt::7.33331pt::13.29866pt.
+[1006
+
+
+]
+l2hSize :tex2html_wrap_inline11685:7.33331pt::7.33331pt::13.29866pt.
+[1007
+
+
+]
+l2hSize :displaymath11013:25.00023pt::0.0pt::349.0pt.
+[1008
+
+
+]
+l2hSize :displaymath11014:14.5pt::0.0pt::349.0pt.
+[1009
+
+
+]
+l2hSize :displaymath11015:14.5pt::0.0pt::349.0pt.
+[1010
+
+
+]
+l2hSize :tex2html_wrap_inline11689:8.0pt::8.0pt::48.86069pt.
+[1011
+
+
+]
+l2hSize :tex2html_wrap_inline11693:8.0pt::8.0pt::16.34961pt.
+[1012
+
+
+]
+l2hSize :displaymath11016:25.00023pt::0.0pt::349.0pt.
+[1013
+
+
+]
+l2hSize :tex2html_wrap_inline12147:10.01111pt::10.01111pt::28.29984pt.
+[1014
+
+
+]
+l2hSize :tex2html_wrap_inline12149:10.84444pt::10.84444pt::31.1889pt.
+[1015
+
+
+]
+l2hSize :tex2html_wrap_inline12153:10.01111pt::10.01111pt::31.63316pt.
+[1016
+
+
+]
+l2hSize :tex2html_wrap_inline12159:10.01111pt::10.01111pt::26.38321pt.
+[1017
+
+
+]
+l2hSize :tex2html_wrap_inline12161:10.84444pt::10.84444pt::28.96667pt.
+[1018
+
+
+]
+l2hSize :tex2html_wrap_inline12165:10.01111pt::10.01111pt::42.13307pt.
+[1019
+
+
+]
+l2hSize :tex2html_wrap_inline12167:10.57858pt::10.57858pt::39.57779pt.
+[1020
+
+
+]
+psfig: searching figs/fig08.28.ps for bounding box
+psfig: including figs/fig08.28.ps 
+l2hSize :figure10598:174.65251pt::0.0pt::343.2825pt.
+[1021
+
+
+]
+l2hSize :tex2html_wrap_inline12183:10.01111pt::10.01111pt::31.63316pt.
+[1022
+
+
+]
+l2hSize :tex2html_wrap_inline12185:10.84444pt::10.84444pt::31.13335pt.
+[1023
+
+
+]
+psfig: searching figs/fig08.29.ps for bounding box
+psfig: including figs/fig08.29.ps 
+l2hSize :figure10610:242.90749pt::0.0pt::350.30875pt.
+[1024
+
+
+]
+psfig: searching figs/fig08.30.ps for bounding box
+psfig: including figs/fig08.30.ps 
+l2hSize :figure10620:299.11751pt::0.0pt::346.29376pt.
+[1025
+
+
+]
+psfig: searching figs/fig08.31.ps for bounding box
+psfig: including figs/fig08.31.ps 
+l2hSize :figure10626:200.75pt::0.0pt::346.29376pt.
+[1026
+
+
+]
+psfig: searching figs/fig08.32.ps for bounding box
+psfig: including figs/fig08.32.ps 
+l2hSize :figure10639:192.71999pt::0.0pt::365.36499pt.
+[1027
+
+
+]
+l2hSize :tex2html_wrap_inline12231:10.01111pt::10.01111pt::42.13307pt.
+[1028
+
+
+]
+l2hSize :tex2html_wrap_inline12233:10.01111pt::10.01111pt::61.66289pt.
+[1029
+
+
+]
+l2hSize :tex2html_wrap_inline12235:10.01111pt::10.01111pt::42.13307pt.
+[1030
+
+
+]
+l2hSize :tex2html_wrap_inline12237:8.20554pt::8.20554pt::39.57777pt.
+[1031
+
+
+]
+l2hSize :tex2html_wrap_inline12239:8.20554pt::8.20554pt::56.95557pt.
+[1032
+
+
+]
+l2hSize :tex2html_wrap_inline12241:10.84444pt::10.84444pt::39.8278pt.
+[1033
+
+
+]
+l2hSize :tex2html_wrap_inline12245:10.01111pt::10.01111pt::42.13307pt.
+[1034
+
+
+]
+l2hSize :tex2html_wrap_inline12247:10.01111pt::10.01111pt::61.66289pt.
+[1035
+
+
+]
+l2hSize :tex2html_wrap_inline12249:10.01111pt::10.01111pt::42.13307pt.
+[1036
+
+
+]
+l2hSize :tex2html_wrap_inline12251:8.20554pt::8.20554pt::40.10555pt.
+[1037
+
+
+]
+l2hSize :tex2html_wrap_inline12253:8.20554pt::8.20554pt::57.48334pt.
+[1038
+
+
+]
+l2hSize :tex2html_wrap_inline12255:10.84444pt::10.84444pt::40.35558pt.
+[1039
+
+
+]
+psfig: searching figs/fig08.33.ps for bounding box
+psfig: including figs/fig08.33.ps 
+l2hSize :figure10670:273.02pt::0.0pt::325.215pt.
+[1040
+
+
+]
+l2hSize :tex2html_wrap_inline11727:8.0pt::8.0pt::13.94519pt.
+[1041
+
+
+]
+l2hSize :tex2html_wrap_inline13143:7.33331pt::7.33331pt::73.4048pt.
+[1042
+
+
+]
+l2hSize :tex2html_wrap_inline13155:8.0pt::8.0pt::25.12852pt.
+[1043
+
+
+]
+l2hSize :tex2html_wrap_inline13159:8.0pt::8.0pt::59.25345pt.
+[1044
+
+
+]
+l2hSize :tex2html_wrap_inline13173:7.44444pt::7.44444pt::46.8123pt.
+[1045
+
+
+]
+l2hSize :tex2html_wrap_inline13175:8.0pt::8.0pt::30.64937pt.
+[1046
+
+
+]
+l2hSize :tex2html_wrap_inline13187:8.0pt::8.0pt::45.04506pt.
+[1047
+
+
+]
+l2hSize :tex2html_wrap_inline13191:6.83331pt::0.0pt::8.41806pt.
+[1048
+
+
+]
+l2hSize :displaymath12979:14.5pt::0.0pt::349.0pt.
+[1049
+
+
+]
+l2hSize :displaymath12980:15.50006pt::0.0pt::349.0pt.
+[1050
+
+
+]
+l2hSize :tex2html_wrap_inline13199:7.33331pt::7.33331pt::12.92021pt.
+[1051
+
+
+]
+l2hSize :displaymath12981:14.5pt::0.0pt::349.0pt.
+[1052
+
+
+]
+l2hSize :displaymath12982:15.50006pt::0.0pt::349.0pt.
+[1053
+
+
+]
+l2hSize :tex2html_wrap_inline13205:7.33331pt::7.33331pt::12.92021pt.
+[1054
+
+
+]
+l2hSize :tex2html_wrap_inline13207:7.44444pt::7.44444pt::20.38199pt.
+[1055
+
+
+]
+l2hSize :displaymath12983:21.06903pt::0.0pt::349.0pt.
+[1056
+
+
+]
+l2hSize :displaymath12984:14.5pt::0.0pt::349.0pt.
+[1057
+
+
+]
+l2hSize :tex2html_wrap_inline13213:8.49002pt::0.0pt::40.97702pt.
+[1058
+
+
+]
+l2hSize :tex2html_wrap_inline13225:6.83331pt::0.0pt::8.55559pt.
+[1059
+
+
+]
+l2hSize :displaymath12985:14.5pt::0.0pt::349.0pt.
+[1060
+
+
+]
+l2hSize :displaymath12986:14.5pt::0.0pt::349.0pt.
+[1061
+
+
+]
+l2hSize :tex2html_wrap_inline13251:8.0pt::8.0pt::19.60423pt.
+[1062
+
+
+]
+l2hSize :tex2html_wrap_inline13255:7.44444pt::7.44444pt::67.92342pt.
+[1063
+
+
+]
+l2hSize :displaymath12988:14.5pt::0.0pt::349.0pt.
+[1064
+
+
+]
+l2hSize :displaymath12989:15.50006pt::0.0pt::349.0pt.
+[1065
+
+
+]
+l2hSize :displaymath12990:21.38907pt::0.0pt::349.0pt.
+[1066
+
+
+]
+l2hSize :tex2html_wrap_inline13259:8.0pt::8.0pt::23.90517pt.
+[1067
+
+
+]
+l2hSize :tex2html_wrap_inline13261:6.95831pt::6.95831pt::23.64128pt.
+[1068
+
+
+]
+l2hSize :tex2html_wrap_inline13263:7.33331pt::7.33331pt::76.18259pt.
+[1069
+
+
+]
+l2hSize :tex2html_wrap_inline13269:8.0pt::8.0pt::31.68297pt.
+[1070
+
+
+]
+l2hSize :displaymath12991:21.06903pt::0.0pt::349.0pt.
+[1071
+
+
+]
+l2hSize :tex2html_wrap_inline13279:8.0pt::8.0pt::33.17366pt.
+[1072
+
+
+]
+l2hSize :tex2html_wrap_inline13281:6.95831pt::6.95831pt::36.39354pt.
+[1073
+
+
+]
+l2hSize :displaymath12992:21.06903pt::0.0pt::349.0pt.
+[1074
+
+
+]
+l2hSize :displaymath12993:15.50006pt::0.0pt::349.0pt.
+[1075
+
+
+]
+l2hSize :tex2html_wrap_inline13289:7.44444pt::7.44444pt::72.9233pt.
+[1076
+
+
+]
+l2hSize :tex2html_wrap_inline13291:8.0pt::8.0pt::39.46062pt.
+[1077
+
+
+]
+l2hSize :tex2html_wrap_inline13295:7.33331pt::7.33331pt::27.95824pt.
+[1078
+
+
+]
+l2hSize :displaymath12994:25.00023pt::0.0pt::349.0pt.
+[1079
+
+
+]
+l2hSize :tex2html_wrap_inline13303:7.44444pt::7.44444pt::26.88882pt.
+[1080
+
+
+]
+l2hSize :displaymath12996:23.87018pt::0.0pt::349.0pt.
+[1081
+
+
+]
+l2hSize :displaymath12997:14.5pt::0.0pt::349.0pt.
+[1082
+
+
+]
+l2hSize :tex2html_wrap_inline13305:8.64003pt::8.64003pt::31.21002pt.
+[1083
+
+
+]
+l2hSize :tex2html_wrap_inline13307:7.44444pt::7.44444pt::5.33511pt.
+[1084
+
+
+]
+l2hSize :displaymath12998:24.9813pt::0.0pt::349.0pt.
+[1085
+
+
+]
+l2hSize :displaymath12999:14.5pt::0.0pt::349.0pt.
+[1086
+
+
+]
+l2hSize :displaymath13000:24.62459pt::0.0pt::349.0pt.
+[1087
+
+
+]
+l2hSize :tex2html_wrap_inline13309:6.83331pt::0.0pt::26.88882pt.
+[1088
+
+
+]
+l2hSize :displaymath13001:19.22743pt::0.0pt::349.0pt.
+[1089
+
+
+]
+l2hSize :tex2html_wrap_inline13311:8.0pt::8.0pt::29.66257pt.
+[1090
+
+
+]
+l2hSize :displaymath13002:31.00029pt::0.0pt::349.0pt.
+[1091
+
+
+]
+l2hSize :tex2html_wrap_inline13317:6.94444pt::0.0pt::24.35411pt.
+[1092
+
+
+]
+l2hSize :tex2html_wrap_inline13319:6.94444pt::0.0pt::34.35414pt.
+[1093
+
+
+]
+l2hSize :displaymath13003:14.5pt::0.0pt::349.0pt.
+[1094
+
+
+]
+l2hSize :tex2html_wrap_inline13321:8.0pt::8.0pt::63.92795pt.
+[1095
+
+
+]
+l2hSize :tex2html_wrap_inline13335:7.44444pt::7.44444pt::24.35411pt.
+[1096
+
+
+]
+l2hSize :tex2html_wrap_inline13337:7.44444pt::7.44444pt::32.13191pt.
+[1097
+
+
+]
+l2hSize :tex2html_wrap_inline13341:7.44444pt::7.44444pt::32.13191pt.
+[1098
+
+
+]
+psfig: searching figs/fig09.01.ps for bounding box
+psfig: including figs/fig09.01.ps 
+l2hSize :figure12411:198.74251pt::0.0pt::314.17374pt.
+[1099
+
+
+]
+psfig: searching figs/fig09.02.ps for bounding box
+psfig: including figs/fig09.02.ps 
+l2hSize :figure12416:135.50624pt::0.0pt::322.20375pt.
+[1100
+
+
+]
+l2hSize :displaymath13005:14.5pt::0.0pt::349.0pt.
+[1101
+
+
+]
+l2hSize :displaymath13006:14.5pt::0.0pt::349.0pt.
+[1102
+
+
+]
+l2hSize :displaymath13007:14.5pt::0.0pt::349.0pt.
+[1103
+
+
+]
+l2hSize :displaymath13008:15.50006pt::0.0pt::349.0pt.
+[1104
+
+
+]
+l2hSize :displaymath13009:14.5pt::0.0pt::349.0pt.
+[1105
+
+
+]
+l2hSize :displaymath13010:19.22743pt::0.0pt::349.0pt.
+[1106
+
+
+]
+l2hSize :tex2html_wrap_inline13365:8.0pt::8.0pt::38.55438pt.
+[1107
+
+
+]
+l2hSize :tex2html_wrap_inline13369:7.44444pt::7.44444pt::25.58685pt.
+[1108
+
+
+]
+l2hSize :displaymath13011:14.5pt::0.0pt::349.0pt.
+[1109
+
+
+]
+l2hSize :displaymath13012:14.5pt::0.0pt::349.0pt.
+[1110
+
+
+]
+l2hSize :displaymath13014:14.5pt::0.0pt::349.0pt.
+[1111
+
+
+]
+l2hSize :displaymath13015:14.5pt::0.0pt::349.0pt.
+[1112
+
+
+]
+l2hSize :displaymath13016:18.85951pt::0.0pt::349.0pt.
+[1113
+
+
+]
+l2hSize :displaymath13017:21.4579pt::0.0pt::349.0pt.
+[1114
+
+
+]
+l2hSize :tex2html_wrap_inline13379:6.83331pt::0.0pt::13.48503pt.
+[1115
+
+
+]
+l2hSize :displaymath13018:18.85951pt::0.0pt::349.0pt.
+[1116
+
+
+]
+l2hSize :displaymath13019:18.85951pt::0.0pt::349.0pt.
+[1117
+
+
+]
+l2hSize :tex2html_wrap_inline13385:7.33331pt::7.33331pt::16.36392pt.
+[1118
+
+
+]
+l2hSize :tex2html_wrap_inline13387:6.83331pt::0.0pt::7.72226pt.
+[1119
+
+
+]
+l2hSize :displaymath13020:18.85951pt::0.0pt::349.0pt.
+[1120
+
+
+]
+psfig: searching figs/fig09.03.ps for bounding box
+psfig: including figs/fig09.03.ps 
+l2hSize :figure12482:287.0725pt::0.0pt::316.18124pt.
+[1121
+
+
+]
+psfig: searching figs/fig09.04.ps for bounding box
+psfig: including figs/fig09.04.ps 
+l2hSize :figure12488:125.46875pt::0.0pt::320.19626pt.
+[1122
+
+
+]
+l2hSize :tex2html_wrap_inline13427:8.0pt::8.0pt::19.4862pt.
+[1123
+
+
+]
+l2hSize :displaymath13021:14.5pt::0.0pt::349.0pt.
+[1124
+
+
+]
+l2hSize :displaymath13022:21.06903pt::0.0pt::349.0pt.
+[1125
+
+
+]
+l2hSize :displaymath13023:21.06903pt::0.0pt::349.0pt.
+[1126
+
+
+]
+l2hSize :displaymath13024:14.5pt::0.0pt::349.0pt.
+[1127
+
+
+]
+l2hSize :displaymath13025:25.00023pt::0.0pt::349.0pt.
+[1128
+
+
+]
+l2hSize :displaymath13026:18.85951pt::0.0pt::349.0pt.
+[1129
+
+
+]
+l2hSize :displaymath13027:18.85951pt::0.0pt::349.0pt.
+[1130
+
+
+]
+l2hSize :displaymath13028:25.00023pt::0.0pt::349.0pt.
+[1131
+
+
+]
+l2hSize :tex2html_wrap_inline13437:8.0pt::8.0pt::24.59033pt.
+[1132
+
+
+]
+psfig: searching figs/fig09.05.ps for bounding box
+psfig: including figs/fig09.05.ps 
+l2hSize :figure12534:160.59999pt::0.0pt::299.1175pt.
+[1133
+
+
+]
+l2hSize :tex2html_wrap_inline13447:8.0pt::8.0pt::27.52116pt.
+[1134
+
+
+]
+l2hSize :tex2html_wrap_inline13451:8.0pt::8.0pt::15.50008pt.
+[1135
+
+
+]
+l2hSize :displaymath13029:22.12459pt::0.0pt::349.0pt.
+[1136
+
+
+]
+l2hSize :tex2html_wrap_inline13453:8.0pt::8.0pt::69.90962pt.
+[1137
+
+
+]
+l2hSize :displaymath13030:21.06903pt::0.0pt::349.0pt.
+[1138
+
+
+]
+l2hSize :displaymath13031:21.06903pt::0.0pt::349.0pt.
+[1139
+
+
+]
+l2hSize :tex2html_wrap_inline13457:6.95831pt::6.95831pt::18.27786pt.
+[1140
+
+
+]
+l2hSize :tex2html_wrap_inline13459:6.95831pt::6.95831pt::18.27786pt.
+[1141
+
+
+]
+l2hSize :tex2html_wrap_inline13461:6.95831pt::6.95831pt::18.27786pt.
+[1142
+
+
+]
+l2hSize :tex2html_wrap_inline13463:6.95831pt::6.95831pt::18.27786pt.
+[1143
+
+
+]
+psfig: searching figs/fig09.06.ps for bounding box
+psfig: including figs/fig09.06.ps 
+l2hSize :figure12556:168.62999pt::0.0pt::321.20001pt.
+[1144
+
+
+]
+l2hSize :tex2html_wrap_inline13481:6.94444pt::0.0pt::12.60419pt.
+[1145
+
+
+]
+psfig: searching figs/fig09.07.ps for bounding box
+psfig: including figs/fig09.07.ps 
+l2hSize :figure12563:463.7325pt::0.0pt::303.1325pt.
+[1146
+
+
+]
+l2hSize :tex2html_wrap_inline13487:7.44444pt::7.44444pt::82.36772pt.
+[1147
+
+
+]
+l2hSize :tex2html_wrap_inline13493:6.95831pt::6.95831pt::70.9465pt.
+[1148
+
+
+]
+l2hSize :tex2html_wrap_inline13499:6.83331pt::0.0pt::18.40514pt.
+[1149
+
+
+]
+l2hSize :tex2html_wrap_inline13505:7.33331pt::7.33331pt::36.62962pt.
+[1150
+
+
+]
+l2hSize :displaymath13032:14.5pt::0.0pt::349.0pt.
+[1151
+
+
+]
+l2hSize :displaymath13033:14.5pt::0.0pt::349.0pt.
+[1152
+
+
+]
+l2hSize :displaymath13034:14.5pt::0.0pt::349.0pt.
+[1153
+
+
+]
+l2hSize :tex2html_wrap_inline13533:8.0pt::8.0pt::41.24988pt.
+[1154
+
+
+]
+l2hSize :tex2html_wrap_inline13535:6.83331pt::0.0pt::15.55214pt.
+[1155
+
+
+]
+l2hSize :tex2html_wrap_inline13537:8.0pt::8.0pt::15.50008pt.
+[1156
+
+
+]
+psfig: searching figs/fig09.08.ps for bounding box
+psfig: including figs/fig09.08.ps 
+l2hSize :figure12577:326.21875pt::0.0pt::205.76874pt.
+[1157
+
+
+]
+l2hSize :tex2html_wrap_inline13539:8.0pt::8.0pt::22.69823pt.
+[1158
+
+
+]
+l2hSize :tex2html_wrap_inline13541:8.0pt::8.0pt::19.9642pt.
+[1159
+
+
+]
+l2hSize :tex2html_wrap_inline13543:8.0pt::8.0pt::42.1624pt.
+[1160
+
+
+]
+l2hSize :tex2html_wrap_inline13549:8.0pt::8.0pt::39.92038pt.
+[1161
+
+
+]
+l2hSize :tex2html_wrap_inline13551:8.0pt::8.0pt::39.92038pt.
+[1162
+
+
+]
+l2hSize :tex2html_wrap_inline13553:8.0pt::8.0pt::28.2538pt.
+[1163
+
+
+]
+l2hSize :tex2html_wrap_inline13565:8.0pt::8.0pt::29.92946pt.
+[1164
+
+
+]
+l2hSize :tex2html_wrap_inline13567:8.0pt::8.0pt::67.04073pt.
+[1165
+
+
+]
+l2hSize :displaymath13035:25.00023pt::0.0pt::349.0pt.
+[1166
+
+
+]
+l2hSize :tex2html_wrap_inline13571:8.0pt::8.0pt::17.5487pt.
+[1167
+
+
+]
+l2hSize :tex2html_wrap_inline13577:8.0pt::8.0pt::66.3357pt.
+[1168
+
+
+]
+l2hSize :tex2html_wrap_inline13579:8.0pt::8.0pt::78.16206pt.
+[1169
+
+
+]
+l2hSize :tex2html_wrap_inline13581:8.0pt::8.0pt::65.39224pt.
+[1170
+
+
+]
+l2hSize :tex2html_wrap_inline13583:6.95831pt::6.95831pt::24.54854pt.
+[1171
+
+
+]
+psfig: searching figs/fig09.09.ps for bounding box
+psfig: including figs/fig09.09.ps 
+l2hSize :figure12596:287.0725pt::0.0pt::232.87pt.
+[1172
+
+
+]
+l2hSize :tex2html_wrap_inline13589:8.0pt::8.0pt::37.06488pt.
+[1173
+
+
+]
+l2hSize :tex2html_wrap_inline13591:8.0pt::8.0pt::37.58922pt.
+[1174
+
+
+]
+l2hSize :displaymath13036:24.62459pt::0.0pt::349.0pt.
+[1175
+
+
+]
+psfig: searching figs/fig09.10.ps for bounding box
+psfig: including figs/fig09.10.ps 
+l2hSize :figure12610:431.6125pt::0.0pt::304.13626pt.
+[1176
+
+
+]
+l2hSize :tex2html_wrap_inline13593:6.45831pt::0.0pt::31.85062pt.
+[1177
+
+
+]
+l2hSize :tex2html_wrap_inline13595:6.94444pt::0.0pt::24.35411pt.
+[1178
+
+
+]
+l2hSize :displaymath13037:37.0pt::0.0pt::349.0pt.
+[1179
+
+
+]
+l2hSize :tex2html_wrap_inline13601:6.83331pt::0.0pt::16.05904pt.
+[1180
+
+
+]
+l2hSize :displaymath13038:14.5pt::0.0pt::349.0pt.
+[1181
+
+
+]
+l2hSize :displaymath13039:22.12459pt::0.0pt::349.0pt.
+[1182
+
+
+]
+l2hSize :tex2html_wrap_inline13607:8.0pt::8.0pt::25.68408pt.
+[1183
+
+
+]
+l2hSize :tex2html_wrap_inline13611:8.0pt::8.0pt::50.04507pt.
+[1184
+
+
+]
+l2hSize :tex2html_wrap_inline13623:6.95831pt::6.95831pt::26.50232pt.
+[1185
+
+
+]
+psfig: searching figs/fig09.11.ps for bounding box
+psfig: including figs/fig09.11.ps 
+l2hSize :figure12629:282.05376pt::0.0pt::309.155pt.
+[1186
+
+
+]
+psfig: searching figs/fig09.12.ps for bounding box
+psfig: including figs/fig09.12.ps 
+l2hSize :figure12634:188.705pt::0.0pt::275.0275pt.
+[1187
+
+
+]
+l2hSize :displaymath13040:14.5pt::0.0pt::349.0pt.
+[1188
+
+
+]
+l2hSize :displaymath13041:14.5pt::0.0pt::349.0pt.
+[1189
+
+
+]
+l2hSize :displaymath13042:14.5pt::0.0pt::349.0pt.
+[1190
+
+
+]
+l2hSize :displaymath13043:25.00023pt::0.0pt::349.0pt.
+[1191
+
+
+]
+l2hSize :displaymath13044:27.03915pt::0.0pt::349.0pt.
+[1192
+
+
+]
+l2hSize :tex2html_wrap_inline13651:8.01782pt::8.01782pt::45.78934pt.
+[1193
+
+
+]
+l2hSize :displaymath13045:27.03915pt::0.0pt::349.0pt.
+[1194
+
+
+]
+l2hSize :tex2html_wrap_inline13657:8.0pt::8.0pt::48.73146pt.
+[1195
+
+
+]
+l2hSize :tex2html_wrap_inline13659:8.01782pt::8.01782pt::21.61465pt.
+[1196
+
+
+]
+l2hSize :tex2html_wrap_inline13661:8.01782pt::8.01782pt::38.8368pt.
+[1197
+
+
+]
+l2hSize :tex2html_wrap_inline13665:8.0pt::8.0pt::48.73146pt.
+[1198
+
+
+]
+l2hSize :tex2html_wrap_inline13669:8.0pt::8.0pt::18.8091pt.
+[1199
+
+
+]
+l2hSize :tex2html_wrap_inline13671:6.83331pt::0.0pt::14.62502pt.
+[1200
+
+
+]
+l2hSize :displaymath13046:14.5pt::0.0pt::349.0pt.
+[1201
+
+
+]
+l2hSize :displaymath13047:25.00023pt::0.0pt::349.0pt.
+[1202
+
+
+]
+l2hSize :tex2html_wrap_inline13679:8.0pt::8.0pt::18.88545pt.
+[1203
+
+
+]
+l2hSize :displaymath13048:14.5pt::0.0pt::349.0pt.
+[1204
+
+
+]
+l2hSize :displaymath13049:26.62448pt::0.0pt::349.0pt.
+[1205
+
+
+]
+l2hSize :tex2html_wrap_inline13685:8.0pt::8.0pt::19.2466pt.
+[1206
+
+
+]
+l2hSize :displaymath13050:14.5pt::0.0pt::349.0pt.
+[1207
+
+
+]
+l2hSize :displaymath13051:14.5pt::0.0pt::349.0pt.
+[1208
+
+
+]
+l2hSize :displaymath13052:14.5pt::0.0pt::349.0pt.
+[1209
+
+
+]
+l2hSize :tex2html_wrap_inline13695:7.51782pt::0.0pt::10.97574pt.
+[1210
+
+
+]
+l2hSize :tex2html_wrap_inline13703:7.51782pt::0.0pt::10.53824pt.
+[1211
+
+
+]
+psfig: searching figs/fig09.13.ps for bounding box
+psfig: including figs/fig09.13.ps 
+l2hSize :figure12678:274.02376pt::0.0pt::304.13626pt.
+[1212
+
+
+]
+l2hSize :tex2html_wrap_inline13711:8.99002pt::8.99002pt::25.97581pt.
+[1213
+
+
+]
+l2hSize :tex2html_wrap_inline13713:6.94444pt::0.0pt::20.7778pt.
+[1214
+
+
+]
+psfig: searching figs/fig09.14.ps for bounding box
+psfig: including figs/fig09.14.ps 
+l2hSize :figure12688:205.76875pt::0.0pt::355.3275pt.
+[1215
+
+
+]
+l2hSize :tex2html_wrap_inline14083:10.01111pt::10.01111pt::28.29984pt.
+[1216
+
+
+]
+l2hSize :tex2html_wrap_inline14085:10.84444pt::10.84444pt::27.57779pt.
+[1217
+
+
+]
+l2hSize :tex2html_wrap_inline14093:10.01111pt::10.01111pt::33.54979pt.
+[1218
+
+
+]
+l2hSize :tex2html_wrap_inline14095:10.84444pt::10.84444pt::31.49446pt.
+[1219
+
+
+]
+l2hSize :tex2html_wrap_inline13723:8.0pt::8.0pt::36.01384pt.
+[1220
+
+
+]
+l2hSize :tex2html_wrap_inline14099:10.01111pt::10.01111pt::65.04951pt.
+[1221
+
+
+]
+l2hSize :tex2html_wrap_inline14101:10.84444pt::10.84444pt::61.77226pt.
+[1222
+
+
+]
+psfig: searching figs/fig09.15.ps for bounding box
+psfig: including figs/fig09.15.ps 
+l2hSize :figure12705:278.03874pt::0.0pt::430.60875pt.
+[1223
+
+
+]
+l2hSize :tex2html_wrap_inline14115:10.01111pt::10.01111pt::38.79974pt.
+[1224
+
+
+]
+l2hSize :tex2html_wrap_inline14117:10.84444pt::10.84444pt::34.27225pt.
+[1225
+
+
+]
+l2hSize :tex2html_wrap_inline13735:6.83331pt::0.0pt::37.95827pt.
+[1226
+
+
+]
+psfig: searching figs/fig09.16.ps for bounding box
+psfig: including figs/fig09.16.ps 
+l2hSize :figure12717:315.1775pt::0.0pt::431.61249pt.
+[1227
+
+
+]
+l2hSize :tex2html_wrap_inline13739:8.0pt::8.0pt::16.26395pt.
+[1228
+
+
+]
+l2hSize :tex2html_wrap_inline13743:8.0pt::8.0pt::20.35658pt.
+[1229
+
+
+]
+l2hSize :displaymath13053:31.40015pt::0.0pt::349.0pt.
+[1230
+
+
+]
+l2hSize :tex2html_wrap_inline14143:10.01111pt::10.01111pt::33.54979pt.
+[1231
+
+
+]
+l2hSize :tex2html_wrap_inline14145:10.84444pt::10.84444pt::39.10558pt.
+[1232
+
+
+]
+l2hSize :tex2html_wrap_inline14149:10.01111pt::10.01111pt::49.29965pt.
+[1233
+
+
+]
+l2hSize :tex2html_wrap_inline14151:10.84444pt::10.84444pt::51.80005pt.
+[1234
+
+
+]
+l2hSize :tex2html_wrap_inline13761:8.0pt::8.0pt::80.90271pt.
+[1235
+
+
+]
+psfig: searching figs/fig09.17.ps for bounding box
+psfig: including figs/fig09.17.ps 
+l2hSize :figure12740:345.29pt::0.0pt::396.48126pt.
+[1236
+
+
+]
+l2hSize :tex2html_wrap_inline13771:8.0pt::8.0pt::15.904pt.
+[1237
+
+
+]
+l2hSize :tex2html_wrap_inline13773:8.0pt::8.0pt::27.54874pt.
+[1238
+
+
+]
+l2hSize :tex2html_wrap_inline13779:8.0pt::8.0pt::37.9527pt.
+[1239
+
+
+]
+psfig: searching figs/fig09.18.ps for bounding box
+psfig: including figs/fig09.18.ps 
+l2hSize :figure12748:552.0625pt::0.0pt::383.4325pt.
+[1240
+
+
+]
+l2hSize :tex2html_wrap_inline14183:10.01111pt::10.01111pt::49.29965pt.
+[1241
+
+
+]
+l2hSize :tex2html_wrap_inline14185:10.84444pt::10.84444pt::43.77226pt.
+[1242
+
+
+]
+l2hSize :tex2html_wrap_inline14189:10.01111pt::10.01111pt::53.0796pt.
+[1243
+
+
+]
+l2hSize :tex2html_wrap_inline14191:10.34444pt::10.34444pt::52.67781pt.
+[1244
+
+
+]
+l2hSize :tex2html_wrap_inline13799:8.01782pt::8.01782pt::22.05215pt.
+[1245
+
+
+]
+l2hSize :tex2html_wrap_inline13829:8.0pt::8.0pt::38.12726pt.
+[1246
+
+
+]
+l2hSize :tex2html_wrap_inline13839:6.45831pt::0.0pt::19.86116pt.
+[1247
+
+
+]
+l2hSize :tex2html_wrap_inline13843:6.94444pt::0.0pt::24.35411pt.
+[1248
+
+
+]
+psfig: searching figs/fig10.01.ps for bounding box
+psfig: including figs/fig10.01.ps 
+l2hSize :figure14230:243.91124pt::0.0pt::335.2525pt.
+[1249
+
+
+]
+l2hSize :tex2html_wrap_inline14745:8.0pt::8.0pt::21.46182pt.
+[1250
+
+
+]
+l2hSize :tex2html_wrap_inline14757:8.0pt::8.0pt::19.07646pt.
+[1251
+
+
+]
+l2hSize :displaymath14633:14.5pt::0.0pt::349.0pt.
+[1252
+
+
+]
+l2hSize :displaymath14634:14.5pt::0.0pt::349.0pt.
+[1253
+
+
+]
+l2hSize :displaymath14635:14.5pt::0.0pt::349.0pt.
+[1254
+
+
+]
+l2hSize :tex2html_wrap_inline14765:9.37892pt::9.37892pt::49.55135pt.
+[1255
+
+
+]
+l2hSize :displaymath14637:14.5pt::0.0pt::349.0pt.
+[1256
+
+
+]
+l2hSize :displaymath14638:14.5pt::0.0pt::349.0pt.
+[1257
+
+
+]
+l2hSize :tex2html_wrap_inline14767:7.51782pt::0.0pt::12.37502pt.
+[1258
+
+
+]
+l2hSize :displaymath14639:22.12459pt::0.0pt::349.0pt.
+[1259
+
+
+]
+l2hSize :tex2html_wrap_inline14769:7.51782pt::0.0pt::14.68057pt.
+[1260
+
+
+]
+l2hSize :displaymath14640:22.12459pt::0.0pt::349.0pt.
+[1261
+
+
+]
+l2hSize :tex2html_wrap_inline14777:8.0pt::8.0pt::85.60175pt.
+[1262
+
+
+]
+l2hSize :tex2html_wrap_inline14783:8.01782pt::8.01782pt::57.89351pt.
+[1263
+
+
+]
+l2hSize :tex2html_wrap_inline14785:8.01782pt::8.01782pt::44.57173pt.
+[1264
+
+
+]
+l2hSize :tex2html_wrap_inline14791:8.0pt::8.0pt::18.79169pt.
+[1265
+
+
+]
+l2hSize :tex2html_wrap_inline14795:8.0pt::8.0pt::90.60176pt.
+[1266
+
+
+]
+l2hSize :tex2html_wrap_inline14801:8.0pt::8.0pt::28.90518pt.
+[1267
+
+
+]
+l2hSize :tex2html_wrap_inline14807:8.0pt::8.0pt::42.47449pt.
+[1268
+
+
+]
+l2hSize :displaymath14641:14.5pt::0.0pt::349.0pt.
+[1269
+
+
+]
+l2hSize :displaymath14642:14.5pt::0.0pt::349.0pt.
+[1270
+
+
+]
+l2hSize :tex2html_wrap_inline14809:8.01782pt::8.01782pt::23.93294pt.
+[1271
+
+
+]
+l2hSize :displaymath14643:22.12459pt::0.0pt::349.0pt.
+[1272
+
+
+]
+l2hSize :tex2html_wrap_inline14811:8.01782pt::8.01782pt::26.2385pt.
+[1273
+
+
+]
+l2hSize :displaymath14644:22.12459pt::0.0pt::349.0pt.
+[1274
+
+
+]
+l2hSize :tex2html_wrap_inline14817:8.0pt::8.0pt::62.86575pt.
+[1275
+
+
+]
+l2hSize :tex2html_wrap_inline14819:8.0pt::8.0pt::70.64355pt.
+[1276
+
+
+]
+psfig: searching figs/fig10.02.ps for bounding box
+psfig: including figs/fig10.02.ps 
+l2hSize :figure14263:314.17375pt::0.0pt::340.27124pt.
+[1277
+
+
+]
+l2hSize :tex2html_wrap_inline14829:7.33331pt::7.33331pt::45.03293pt.
+[1278
+
+
+]
+l2hSize :tex2html_wrap_inline14833:7.44444pt::7.44444pt::41.83151pt.
+[1279
+
+
+]
+l2hSize :tex2html_wrap_inline14835:7.44444pt::7.44444pt::10.19102pt.
+[1280
+
+
+]
+l2hSize :tex2html_wrap_inline14837:7.33331pt::7.33331pt::11.79173pt.
+[1281
+
+
+]
+psfig: searching figs/fig10.03.ps for bounding box
+psfig: including figs/fig10.03.ps 
+l2hSize :figure14280:223.83626pt::0.0pt::337.26001pt.
+[1282
+
+
+]
+l2hSize :tex2html_wrap_inline14841:8.0pt::8.0pt::101.16322pt.
+[1283
+
+
+]
+l2hSize :tex2html_wrap_inline14843:8.0pt::8.0pt::93.38542pt.
+[1284
+
+
+]
+l2hSize :displaymath14645:14.5pt::0.0pt::349.0pt.
+[1285
+
+
+]
+l2hSize :tex2html_wrap_inline14845:7.33331pt::7.33331pt::64.51596pt.
+[1286
+
+
+]
+l2hSize :tex2html_wrap_inline14849:8.0pt::8.0pt::24.73268pt.
+[1287
+
+
+]
+l2hSize :tex2html_wrap_inline14851:8.01782pt::8.01782pt::73.36223pt.
+[1288
+
+
+]
+l2hSize :displaymath14646:14.86108pt::0.0pt::349.0pt.
+[1289
+
+
+]
+l2hSize :displaymath14647:21.56903pt::0.0pt::349.0pt.
+[1290
+
+
+]
+l2hSize :tex2html_wrap_inline14853:7.44444pt::7.44444pt::74.05357pt.
+[1291
+
+
+]
+psfig: searching figs/fig10.04.ps for bounding box
+psfig: including figs/fig10.04.ps 
+l2hSize :figure14299:88.33pt::0.0pt::328.22626pt.
+[1292
+
+
+]
+l2hSize :displaymath14648:23.10794pt::0.0pt::349.0pt.
+[1293
+
+
+]
+l2hSize :tex2html_wrap_inline14861:8.0pt::8.0pt::26.84727pt.
+[1294
+
+
+]
+l2hSize :tex2html_wrap_inline14863:7.33331pt::7.33331pt::48.52364pt.
+[1295
+
+
+]
+l2hSize :tex2html_wrap_inline14865:6.95831pt::6.95831pt::38.9328pt.
+[1296
+
+
+]
+l2hSize :displaymath14649:14.5pt::0.0pt::349.0pt.
+[1297
+
+
+]
+psfig: searching figs/fig10.05.ps for bounding box
+psfig: including figs/fig10.05.ps 
+l2hSize :figure14318:192.71999pt::0.0pt::329.23001pt.
+[1298
+
+
+]
+l2hSize :tex2html_wrap_inline14869:8.14003pt::0.0pt::10.98851pt.
+[1299
+
+
+]
+l2hSize :tex2html_wrap_inline14873:6.95831pt::6.95831pt::71.15486pt.
+[1300
+
+
+]
+l2hSize :displaymath14650:21.06903pt::0.0pt::349.0pt.
+[1301
+
+
+]
+l2hSize :displaymath14651:21.06903pt::0.0pt::349.0pt.
+[1302
+
+
+]
+l2hSize :tex2html_wrap_inline14881:8.0pt::8.0pt::64.4907pt.
+[1303
+
+
+]
+l2hSize :tex2html_wrap_inline14889:8.0pt::8.0pt::19.5903pt.
+[1304
+
+
+]
+l2hSize :displaymath14652:14.5pt::0.0pt::349.0pt.
+[1305
+
+
+]
+l2hSize :displaymath14653:14.5pt::0.0pt::349.0pt.
+[1306
+
+
+]
+l2hSize :tex2html_wrap_inline14895:8.0pt::8.0pt::56.08675pt.
+[1307
+
+
+]
+l2hSize :displaymath14654:14.5pt::0.0pt::349.0pt.
+[1308
+
+
+]
+l2hSize :tex2html_wrap_inline14897:8.64003pt::8.64003pt::31.85423pt.
+[1309
+
+
+]
+l2hSize :displaymath14655:14.5pt::0.0pt::349.0pt.
+[1310
+
+
+]
+l2hSize :tex2html_wrap_inline14899:8.0pt::8.0pt::16.74545pt.
+[1311
+
+
+]
+l2hSize :tex2html_wrap_inline14901:7.33331pt::7.33331pt::47.29381pt.
+[1312
+
+
+]
+l2hSize :displaymath14656:25.00023pt::0.0pt::349.0pt.
+[1313
+
+
+]
+l2hSize :tex2html_wrap_inline14903:8.94843pt::8.94843pt::17.76256pt.
+[1314
+
+
+]
+l2hSize :displaymath14657:14.5pt::0.0pt::349.0pt.
+[1315
+
+
+]
+l2hSize :displaymath14658:21.4579pt::0.0pt::349.0pt.
+[1316
+
+
+]
+l2hSize :tex2html_wrap_inline14909:7.44444pt::7.44444pt::24.35411pt.
+[1317
+
+
+]
+l2hSize :tex2html_wrap_inline14913:8.0pt::8.0pt::38.50134pt.
+[1318
+
+
+]
+l2hSize :tex2html_wrap_inline14915:8.0pt::8.0pt::55.69194pt.
+[1319
+
+
+]
+l2hSize :tex2html_wrap_inline14921:7.44444pt::7.44444pt::32.13191pt.
+[1320
+
+
+]
+l2hSize :displaymath14659:21.06903pt::0.0pt::349.0pt.
+[1321
+
+
+]
+l2hSize :displaymath14660:21.21983pt::0.0pt::349.0pt.
+[1322
+
+
+]
+l2hSize :displaymath14661:22.12459pt::0.0pt::349.0pt.
+[1323
+
+
+]
+l2hSize :displaymath14662:22.12459pt::0.0pt::349.0pt.
+[1324
+
+
+]
+l2hSize :displaymath14663:25.00023pt::0.0pt::349.0pt.
+[1325
+
+
+]
+l2hSize :displaymath14664:25.69519pt::0.0pt::349.0pt.
+[1326
+
+
+]
+l2hSize :displaymath14665:25.96742pt::0.0pt::349.0pt.
+[1327
+
+
+]
+l2hSize :displaymath14666:23.65628pt::0.0pt::349.0pt.
+[1328
+
+
+]
+l2hSize :displaymath14667:14.5pt::0.0pt::349.0pt.
+[1329
+
+
+]
+l2hSize :displaymath14668:21.4579pt::0.0pt::349.0pt.
+[1330
+
+
+]
+l2hSize :displaymath14669:21.4579pt::0.0pt::349.0pt.
+[1331
+
+
+]
+l2hSize :displaymath14670:21.4579pt::0.0pt::349.0pt.
+[1332
+
+
+]
+l2hSize :displaymath14671:25.00023pt::0.0pt::349.0pt.
+[1333
+
+
+]
+psfig: searching figs/fig10.06.ps for bounding box
+psfig: including figs/fig10.06.ps 
+l2hSize :figure14407:98.36751pt::0.0pt::330.23375pt.
+[1334
+
+
+]
+l2hSize :displaymath14672:21.4579pt::0.0pt::349.0pt.
+[1335
+
+
+]
+l2hSize :tex2html_wrap_inline14937:8.0pt::8.0pt::64.2383pt.
+[1336
+
+
+]
+l2hSize :displaymath14673:25.00023pt::0.0pt::349.0pt.
+[1337
+
+
+]
+l2hSize :displaymath14674:25.00023pt::0.0pt::349.0pt.
+[1338
+
+
+]
+l2hSize :displaymath14675:25.00023pt::0.0pt::349.0pt.
+[1339
+
+
+]
+l2hSize :displaymath14676:21.4579pt::0.0pt::349.0pt.
+[1340
+
+
+]
+l2hSize :displaymath14677:25.00023pt::0.0pt::349.0pt.
+[1341
+
+
+]
+psfig: searching figs/fig10.07.ps for bounding box
+psfig: including figs/fig10.07.ps 
+l2hSize :figure14432:110.41249pt::0.0pt::327.2225pt.
+[1342
+
+
+]
+l2hSize :tex2html_wrap_inline14947:8.0pt::8.0pt::22.72227pt.
+[1343
+
+
+]
+l2hSize :tex2html_wrap_inline14949:8.0pt::8.0pt::20.73616pt.
+[1344
+
+
+]
+l2hSize :tex2html_wrap_inline14951:8.0pt::8.0pt::63.19444pt.
+[1345
+
+
+]
+l2hSize :displaymath14678:23.59795pt::0.0pt::349.0pt.
+[1346
+
+
+]
+l2hSize :tex2html_wrap_inline14953:8.0pt::8.0pt::17.0892pt.
+[1347
+
+
+]
+l2hSize :tex2html_wrap_inline14955:8.0pt::8.0pt::69.2279pt.
+[1348
+
+
+]
+l2hSize :tex2html_wrap_inline14957:8.0pt::8.0pt::40.103pt.
+[1349
+
+
+]
+l2hSize :displaymath14679:25.40523pt::0.0pt::349.0pt.
+[1350
+
+
+]
+l2hSize :displaymath14680:25.00023pt::0.0pt::349.0pt.
+[1351
+
+
+]
+l2hSize :displaymath14681:21.56903pt::0.0pt::349.0pt.
+[1352
+
+
+]
+l2hSize :displaymath14682:14.5pt::0.0pt::349.0pt.
+[1353
+
+
+]
+l2hSize :displaymath14683:14.5pt::0.0pt::349.0pt.
+[1354
+
+
+]
+l2hSize :displaymath14684:26.20392pt::0.0pt::349.0pt.
+[1355
+
+
+]
+l2hSize :tex2html_wrap_inline14969:8.0pt::8.0pt::24.30556pt.
+[1356
+
+
+]
+l2hSize :displaymath14685:23.56903pt::0.0pt::349.0pt.
+[1357
+
+
+]
+l2hSize :tex2html_wrap_inline14975:8.0pt::8.0pt::43.83331pt.
+[1358
+
+
+]
+l2hSize :tex2html_wrap_inline14977:8.0pt::8.0pt::16.86234pt.
+[1359
+
+
+]
+l2hSize :tex2html_wrap_inline14989:8.0pt::8.0pt::93.24294pt.
+[1360
+
+
+]
+l2hSize :tex2html_wrap_inline14997:6.83331pt::0.0pt::16.2917pt.
+[1361
+
+
+]
+l2hSize :tex2html_wrap_inline14999:8.0pt::8.0pt::29.58334pt.
+[1362
+
+
+]
+l2hSize :tex2html_wrap_inline15001:8.0pt::8.0pt::29.58334pt.
+[1363
+
+
+]
+l2hSize :tex2html_wrap_inline15005:8.0pt::8.0pt::62.91663pt.
+[1364
+
+
+]
+l2hSize :tex2html_wrap_inline15007:8.0pt::8.0pt::20.50009pt.
+[1365
+
+
+]
+l2hSize :tex2html_wrap_inline15009:6.45831pt::0.0pt::86.05557pt.
+[1366
+
+
+]
+l2hSize :tex2html_wrap_inline15011:6.95831pt::6.95831pt::111.05565pt.
+[1367
+
+
+]
+l2hSize :tex2html_wrap_inline15013:8.0pt::8.0pt::83.83347pt.
+[1368
+
+
+]
+psfig: searching figs/fig10.08.ps for bounding box
+psfig: including figs/fig10.08.ps 
+l2hSize :figure14466:255.95625pt::0.0pt::332.24124pt.
+[1369
+
+
+]
+psfig: searching figs/fig10.09.ps for bounding box
+psfig: including figs/fig10.09.ps 
+l2hSize :figure14476:94.3525pt::0.0pt::322.20375pt.
+[1370
+
+
+]
+l2hSize :tex2html_wrap_inline15031:6.45831pt::0.0pt::17.08337pt.
+[1371
+
+
+]
+psfig: searching figs/fig10.10.ps for bounding box
+psfig: including figs/fig10.10.ps 
+l2hSize :figure14483:250.9375pt::0.0pt::330.23375pt.
+[1372
+
+
+]
+psfig: searching figs/fig10.11.ps for bounding box
+psfig: including figs/fig10.11.ps 
+l2hSize :figure14488:257.96376pt::0.0pt::229.85875pt.
+[1373
+
+
+]
+l2hSize :tex2html_wrap_inline15041:8.0pt::8.0pt::14.79172pt.
+[1374
+
+
+]
+psfig: searching figs/fig10.12.ps for bounding box
+psfig: including figs/fig10.12.ps 
+l2hSize :figure14496:266.99751pt::0.0pt::362.35376pt.
+[1375
+
+
+]
+psfig: searching figs/fig10.13.ps for bounding box
+psfig: including figs/fig10.13.ps 
+l2hSize :figure14503:311.16249pt::0.0pt::268.00125pt.
+[1376
+
+
+]
+psfig: searching figs/fig10.14.ps for bounding box
+psfig: including figs/fig10.14.ps 
+l2hSize :figure14510:260.97499pt::0.0pt::414.54874pt.
+[1377
+
+
+]
+l2hSize :tex2html_wrap_inline15045:8.0pt::8.0pt::153.27757pt.
+[1378
+
+
+] (./images.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1849 strings out of 95847
+ 20957 string characters out of 1193874
+ 64940 words of memory out of 1000001
+ 4624 multiletter control sequences out of 10000+50000
+ 3808 words of font info for 15 fonts, out of 500000 for 1000
+ 14 hyphenation exceptions out of 1000
+ 23i,15n,19p,731b,305s stack positions out of 1500i,500n,5000p,200000b,5000s
+
+Output written on images.dvi (1378 pages, 377728 bytes).

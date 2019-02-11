@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Frequency</TITLE>
+<META NAME="description" CONTENT="Frequency">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node12.html">
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node12.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html707"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html701"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html695"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html703"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html705"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html708"
+  HREF="node12.html">Synthesizing a sinusoid</A>
+<B> Up:</B> <A NAME="tex2html702"
+  HREF="node7.html">Sinusoids, amplitude and frequency</A>
+<B> Previous:</B> <A NAME="tex2html696"
+  HREF="node10.html">Controlling Amplitude</A>
+ &nbsp; <B>  <A NAME="tex2html704"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html706"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00540000000000000000">
+Frequency</A>
+</H1>
+
+<P>
+Frequencies, like amplitudes, are often measured on a logarithmic scale, in
+order to emphasize proportions between them, which usually provide a better
+description of the relationship between frequencies than do differences
+between them.  The frequency ratio between two musical tones determines
+the musical interval between them.
+
+<P>
+The Western musical scale divides the 
+<A NAME="1095"></A><I>octave</I> (the musical interval associated with a ratio of 2:1) into
+twelve equal sub-intervals, each of which therefore corresponds to a ratio
+of <!-- MATH
+ ${2 ^ {1/{12}}}$
+ -->
+<IMG
+ WIDTH="37" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img110.png"
+ ALT="${2 ^ {1/{12}}}$">.  For historical  reasons this sub-interval is called a
+<A NAME="1098"></A><I>half-step</I>.
+A convenient logarithmic scale for pitch is simply to
+count the number of half-steps from a reference pitch--allowing fractions to
+permit us to specify pitches which don't fall on a note of the Western scale.
+The most commonly used logarithmic pitch scale is
+<A NAME="1100"></A>``MIDI pitch", in which the pitch 69 is assigned to a frequency of 440 cycles
+per second--the A above middle C.  To convert between a MIDI pitch <IMG
+ WIDTH="17" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img111.png"
+ ALT="$m$">
+and a frequency
+in cycles per second <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.png"
+ ALT="$f$">, apply the
+<A NAME="1101"></A>Pitch/Frequency Conversion formulas:
+
+<P>
+<A NAME="eq-pitchmidi"></A>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+m = 69 + 12 \cdot {\log _ 2} (f/440)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="178" HEIGHT="28" BORDER="0"
+ SRC="img113.png"
+ ALT="\begin{displaymath}
+m = 69 + 12 \cdot {\log _ 2} (f/440)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+f = 440 \cdot {{2} ^ {(m - 69) / 12}}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="136" HEIGHT="27" BORDER="0"
+ SRC="img114.png"
+ ALT="\begin{displaymath}
+f = 440 \cdot {{2} ^ {(m - 69) / 12}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Middle C, corresponding to MIDI pitch <IMG
+ WIDTH="54" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img115.png"
+ ALT="$m=60$">, comes to <IMG
+ WIDTH="86" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img116.png"
+ ALT="$f=261.626$"> cycles per
+second.
+
+<P>
+MIDI itself is an old hardware protocol which has unfortunately insinuated
+itself into a great deal of software design.  In hardware, MIDI allows only
+integer pitches between 0 and 127.  However, the underlying scale is well
+defined for any ``MIDI" number, even negative ones; for example a ``MIDI pitch"
+of -4 is a decent rate of vibrato.  The pitch scale cannot, however, describe
+frequencies less than or equal to zero cycles per second. (For a clear
+description of MIDI, its capabilities and limitations, see
+[<A
+ HREF="node202.html#r-ballora03">Bal03</A>, ch.6-8]).
+
+<P>
+A half-step comes to a ratio of about 1.059 to 1, or about a six percent
+increase in frequency.  Half-steps are further divided into <A NAME="1107"></A><I>cents</I>, each cent being one hundredth of a half-step.  As a rule of
+thumb, it might take about three cents to make a discernible change in the
+pitch of a musical tone.  At middle C this comes to a difference of about 1/2
+cycle per second.  A graph of frequency as a function of MIDI pitch, over a
+two-octave range, is shown in Figure <A HREF="node10.html#fig01.04">1.4</A>.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html707"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html701"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html695"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html703"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html705"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html708"
+  HREF="node12.html">Synthesizing a sinusoid</A>
+<B> Up:</B> <A NAME="tex2html702"
+  HREF="node7.html">Sinusoids, amplitude and frequency</A>
+<B> Previous:</B> <A NAME="tex2html696"
+  HREF="node10.html">Controlling Amplitude</A>
+ &nbsp; <B>  <A NAME="tex2html704"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html706"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Fixed, noninterpolating delay line</TITLE>
+<META NAME="description" CONTENT="Fixed, noninterpolating delay line">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node118.html">
+<LINK REL="previous" HREF="node116.html">
+<LINK REL="up" HREF="node116.html">
+<LINK REL="next" HREF="node118.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2305"
+  HREF="node118.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2299"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2293"
+  HREF="node116.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2301"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2303"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2306"
+  HREF="node118.html">Recirculating comb filter</A>
+<B> Up:</B> <A NAME="tex2html2300"
+  HREF="node116.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2294"
+  HREF="node116.html">Examples</A>
+ &nbsp; <B>  <A NAME="tex2html2302"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2304"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0011101000000000000000">
+Fixed, noninterpolating delay line</A>
+</H2>
+
+<P>
+Example G01.delay.pd (Figure <A HREF="#fig07.23">7.23</A>) applies a simple delay line to
+an input signal.  Two new objects are needed:
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig07.23"></A><A NAME="8194"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 7.23:</STRONG>
+Example patch G01.delay.pd, showing a noninterpolating delay with
+a delay time controlled in milliseconds.</CAPTION>
+<TR><TD><IMG
+ WIDTH="242" HEIGHT="312" BORDER="0"
+ SRC="img818.png"
+ ALT="\begin{figure}\psfig{file=figs/fig07.23.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><!-- MATH
+ $\fbox{ \texttt{delwrite\~}}$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img819.png"
+ ALT="\fbox{ \texttt{delwrite\~}}">:
+<A NAME="8424"></A>define and write to a delay line.  The first creation argument gives the name of the
+delay line (and two delay lines may not share the same name).  The
+second creation argument is the length of the delay line in milliseconds.  The
+inlet takes an audio signal and writes it continuously into the delay line.
+
+<P>
+<BR><!-- MATH
+ $\fbox{ \texttt{delread\~}}$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img821.png"
+ ALT="\fbox{ \texttt{delread\~}}">:
+<A NAME="8425"></A>read from (or ``tap") a delay line.  The first creation argument gives the name
+of the delay line (which should agree with the name of the corresponding 
+<TT>delwrite~</TT> object; this is how Pd knows which <TT>delwrite~</TT> to
+associate with the <TT>delread~</TT> object).  The
+second (optional) creation argument gives the delay time in milliseconds.  This
+may not be negative and also may not exceed the length of the delay line as
+specified to the <TT>delwrite~</TT> object.  Incoming numbers (messages) may be
+used to change the delay time dynamically.  However, this will make a discontinuous
+change in the output, which should therefore be muted if the delay time changes.
+
+<P>
+The example simply pairs one <TT>delwrite~</TT> and one <TT>delread~</TT> object
+to make a simple, noninterpolating delay.  The input signal is a looped
+recording.  The delayed and the non-delayed signal are added to make a
+non-recirculating comb filter.  At delay times below about 10 milliseconds, the
+filtering effect is most prominent, and above that, a discrete echo becomes
+audible.  There is no muting protection on the delay output, so clicks are
+possible when the delay time changes.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2305"
+  HREF="node118.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2299"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2293"
+  HREF="node116.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2301"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2303"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2306"
+  HREF="node118.html">Recirculating comb filter</A>
+<B> Up:</B> <A NAME="tex2html2300"
+  HREF="node116.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2294"
+  HREF="node116.html">Examples</A>
+ &nbsp; <B>  <A NAME="tex2html2302"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2304"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

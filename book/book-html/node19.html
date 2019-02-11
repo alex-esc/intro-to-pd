@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Constant amplitude scaler</TITLE>
+<META NAME="description" CONTENT="Constant amplitude scaler">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node20.html">
+<LINK REL="previous" HREF="node18.html">
+<LINK REL="up" HREF="node18.html">
+<LINK REL="next" HREF="node20.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html825"
+  HREF="node20.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html819"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html813"
+  HREF="node18.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html821"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html823"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html826"
+  HREF="node20.html">Amplitude control in decibels</A>
+<B> Up:</B> <A NAME="tex2html820"
+  HREF="node18.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html814"
+  HREF="node18.html">Examples</A>
+ &nbsp; <B>  <A NAME="tex2html822"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html824"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00591000000000000000">
+Constant amplitude scaler</A>
+</H2>
+
+<P>
+Example A01.sinewave.pd, shown in Figure <A HREF="#fig01.11">1.11</A>, contains essentially the
+simplest possible patch that makes a sound,
+with only three object boxes.  (There are also comments, and two message
+boxes to turn Pd's ``DSP" (audio) processing on and off.)  The three object boxes
+are:
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig01.11"></A><A NAME="1256"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.11:</STRONG>
+The contents of the first Pd example patch: A01.sinewave.pd.</CAPTION>
+<TR><TD><IMG
+ WIDTH="542" HEIGHT="608" BORDER="0"
+ SRC="img145.png"
+ ALT="\begin{figure}\psfig{file=figs/fig01.11.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $ \mathrm{osc}\sim $}$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img146.png"
+ ALT="\fbox{ $ \mathrm{osc}\sim $}">:
+<A NAME="1402"></A>sinusoidal oscillator.  The 
+left hand side input
+and the output are digital audio signals.  The input is taken to be a
+(possibly time-varying) frequency in Hertz.  The output is a sinusoid at
+the specified frequency.  If nothing is connected to the frequency inlet,
+the creation argument (440 in this example) is used as the frequency.
+The output has peak amplitude one.  You may set an initial phase by sending
+messages (not audio signals) to the right inlet.  The left (frequency) inlet
+may also be sent messages to set the frequency, since any inlet that takes an
+audio signal may also be sent messages which are automatically converted to the
+desired audio signal.
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $*\sim$\  }$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="\fbox{ $*\sim$\ }">:
+<A NAME="1370"></A>multiplier.  This exists in two
+forms.  If a creation argument is specified (as in this example; it's 0.05),
+this box multiplies a digital audio signal (in the left inlet) by the number; 
+messages to the right inlet can update the number as well.  If no argument is
+given, this box multiplies two incoming digital audio signals together.
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $ \mathrm{dac}\sim $}$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img148.png"
+ ALT="\fbox{ $ \mathrm{dac}\sim $}">:
+<A NAME="1403"></A>audio output device. 
+Depending on your hardware, this might not actually be a Digital/Analog
+Converter as the name suggests; but in general, it allows you to send any
+audio signal to your computer's audio output(s).  If there are no creation
+arguments, the default behavior is to output to channels one and two of
+the audio hardware; you may specify alternative channel numbers (one or many)
+using the creation arguments.  Pd itself may be configured to use two or
+more output channels, or may not have the audio output device open at all;
+consult the Pd documentation for details.
+
+<P>
+The two message boxes show a peculiarity in the way messages are parsed in
+message boxes.  Earlier in Figure <A HREF="node16.html#fig01.10">1.10</A> (part a), the message
+consisted only of the number 21.  When clicked, that box sent the message ``21"
+to its outlet and hence to any objects connected to it.  In this current
+example, the text of the message boxes starts with a semicolon.  This is a
+terminator between messages (so the first message is empty), after which the
+next word is taken as the name of the recipient of the following message.  Thus
+the message here is ``dsp 1" (or ``dsp 0") and the message is to be sent, not
+to any connected objects--there aren't any anyway--but rather, to the object
+named ``pd".  This particular object is provided invisibly by the Pd program
+and you can send it various messages to control Pd's global state, in this case
+turning audio processing on (``1") and off (``0").
+
+<P>
+Many more details about the control aspects of Pd, such as the above, are
+explained in a different series of example patches (the ``control examples") in
+the Pd release, but they will only be touched on here as necessary to
+demonstrate the audio signal processing techniques that are the subject of this
+book.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html825"
+  HREF="node20.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html819"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html813"
+  HREF="node18.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html821"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html823"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html826"
+  HREF="node20.html">Amplitude control in decibels</A>
+<B> Up:</B> <A NAME="tex2html820"
+  HREF="node18.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html814"
+  HREF="node18.html">Examples</A>
+ &nbsp; <B>  <A NAME="tex2html822"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html824"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

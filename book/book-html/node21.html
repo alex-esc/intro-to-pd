@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Smoothed amplitude control with an envelope generator</TITLE>
+<META NAME="description" CONTENT="Smoothed amplitude control with an envelope generator">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node22.html">
+<LINK REL="previous" HREF="node20.html">
+<LINK REL="up" HREF="node18.html">
+<LINK REL="next" HREF="node22.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html853"
+  HREF="node22.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html847"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html841"
+  HREF="node20.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html849"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html851"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html854"
+  HREF="node22.html">Major triad</A>
+<B> Up:</B> <A NAME="tex2html848"
+  HREF="node18.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html842"
+  HREF="node20.html">Amplitude control in decibels</A>
+ &nbsp; <B>  <A NAME="tex2html850"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html852"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00593000000000000000">
+Smoothed amplitude control with an envelope generator</A>
+</H2>
+<A NAME="sect1.ex.3"></A>
+<P>
+As Figure <A HREF="node12.html#fig01.06">1.6</A> shows, one way to make smooth amplitude changes in a
+signal without clicks is to multiply it by the output of an envelope generator
+as shown in block diagram form in Figure <A HREF="node12.html#fig01.07">1.7</A>.  This may be
+implemented in Pd using the <TT>line~</TT> object:
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $ \mathrm{line}\sim $}$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img152.png"
+ ALT="\fbox{ $ \mathrm{line}\sim $}">:
+<A NAME="1404"></A>envelope generator.
+The output is a signal which ramps linearly from one value to another over
+time, as determined by the messages received.  The inlets take messages to
+specify target values (left inlet) and time delays (right inlet).  Because
+of a general rule of Pd messages, a pair of numbers sent to the left inlet
+suffices to specify a target value and a time together.  The time is in
+milliseconds (taking into account the sample rate), and the target value is
+unitless, or in other words, its output range should conform to whatever
+input it may be connected to.
+
+<P>
+Example A03.line.pd demonstrates the use of a <TT>line~</TT> object to control the
+amplitude of a sinusoid.  The active part is shown in Figure <A HREF="node20.html#fig01.12">1.12</A>
+(part b).
+The six message boxes are all connected to the <TT>line~</TT> object, and are
+activated by clicking on them; the top one, for instance, specifies that the
+<TT>line~</TT> ramp (starting at wherever its output was before receiving the
+message) to the value 0.1 over two seconds.  After the two seconds elapse,
+unless other messages have arrived in the meantime, the output remains 
+steady at 0.1.  Messages may arrive before the two seconds elapse, in which
+case the <TT>line~</TT> object abandons its old trajectory and takes up a
+new one.
+
+<P>
+Two messages to <TT>line~</TT> might arrive at the same time or so close together
+in time that no DSP computation takes place between the two; in this case, the
+earlier message has no effect, since <TT>line~</TT> won't have changed its output
+yet to follow the first message, and its current output, unchanged, is then
+used as a starting point for the second segment.  An exception to this rule
+is that, if <TT>line~</TT> gets a time value of zero, the output value is
+immediately set to the new value and further segments will start from the
+new value; thus, by sending two pairs, the first with a time value of
+zero and the second with a nonzero time value, one can independently specify
+the beginning and end values of a segment in <TT>line~</TT>'s output.
+
+<P>
+The treatment of <TT>line~</TT>'s right inlet is unusual among Pd objects in that
+it forgets old values; a message with a single number such as ``0.1" is
+always equivalent to the pair, ``0.1 0".  Almost any other object will retain
+the previous value for the right inlet, instead of resetting it to zero.
+
+<P>
+Example A04.line2.pd&nbsp; shows the <TT>line~</TT> object's output graphically.  Using
+the various message boxes, you can recreate the effects shown in Figure
+<A HREF="node12.html#fig01.06">1.6</A>.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html853"
+  HREF="node22.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html847"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html841"
+  HREF="node20.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html849"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html851"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html854"
+  HREF="node22.html">Major triad</A>
+<B> Up:</B> <A NAME="tex2html848"
+  HREF="node18.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html842"
+  HREF="node20.html">Amplitude control in decibels</A>
+ &nbsp; <B>  <A NAME="tex2html850"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html852"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

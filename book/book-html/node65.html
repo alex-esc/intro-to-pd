@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Voice allocation</TITLE>
+<META NAME="description" CONTENT="Voice allocation">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node66.html">
+<LINK REL="previous" HREF="node64.html">
+<LINK REL="up" HREF="node58.html">
+<LINK REL="next" HREF="node66.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1515"
+  HREF="node66.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1509"
+  HREF="node58.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1503"
+  HREF="node64.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1511"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1513"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1516"
+  HREF="node66.html">Voice tags</A>
+<B> Up:</B> <A NAME="tex2html1510"
+  HREF="node58.html">Automation and voice management</A>
+<B> Previous:</B> <A NAME="tex2html1504"
+  HREF="node64.html">Polyphony</A>
+ &nbsp; <B>  <A NAME="tex2html1512"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1514"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00850000000000000000"></A>
+<A NAME="sect4.voicealloc"></A>
+<BR>
+Voice allocation
+</H1>
+
+<P>
+It is frequently desirable to automate the selection of voices to associate
+with individual
+<A NAME="4677"></A><I>tasks</I>
+(such as notes to play).  For example, a musician playing
+at a keyboard can't practically choose which voice should go with each note
+played.  To automate voice selection we need a voice allocation algorithm, to
+be used as shown in Figure <A HREF="#fig04.09">4.9</A>.
+
+<P>
+Armed with a suitable voice allocation algorithm, the control source need not
+concern itself with the detail of which voice is taking care of which task;
+algorithmic note generators and sequencers frequently rely on this.  On the
+other hand, musical writing for ensembles frequently specifies explicitly
+which instrument plays which note, so that the notes will connect to each other
+end-to-end in a desirable way.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig04.09"></A><A NAME="4682"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.9:</STRONG>
+Polyphonic voice allocation.</CAPTION>
+<TR><TD><IMG
+ WIDTH="166" HEIGHT="388" BORDER="0"
+ SRC="img372.png"
+ ALT="\begin{figure}\psfig{file=figs/fig04.09.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+One simple voice allocation algorithm works as shown in Figure <A HREF="#fig04.10">4.10</A>.  Here we
+suppose that the voice bank has only two voices, and we try to allocate voices
+for the tasks <IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$a$">, <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$b$">, <IMG
+ WIDTH="10" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img293.png"
+ ALT="$c$">, and <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$">.  Things go smoothly until task <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$">
+comes along, but then we see no free voices (they are taken up by <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$b$"> and <IMG
+ WIDTH="10" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img293.png"
+ ALT="$c$">).
+We could now elect either to drop task <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$">, or else to steal the voice of
+either task <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$b$"> or <IMG
+ WIDTH="10" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img293.png"
+ ALT="$c$">.  In practice the best choice is usually to steal one.
+In this particular example, we chose to steal the voice of the oldest task,
+<IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$b$">.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig04.10"></A><A NAME="4688"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.10:</STRONG>
+A polyphonic voice allocation algorithm, showing voice stealing.</CAPTION>
+<TR><TD><IMG
+ WIDTH="371" HEIGHT="218" BORDER="0"
+ SRC="img373.png"
+ ALT="\begin{figure}\psfig{file=figs/fig04.10.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+If we happen to know the length of the tasks <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$b$"> and <IMG
+ WIDTH="10" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img293.png"
+ ALT="$c$"> at the
+outset of task <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$">, we may be able to make a better choice of which voice
+to steal.  In this example it might have been better to steal from <IMG
+ WIDTH="10" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img293.png"
+ ALT="$c$">, so 
+that <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$"> and <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$b$"> would be playing together at the end and not <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$"> alone.
+In some situations this information will be available when the choice must be
+made, and in some (live keyboard input, for example) it will not.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1515"
+  HREF="node66.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1509"
+  HREF="node58.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1503"
+  HREF="node64.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1511"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1513"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1516"
+  HREF="node66.html">Voice tags</A>
+<B> Up:</B> <A NAME="tex2html1510"
+  HREF="node58.html">Automation and voice management</A>
+<B> Previous:</B> <A NAME="tex2html1504"
+  HREF="node64.html">Polyphony</A>
+ &nbsp; <B>  <A NAME="tex2html1512"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1514"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

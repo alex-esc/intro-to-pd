@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Non-recirculating comb filter as octave doubler</TITLE>
+<META NAME="description" CONTENT="Non-recirculating comb filter as octave doubler">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node123.html">
+<LINK REL="previous" HREF="node121.html">
+<LINK REL="up" HREF="node116.html">
+<LINK REL="next" HREF="node123.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2375"
+  HREF="node123.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2369"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2363"
+  HREF="node121.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2371"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2373"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2376"
+  HREF="node123.html">Time-varying complex comb filter:</A>
+<B> Up:</B> <A NAME="tex2html2370"
+  HREF="node116.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2364"
+  HREF="node121.html">Order of execution in</A>
+ &nbsp; <B>  <A NAME="tex2html2372"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2374"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0011106000000000000000">
+Non-recirculating comb filter as octave doubler</A>
+</H2>
+
+<P>
+In example G06.octave.doubler.pd (Figure <A HREF="#fig07.29">7.29</A>) we revisit the idea of pitch-based
+octave shifting introduced earlier in E03.octave.divider.pd.  There, knowing the
+periodicity of an incoming sound allowed us to tune a ring modulator to
+introduce subharmonics.  Here we realize the octave doubler described in
+Section <A HREF="node108.html#sect7.network">7.3</A>.
+Using a variable, non-recirculating comb filter we
+take out odd harmonics, leaving only the even ones, which
+sound an octave higher.  As before, the spectral envelope of the sound is
+roughly preserved by the operation, so we can avoid the ``chipmunk" effect we
+would have got by using speed change to do the transposition.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig07.29"></A><A NAME="8278"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 7.29:</STRONG>
+An ``octave doubler" uses pitch information (obtained using
+a <TT>fiddle~</TT> object) to tune a comb filter to remove the odd harmonics
+in an incoming sound.</CAPTION>
+<TR><TD><IMG
+ WIDTH="465" HEIGHT="376" BORDER="0"
+ SRC="img838.png"
+ ALT="\begin{figure}\psfig{file=figs/fig07.29.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The comb filtering is done by combining two delayed copies of the incoming
+signal (from the <TT>pd looper</TT> subpatch at top).  The fixed one
+(<TT>delread~</TT>) is set to the window size of the pitch
+following algorithm.  Whereas in the earlier example this was hidden in another
+subpatch, we can now show this explicitly.  The delay in milliseconds is
+estimated as equal to the 2048-sample analysis window used by the
+<TT>fiddle~</TT> object; in milliseconds this comes to <!-- MATH
+ $1000\cdot2048/R$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img839.png"
+ ALT="$1000\cdot2048/R$"> where
+<IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$R$"> is the sample rate.
+
+<P>
+The variable delay is the same, plus 1/2 of the measured period of the incoming
+sound, or <IMG
+ WIDTH="73" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img840.png"
+ ALT="$1000/(2f)$"> milliseconds where <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.png"
+ ALT="$f$"> is the frequency in cycles per
+second.  The sum of this and the fixed delay time is then smoothed using a
+<TT>line~</TT> object to make the input signal for the variable delay line.
+
+<P>
+Since the difference between the two delays is <IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img841.png"
+ ALT="$1/(2f)$">, the resonant
+frequencies of the resulting comb filter are <!-- MATH
+ $2f, 4f, 6f\cdots$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img842.png"
+ ALT="$2f, 4f, 6f\cdots$">; the frequency
+response (Section <A HREF="node108.html#sect7.network">7.3</A>) is zero at the frequencies <IMG
+ WIDTH="61" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img843.png"
+ ALT="$f, 3f, \ldots$">,
+so the resulting sound contains only the partials at multiples of <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img844.png"
+ ALT="$2f$">--an
+octave above the original.  Seen another way, the incoming sound is output
+twice, a half-cycle apart; odd harmonics are thereby shifted 180 degrees 
+(<IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="$\pi $"> radians) and cancel; even harmonics are in phase with their delayed
+copies and remain in the sum.
+
+<P>
+Both this and the octave divider may be altered to make shifts of 3 or 4
+to one in frequency, and they may also be combined to make compound shifts
+such as a musical fifth (a ratio of 3:2) by shifting down an octave and then
+back up a factor of three.  (You should do the down-shifting before the
+up-shifting for best results.)
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2375"
+  HREF="node123.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2369"
+  HREF="node116.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2363"
+  HREF="node121.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2371"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2373"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2376"
+  HREF="node123.html">Time-varying complex comb filter:</A>
+<B> Up:</B> <A NAME="tex2html2370"
+  HREF="node116.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2364"
+  HREF="node121.html">Order of execution in</A>
+ &nbsp; <B>  <A NAME="tex2html2372"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2374"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

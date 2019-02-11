@@ -1,0 +1,299 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Periodic Signals</TITLE>
+<META NAME="description" CONTENT="Periodic Signals">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node15.html">
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node15.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html749"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html743"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html737"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html745"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html747"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html750"
+  HREF="node15.html">About the Software Examples</A>
+<B> Up:</B> <A NAME="tex2html744"
+  HREF="node7.html">Sinusoids, amplitude and frequency</A>
+<B> Previous:</B> <A NAME="tex2html738"
+  HREF="node13.html">Superposing Signals</A>
+ &nbsp; <B>  <A NAME="tex2html746"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html748"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00570000000000000000"></A>
+<A NAME="sect1.fourier"></A>
+<BR>
+Periodic Signals
+</H1>
+A signal <IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.png"
+ ALT="$x[n]$"> is said to repeat at a period <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img135.png"
+ ALT="$\tau$"> if
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x[n + \tau] = x[n]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="102" HEIGHT="28" BORDER="0"
+ SRC="img136.png"
+ ALT="\begin{displaymath}
+x[n + \tau] = x[n]
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+for all <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.png"
+ ALT="$n$">.  Such a signal would also repeat at periods <IMG
+ WIDTH="20" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img137.png"
+ ALT="$2 \tau$"> and so on;
+the smallest <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img135.png"
+ ALT="$\tau$"> if any at which a signal repeats is called the signal's
+<A NAME="1175"></A><I>period</I>.
+In discussing periods of digital audio signals, we quickly run into the
+difficulty of describing signals whose ``period" isn't an integer, so that the
+equation above doesn't make sense.  For now we'll  effectively
+ignore this difficulty by supposing that the signal <IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.png"
+ ALT="$x[n]$"> may somehow be
+interpolated between the samples so that it's well defined whether <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.png"
+ ALT="$n$"> is an
+integer or not.
+
+<P>
+A sinusoid has a period (in samples) of <!-- MATH
+ $2 \pi / \omega$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.png"
+ ALT="$2 \pi / \omega$"> where
+<IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.png"
+ ALT="$\omega $"> is the angular frequency.  More generally, any sum of sinusoids
+with frequencies <!-- MATH
+ $2 \pi k/ \omega$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.png"
+ ALT="$2 \pi k/ \omega$">, for integers <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$">, will repeat after
+<!-- MATH
+ $2 \pi / \omega$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.png"
+ ALT="$2 \pi / \omega$"> samples.
+Such a sum is called a <I>Fourier Series</I>:
+<A NAME="eq-fourierseries"></A>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x[n] = {a_0} +
+    {a_1} \cos \left ( \omega n + {\phi_1} \right ) + 
+    {a_2} \cos \left ( 2 \omega n + {\phi_2} \right ) + \cdots +
+    {a_p} \cos \left ( p \omega n + {\phi_p} \right )
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="507" HEIGHT="29" BORDER="0"
+ SRC="img140.png"
+ ALT="\begin{displaymath}
+x[n] = {a_0} +
+{a_1} \cos \left ( \omega n + {\phi_1} \rig...
+... + \cdots +
+{a_p} \cos \left ( p \omega n + {\phi_p} \right )
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Moreover, if we make certain technical assumptions (in effect that signals
+only contain frequencies up to a finite bound), we can represent any periodic
+signal as such a sum.  This is the discrete-time variant of Fourier analysis
+which will reappear in Chapter <A HREF="node163.html#chapter-fourier">9</A>.
+
+<P>
+The angular frequencies of the sinusoids above are all integer
+multiples of <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.png"
+ ALT="$\omega $">.  They are called the
+<A NAME="1187"></A><I>harmonics</I>
+of <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.png"
+ ALT="$\omega $">, which in turn is called the
+<A NAME="1189"></A><I>fundamental</I>.  In terms of pitch, the harmonics
+<!-- MATH
+ $\omega, 2 \omega, \ldots$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.png"
+ ALT="$\omega, 2 \omega, \ldots$"> are at intervals of 0, 1200, 1902, 2400, 2786,
+3102, 3369, 3600, ..., cents above the fundamental; this sequence of pitches
+is sometimes called the <I>harmonic series</I>.  The first six of these are
+all quite close to multiples of 100; in other words, the first six harmonics
+of a pitch in the Western scale land close to (but not always exactly on) other
+pitches of the same scale; the third and sixth miss only by 2 cents and the
+fifth misses by 14.
+
+<P>
+<A NAME="r-intervals"></A>Put another way, the frequency ratio 3:2 (a perfect fifth in Western
+terminology) is almost exactly
+seven half-steps, 4:3 (a perfect fourth) is just as near to five half-steps,
+and the ratios 5:4 and 6:5 (perfect major and minor thirds) are fairly close to
+intervals of four and three half-steps, respectively.
+
+<P>
+A Fourier series (with only three terms) is shown in Figure <A HREF="#fig01.08">1.8</A>.
+The first three graphs are of sinusoids, whose frequencies are in a 1:2:3
+ratio.  The common period is marked on the horizontal axis.  Each sinusoid
+has a different amplitude and initial phase.  The sum of the three, at
+bottom, is not a sinusoid, but it still maintains the periodicity shared
+by the three component sinusoids.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig01.08"></A><A NAME="1196"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.8:</STRONG>
+A Fourier series, showing three sinusoids and their sum.  The
+three component sinusoids have frequencies in the ratio 1:2:3.</CAPTION>
+<TR><TD><IMG
+ WIDTH="438" HEIGHT="373" BORDER="0"
+ SRC="img142.png"
+ ALT="\begin{figure}\psfig{file=figs/fig01.08.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Leaving questions of phase aside, we can use a bank of sinusoidal oscillators
+to synthesize periodic tones, or even to morph smoothly through a succession
+of periodic tones, by specifying the fundamental frequency and the (possibly
+time-varying) amplitudes of the partials.  Figure <A HREF="#fig01.09">1.9</A> shows a
+block diagram for doing this.  
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig01.09"></A><A NAME="1202"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.9:</STRONG>
+Using many oscillators to synthesize a waveform with desired harmonic
+amplitudes.</CAPTION>
+<TR><TD><IMG
+ WIDTH="482" HEIGHT="391" BORDER="0"
+ SRC="img143.png"
+ ALT="\begin{figure}\psfig{file=figs/fig01.09.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+This is an example of
+<A NAME="1205"></A><I>additive synthesis</I>; more generally the term can be applied to networks
+in which the frequencies of the oscillators are independently controllable.
+The early days of computer music rang with the sound of additive synthesis.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html749"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html743"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html737"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html745"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html747"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html750"
+  HREF="node15.html">About the Software Examples</A>
+<B> Up:</B> <A NAME="tex2html744"
+  HREF="node7.html">Sinusoids, amplitude and frequency</A>
+<B> Previous:</B> <A NAME="tex2html738"
+  HREF="node13.html">Superposing Signals</A>
+ &nbsp; <B>  <A NAME="tex2html746"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html748"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

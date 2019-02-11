@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Exercises</TITLE>
+<META NAME="description" CONTENT="Exercises">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="previous" HREF="node50.html">
+<LINK REL="up" HREF="node40.html">
+<LINK REL="next" HREF="node58.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1387"
+  HREF="node58.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1381"
+  HREF="node40.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1377"
+  HREF="node56.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1383"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1385"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1388"
+  HREF="node58.html">Automation and voice management</A>
+<B> Up:</B> <A NAME="tex2html1382"
+  HREF="node40.html">Audio and control computations</A>
+<B> Previous:</B> <A NAME="tex2html1378"
+  HREF="node56.html">MIDI-style synthesizer</A>
+ &nbsp; <B>  <A NAME="tex2html1384"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1386"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION007110000000000000000">
+Exercises</A>
+</H1>
+
+<P>
+
+<OL>
+<LI>How many partials of a tone at A 440 can be represented digitally at a
+sample rate of 44100 Hertz?
+
+<P>
+</LI>
+<LI>What frequency would you hear if you synthesized a sinusoid at 88000 Hertz
+at a sample rate of 44100?
+
+<P>
+</LI>
+<LI>Suppose you are synthesizing sound at 44100 Hertz, and are computing
+64-sample audio blocks.  A control event is scheduled to happen at an elapsed
+time of exactly one second, using the fast-as-possible update scheme.  At what
+sample does the update actually occur?
+
+<P>
+</LI>
+<LI>Sampling at 44100, we wish to approximately play a tone at middle C by
+repeating a fixed waveform every N samples.  What value of <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$"> should we
+choose, and how many cents (Page <A HREF="node11.html#eq-pitchmidi"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="file:/usr/local/share/lib/latex2html/icons/crossref.png"></A>) are we off from the
+``true" middle C?
+
+<P>
+</LI>
+<LI>Two sawtooth waves, of unit amplitude, have frequencies 200 and 300 Hertz,
+respectively.  What is the periodicity of the sum of the two?  What if you
+then wrapped the sum back to the range from 0 to 1?  Does this result change
+depending on the relative phase of the two?
+
+<P>
+</LI>
+<LI>Two sawtooth waves, of equal frequency and amplitude and one half cycle
+out of phase, are summed.  What is the waveform of the sum, and what are its
+amplitude and frequency?
+
+<P>
+</LI>
+<LI>What is the relative level, in decibels, of a sawtooth wave's third
+harmonic (three times the fundamental) compared to that of the fundamental?
+
+<P>
+</LI>
+<LI>Suppose you synthesize a 44000-Hertz sawtooth wave at a sample rate
+of 44100 Hertz.  What is the resulting waveform?
+
+<P>
+</LI>
+<LI>Using the techniques of Section <A HREF="node47.html#sect3.analog">3.7</A>, draw a block diagram
+for generating two phase-locked sinusoids at 500 and 700 Hertz.
+
+<P>
+</LI>
+<LI>Draw a block diagram showing how to use thresholding to detect when one
+audio signal exceeds another one in value.  (You might want to do this to
+detect and filter out feedback from speakers to microphones.)
+
+<P>
+</LI>
+</OL>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1387"
+  HREF="node58.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1381"
+  HREF="node40.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1377"
+  HREF="node56.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1383"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1385"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1388"
+  HREF="node58.html">Automation and voice management</A>
+<B> Up:</B> <A NAME="tex2html1382"
+  HREF="node40.html">Audio and control computations</A>
+<B> Previous:</B> <A NAME="tex2html1378"
+  HREF="node56.html">MIDI-style synthesizer</A>
+ &nbsp; <B>  <A NAME="tex2html1384"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1386"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

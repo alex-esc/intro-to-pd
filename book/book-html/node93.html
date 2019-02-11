@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Pulse trains via wavetable stretching</TITLE>
+<META NAME="description" CONTENT="Pulse trains via wavetable stretching">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node94.html">
+<LINK REL="previous" HREF="node92.html">
+<LINK REL="up" HREF="node91.html">
+<LINK REL="next" HREF="node94.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1941"
+  HREF="node94.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1935"
+  HREF="node91.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1929"
+  HREF="node92.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1937"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1939"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1942"
+  HREF="node94.html">Resulting spectra</A>
+<B> Up:</B> <A NAME="tex2html1936"
+  HREF="node91.html">Pulse trains</A>
+<B> Previous:</B> <A NAME="tex2html1930"
+  HREF="node92.html">Pulse trains via waveshaping</A>
+ &nbsp; <B>  <A NAME="tex2html1938"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1940"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001022000000000000000">
+Pulse trains via wavetable stretching</A>
+</H2>
+
+<P>
+In the wavetable formulation, a pulse train can be made by a stretched
+wavetable:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{M_a}(\phi) = W (a \phi),
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="117" HEIGHT="28" BORDER="0"
+ SRC="img574.png"
+ ALT="\begin{displaymath}
+{M_a}(\phi) = W (a \phi),
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <!-- MATH
+ $-\pi \le \phi \le \pi$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img556.png"
+ ALT="$-\pi \le \phi \le \pi$"> is the phase, i.e., the value <IMG
+ WIDTH="23" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img575.png"
+ ALT="$\omega n$"> wrapped
+to lie between <IMG
+ WIDTH="25" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img576.png"
+ ALT="$-\pi$"> and <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="$\pi $">.  The function <IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$W$"> should be zero at and beyond
+the points <IMG
+ WIDTH="25" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img576.png"
+ ALT="$-\pi$"> and <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="$\pi $">, and rise to a maximum at 0.  A possible choice for
+the function <IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$W$"> is
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+W(\phi) = {1\over2} \left ( \cos(\phi) + 1 \right )
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="156" HEIGHT="38" BORDER="0"
+ SRC="img577.png"
+ ALT="\begin{displaymath}
+W(\phi) = {1\over2} \left ( \cos(\phi) + 1 \right )
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+which is graphed in part (a) of Figure <A HREF="#fig06.04">6.4</A>.  This is known as the
+<A NAME="6857"></A><A NAME="6858"></A><I>Hann window function</I>;
+it will come up again 
+in Chapter <A HREF="node163.html#chapter-fourier">9</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig06.04"></A><A NAME="6863"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Pulse width modulation using the von Hann window function: (a) the
+function <!-- MATH
+ $W(\phi)=(1+\cos(\phi))/2$
+ -->
+<IMG
+ WIDTH="162" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img578.png"
+ ALT="$W(\phi)=(1+\cos(\phi))/2$">; (b) the function as a waveform,
+repeated at a duty
+cycle of 100% (modulation index <IMG
+ WIDTH="41" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$a=1$">); (c) the waveform at a 50% duty
+cycle (<IMG
+ WIDTH="41" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.png"
+ ALT="$a=2$">).</CAPTION>
+<TR><TD><IMG
+ WIDTH="407" HEIGHT="403" BORDER="0"
+ SRC="img579.png"
+ ALT="\begin{figure}\psfig{file=figs/fig06.04.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Realizing this as a repeating waveform, we get a succession of (appropriately
+sampled) copies of the function <IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$W$">, whose duty cycle is
+<IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img580.png"
+ ALT="$1/a$"> (parts b and c of the figure). 
+If you don't wish the copies to overlap the index <IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$a$"> must be
+at least 1.  If you want to allow overlap the simplest strategy is to
+duplicate the block diagram (Figure <A HREF="node90.html#fig06.03">6.3</A>) out of phase, as described
+in Section <A HREF="node30.html#sect2.stretching">2.4</A> and realized in Section
+<A HREF="node37.html#sect2.example.overlap">2.6</A>.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1941"
+  HREF="node94.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1935"
+  HREF="node91.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1929"
+  HREF="node92.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1937"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1939"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1942"
+  HREF="node94.html">Resulting spectra</A>
+<B> Up:</B> <A NAME="tex2html1936"
+  HREF="node91.html">Pulse trains</A>
+<B> Previous:</B> <A NAME="tex2html1930"
+  HREF="node92.html">Pulse trains via waveshaping</A>
+ &nbsp; <B>  <A NAME="tex2html1938"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1940"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

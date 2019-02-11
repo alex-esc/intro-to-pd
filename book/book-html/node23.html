@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Conversion between frequency and pitch</TITLE>
+<META NAME="description" CONTENT="Conversion between frequency and pitch">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node24.html">
+<LINK REL="previous" HREF="node22.html">
+<LINK REL="up" HREF="node18.html">
+<LINK REL="next" HREF="node24.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html881"
+  HREF="node24.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html875"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html869"
+  HREF="node22.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html877"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html879"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html882"
+  HREF="node24.html">More additive synthesis</A>
+<B> Up:</B> <A NAME="tex2html876"
+  HREF="node18.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html870"
+  HREF="node22.html">Major triad</A>
+ &nbsp; <B>  <A NAME="tex2html878"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html880"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00595000000000000000">
+Conversion between frequency and pitch</A>
+</H2>
+
+<P>
+Example A06.frequency.pd&nbsp; (Figure <A HREF="#fig01.13">1.13</A>) shows Pd's object for converting
+pitch to frequency units (<TT>mtof</TT>, meaning ``MIDI to frequency") and its
+inverse <TT>ftom</TT>.  We also introduce two other object classes,
+<TT>send</TT> and <TT>receive</TT>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig01.13"></A><A NAME="1296"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.13:</STRONG>
+Conversion between pitch and frequency in A06.frequency.pd.</CAPTION>
+<TR><TD><IMG
+ WIDTH="566" HEIGHT="180" BORDER="0"
+ SRC="img153.png"
+ ALT="\begin{figure}\psfig{file=figs/fig01.13.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $ \mathrm{mtof} $}$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img154.png"
+ ALT="\fbox{ $ \mathrm{mtof} $}">, <!-- MATH
+ $\fbox{ $ \mathrm{ftom} $}$
+ -->
+<IMG
+ WIDTH="51" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img155.png"
+ ALT="\fbox{ $ \mathrm{ftom} $}">:
+<A NAME="1405"></A><A NAME="1406"></A>convert MIDI pitch to frequency units according to the 
+Pitch/Frequency Conversion Formulas (Page <A HREF="node11.html#eq-pitchmidi"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="file:/usr/local/share/lib/latex2html/icons/crossref.png"></A>).  Inputs
+and outputs are messages (``tilde" equivalents of the two also exist,
+although like <TT>dbtorms~</TT>  they're expensive in CPU time).
+The <TT>ftom</TT> object's output is -1500
+if the input is zero or negative; and likewise, if you give <TT>mtof</TT> -1500 or lower it outputs zero.
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $ \mathrm{receive} $}$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img156.png"
+ ALT="\fbox{ $ \mathrm{receive} $}">, <!-- MATH
+ $\fbox{ $ \mathrm{r} $}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="\fbox{ $ \mathrm{r} $}">:
+<A NAME="1407"></A><A NAME="1408"></A>Receive messages non-locally.
+The <TT>receive</TT> object, which may be abbreviated as ``<TT>r</TT>",
+waits for non-local messages to be sent by a <TT>send</TT> object (described below)
+or
+by a message box using redirection (the ``;" feature discussed in the
+earlier example, A01.sinewave.pd).  The argument (such as ``frequency" and ``pitch"
+in this example) is the name to which messages are sent.  Multiple 
+<TT>receive</TT> objects may share the same name, in which case any message
+sent to that name will go to all of them.
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $\mathrm{send}$}$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.png"
+ ALT="\fbox{ $\mathrm{send}$}">, <!-- MATH
+ $\fbox{ $\mathrm{s}$\  }$
+ -->
+<IMG
+ WIDTH="31" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img159.png"
+ ALT="\fbox{ $\mathrm{s}$\ }">:
+<A NAME="1409"></A><A NAME="1410"></A>The <TT>send</TT> object, which may be abbreviated as ``<TT>s</TT>", directs
+messages to <TT>receive</TT> objects.
+
+<P>
+Two new properties of number boxes are used here.  Earlier we've used them
+as controls or as displays; here, the two number boxes each function as both.
+If a number box gets a number in its inlet, it not only displays the number
+but also repeats the number to its output.  However, a number box may also be sent
+a ``set" message, such as ``set 55" for example.  This would set the value
+of the number box to 55 (and display it) but not cause the output that would
+result from the simple ``55" message.  In this case, numbers coming from the
+two <TT>receive</TT> objects are formatted (using message boxes) to read ``set 55" instead
+of just ``55", and so on.  (The special word ``$1" is replaced by the
+incoming number.)  This is done because otherwise we would have an infinite
+loop: frequency would change pitch which would change frequency and so on
+forever, or at least until something broke.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html881"
+  HREF="node24.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html875"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html869"
+  HREF="node22.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html877"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html879"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html882"
+  HREF="node24.html">More additive synthesis</A>
+<B> Up:</B> <A NAME="tex2html876"
+  HREF="node18.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html870"
+  HREF="node22.html">Major triad</A>
+ &nbsp; <B>  <A NAME="tex2html878"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html880"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Automatic read point precession</TITLE>
+<META NAME="description" CONTENT="Automatic read point precession">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="previous" HREF="node37.html">
+<LINK REL="up" HREF="node32.html">
+<LINK REL="next" HREF="node39.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1104"
+  HREF="node39.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1098"
+  HREF="node32.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1094"
+  HREF="node37.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1100"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1102"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1105"
+  HREF="node39.html">Exercises</A>
+<B> Up:</B> <A NAME="tex2html1099"
+  HREF="node32.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1095"
+  HREF="node37.html">Overlapping sample looper</A>
+ &nbsp; <B>  <A NAME="tex2html1101"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1103"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00666000000000000000">
+Automatic read point precession</A>
+</H2>
+
+<P>
+Example B11.sampler.rockafella.pd, shown in part (b) of Figure <A HREF="node37.html#fig02.16">2.16</A>, adapts the ideas
+shown above to a situation where the read point is computed automatically.
+Here we precess the read-point through the sample in a loop, permitting us
+to speed up or slow down the playback independently of the transposition.
+
+<P>
+This example addresses a weakness of the preceding one, which is that, if the
+relative precession speed is anywhere near one (i.e., the natural speed of
+listening to the recorded wavetable), and if there is not much transposition
+either, it becomes preferable to use larger grains and lower the frequency of
+repetition accordingly (keeping the product constant to achieve the desired
+transposition.)  However, if the grain size is allowed to get large, it is no
+longer convenient to quantize control changes at phase wrappings, because
+they might be too far apart to allow for a reasonable response time to control
+changes.
+
+<P>
+In this patch we remove the <TT>samphold~</TT> object that had controlled
+the read point (but we leave in the one for chunk size which is much harder
+to change in mid-loop).  Instead, we use the (known) rate of precession of the
+read point to correct the sawtooth frequency, so that we maintain the desired
+transposition.  It turns out that, when transposition factor and precession
+are close to each other (so that we are nearly doing the same thing as simple
+speed change) the frequency will drop to a value close to zero, so we will
+have increased the naturalness of the result at the same time.
+
+<P>
+In this patch we switch from managing read points, chunk sizes, etc., in
+samples and use seconds instead, converting to samples (and shifting by
+one) only just before the <TT>tabread4~</TT> object.
+The wavetable holds one second of sound, and we'll assume here that the
+nominal chunk size will not exceed 0.1 second, so that we can safely let
+the read point range from 0 to 0.9; the ``real" chunk size will vary, and
+can become quite large, because of the moving read pointer.
+
+<P>
+The precession
+control sets the frequency of a phasor of amplitude 0.9, and therefore the
+precession must be multiplied by 0.9 to set the frequency of the phasor (so
+that, for a precession of one for instance, the amplitude and frequency of
+the read point are both 0.9, so that the slope, equal to amplitude over
+frequency, is one).  The output of this is named ``read-pt" as before, and
+is used by both copies of the wavetable reader.
+
+<P>
+The precession <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$p$"> and the chunk size <IMG
+ WIDTH="10" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img293.png"
+ ALT="$c$"> being known, and if we denote
+the frequency of the upper (original) <TT>phasor~</TT> by <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.png"
+ ALT="$f$">, the transposition factor is given by:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+t = p + cf
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="71" HEIGHT="27" BORDER="0"
+ SRC="img294.png"
+ ALT="\begin{displaymath}
+t = p + cf
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and solving for <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.png"
+ ALT="$f$"> gives:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+f = {{t - p} \over c} = {{{{2 ^ {h/12}}} - p} \over c}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="153" HEIGHT="42" BORDER="0"
+ SRC="img295.png"
+ ALT="\begin{displaymath}
+f = {{t - p} \over c} = {{{{2 ^ {h/12}}} - p} \over c}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img194.png"
+ ALT="$h$"> is the desired transposition in half-steps.  This is the formula
+used in the <TT>expr</TT> object.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1104"
+  HREF="node39.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1098"
+  HREF="node32.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1094"
+  HREF="node37.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1100"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1102"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1105"
+  HREF="node39.html">Exercises</A>
+<B> Up:</B> <A NAME="tex2html1099"
+  HREF="node32.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1095"
+  HREF="node37.html">Overlapping sample looper</A>
+ &nbsp; <B>  <A NAME="tex2html1101"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1103"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Elementary filters</TITLE>
+<META NAME="description" CONTENT="Elementary filters">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node139.html">
+<LINK REL="previous" HREF="node128.html">
+<LINK REL="up" HREF="node127.html">
+<LINK REL="next" HREF="node133.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2547"
+  HREF="node133.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2541"
+  HREF="node127.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2535"
+  HREF="node131.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2543"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2545"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2548"
+  HREF="node133.html">Elementary non-recirculating filter</A>
+<B> Up:</B> <A NAME="tex2html2542"
+  HREF="node127.html">Filters</A>
+<B> Previous:</B> <A NAME="tex2html2536"
+  HREF="node131.html">Equalizing filters</A>
+ &nbsp; <B>  <A NAME="tex2html2544"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2546"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001220000000000000000">
+Elementary filters</A>
+</H1>
+
+<P>
+We saw in Chapter 7 how to predict the frequency and phase response of delay
+networks. The art of filter design lies in finding a delay network whose
+transfer function (which controls the frequency and phase response) has a
+desired shape.  We will develop an approach to building such delay networks
+out of the two types of comb filters developed in Chapter 7: recirculating and
+non-recirculating.  Here we will be interested in the special case where the
+delay is only one sample in length.  In this situation, the frequency responses
+shown in Figures <A HREF="node108.html#fig07.06">7.6</A> and <A HREF="node109.html#fig07.10">7.10</A> no longer look like combs;
+the second peak recedes all the way to the sample rate, <IMG
+ WIDTH="21" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$2\pi $"> radians, when
+<IMG
+ WIDTH="40" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img736.png"
+ ALT="$d=1$">.  Since only frequencies between 0 and the Nyquist frequency (<IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="$\pi $">
+radians) are audible, in effect there is only one peak when <IMG
+ WIDTH="40" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img736.png"
+ ALT="$d=1$">.
+
+<P>
+In the comb filters shown in Chapter 7, the peaks are situated at DC (zero
+frequency), but we will often wish to place them at other, nonzero
+frequencies.  This is done using delay networks--comb
+filters--with complex-valued gains.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html2549"
+  HREF="node133.html">Elementary non-recirculating filter</A>
+<LI><A NAME="tex2html2550"
+  HREF="node134.html">Non-recirculating filter, second form</A>
+<LI><A NAME="tex2html2551"
+  HREF="node135.html">Elementary recirculating filter</A>
+<LI><A NAME="tex2html2552"
+  HREF="node136.html">Compound filters</A>
+<LI><A NAME="tex2html2553"
+  HREF="node137.html">Real outputs from complex filters</A>
+<LI><A NAME="tex2html2554"
+  HREF="node138.html">Two recirculating filters for the price of one</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2547"
+  HREF="node133.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2541"
+  HREF="node127.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2535"
+  HREF="node131.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2543"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2545"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2548"
+  HREF="node133.html">Elementary non-recirculating filter</A>
+<B> Up:</B> <A NAME="tex2html2542"
+  HREF="node127.html">Filters</A>
+<B> Previous:</B> <A NAME="tex2html2536"
+  HREF="node131.html">Equalizing filters</A>
+ &nbsp; <B>  <A NAME="tex2html2544"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2546"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

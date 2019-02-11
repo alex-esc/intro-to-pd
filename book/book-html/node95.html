@@ -1,0 +1,416 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Movable ring modulation</TITLE>
+<META NAME="description" CONTENT="Movable ring modulation">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node96.html">
+<LINK REL="previous" HREF="node91.html">
+<LINK REL="up" HREF="node89.html">
+<LINK REL="next" HREF="node96.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1967"
+  HREF="node96.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1961"
+  HREF="node89.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1955"
+  HREF="node94.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1963"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1965"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1968"
+  HREF="node96.html">Phase-aligned formant (PAF) generator</A>
+<B> Up:</B> <A NAME="tex2html1962"
+  HREF="node89.html">Designer spectra</A>
+<B> Previous:</B> <A NAME="tex2html1956"
+  HREF="node94.html">Resulting spectra</A>
+ &nbsp; <B>  <A NAME="tex2html1964"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1966"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001030000000000000000"></A>
+<A NAME="sect6.carrier"></A>
+<BR>
+Movable ring modulation
+</H1>
+
+<P>
+We turn now to the carrier signal, seeking ways to make it more controllable.
+We would particularly like to be able to slide the spectral energy continuously
+up and
+down in frequency.  Simply ramping the frequency of the carrier oscillator
+will not accomplish this, since the spectra won't be harmonic except when the
+carrier is an integer multiple of the fundamental frequency.
+
+<P>
+In the stretched wavetable approach we can accomplish this  simply by sampling
+a sinusoid and transposing it to the desired ``pitch".  The transposed pitch
+isn't heard as a periodicity since the wavetable itself is read periodically at
+the fundamental frequency.  Instead, the sinusoid is transposed as a spectral
+envelope.
+
+<P>
+Figure <A HREF="#fig06.07">6.7</A> shows a carrier signal produced in this way, tuned to
+produce a formant centered at 1.5 times the fundamental frequency.  The signal
+has no outright discontinuity at the phase wraparound frequency, but it does
+have a discontinuity in slope, which, if not removed by applying a suitable
+modulation signal, would have very audible high-frequency components.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig06.07"></A><A NAME="6894"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.7:</STRONG>
+Waveform for a wavetable-based carrier signal tuned to 1.5 times
+the fundamental.  Two periods are shown.</CAPTION>
+<TR><TD><IMG
+ WIDTH="353" HEIGHT="109" BORDER="0"
+ SRC="img585.png"
+ ALT="\begin{figure}\psfig{file=figs/fig06.07.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Using this idea we can make a complete description of how to use the block
+diagram of Figure <A HREF="node90.html#fig06.03">6.3</A> to produce a desired formant.  The wavetable
+lookup on the left hand side would hold a sinusoid (placed symmetrically so
+that the phase is zero at the center of the wavetable).  The right-hand-side
+wavetable would hold a Hann or other appropriate window function.
+If we desire the fundamental frequency to be <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.png"
+ ALT="$\omega $">, the
+formant center frequency to be <IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img464.png"
+ ALT="$\omega_c$">, and the bandwidth to be <IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img586.png"
+ ALT="$\omega_b$">,
+we set the ``stretch" parameter to the <I>center frequency quotient</I>
+defined as <!-- MATH
+ ${\omega_c}/\omega$
+ -->
+<IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img587.png"
+ ALT="${\omega_c}/\omega$">, and the index of
+modulation to the <I>bandwidth quotient</I>, <!-- MATH
+ ${\omega_b}/\omega$
+ -->
+<IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img588.png"
+ ALT="${\omega_b}/\omega$">.
+
+<P>
+The output signal is simply a sample of a cosine wave at the
+desired center frequency, repeated at the (unrelated in general) desired
+period, and windowed to take out the discontinuities at period boundaries.
+
+<P>
+Although we aren't able to derive this result yet (we will need Fourier
+analysis), it will turn out that, in the main lobe of the formant, the phases
+are all zero at the center of the waveform (i.e., the components are all
+cosines if we consider the phase to be zero at the center of
+the waveform).  This means we may
+superpose any number of these formants to build a more complex spectrum and the
+amplitudes of the partials will combine by addition.  (The sidelobes don't
+behave so well: they are alternately of opposite sign and will produce
+cancellation patterns; but we can often just shrug them off as a small,
+uncontrollable, residual signal.)
+
+<P>
+This method leads to an interesting generalization, which is to take a sequence
+of recorded wavetables, align all their component phases to those of
+cosines, and use them in place of the cosine function as the carrier signal.
+The phase alignment is necessary to allow coherent cross-fading between
+samples so that the spectral envelope can change smoothly.  If, for example, we
+use successive snippets of a vocal sample as input, we get a strikingly
+effective vocoder; see Section <A HREF="node177.html#sect9-bash">9.6</A>.
+
+<P>
+Another technique for making carrier signals that can be slid continuously
+up and down in frequency while maintaining a fundamental frequency
+is simply to cross-fade between harmonics.  The carrier signal is then:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+c(\phi) = c(\omega n) = p \cos( k \omega n) + q \cos( (k+1) \omega n)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="313" HEIGHT="28" BORDER="0"
+ SRC="img589.png"
+ ALT="\begin{displaymath}
+c(\phi) = c(\omega n) = p \cos( k \omega n) + q \cos( (k+1) \omega n)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="67" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img590.png"
+ ALT="$p + q = 1$"> and <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$"> is an integer, all three chosen so that
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+(k + q) * {\omega} = {\omega_c}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="109" HEIGHT="28" BORDER="0"
+ SRC="img591.png"
+ ALT="\begin{displaymath}
+(k + q) * {\omega} = {\omega_c}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+so that the spectral center of mass of the two cosines is placed at
+<IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img464.png"
+ ALT="$\omega_c$">.  (Note that we make the amplitudes of the two cosines add to one
+instead of setting the total power to one; we do this because the modulator
+will operate phase-coherently on them.)  To accomplish this we simply
+set <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$"> and <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.png"
+ ALT="$q$"> to be the integer and fractional part, respectively,
+of the center frequency quotient <!-- MATH
+ $\omega_c/\omega$
+ -->
+<IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img593.png"
+ ALT="$\omega_c/\omega$">.
+
+<P>
+The simplest way of making a control interface for this synthesis technique
+would be to use
+ramps to update <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.png"
+ ALT="$\omega $"> and <IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img464.png"
+ ALT="$\omega_c$">, and then to compute <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.png"
+ ALT="$q$"> and <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$">
+as audio signals from the ramped, smoothly varying <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.png"
+ ALT="$\omega $"> and <IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img464.png"
+ ALT="$\omega_c$">.
+Oddly enough, despite the fact that <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$">, <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$p$">, and <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.png"
+ ALT="$q$"> are discontinuous
+functions of <!-- MATH
+ $\omega_c/\omega$
+ -->
+<IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img593.png"
+ ALT="$\omega_c/\omega$">, the carrier <IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img594.png"
+ ALT="$c(\phi)$"> turns out to vary
+continuously with <!-- MATH
+ $\omega_c/\omega$
+ -->
+<IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img593.png"
+ ALT="$\omega_c/\omega$">, and so if the desired center frequency
+<IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img464.png"
+ ALT="$\omega_c$"> is ramped from value to value the result is a continuous sweep in
+center frequency.  However, more work is needed if discontinuous changes
+in center frequency are needed.  This is not an unreasonable thing to wish
+for, being analogous to changing the frequency of an oscillator discontinuously.
+
+<P>
+There turns out to be a good way to accomodate this.
+The trick to updating <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$"> and <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.png"
+ ALT="$q$"> is to note that <IMG
+ WIDTH="61" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img595.png"
+ ALT="$c(\phi) = 1$"> whenever <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.png"
+ ALT="$\phi$">
+is a multiple of <IMG
+ WIDTH="21" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$2\pi $">, regardless of the choice of <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$">, <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$p$">, and <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.png"
+ ALT="$q$"> as long
+as <IMG
+ WIDTH="67" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img590.png"
+ ALT="$p + q = 1$">.  Hence, we may make discontinuous changes in <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$">, <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$p$">, and <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.png"
+ ALT="$q$"> once
+per period (right when the phase is a multiple of <IMG
+ WIDTH="21" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$2\pi $">), without making
+discontinuities in the carrier signal.
+
+<P>
+In the specific case of FM, if we wish we can now go back and modify the
+original formulation to:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+p  \cos ( n  {\omega_2}  t + r  \cos ({\omega_1} t)) +
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="176" HEIGHT="28" BORDER="0"
+ SRC="img596.png"
+ ALT="\begin{displaymath}
+p \cos ( n {\omega_2} t + r \cos ({\omega_1} t)) +
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P> <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
++ q \cos ( (n+1) {\omega_2} t + r \cos ({\omega_1} t))
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="212" HEIGHT="28" BORDER="0"
+ SRC="img597.png"
+ ALT="\begin{displaymath}
++ q \cos ( (n+1) {\omega_2} t + r \cos ({\omega_1} t))
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+This allows us to add glissandi (which are heard as dipthongs) to Chowning's
+original phase-modulation-based vocal synthesis technique.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1967"
+  HREF="node96.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1961"
+  HREF="node89.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1955"
+  HREF="node94.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1963"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1965"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1968"
+  HREF="node96.html">Phase-aligned formant (PAF) generator</A>
+<B> Up:</B> <A NAME="tex2html1962"
+  HREF="node89.html">Designer spectra</A>
+<B> Previous:</B> <A NAME="tex2html1956"
+  HREF="node94.html">Resulting spectra</A>
+ &nbsp; <B>  <A NAME="tex2html1964"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1966"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

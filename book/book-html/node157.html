@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Prefabricated time-varying band-pass filter</TITLE>
+<META NAME="description" CONTENT="Prefabricated time-varying band-pass filter">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node158.html">
+<LINK REL="previous" HREF="node156.html">
+<LINK REL="up" HREF="node155.html">
+<LINK REL="next" HREF="node158.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2917"
+  HREF="node158.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2911"
+  HREF="node155.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2905"
+  HREF="node156.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2913"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2915"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2918"
+  HREF="node158.html">Envelope followers</A>
+<B> Up:</B> <A NAME="tex2html2912"
+  HREF="node155.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2906"
+  HREF="node156.html">Prefabricated low-, high-, and</A>
+ &nbsp; <B>  <A NAME="tex2html2914"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2916"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001252000000000000000">
+Prefabricated time-varying band-pass filter</A>
+</H2>
+
+<P>
+Time-varying band-pass filtering, as often used in classical 
+subtractive synthesis (Section <A HREF="node152.html#sect08.subtractive">8.4.1</A>), can be done
+using the <TT>vcf~</TT> object, introduced here:
+
+<P>
+<BR><!-- MATH
+ $\fbox{ \texttt{vcf\~}}$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1022.png"
+ ALT="\fbox{ \texttt{vcf\~}}">:
+<A NAME="10846"></A>a ``voltage controlled" band-pass filter,
+similar to <TT>bp~</TT>, but with a signal inlet to control center frequency.
+Both <TT>bp~</TT> and <TT>vcf~</TT> are one-pole resonant filters as
+developed in Section <A HREF="node143.html#sect8.twopolebandpass">8.3.4</A>; <TT>bp~</TT> outputs only
+the real part of the resulting signal, while <TT>vcf~</TT> outputs the
+real and imaginary parts separately.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig08.29"></A><A NAME="10612"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 8.29:</STRONG>
+The <TT>vcf~</TT> band-pass filter, with its center frequency
+controlled by an audio signal (as compared to
+<TT>bp~</TT> which takes only control messages to set its center frequency. </CAPTION>
+<TR><TD><IMG
+ WIDTH="303" HEIGHT="355" BORDER="0"
+ SRC="img1024.png"
+ ALT="\begin{figure}\psfig{file=figs/fig08.29.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Example H04.filter.sweep.pd (Figure <A HREF="#fig08.29">8.29</A>) demonstrates using the <TT>vcf~</TT> object for a simple and characteristic subtractive synthesis task.  A
+<TT>phasor~</TT> object (at top) creates a sawtooth wave to filter.  (This is
+not especially good practice as we are not controlling the possibility of
+foldover; a better sawtooth generator for this purpose will be developed in
+Chapter 10.)  The second <TT>phasor~</TT> object (labeled ``LFO for sweep")
+controls the time-varying center frequency.  After adjusting to set the depth
+and a base center frequency (given in MIDI units), the result is converted into
+Hertz (using the <TT>tabread4~</TT> object) and passed to <TT>vcf~</TT> to set
+its center frequency.  Another example of using a <TT>vcf~</TT> object for
+subtractive synthesis is demonstrated in example H05.filter.floyd.pd.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2917"
+  HREF="node158.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2911"
+  HREF="node155.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2905"
+  HREF="node156.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2913"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2915"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2918"
+  HREF="node158.html">Envelope followers</A>
+<B> Up:</B> <A NAME="tex2html2912"
+  HREF="node155.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2906"
+  HREF="node156.html">Prefabricated low-, high-, and</A>
+ &nbsp; <B>  <A NAME="tex2html2914"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2916"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

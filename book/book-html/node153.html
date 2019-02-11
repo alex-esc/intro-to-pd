@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Envelope following</TITLE>
+<META NAME="description" CONTENT="Envelope following">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node154.html">
+<LINK REL="previous" HREF="node152.html">
+<LINK REL="up" HREF="node151.html">
+<LINK REL="next" HREF="node154.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2857"
+  HREF="node154.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2851"
+  HREF="node151.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2845"
+  HREF="node152.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2853"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2855"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2858"
+  HREF="node154.html">Single Sideband Modulation</A>
+<B> Up:</B> <A NAME="tex2html2852"
+  HREF="node151.html">Applications</A>
+<B> Previous:</B> <A NAME="tex2html2846"
+  HREF="node152.html">Subtractive synthesis</A>
+ &nbsp; <B>  <A NAME="tex2html2854"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2856"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001242000000000000000"></A>
+<A NAME="sect8.envelopefollower"></A>
+<BR>
+Envelope following
+</H2>
+
+<P>
+It is frequently desirable to use the time-varying power of an incoming signal 
+to trigger or control a musical process.  To do this, we will need a procedure
+for measuring the power of an audio signal.  Since most audio signals pass
+through zero many times per second, it won't suffice to take instantaneous values
+of the signal to measure its power; instead, we must calculate the average
+power over an interval of time long enough that its variations won't
+show up in the power estimate, but short enough that changes in signal level
+are quickly reported.  A computation that provides a
+time-varying power estimate of a signal is called an
+<A NAME="10533"></A><I>envelope follower</I>.
+
+<P>
+The output of a low-pass filter can be viewed as a moving average of its input.
+For example, suppose we apply a normalized one-pole low-pass filter with
+coefficient <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$p$">, as in  Figure <A HREF="node148.html#fig08.21">8.21</A>, to an incoming signal <IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.png"
+ ALT="$x[n]$">. 
+The output (call it y[n]) is the sum of the delay output times <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$p$">, with
+the input times <IMG
+ WIDTH="38" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img910.png"
+ ALT="$1-p$">:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+y[n] = p \cdot y[n-1] + (1-p) \cdot x[n]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="226" HEIGHT="28" BORDER="0"
+ SRC="img988.png"
+ ALT="\begin{displaymath}
+y[n] = p \cdot y[n-1] + (1-p) \cdot x[n]
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+so each input is averaged, with weight <IMG
+ WIDTH="38" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img910.png"
+ ALT="$1-p$">, into the previous output to
+produce a new output.  So we can make a moving average of the square of an
+audio signal using the diagram of Figure <A HREF="#fig08.26">8.26</A>.  The output is
+a time-varying average of the instantaneous power <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img989.png"
+ ALT="$x[n]^2$">, and the design
+of the low-pass filter controls, among other things, the settling time of
+the moving average.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig08.26"></A><A NAME="10539"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 8.26:</STRONG>
+Envelope follower.  The output is the average power of the input
+signal.</CAPTION>
+<TR><TD><IMG
+ WIDTH="82" HEIGHT="238" BORDER="0"
+ SRC="img990.png"
+ ALT="\begin{figure}\psfig{file=figs/fig08.26.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+For more insight into the design of a suitable low-pass filter for an envelope
+follower, we analyze it from the point of view of signal spectra.  If, for
+instance, we put in a real-valued sinusoid:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x[n] = a \cdot \cos(\alpha n)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="120" HEIGHT="28" BORDER="0"
+ SRC="img991.png"
+ ALT="\begin{displaymath}
+x[n] = a \cdot \cos(\alpha n)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+the result of squaring is:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{{x[n]}^2} = {{a^2}\over 2} \left ( \cos(2 \alpha n) + 1 \right )
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="177" HEIGHT="41" BORDER="0"
+ SRC="img992.png"
+ ALT="\begin{displaymath}
+{{x[n]}^2} = {{a^2}\over 2} \left ( \cos(2 \alpha n) + 1 \right )
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and so if the low-pass filter effectively stops the component of frequency
+<IMG
+ WIDTH="21" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img993.png"
+ ALT="$2 \alpha$"> we will get out approximately the constant <IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img994.png"
+ ALT="${{a^2} / 2}$">, which
+is indeed the average power.
+
+<P>
+The situation for a signal with several components is similar.  Suppose the
+input signal is now,
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x[n] = a \cdot \cos(\alpha n) + b \cdot \cos(\beta n)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="211" HEIGHT="28" BORDER="0"
+ SRC="img995.png"
+ ALT="\begin{displaymath}
+x[n] = a \cdot \cos(\alpha n) + b \cdot \cos(\beta n)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+whose spectrum is plotted in Figure <A HREF="#fig08.27">8.27</A> (part a).  (We have omitted
+the two phase terms but they will have no effect on the outcome.) Squaring the
+signal produces the spectrum shown in part (b) (see Section
+<A HREF="node77.html#sect5.ringmod">5.2</A>).) We can get the desired fixed value of <!-- MATH
+ $({a^2} +
+{b^2})/2$
+ -->
+<IMG
+ WIDTH="80" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img996.png"
+ ALT="$({a^2} +
+{b^2})/2$"> simply by filtering out all the other components; ideally the result
+will be a constant (DC) signal.  As long as we filter out all the partials, and
+also all the difference tones, we end up with a stable output that correctly
+estimates the average power.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig08.27"></A><A NAME="10551"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 8.27:</STRONG>
+Envelope following from the spectral point of view: (a) an 
+incoming signal with two components; (b) the result of squaring it.</CAPTION>
+<TR><TD><IMG
+ WIDTH="388" HEIGHT="328" BORDER="0"
+ SRC="img997.png"
+ ALT="\begin{figure}\psfig{file=figs/fig08.27.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Envelope followers may also be used on noisy signals, which may be thought of
+as signals with dense spectra.  In this situation there will be difference
+frequencies arbitrarily close to zero, and filtering them out
+entirely will be impossible; we will always get fluctuations in the output, but
+they will decrease proportionally as the filter's passband is narrowed.
+
+<P>
+Although a narrower passband will always give a cleaner output, whether for
+discrete or continuous spectra, the filter's settling time will lengthen
+proportionally as the passband is narrowed.  There is thus a tradeoff between
+getting a quick response and a smooth result.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2857"
+  HREF="node154.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2851"
+  HREF="node151.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2845"
+  HREF="node152.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2853"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2855"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2858"
+  HREF="node154.html">Single Sideband Modulation</A>
+<B> Up:</B> <A NAME="tex2html2852"
+  HREF="node151.html">Applications</A>
+<B> Previous:</B> <A NAME="tex2html2846"
+  HREF="node152.html">Subtractive synthesis</A>
+ &nbsp; <B>  <A NAME="tex2html2854"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2856"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

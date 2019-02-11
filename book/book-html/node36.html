@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Looping samplers</TITLE>
+<META NAME="description" CONTENT="Looping samplers">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node37.html">
+<LINK REL="previous" HREF="node35.html">
+<LINK REL="up" HREF="node32.html">
+<LINK REL="next" HREF="node37.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1078"
+  HREF="node37.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1072"
+  HREF="node32.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1066"
+  HREF="node35.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1074"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1076"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1079"
+  HREF="node37.html">Overlapping sample looper</A>
+<B> Up:</B> <A NAME="tex2html1073"
+  HREF="node32.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1067"
+  HREF="node35.html">Using a wavetable as</A>
+ &nbsp; <B>  <A NAME="tex2html1075"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1077"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00664000000000000000">
+Looping samplers</A>
+</H2>
+<A NAME="sect2.example.loop"></A>
+<P>
+In most situations, you'll want a more automated way than moving the mouse to
+specify wavetable read locations; for instance, you might want to be able to
+play a sample at a steady transposition; you might have several samples playing
+back at once (or other things requiring attention), or you might want to switch
+quickly between samples or go to prearranged locations.  In the next few
+examples we'll develop an automated looping sample reader, which, although only
+one of many possible approaches, is a powerful and often-used one.
+
+<P>
+Patches B05.sampler.loop.pd and B06.sampler.loop.smooth.pd show how to do this: the former in the simplest
+possible way and the latter (pictured in Figure <A HREF="#fig02.15">2.15</A>, part a)
+incorporating a second waveshape to envelope the sound as described in
+Section <A HREF="node29.html#sect2.enveloping">2.3</A>.  One new object class
+is introduced here:
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig02.15"></A><A NAME="2443"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.15:</STRONG>
+(a) a looping sampler with a synchronized envelope (B06.sampler.loop.smooth.pd); (b) the
+same, but with a control for read location (B08.sampler.nodoppler.pd).</CAPTION>
+<TR><TD><IMG
+ WIDTH="546" HEIGHT="547" BORDER="0"
+ SRC="img281.png"
+ ALT="\begin{figure}\psfig{file=figs/fig02.15.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $\mathrm{cos}\sim$\  }$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img282.png"
+ ALT="\fbox{ $\mathrm{cos}\sim$\ }">:
+<A NAME="2559"></A>compute the cosine of <IMG
+ WIDTH="21" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$2\pi $"> times the input signal (so that 0 to 1 makes a whole
+cycle).  Unlike the table reading classes in Pd, <TT>cos~</TT> handles
+wraparound so that there is no range limitation on its input.
+
+<P>
+In Figure <A HREF="#fig02.15">2.15</A> (part a), a <TT>phasor~</TT> object supplies both
+indices into the wavetable (at right) and phases for a half-cosine-shaped
+envelope function at left.  These two are multiplied, and the product is
+high-pass filtered and output.  Reading the wavetable is straightforward; the
+phasor is multiplied by a ``chunk size" parameter, added to 1, and used as an
+index to <TT>tabread4~</TT>The chunk size parameter is multiplied by
+441 to convert it from hundredths of a second to samples.  This corresponds
+exactly to the block diagram shown in Figure <A HREF="node28.html#fig02.05">2.5</A>, with a segment
+location of 1.  (The segment location can't be 0 because 1 is the minimum index
+for which <TT>tabread4~</TT> works.)
+
+<P>
+The left-hand signal path in the example corresponds to the enveloping
+wavetable lookup technique shown in Figure <A HREF="node29.html#fig02.07">2.7</A>.  Here the sawtooth
+wave is adjusted to the range (-1/4, 1/4) (by subtracting and multiplying by
+0.5), and then sent to <TT>cos~</TT>.  This reads the cosine
+function in the range (<IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.png"
+ ALT="$-\pi/2$">, <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$\pi /2$">), thus giving only the positive half
+of the waveform.
+
+<P>
+Part (b) of Figure <A HREF="#fig02.15">2.15</A> introduces a third parameter, the ``read
+point", which specifies where in the sample the loop is to start.  (In part (a)
+we always started at the beginning.)  The necessary change is simple enough:
+add the ``read point" control value, in samples,
+to the wavetable index and proceed as before.  To avoid discontinuities
+in the index we smooth the read point value using
+<TT>pack</TT> and <TT>line~</TT> objects, just as we did in
+the first sampler example (Figure <A HREF="node35.html#fig02.14">2.14</A>).
+
+<P>
+This raises an important, though subtle, issue.  The Momentary
+Transposition Formula  (Page <A HREF="node28.html#sect2.momentaryformula"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="file:/usr/local/share/lib/latex2html/icons/crossref.png"></A>) predicts that, as
+long as the chunk size and read point aren't changing in time, the
+transposition is just the frequency times the chunk size (as always, using
+appropriate units; Hertz and seconds, for example, so that the product is
+dimensionless).  However, varying the chunk size and read point in time will
+affect the momentary transposition, often in very noticeable ways, as can be
+heard in Example B07.sampler.scratch.pd.  Example B08.sampler.nodoppler.pd (the one shown in the figure) shows
+one possible way of controlling this effect, while introducing a new object
+class:
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $\mathrm{samphold}\sim$\  }$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img284.png"
+ ALT="\fbox{ $\mathrm{samphold}\sim$\ }">:
+<A NAME="2560"></A>a sample and hold unit.  (This will be familiar to analog synthesizer users,
+but with a digital twist; for more details see Section <A HREF="node47.html#sect3.analog">3.7</A>.)
+This stores a single sample of the left-hand-side
+input and outputs it repeatedly, until caused by the right-hand-side input (also
+a  digital audio signal, called the <EM>trigger</EM>) to overwrite the stored
+sample with a new one--again
+from the left-hand-side input.  The unit acquires a new sample whenever
+the trigger's numerical value falls from one sample to the next.  This is
+designed to be easy to pair with <TT>phasor~</TT> objects, to facilitate
+triggering on phase wraparounds.
+
+<P>
+Example B08.sampler.nodoppler.pd uses two <TT>samphold~</TT> objects to update the values
+of the chunk size and read point, exactly when the <TT>phasor~</TT> wraps around, at which moments the cosine envelope is at zero so the effect
+of the instantaneous changes can't be heard.  In this situation we can apply
+the simpler Transposition Formula for Looping Wavetables to relate frequency,
+chunk size, and transposition.  This is demonstrated in Example B09.sampler.transpose.pd (not shown).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1078"
+  HREF="node37.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1072"
+  HREF="node32.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1066"
+  HREF="node35.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1074"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1076"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1079"
+  HREF="node37.html">Overlapping sample looper</A>
+<B> Up:</B> <A NAME="tex2html1073"
+  HREF="node32.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1067"
+  HREF="node35.html">Using a wavetable as</A>
+ &nbsp; <B>  <A NAME="tex2html1075"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1077"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

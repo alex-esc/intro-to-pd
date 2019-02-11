@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Overlapping sample looper</TITLE>
+<META NAME="description" CONTENT="Overlapping sample looper">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node38.html">
+<LINK REL="previous" HREF="node36.html">
+<LINK REL="up" HREF="node32.html">
+<LINK REL="next" HREF="node38.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1092"
+  HREF="node38.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1086"
+  HREF="node32.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1080"
+  HREF="node36.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1088"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1090"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1093"
+  HREF="node38.html">Automatic read point precession</A>
+<B> Up:</B> <A NAME="tex2html1087"
+  HREF="node32.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1081"
+  HREF="node36.html">Looping samplers</A>
+ &nbsp; <B>  <A NAME="tex2html1089"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1091"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00665000000000000000">
+Overlapping sample looper</A>
+</H2>
+<A NAME="sect2.example.overlap"></A>
+<P>
+As described in Section <A HREF="node29.html#sect2.enveloping">2.3</A>, it is sometimes desirable to
+use two or more overlapping looping samplers to produce a reasonably continuous
+sound without having to envelope too sharply at the ends of the loop.  This is
+especially likely in situations where the chunk that is looped is short,
+a tenth of a second or less.  Example B10.sampler.overlap.pd, shown in Figure <A HREF="#fig02.16">2.16</A>
+(part a), realizes two looping samplers a half-cycle out of phase from each
+other.  New object classes are:
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig02.16"></A><A NAME="2466"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.16:</STRONG>
+(a) two overlapped looping samplers (B10.sampler.overlap.pd); (b) the
+same, but with a phasor-controlled read point (B11.sampler.rockafella.pd).</CAPTION>
+<TR><TD><IMG
+ WIDTH="617" HEIGHT="741" BORDER="0"
+ SRC="img285.png"
+ ALT="\begin{figure}\psfig{file=figs/fig02.16.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $\mathrm{loadbang}$\  }$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img286.png"
+ ALT="\fbox{ $\mathrm{loadbang}$\ }">:
+<A NAME="2561"></A>output a ``bang" message on load.  This is used in this patch to make sure the
+division of transposition by chunk size will have a valid transposition factor
+in case ``chunk size" is moused on first.
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $\mathrm{expr}$\  }$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img287.png"
+ ALT="\fbox{ $\mathrm{expr}$\ }">:
+<A NAME="2562"></A>evaluate mathematical expressions.  Variables appear as $f1, $f2, and so on,
+corresponding to the object's inlets.  Arithmetic operations are allowed,
+with parentheses for grouping, and many library functions are supplied,
+such as exponentiation, which shows up in this example as ``pow" (the
+power function).
+
+<P>
+<BR><!-- MATH
+ $\fbox{$\mathrm{wrap}\sim$}$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img288.png"
+ ALT="\fbox{$\mathrm{wrap}\sim$}">:
+<A NAME="2563"></A>wrap to the interval from 0 to 1.  So, for instance, 1.2 becomes 0.2; 0.5
+remains unchanged; and -0.6 goes to 0.4.
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $\mathrm{send}\sim$\  }$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img289.png"
+ ALT="\fbox{ $\mathrm{send}\sim$\ }">,
+<!-- MATH
+ $\fbox{ $\mathrm{s}\sim$\  }$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img290.png"
+ ALT="\fbox{ $\mathrm{s}\sim$\ }">,
+<!-- MATH
+ $\fbox{ $\mathrm{receive}\sim$\  }$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img291.png"
+ ALT="\fbox{ $\mathrm{receive}\sim$\ }">,
+<!-- MATH
+ $\fbox{ $\mathrm{r}\sim$\  }$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img292.png"
+ ALT="\fbox{ $\mathrm{r}\sim$\ }">:
+<A NAME="2564"></A><A NAME="2565"></A><A NAME="2566"></A><A NAME="2567"></A>signal versions of <TT>send</TT> and <TT>receive</TT>.  An audio
+signal sent to a <TT>send~</TT> object appears at the outlets of any and
+all <TT>receive~</TT> objects of the same name.  Unlike
+<TT>send</TT> and <TT>receive</TT>, you may not have more than one
+<TT>send~</TT> object with the same name (in that connection, see
+the <TT>throw~</TT> and <TT>catch~</TT> objects).
+
+<P>
+In the example, part of the wavetable reading machinery is duplicated, using
+identical calculations of ``chunk-size-samples" (a message stream) and
+``read-pt" (an audio signal smoothed as before).  However, the ``phase"
+audio signal, in the other copy, is replaced by ``phase2".  The top part
+of the figure shows the calculation of the two phase signals: the first one
+as the output of a <TT>phasor~</TT> object, and the second by adding
+0.5 and wrapping, thereby adding 0.5 cycles (<IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="$\pi $"> radians) to the
+phase.  The two phase signals are each used, with the same range adjustments as
+before, to calculate indices into the wavetable and the <TT>cos~</TT> object, and to control the two <TT>samphold~</TT> objects.  Finally, the
+results of the two copies are added for output.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1092"
+  HREF="node38.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1086"
+  HREF="node32.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1080"
+  HREF="node36.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1088"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1090"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1093"
+  HREF="node38.html">Automatic read point precession</A>
+<B> Up:</B> <A NAME="tex2html1087"
+  HREF="node32.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1081"
+  HREF="node36.html">Looping samplers</A>
+ &nbsp; <B>  <A NAME="tex2html1089"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1091"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

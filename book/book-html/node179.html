@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Fourier analysis and resynthesis in Pd</TITLE>
+<META NAME="description" CONTENT="Fourier analysis and resynthesis in Pd">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node180.html">
+<LINK REL="previous" HREF="node178.html">
+<LINK REL="up" HREF="node178.html">
+<LINK REL="next" HREF="node180.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3245"
+  HREF="node180.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3239"
+  HREF="node178.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3233"
+  HREF="node178.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3241"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html3243"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3246"
+  HREF="node180.html">Narrow-band companding: noise suppression</A>
+<B> Up:</B> <A NAME="tex2html3240"
+  HREF="node178.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html3234"
+  HREF="node178.html">Examples</A>
+ &nbsp; <B>  <A NAME="tex2html3242"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3244"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001371000000000000000">
+Fourier analysis and resynthesis in Pd</A>
+</H2>
+
+<P>
+Example I01.Fourier.analysis.pd (Figure  <A HREF="#fig09.14">9.14</A>, part a) demonstrates computing the
+Fourier transform of an audio signal using the <TT>fft~</TT> object:
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig09.14"></A><A NAME="12858"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Fourier analysis in Pd: (a) the <!-- MATH
+ $\mathrm{fft}\sim$
+ -->
+<IMG
+ WIDTH="35" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1214.png"
+ ALT="$\mathrm{fft}\sim$"> object; (b)
+using a subwindow to control block size of the Fourier transform;  (c)
+the subwindow, using a real Fourier transform (the <TT>fft~</TT>object) and the
+Hann windowing function.</CAPTION>
+<TR><TD><IMG
+ WIDTH="530" HEIGHT="293" BORDER="0"
+ SRC="img1215.png"
+ ALT="\begin{figure}\psfig{file=figs/fig09.14.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><!-- MATH
+ $\fbox{\texttt{fft\~}}$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1216.png"
+ ALT="\fbox{\texttt{fft\~}}">:
+<A NAME="12898"></A><A NAME="12696"></A>Fast Fourier transform.  The two inlets take audio signals representing the real
+and imaginary parts of a complex-valued signal.  The window size <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$"> is given
+by Pd's block size.  One Fourier transform is done on each block.
+
+<P>
+The Fast Fourier transform [<A
+ HREF="node202.html#r-smith03">SI03</A>] reduces the computational cost of
+Fourier analysis in Pd to only that of between 5 and 15 <TT>osc~</TT> objects in
+typical configurations.  The FFT algorithm in its simplest form takes <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$"> to
+be a power of two, which is also (normally) a constraint on block sizes in Pd.
+
+<P>
+Example I02.Hann.window.pd (Figure  <A HREF="#fig09.14">9.14</A>, parts b and c) shows how to control the
+block size using a <TT>block~</TT> object, how to apply a Hann window, and a 
+different version of the Fourier transform.  Part (b) shows the invocation of a
+subwindow which in turn is shown in part (c).  New objects are:
+
+<P>
+<BR><!-- MATH
+ $\fbox{\texttt{rfft\~}}$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1218.png"
+ ALT="\fbox{\texttt{rfft\~}}">:
+<A NAME="12899"></A>real Fast Fourier transform.  The imaginary part of the input is assumed to
+be zero.  Only the first <IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1220.png"
+ ALT="$N/2+1$"> channels of output are filled in (the others
+are determined by symmetry).  This takes half the computation time of the
+(more general) <TT>fft~</TT>object.
+
+<P>
+<BR><!-- MATH
+ $\fbox{\texttt{tabreceive\~}}$
+ -->
+<IMG
+ WIDTH="106" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1221.png"
+ ALT="\fbox{\texttt{tabreceive\~}}">:
+<A NAME="12900"></A>repeatedly outputs the contents of a wavetable.  Each
+block of computation outputs the same first <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$"> samples of the table.
+
+<P>
+In this example, the table ``$0-hann" holds a Hann window function
+of length 512, in agreement with the specified block size.  The signal
+to be analyzed appears (from the parent patch) via the <TT>inlet~</TT> object.
+The channel amplitudes (the output of the <TT>rfft~</TT> object) are reduced
+to real-valued magnitudes: the real and imaginary parts are squared separately,
+the two squares are added, and the result passed to the <TT>sqrt~</TT> object.
+Finally the magnitude is written (controlled by a connection not shown in
+the figure) via <TT>tabwrite~</TT> to another table, ``$0-magnitude", for
+graphing.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig09.15"></A><A NAME="12707"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9.15:</STRONG>
+Fourier analysis and resynthesis, using <TT>block~</TT> to specify an 
+overlap of 4, and <TT>rifft~</TT> to reconstruct the signal after modification.</CAPTION>
+<TR><TD><IMG
+ WIDTH="646" HEIGHT="413" BORDER="0"
+ SRC="img1223.png"
+ ALT="\begin{figure}\psfig{file=figs/fig09.15.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Example I03.resynthesis.pd (Figure  <A HREF="#fig09.15">9.15</A>) shows how to analyze and resynthesize
+an audio signal following the strategy of Figure <A HREF="node172.html#fig09.07">9.7</A>.  
+As before there is a sub-window to do the work at a block size appropriate to
+the task; the figure shows only the sub-window.
+We need one new object for the inverse Fourier transform:
+
+<P>
+<BR><!-- MATH
+ $\fbox{\texttt{rifft\~}}$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1224.png"
+ ALT="\fbox{\texttt{rifft\~}}">:
+<A NAME="12901"></A>real inverse Fast Fourier transform.  Using the first <IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1220.png"
+ ALT="$N/2+1$"> points of its
+inputs (taken to be a real/imaginary pair), and assuming the appropriate values
+for the other channels by symmetry, reconstructs a real-valued output.  No
+normalization is done, so that a <TT>rfft~</TT>/<TT>rifft~</TT> pair together
+result in a gain of <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$">.  The <TT>ifft~</TT> object is also available 
+which computes an unnormalized inverse for the <TT>fft~</TT> object,
+reconstructing a complex-valued output.
+
+<P>
+The <TT>block~</TT> object, in the subwindow, is invoked with a second argument
+which specifies an overlap factor of 4.  This dictates that the sub-window will
+run four times every <IMG
+ WIDTH="63" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1226.png"
+ ALT="$N=512$"> samples, at regular intervals of 128 samples.  The
+<TT>inlet~</TT> object does the necessary buffering and rearranging of samples
+so that its output always gives the 512 latest samples of input in order.  In
+the other direction, the <TT>outlet~</TT> object adds segments of
+its previous four inputs to carry out the overlap-add scheme shown in Figure
+<A HREF="node172.html#fig09.07">9.7</A>.
+
+<P>
+The 512-sample blocks are multiplied by the Hann window both at
+the input and the output.  If the <TT>rfft~</TT> and <TT>rifft~</TT> objects
+were connected without any modifications in between, the output would 
+faithfully reconstruct the input.
+
+<P>
+A modification is applied, however: each channel is multiplied by a
+(positive real-valued) gain.   The complex-valued amplitude for each channel is
+scaled by separately multiplying the real and imaginary parts by the gain. The
+gain (which depends on the channel) comes from another table, named
+``$0-gain".   The result is a graphical equalization filter; by mousing in the
+graphical window for this table, you can design gain-frequency curves.
+
+<P>
+There is an inherent delay introduced by using <TT>block~</TT> to increase
+the block size (but none if it is used, as shown in Chapter 7, to reduce
+block size relative to the parent window.)  The delay can be measured from
+the inlet to the outlet of the sub-patch, and is equal to the difference of the
+two block sizes.  In this example the buffering delay is 512-64=448 samples.
+Blocking delay does not depend on overlap, only on block sizes.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3245"
+  HREF="node180.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3239"
+  HREF="node178.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3233"
+  HREF="node178.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3241"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html3243"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3246"
+  HREF="node180.html">Narrow-band companding: noise suppression</A>
+<B> Up:</B> <A NAME="tex2html3240"
+  HREF="node178.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html3234"
+  HREF="node178.html">Examples</A>
+ &nbsp; <B>  <A NAME="tex2html3242"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3244"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

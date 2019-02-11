@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Sampling and foldover</TITLE>
+<META NAME="description" CONTENT="Sampling and foldover">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node52.html">
+<LINK REL="previous" HREF="node50.html">
+<LINK REL="up" HREF="node50.html">
+<LINK REL="next" HREF="node52.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1307"
+  HREF="node52.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1301"
+  HREF="node50.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1295"
+  HREF="node50.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1303"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1305"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1308"
+  HREF="node52.html">Converting controls to signals</A>
+<B> Up:</B> <A NAME="tex2html1302"
+  HREF="node50.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1296"
+  HREF="node50.html">Examples</A>
+ &nbsp; <B>  <A NAME="tex2html1304"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1306"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION007101000000000000000">
+Sampling and foldover</A>
+</H2>
+
+<P>
+Example C01.nyquist.pd (Figure <A HREF="#fig03.13">3.13</A>, part a) shows an oscillator
+playing a wavetable, sweeping through frequencies from 500 to 1423.  The
+wavetable consists of only the 46th partial, which therefore varies from 23000
+to 65458 Hertz.  At a sample rate of 44100 these two frequencies 
+theoretically sound at 21100
+and 21358 Hertz, but sweeping from one to the other folds down through
+zero and back up.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig03.13"></A><A NAME="3741"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.13:</STRONG>
+(a) sending an oscillator over the Nyquist frequency;
+(b) zipper noise from the <TT>line</TT> (control) object; (c) the
+<TT>line~</TT> and <TT>vline~</TT> objects compared.</CAPTION>
+<TR><TD><IMG
+ WIDTH="475" HEIGHT="724" BORDER="0"
+ SRC="img344.png"
+ ALT="\begin{figure}\psfig{file=figs/fig03.13.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Two other waveforms are provided to show the interesting effects of beating
+between partials which, although they ``should" have been far apart, find
+themselves neighbors through foldover.  For instance, at 1423 Hertz, the second
+harmonic is 2846 Hertz whereas the 33rd harmonic sounds at 1423*33-44100 = 2859
+Hertz--a rude dissonance.
+
+<P>
+Other less extreme examples can still produce audible foldover in less striking
+forms.  Usually it is still objectionable and it is worth learning to
+hear it.  Example C02.sawtooth-foldover.pd (not pictured here) demonstrates this for a sawtooth
+(the <TT>phasor~</TT> object).  For wavetables holding audio recordings,
+interpolation error can create extra foldover.  The effects of this can
+vary widely; the sound is sometimes described as
+``crunchy" or ``splattering", depending on the recording, the transposition,
+and the interpolation algorithm.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1307"
+  HREF="node52.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1301"
+  HREF="node50.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1295"
+  HREF="node50.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1303"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1305"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1308"
+  HREF="node52.html">Converting controls to signals</A>
+<B> Up:</B> <A NAME="tex2html1302"
+  HREF="node50.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1296"
+  HREF="node50.html">Examples</A>
+ &nbsp; <B>  <A NAME="tex2html1304"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1306"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>ADSR envelope generator</TITLE>
+<META NAME="description" CONTENT="ADSR envelope generator">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node70.html">
+<LINK REL="previous" HREF="node68.html">
+<LINK REL="up" HREF="node68.html">
+<LINK REL="next" HREF="node70.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1576"
+  HREF="node70.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1570"
+  HREF="node68.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1564"
+  HREF="node68.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1572"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1574"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1577"
+  HREF="node70.html">Transfer functions for amplitude</A>
+<B> Up:</B> <A NAME="tex2html1571"
+  HREF="node68.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1565"
+  HREF="node68.html">Examples</A>
+ &nbsp; <B>  <A NAME="tex2html1573"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1575"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00881000000000000000">
+ADSR envelope generator</A>
+</H2>
+
+<P>
+Example D01.envelope.gen.pd (Figure <A HREF="#fig04.12">4.12</A>) shows how the <TT>line~</TT> object may
+be used to generate an ADSR envelope to control a synthesis patch (only the
+ADSR envelope is shown in the figure).  The ``attack" button, when pressed, has
+two effects.  The first (leftmost in the figure) is to set the <TT>line~</TT> object on its attack segment, with a target of 10 (the peak amplitude) over 200
+msec (the attack time).  Second, the attack button sets a <TT>delay 200</TT> object, so that after the attack segment is done, the decay segment can start. 
+The decay segment falls to a target of 1 (the sustain level) after another 2500
+msec (the decay time).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig04.12"></A><A NAME="4744"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.12:</STRONG>
+Using a <TT>line~</TT> object to generate an
+ADSR envelope.</CAPTION>
+<TR><TD><IMG
+ WIDTH="222" HEIGHT="229" BORDER="0"
+ SRC="img379.png"
+ ALT="\begin{figure}\psfig{file=figs/fig04.12.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The ``release" button sends the same <TT>line~</TT> object back to zero over 
+500 more milliseconds (the release time).  Also, in case the
+<TT>delay 200</TT> object happens to be set at the moment the ``release" button is pressed, a
+``stop" message is sent to it.  This prevents the ADSR generator from
+launching its decay segment after launching its release segment.
+
+<P>
+In Example D02.adsr.pd (Figure <A HREF="#fig04.13">4.13</A>)
+we encapsulate the ADSR generator in a Pd abstraction 
+(named <TT>adsr</TT>) so that it can easily be replicated. The design of the
+<TT>adsr</TT> abstraction makes it possible to control the five ADSR parameters
+either by supplying creation arguments or by connecting control streams to its
+inlets.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig04.13"></A><A NAME="4886"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.13:</STRONG>
+Invoking the <TT>adsr</TT> abstraction.</CAPTION>
+<TR><TD><IMG
+ WIDTH="217" HEIGHT="153" BORDER="0"
+ SRC="img380.png"
+ ALT="\begin{figure}\psfig{file=figs/fig04.13.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+In this example the five creation arguments (1, 100, 200, 50, and 300) specify
+the peak level, attack time, decay time, sustain level (as a percentage of peak
+level), and release time.  There are six control inlets: the first to trigger
+the ADSR generator, and the others to update the values of the five parameters.
+The output of the abstraction is an audio signal.
+
+<P>
+This abstraction is realized as shown in Figure <A HREF="#fig04.14">4.14</A>.  (You can open
+this subpatch by clicking on the <TT>adsr</TT> object in the patch.)  The only
+signal objects are <TT>line~</TT> and <TT>outlet~</TT>.  The three <TT>pack</TT> objects correspond to the three message objects from the earlier Figure 
+<A HREF="#fig04.12">4.12</A>.  From left to right, they take care of the attack, decay,
+and release segments.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig04.14"></A><A NAME="4887"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.14:</STRONG>
+Inside the <TT>adsr</TT> abstraction.</CAPTION>
+<TR><TD><IMG
+ WIDTH="583" HEIGHT="428" BORDER="0"
+ SRC="img381.png"
+ ALT="\begin{figure}\psfig{file=figs/fig04.14.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The attack segment goes to a target specified as ``$1" (the first
+creation argument of the abstraction) over ``$2" milliseconds; these
+values may be overwritten by sending numbers to the ``peak level" and ``attack"
+inlets.  The release segment is similar, but simpler, since the target is
+always zero.  The hard part is the decay segment, which again must be set
+off after a delay equal to the attack time (the <TT>del $2</TT> object).
+The sustain level is calculated from the peak level and the sustain percentage
+(multiplying the two and dividing by 100).
+
+<P>
+The trigger inlet, if sent a number other than zero, triggers an 
+onset (the attack
+and decay segments), and if sent zero, triggers the release segment.
+Furthermore, the ADSR generator may be reset to zero by sending a negative
+trigger (which also generates an onset).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1576"
+  HREF="node70.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1570"
+  HREF="node68.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1564"
+  HREF="node68.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1572"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1574"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1577"
+  HREF="node70.html">Transfer functions for amplitude</A>
+<B> Up:</B> <A NAME="tex2html1571"
+  HREF="node68.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1565"
+  HREF="node68.html">Examples</A>
+ &nbsp; <B>  <A NAME="tex2html1573"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1575"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,437 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>General (non-symmetric) triangle wave</TITLE>
+<META NAME="description" CONTENT="General (non-symmetric) triangle wave">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="previous" HREF="node191.html">
+<LINK REL="up" HREF="node188.html">
+<LINK REL="next" HREF="node193.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3440"
+  HREF="node193.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3434"
+  HREF="node188.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3430"
+  HREF="node191.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3436"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html3438"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3441"
+  HREF="node193.html">Predicting and controlling foldover</A>
+<B> Up:</B> <A NAME="tex2html3435"
+  HREF="node188.html">Fourier series of the</A>
+<B> Previous:</B> <A NAME="tex2html3431"
+  HREF="node191.html">Square and symmetric triangle</A>
+ &nbsp; <B>  <A NAME="tex2html3437"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3439"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001434000000000000000"></A>
+<A NAME="sect10.gentriangle"></A>
+<BR>
+General (non-symmetric) triangle wave
+</H2>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig10.07"></A><A NAME="14434"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 10.7:</STRONG>
+Non-symmetric triangle wave, with vertices at <IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.png"
+ ALT="$(M, 1)$"> and
+<IMG
+ WIDTH="93" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.png"
+ ALT="$(N-M, -1)$">.</CAPTION>
+<TR><TD><IMG
+ WIDTH="474" HEIGHT="123" BORDER="0"
+ SRC="img1342.png"
+ ALT="\begin{figure}\psfig{file=figs/fig10.07.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+A general, non-symmetric triangle wave appears in Figure <A HREF="#fig10.07">10.7</A>.  Here
+we have arranged the cycle so that, first, the DC component is zero (so that
+the two corners have equal and opposite heights), and second, so that the
+midpoint of the shorter segment goes through the point <IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1343.png"
+ ALT="$(0,0)$">.
+
+<P>
+The two line segments have slopes equal to <IMG
+ WIDTH="35" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1344.png"
+ ALT="$1/M$"> and <IMG
+ WIDTH="103" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1345.png"
+ ALT="$-2/(N-2M)$">, so the
+decomposition into component parabolic waves is given by:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x[n] = {{N^2} \over {MN - 2{M^2}}} (p[n-M] - p[n+M])
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="291" HEIGHT="42" BORDER="0"
+ SRC="img1346.png"
+ ALT="\begin{displaymath}
+x[n] = {{N^2} \over {MN - 2{M^2}}} (p[n-M] - p[n+M])
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+(here we're using the periodicity of <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1347.png"
+ ALT="$p[n]$"> to replace <IMG
+ WIDTH="112" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1348.png"
+ ALT="$p[n-(N-M)]$"> by
+<IMG
+ WIDTH="66" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1349.png"
+ ALT="$p[n+M]$">).)
+
+<P>
+The most general way of dealing with linear combinations of elementary
+(parabolic and/or sawtooth) waves is to go back to the complex Fourier
+series, as
+we did in finding the series for the elementary waves themselves.  But in this
+particular case we can use a trigonometric identity to avoid the extra work of
+converting back and forth.  First we plug in the real-valued Fourier series:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x[n] = {{N^2} \over {2{\pi ^ 2} (MN - 2{M^2})}}  \left [
+        \parbox[t][0.12in]{0in}{\mbox{}}
+        {\cos ( \omega (n-M))} - {\cos ( \omega (n+M))}
+        \right .
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="407" HEIGHT="45" BORDER="0"
+ SRC="img1350.png"
+ ALT="\begin{displaymath}
+x[n] = {{N^2} \over {2{\pi ^ 2} (MN - 2{M^2})}} \left [
+\p...
+...{}}
+{\cos ( \omega (n-M))} - {\cos ( \omega (n+M))}
+\right .
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\left .
+        + {{\cos ( 2 \omega (n-M)) - \cos ( 2 \omega (n+M))} \over 4}
+        + \cdots
+    \right ]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="298" HEIGHT="45" BORDER="0"
+ SRC="img1351.png"
+ ALT="\begin{displaymath}
+\left .
++ {{\cos ( 2 \omega (n-M)) - \cos ( 2 \omega (n+M))} \over 4}
++ \cdots
+\right ]
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Now we use the identity,
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\cos(a) - \cos(b) = 2  \sin({{b-a}\over 2}) \sin({{a+b}\over 2})
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="275" HEIGHT="39" BORDER="0"
+ SRC="img1352.png"
+ ALT="\begin{displaymath}
+\cos(a) - \cos(b) = 2 \sin({{b-a}\over 2}) \sin({{a+b}\over 2})
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+so that, for example,
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\cos ( \omega (n-M))} - {\cos ( \omega (n+M))} =
+    2 \sin (2 \pi M / N) \sin ( \omega n)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="396" HEIGHT="28" BORDER="0"
+ SRC="img1353.png"
+ ALT="\begin{displaymath}
+{\cos ( \omega (n-M))} - {\cos ( \omega (n+M))} =
+2 \sin (2 \pi M / N) \sin ( \omega n)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+(Here again we used the definition of <!-- MATH
+ $\omega = 2 \pi / N$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1047.png"
+ ALT="$\omega=2\pi/N$">.)  This is a
+simplification since the first sine term does not depend on <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.png"
+ ALT="$n$">; it's 
+just an amplitude term.  Applying the identity to all the terms of the expansion
+for <IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.png"
+ ALT="$x[n]$"> gives:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x[n] = a[1] \sin(\omega n) + a[2]  \sin(2 \omega n) + \cdots
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="271" HEIGHT="28" BORDER="0"
+ SRC="img1354.png"
+ ALT="\begin{displaymath}
+x[n] = a[1] \sin(\omega n) + a[2] \sin(2 \omega n) + \cdots
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where the amplitudes of the components are given by:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+a[k] = {1 \over {{\pi ^ 2} (M/N - 2{{(M/N)}^2})}} 
+    \cdot {{\sin (2 \pi k M / N) } \over {k^2}}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="311" HEIGHT="47" BORDER="0"
+ SRC="img1355.png"
+ ALT="\begin{displaymath}
+a[k] = {1 \over {{\pi ^ 2} (M/N - 2{{(M/N)}^2})}}
+\cdot {{\sin (2 \pi k M / N) } \over {k^2}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Notice that the result does not depend separately on the values of <IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img86.png"
+ ALT="$M$"> and <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$">,
+but only on their ratio, <IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1356.png"
+ ALT="$M/N$"> (this is not surprising because the shape of
+the waveform depends on this ratio).  If we look at small values of <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$">:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+k < {{1} \over {4 M/N}}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="77" HEIGHT="42" BORDER="0"
+ SRC="img1357.png"
+ ALT="\begin{displaymath}
+k &lt; {{1} \over {4 M/N}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+the argument of the sine function is less than <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$\pi /2$"> and using the
+approximation <!-- MATH
+ $\sin(\theta) \approx \theta$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1358.png"
+ ALT="$\sin(\theta) \approx \theta$"> we find that <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1359.png"
+ ALT="$a[k]$"> drops off
+as <IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img72.png"
+ ALT="$1/k$">, just as the partials of a sawtooth wave.  But for larger values of
+<IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$"> the sine term oscillates between 1 and -1, so that the amplitudes drop off
+irregularly as <IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img73.png"
+ ALT="$1/{k^2}$">.
+
+<P>
+Figure <A HREF="node194.html#fig10.08">10.8</A> shows the partial strengths with <IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1356.png"
+ ALT="$M/N$"> set to
+0.03; here, our prediction is that the <IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img72.png"
+ ALT="$1/k$"> dependence should extend to
+<!-- MATH
+ $k \approx 1/(4\cdot 0.03) \approx 8.5$
+ -->
+<IMG
+ WIDTH="151" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1360.png"
+ ALT="$k \approx 1/(4\cdot 0.03) \approx 8.5$">, in rough agreement with the figure.
+
+<P>
+Another way to see why the partials should behave as <IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img72.png"
+ ALT="$1/k$"> for low values of
+<IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$"> and <IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img73.png"
+ ALT="$1/{k^2}$"> thereafter, is to compare the period of a given partial with
+the length of the short segment, <IMG
+ WIDTH="28" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1361.png"
+ ALT="$2M$">.  For partials numbering less than
+<IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1362.png"
+ ALT="$N/4M$">, the period is at least twice the length of the short segment, and at
+that scale the waveform is nearly indistinguishable from a sawtooth wave. 
+For partials numbering in excess of <IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1363.png"
+ ALT="$N/2M$">, the two corners of the triangle
+wave are at least one period apart, and at these higher frequencies the two
+corners (each with <IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img73.png"
+ ALT="$1/{k^2}$"> frequency dependence) are resolved from each
+other.  In the figure, the notch at partial 17 occurs at the wavelength
+<!-- MATH
+ $N/2M \approx 1/17$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1364.png"
+ ALT="$N/2M \approx 1/17$">, at which wavelength the two corners are one cycle apart;
+since the corners are opposite in sign they cancel each other.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3440"
+  HREF="node193.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3434"
+  HREF="node188.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3430"
+  HREF="node191.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3436"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html3438"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3441"
+  HREF="node193.html">Predicting and controlling foldover</A>
+<B> Up:</B> <A NAME="tex2html3435"
+  HREF="node188.html">Fourier series of the</A>
+<B> Previous:</B> <A NAME="tex2html3431"
+  HREF="node191.html">Square and symmetric triangle</A>
+ &nbsp; <B>  <A NAME="tex2html3437"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3439"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

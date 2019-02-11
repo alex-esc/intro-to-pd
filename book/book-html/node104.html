@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Time shifts and delays</TITLE>
+<META NAME="description" CONTENT="Time shifts and delays">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node127.html">
+<LINK REL="previous" HREF="node89.html">
+<LINK REL="up" HREF="book.html">
+<LINK REL="next" HREF="node105.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2094"
+  HREF="node105.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2088"
+  HREF="book.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2082"
+  HREF="node103.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2090"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2092"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2095"
+  HREF="node105.html">Complex numbers</A>
+<B> Up:</B> <A NAME="tex2html2089"
+  HREF="book.html">book</A>
+<B> Previous:</B> <A NAME="tex2html2083"
+  HREF="node103.html">Exercises</A>
+ &nbsp; <B>  <A NAME="tex2html2091"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2093"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001100000000000000000"></A>
+<A NAME="chapter-delay"></A>
+<BR>
+Time shifts and delays
+</H1>
+
+<P>
+At 5:00 some afternoon, put on your favorite recording of the Ramones string
+quarter number 5.  The next Saturday, play the same recording at 5:00:01,  one
+second later in the day.  The two playings ideally should sound the same.  
+Shifting the whole thing one second (or, if you like, a few days
+and a second) has no physical effect on the sound.
+
+<P>
+But now suppose you played it at 5:00 and 5:00:01 on the same day (on two
+different playback systems, since the music lasts much longer than one second).
+Now the sound is much different.  The difference, whatever it is,
+clearly resides in neither of the two individual sounds, but rather in the
+<A NAME="7751"></A><I>interference</I>
+between the two.  This interference can be perceived in at least four different
+ways:
+<DL>
+<DT></DT>
+<DD>Canons: Combining two copies of a signal with a time shift sufficient
+for the signal to change appreciably, we might hear the two as separate musical
+streams, in effect comparing the signal to its earlier self.  If the signal is
+a melody, the time shift might be comparable to the length of one or several
+notes.
+
+<P>
+</DD>
+<DT></DT>
+<DD>Echos: At time shifts between about 30 milliseconds and about a second,
+the later copy of the signal can sound like an echo of the earlier one.   An echo
+may reduce the intelligibility of the signal (especially if it consists of
+speech), but usually won't change the overall ``shape" of melodies or
+phrases.
+
+<P>
+</DD>
+<DT></DT>
+<DD>Filtering: At time shifts below about 30 milliseconds, the copies are
+too close together in time to be perceived separately, and the dominant effect
+is that some frequencies are enhanced and others suppressed.  This changes the
+spectral envelope of the sound.
+
+<P>
+</DD>
+<DT></DT>
+<DD>Altered room quality: If the second copy is played more quietly than the
+first, and especially if we add many more delayed copies at reduced amplitudes,
+the result can mimic the echos that arise in a room or other acoustic space.
+
+<P>
+</DD>
+</DL>
+The sound of a given arrangement of delayed copies of a signal may
+combine two or more of these affects.
+
+<P>
+Mathematically, the effect of a time shift on a signal can be described as a
+phase change of each of the signal's sinusoidal components.  The phase shift of
+each component is different depending on its frequency (as well as on the
+amount of time shift).  In the rest of this chapter we will often consider
+superpositions of sinusoids at different phases.  Heretofore we have been
+content to use real-valued sinusoids in our analyses, but in this and later
+chapters the formulas will become more complicated and we will need more
+powerful mathematical tools to manage them.  In a preliminary
+section of this chapter we will develop the additional background needed.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html2096"
+  HREF="node105.html">Complex numbers</A>
+<UL>
+<LI><A NAME="tex2html2097"
+  HREF="node106.html">Complex sinusoids</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2098"
+  HREF="node107.html">Time shifts and phase changes</A>
+<LI><A NAME="tex2html2099"
+  HREF="node108.html">Delay networks</A>
+<LI><A NAME="tex2html2100"
+  HREF="node109.html">Recirculating delay networks</A>
+<LI><A NAME="tex2html2101"
+  HREF="node110.html">Power conservation and complex delay networks</A>
+<LI><A NAME="tex2html2102"
+  HREF="node111.html">Artificial reverberation</A>
+<UL>
+<LI><A NAME="tex2html2103"
+  HREF="node112.html">Controlling reverberators</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2104"
+  HREF="node113.html">Variable and fractional shifts</A>
+<LI><A NAME="tex2html2105"
+  HREF="node114.html">Fidelity of interpolating delay lines</A>
+<LI><A NAME="tex2html2106"
+  HREF="node115.html">Pitch shifting</A>
+<LI><A NAME="tex2html2107"
+  HREF="node116.html">Examples</A>
+<UL>
+<LI><A NAME="tex2html2108"
+  HREF="node117.html">Fixed, noninterpolating delay line</A>
+<LI><A NAME="tex2html2109"
+  HREF="node118.html">Recirculating comb filter</A>
+<LI><A NAME="tex2html2110"
+  HREF="node119.html">Variable delay line</A>
+<LI><A NAME="tex2html2111"
+  HREF="node120.html">Order of execution and lower limits on delay times</A>
+<LI><A NAME="tex2html2112"
+  HREF="node121.html">Order of execution in non-recirculating delay lines</A>
+<LI><A NAME="tex2html2113"
+  HREF="node122.html">Non-recirculating comb filter as octave doubler</A>
+<LI><A NAME="tex2html2114"
+  HREF="node123.html">Time-varying complex comb filter: shakers</A>
+<LI><A NAME="tex2html2115"
+  HREF="node124.html">Reverberator</A>
+<LI><A NAME="tex2html2116"
+  HREF="node125.html">Pitch shifter</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2117"
+  HREF="node126.html">Exercises</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2094"
+  HREF="node105.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2088"
+  HREF="book.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2082"
+  HREF="node103.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2090"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2092"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2095"
+  HREF="node105.html">Complex numbers</A>
+<B> Up:</B> <A NAME="tex2html2089"
+  HREF="book.html">book</A>
+<B> Previous:</B> <A NAME="tex2html2083"
+  HREF="node103.html">Exercises</A>
+ &nbsp; <B>  <A NAME="tex2html2091"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2093"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

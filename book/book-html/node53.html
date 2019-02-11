@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Non-looping wavetable player</TITLE>
+<META NAME="description" CONTENT="Non-looping wavetable player">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node54.html">
+<LINK REL="previous" HREF="node52.html">
+<LINK REL="up" HREF="node50.html">
+<LINK REL="next" HREF="node54.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1335"
+  HREF="node54.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1329"
+  HREF="node50.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1323"
+  HREF="node52.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1331"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1333"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1336"
+  HREF="node54.html">Signals to controls</A>
+<B> Up:</B> <A NAME="tex2html1330"
+  HREF="node50.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1324"
+  HREF="node52.html">Converting controls to signals</A>
+ &nbsp; <B>  <A NAME="tex2html1332"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1334"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION007103000000000000000">
+Non-looping wavetable player</A>
+</H2>
+<A NAME="sect3.noloopsampler"></A>
+<P>
+One application area requiring careful attention to the control stream/audio
+signal boundary is sampling.  Until now our samplers have skirted the issue
+by looping perpetually.  This allows for a rich variety of sound that can be
+accessed by making continuous changes in parameters such as loop size and
+envelope shape.  However, many uses of sampling require the internal features
+of a wavetable to emerge at predictable, synchronizable moments in time. For
+example, recorded percussion sounds are usually played from the beginning, are not
+often looped, and are usually played in a determined time
+relationship with the rest of the music.
+
+<P>
+In this situation, control streams are better adapted than audio signals as
+triggers.  Example C05.sampler.oneshot.pd (Figure <A HREF="#fig03.14">3.14</A>) shows one possible
+way to accomplish this.  The four tilde objects at bottom left form the
+signal processing network for playback.  One <TT>vline~</TT> object
+generates a phase signal (actually just a table lookup index) to the
+<TT>tabread4~</TT> object; this replaces the <TT>phasor~</TT> of
+Example B03.tabread4.pd (Page <A HREF="node34.html#fig02.13"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="file:/usr/local/share/lib/latex2html/icons/crossref.png"></A>) and its derivatives.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig03.14"></A><A NAME="3762"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.14:</STRONG>
+Non-looping sampler.</CAPTION>
+<TR><TD><IMG
+ WIDTH="528" HEIGHT="422" BORDER="0"
+ SRC="img347.png"
+ ALT="\begin{figure}\psfig{file=figs/fig03.14.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The amplitude of the output of <TT>tabread4~</TT>  is controlled by a
+second <TT>vline~</TT> object, in order to prevent discontinuities
+in the output in case a new event is started while the previous event is still
+playing.  The ``cutoff" <TT>vline~</TT> object ramps the output down to zero
+(whether or not it is playing) so that, once the output is zero, the index
+of the wavetable may be changed discontinuously.
+
+<P>
+In order to start a new ``note", first, the ``cutoff" <TT>vline~</TT> object is
+ramped to zero; then, after a delay of 5 msec (at which point <TT>vline~</TT> has reached zero) the phase is reset.  This is done with two messages: first,
+the phase is set to 1 (with no time value so that it jumps to 1 with no
+ramping).  The value ``1" specifies the first readable point of the wavetable,
+since we are using 4-point interpolation.  Second, in the same message box, 
+the phase is ramped to 441,000,000 over a time period of 10,000,000 msec.  (In
+Pd, large numbers are shown using exponential notation; these two appear as
+4.41e+08 and 1e+07.)  The quotient is 44.1 (in units per millisecond) giving
+a transposition of one.  The upper <TT>vline~</TT> object (which generates the
+phase) receives these messages via the ``r phase" object above it.
+
+<P>
+The example assumes that the wavetable is ramped smoothly to zero at either
+end, and the bottom right portion of the patch shows how to record such a
+wavetable (in this case four seconds long).  Here a regular (and
+computationally cheaper) <TT>line~</TT> object suffices.  Although the wavetable
+should be at least 4 seconds long for this to work, you may record shorter
+wavetables simply by cutting the <TT>line~</TT> object off earlier.  The only
+caveat is that, if you are simultaneously reading and writing from the same
+wavetable, you should avoid situations where read and write operations attack
+the same portion of the wavetable at once.
+
+<P>
+The <TT>vline~</TT> objects surrounding the <TT>tabread4~</TT> were chosen over <TT>line~</TT> because the latter's rounding of 
+breakpoints to the nearest block boundary (typically 1.45 msec) can make
+for audible aperiodicities in the sound if the wavetable is repeated more than
+10 or 20 times per second, and would prevent you from getting a nice, periodic
+sound at higher rates of repetition.
+
+<P>
+We will return to <TT>vline~</TT>-based sampling in the next chapter, to
+add transposition, envelopes, and polyphony.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1335"
+  HREF="node54.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1329"
+  HREF="node50.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1323"
+  HREF="node52.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1331"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1333"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1336"
+  HREF="node54.html">Signals to controls</A>
+<B> Up:</B> <A NAME="tex2html1330"
+  HREF="node50.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1324"
+  HREF="node52.html">Converting controls to signals</A>
+ &nbsp; <B>  <A NAME="tex2html1332"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1334"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

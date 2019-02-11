@@ -1,0 +1,312 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Superposing Signals</TITLE>
+<META NAME="description" CONTENT="Superposing Signals">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node14.html">
+<LINK REL="previous" HREF="node12.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node14.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html735"
+  HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html729"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html723"
+  HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html731"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html733"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html736"
+  HREF="node14.html">Periodic Signals</A>
+<B> Up:</B> <A NAME="tex2html730"
+  HREF="node7.html">Sinusoids, amplitude and frequency</A>
+<B> Previous:</B> <A NAME="tex2html724"
+  HREF="node12.html">Synthesizing a sinusoid</A>
+ &nbsp; <B>  <A NAME="tex2html732"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html734"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00560000000000000000"></A>
+<A NAME="sect1.combine"></A>
+<BR>
+Superposing Signals
+</H1>
+
+<P>
+If a signal <IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.png"
+ ALT="$x[n]$"> has a peak or RMS amplitude <IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$A$"> (in some fixed window), then
+the scaled signal <IMG
+ WIDTH="51" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img122.png"
+ ALT="$k \cdot x[n]$"> (where <IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$k \ge 0$">) has amplitude <IMG
+ WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img124.png"
+ ALT="$kA$">.  The
+mean power of the scaled signal changes by a factor of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img125.png"
+ ALT="$k^2$">.  The situation gets
+more complicated when two different signals are added together; just knowing
+the amplitudes of the two does not suffice to know the amplitude of the sum.
+The two amplitude measures do at least obey triangle inequalities; for any
+two signals <IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.png"
+ ALT="$x[n]$"> and <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$y[n]$">,
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{A_{\mathrm{peak}}} \{x[n]\} + 
+    {A_{\mathrm{peak}}} \{y[n]\} \ge
+    {A_{\mathrm{peak}}} \{x[n]+y[n]\}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="332" HEIGHT="29" BORDER="0"
+ SRC="img126.png"
+ ALT="\begin{displaymath}
+{A_{\mathrm{peak}}} \{x[n]\} +
+{A_{\mathrm{peak}}} \{y[n]\} \ge
+{A_{\mathrm{peak}}} \{x[n]+y[n]\}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{A_{\mathrm{RMS}}} \{x[n]\} + 
+    {A_{\mathrm{RMS}}} \{y[n]\} \ge 
+    {A_{\mathrm{RMS}}} \{x[n]+y[n]\}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="337" HEIGHT="28" BORDER="0"
+ SRC="img127.png"
+ ALT="\begin{displaymath}
+{A_{\mathrm{RMS}}} \{x[n]\} +
+{A_{\mathrm{RMS}}} \{y[n]\} \ge
+{A_{\mathrm{RMS}}} \{x[n]+y[n]\}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+If we fix a window from <IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img86.png"
+ ALT="$M$"> to <IMG
+ WIDTH="82" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.png"
+ ALT="$N+M-1$"> as usual, we can write out the
+mean power of the sum of two signals:
+<A NAME="eq-meanpowersum"></A>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+P \{x[n] + y[n]\} = P \{x[n]\} + P \{y[n]\}
+    	+ 2 \cdot {\mathrm{COV}} \{ x[n] , y[n] \}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="405" HEIGHT="28" BORDER="0"
+ SRC="img129.png"
+ ALT="\begin{displaymath}
+P \{x[n] + y[n]\} = P \{x[n]\} + P \{y[n]\}
++ 2 \cdot {\mathrm{COV}} \{ x[n] , y[n] \}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where we have introduced the
+<A NAME="1161"></A><I>covariance</I> of two signals:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\mathrm{COV}} \{ x[n] , y[n] \} = 
+	{
+	    {x[M]y[M] + \cdots + x[M+N-1]y[M+N-1]}
+	    \over
+	    N
+	}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="454" HEIGHT="40" BORDER="0"
+ SRC="img130.png"
+ ALT="\begin{displaymath}
+{\mathrm{COV}} \{ x[n] , y[n] \} =
+{
+{x[M]y[M] + \cdots + x[M+N-1]y[M+N-1]}
+\over
+N
+}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The covariance may be positive, zero, or negative.  Over a sufficiently large
+window, the covariance of two sinusoids with different frequencies is
+negligible compared to the mean power.  Two signals which have no covariance
+are called <I>uncorrelated</I> (the correlation is the covariance normalized
+to lie between -1 and 1).
+In general, for two uncorrelated
+signals, the power of the
+sum is the sum of the powers:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+P \{x[n] + y[n]\} = P \{x[n]\} + P \{y[n]\} , \hspace{0.1in}
+    	\mathrm{whenever}
+    	\ {\mathrm{COV}} \{ x[n] , y[n] \} = 0
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="483" HEIGHT="28" BORDER="0"
+ SRC="img131.png"
+ ALT="\begin{displaymath}
+P \{x[n] + y[n]\} = P \{x[n]\} + P \{y[n]\} , \hspace{0.1in}
+\mathrm{whenever}
+\ {\mathrm{COV}} \{ x[n] , y[n] \} = 0
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Put in terms of amplitude, this becomes:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{{\left ( {A_{\mathrm{RMS}}} \{x[n]+y[n]\} \right ) } ^ 2} =
+    {{\left ( {A_{\mathrm{RMS}}} \{x[n]\} \right ) } ^ 2} + 
+    {{\left ( {A_{\mathrm{RMS}}} \{y[n]\} \right ) } ^ 2} .
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="398" HEIGHT="28" BORDER="0"
+ SRC="img132.png"
+ ALT="\begin{displaymath}
+{{\left ( {A_{\mathrm{RMS}}} \{x[n]+y[n]\} \right ) } ^ 2} ...
+...2} +
+{{\left ( {A_{\mathrm{RMS}}} \{y[n]\} \right ) } ^ 2} .
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+This is the familiar Pythagorean relation.  So uncorrelated signals can be
+thought of as vectors at right angles to each other; positively correlated ones
+as having an acute angle between them, and negatively correlated as having an
+obtuse angle between them.
+
+<P>
+For example, if two uncorrelated signals both have RMS amplitude <IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$a$">,
+the sum will have RMS amplitude <IMG
+ WIDTH="33" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.png"
+ ALT="${\sqrt 2} a$">.  On the other hand if the two
+signals happen to be equal--the most correlated possible--the sum will have
+amplitude <IMG
+ WIDTH="19" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img134.png"
+ ALT="$2a$">, which is the maximum allowed by the triangle inequality.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html735"
+  HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html729"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html723"
+  HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html731"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html733"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html736"
+  HREF="node14.html">Periodic Signals</A>
+<B> Up:</B> <A NAME="tex2html730"
+  HREF="node7.html">Sinusoids, amplitude and frequency</A>
+<B> Previous:</B> <A NAME="tex2html724"
+  HREF="node12.html">Synthesizing a sinusoid</A>
+ &nbsp; <B>  <A NAME="tex2html732"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html734"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

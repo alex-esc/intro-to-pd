@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>All-pass filters</TITLE>
+<META NAME="description" CONTENT="All-pass filters">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="previous" HREF="node149.html">
+<LINK REL="up" HREF="node139.html">
+<LINK REL="next" HREF="node151.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2812"
+  HREF="node151.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2806"
+  HREF="node139.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2802"
+  HREF="node149.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2808"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2810"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2813"
+  HREF="node151.html">Applications</A>
+<B> Up:</B> <A NAME="tex2html2807"
+  HREF="node139.html">Designing filters</A>
+<B> Previous:</B> <A NAME="tex2html2803"
+  HREF="node149.html">Impulse responses of recirculating</A>
+ &nbsp; <B>  <A NAME="tex2html2809"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2811"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0012311000000000000000">
+All-pass filters</A>
+</H2>
+
+<P>
+Sometimes a filter is applied to get a desired phase change, rather than to
+alter the amplitudes of the frequency components of a sound.  To do this
+we would need a way to design a filter with a constant, unit frequency response
+but which changes the phase of an incoming sinusoid in a way that depends on its
+frequency.  We have already seen in Chapter 7 that a delay  of length <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$d$">
+introduces a phase change of <IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img677.png"
+ ALT="$- d \omega$">, at the angular frequency <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.png"
+ ALT="$\omega $">.
+Another class of filters, called
+<A NAME="10502"></A><I>all-pass filters</I>,
+can make phase changes which are more interesting functions of <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.png"
+ ALT="$\omega $">.
+
+<P>
+To design an all-pass filter, we start with two facts: first, an elementary
+recirculating filter and an elementary non-recirculating one cancel each other
+out perfectly if they have the same gain coefficient.  In other words, if a
+signal has been put through a one-zero filter, either real or complex, the
+effect can be reversed by sequentially applying a one-pole filter, and vice
+versa.
+
+<P>
+The second fact is that the elementary non-recirculating filter of the second
+form has the same frequency response as that of the first form; they differ only
+in phase response.  So if we combine an elementary recirculating filter with
+an elementary non-recirculating one of the second form, the frequency responses
+cancel out (to a flat gain independent of frequency) but the phase response
+is not constant.
+
+<P>
+To find the transfer function,  we choose the same complex number <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img982.png"
+ ALT="$P&lt;1$"> as
+coefficient for both elementary filters and multiply their transfer functions:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+H(Z) = {{
+                {\overline{P} - {Z^{-1}}}
+           } \over {
+                {1 - P{Z^{-1}}}
+           }}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="131" HEIGHT="44" BORDER="0"
+ SRC="img983.png"
+ ALT="\begin{displaymath}
+H(Z) = {{
+{\overline{P} - {Z^{-1}}}
+} \over {
+{1 - P{Z^{-1}}}
+}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The coefficient <IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img880.png"
+ ALT="$P$"> controls both the location of the one pole (at <IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img880.png"
+ ALT="$P$"> itself)
+and the zero (at <!-- MATH
+ $1/\overline{P}$
+ -->
+<IMG
+ WIDTH="31" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img984.png"
+ ALT="$1/\overline{P}$">).  Figure <A HREF="#fig08.23">8.23</A> shows the phase response of
+the all-pass filter for four real-valued choices <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$p$"> of the coefficient.  At
+frequencies of <IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img179.png"
+ ALT="$0$">, <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="$\pi $">, and <IMG
+ WIDTH="21" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$2\pi $">, the phase response is just that of a
+one-sample delay; but for frequencies in between, the phase response is bent
+upward or downward depending on the coefficient.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig08.23"></A><A NAME="10511"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 8.23:</STRONG>
+Phase response of all-pass filters with different pole locations <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$p$">.
+When the pole is located at zero, the filter reduces to a one-sample delay.</CAPTION>
+<TR><TD><IMG
+ WIDTH="319" HEIGHT="218" BORDER="0"
+ SRC="img985.png"
+ ALT="\begin{figure}\psfig{file=figs/fig08.23.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Complex coefficients give similar phase response curves, but the frequencies at
+which they cross the diagonal line in the figure are shifted according to the
+argument of the coefficient <IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img880.png"
+ ALT="$P$">.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2812"
+  HREF="node151.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2806"
+  HREF="node139.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2802"
+  HREF="node149.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2808"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2810"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2813"
+  HREF="node151.html">Applications</A>
+<B> Up:</B> <A NAME="tex2html2807"
+  HREF="node139.html">Designing filters</A>
+<B> Previous:</B> <A NAME="tex2html2803"
+  HREF="node149.html">Impulse responses of recirculating</A>
+ &nbsp; <B>  <A NAME="tex2html2809"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2811"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

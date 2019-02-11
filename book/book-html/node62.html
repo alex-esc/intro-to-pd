@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Muting</TITLE>
+<META NAME="description" CONTENT="Muting">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node63.html">
+<LINK REL="previous" HREF="node61.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node63.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1475"
+  HREF="node63.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1469"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1463"
+  HREF="node61.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1471"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1473"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1476"
+  HREF="node63.html">Switch-and-ramp</A>
+<B> Up:</B> <A NAME="tex2html1470"
+  HREF="node61.html">Continuous and discontinuous control</A>
+<B> Previous:</B> <A NAME="tex2html1464"
+  HREF="node61.html">Continuous and discontinuous control</A>
+ &nbsp; <B>  <A NAME="tex2html1472"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1474"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00831000000000000000"></A>
+<A NAME="sect4.muting"></A>
+<BR>
+Muting
+</H2>
+
+<P>
+The
+<A NAME="4634"></A><I>muting</I>
+technique is to apply an envelope to the output amplitude, which is quickly
+ramped to zero before the parameter change and then restored afterward.  It
+may or may not be the case that the discontinuous changes will result in a signal
+that rises smoothly from zero afterward. In Figure <A HREF="#fig04.05">4.5</A> (part a),
+we take the example of an amplitude envelope (the output signal of an ADSR
+generator), and assume that the discontinuous change is to start a new note at
+amplitude zero.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig04.05"></A><A NAME="4639"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.5:</STRONG>
+Muting technique for hiding discontinuous changes: (a) the
+envelope (upper graph) is set discontinuously to zero and
+the muting signal (lower graph) ramps down in advance to prepare for the change, and
+then is restored (discontinuously) to its previous value; (b) the envelope
+changes discontinuously between two nonzero values; the muting signal must 
+both ramp down beforehand and ramp back up afterward.</CAPTION>
+<TR><TD><IMG
+ WIDTH="327" HEIGHT="334" BORDER="0"
+ SRC="img368.png"
+ ALT="\begin{figure}\psfig{file=figs/fig04.05.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+To change the ADSR generator's output discontinuously we
+<A NAME="4642"></A><I>reset</I> it.  This is a different operation from triggering it; the
+result is to make it jump to a new value, after which we may either simply
+leave it there or trigger it anew.  Figure <A HREF="#fig04.05">4.5</A> (part a)
+shows the effect of resetting and retriggering an ADSR generator.
+
+<P>
+Below the ADSR generator output we see the appropriate muting signal, which ramps to zero
+to prepare for the discontinuity.  The amount of time we allow for muting
+should be small (so as to disrupt the previous sound as little as possible)
+but not so small as to cause audible artifacts in the output.
+A working example of this type of muting was already shown on Page
+<A HREF="node53.html#sect3.noloopsampler"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="file:/usr/local/share/lib/latex2html/icons/crossref.png"></A>; there we allowed 5 msec for ramping down.
+The muting signal is multiplied by the output of the process to be de-clicked.
+
+<P>
+Figure <A HREF="#fig04.05">4.5</A> (part b) shows the situation in which we suppose the
+discontinuous change is between two possibly nonzero values.  Here the muting
+signal must not only ramp down as before (in advance of the discontinuity) but
+must also ramp back up afterward.  The ramp-down time need not equal the
+ramp-up time; these must be chosen, as always, by listening to the output
+sound.
+
+<P>
+In general, muting presents the difficulty that you must start the muting
+operation in advance of making the desired control change.  In real-time
+settings, this often requires that we intentionally delay the control change.
+This is another reason for keeping the muting time as low as possible.  
+(Moreover, it's a bad idea to try to minimize delay by conditionally
+omitting the ramp-down period when it isn't needed; a constant delay
+is much better than one that varies, even if it is smaller on average.)
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1475"
+  HREF="node63.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1469"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1463"
+  HREF="node61.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1471"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1473"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1476"
+  HREF="node63.html">Switch-and-ramp</A>
+<B> Up:</B> <A NAME="tex2html1470"
+  HREF="node61.html">Continuous and discontinuous control</A>
+<B> Previous:</B> <A NAME="tex2html1464"
+  HREF="node61.html">Continuous and discontinuous control</A>
+ &nbsp; <B>  <A NAME="tex2html1472"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1474"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Octave divider and formant adder</TITLE>
+<META NAME="description" CONTENT="Octave divider and formant adder">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node83.html">
+<LINK REL="previous" HREF="node81.html">
+<LINK REL="up" HREF="node80.html">
+<LINK REL="next" HREF="node83.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1774"
+  HREF="node83.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1768"
+  HREF="node80.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1762"
+  HREF="node81.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1770"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1772"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1775"
+  HREF="node83.html">Waveshaping and difference tones</A>
+<B> Up:</B> <A NAME="tex2html1769"
+  HREF="node80.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1763"
+  HREF="node81.html">Ring modulation and spectra</A>
+ &nbsp; <B>  <A NAME="tex2html1771"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1773"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00952000000000000000">
+Octave divider and formant adder</A>
+</H2>
+<A NAME="sect5.octave"></A>
+<P>
+As suggested in Section <A HREF="node77.html#sect5.ringmod">5.2</A>, when considering the result of
+modulating a complex harmonic (i.e., periodic) signal by a sinusoid, an
+interesting special case is to set the carrier oscillator to <IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img98.png"
+ ALT="$1/2$"> the
+fundamental frequency, which drops the resulting sound an octave with only
+a relatively small deformation of the spectral envelope.  Another is to
+modulate by a sinusoid at several times the fundamental frequency, which
+in effect displaces the spectral envelope without changing the fundamental
+frequency of the result.  This is demonstrated in Example E03.octave.divider.pd (Figure 
+<A HREF="#fig05.10">5.10</A>).  The signal we process here is a recorded, spoken voice.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig05.10"></A><A NAME="5803"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.10:</STRONG>
+Lowering the pitch of a sound by an octave by determining its pitch
+and modulating at half the fundamental.</CAPTION>
+<TR><TD><IMG
+ WIDTH="359" HEIGHT="371" BORDER="0"
+ SRC="img487.png"
+ ALT="\begin{figure}\psfig{file=figs/fig05.10.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The subpatches <TT>pd looper</TT> and <TT>pd delay</TT> hide details.  The
+first is a looping sampler as introduced in Chapter <A HREF="node26.html#chapter-wavetable">2</A>. 
+The second is a delay of 1024 samples, which uses objects that are introduced
+later in Chapter <A HREF="node104.html#chapter-delay">7</A>.  We will introduce one object class here:
+
+<P>
+<BR><!-- MATH
+ $\fbox{ \texttt{fiddle\~}}$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img488.png"
+ ALT="\fbox{ \texttt{fiddle\~}}">:
+<A NAME="5955"></A>pitch tracker.  The inlet takes a signal to analyze, and messages to 
+change settings.  Depending on its creation arguments <TT>fiddle~</TT>may have a
+variable number of outlets offering various information about the input
+signal.  As shown here, with only one creation argument to specify window size,
+the third outlet attempts to report the pitch of the input, and the amplitude
+of that portion of the input which repeats (at least approximately) at the
+reported pitch.  These are output as a list of two numbers.  The pitch, which
+is in MIDI units, is reported as zero if none could be identified.
+
+<P>
+In this patch the third outlet is unpacked into its pitch and amplitude
+components, and the pitch component is filtered by the <TT>moses</TT> object so that
+only successful pitch estimates (nonzero ones) are used.  These are
+converted to units of frequency by the <TT>mtof</TT> object.  Finally, the frequency
+estimates are either reduced by <IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img98.png"
+ ALT="$1/2$"> or else multiplied by 15, depending on
+the selected multiplier, to provide the modulation frequency.  In the first
+case we get an octave divider, and in the second, additional high harmonics
+that deform the vowels.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1774"
+  HREF="node83.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1768"
+  HREF="node80.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1762"
+  HREF="node81.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1770"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1772"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1775"
+  HREF="node83.html">Waveshaping and difference tones</A>
+<B> Up:</B> <A NAME="tex2html1769"
+  HREF="node80.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1763"
+  HREF="node81.html">Ring modulation and spectra</A>
+ &nbsp; <B>  <A NAME="tex2html1771"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1773"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Two-cosine carrier signal</TITLE>
+<META NAME="description" CONTENT="Two-cosine carrier signal">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node101.html">
+<LINK REL="previous" HREF="node99.html">
+<LINK REL="up" HREF="node97.html">
+<LINK REL="next" HREF="node101.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2042"
+  HREF="node101.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2036"
+  HREF="node97.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2030"
+  HREF="node99.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2038"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2040"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2043"
+  HREF="node101.html">The PAF generator</A>
+<B> Up:</B> <A NAME="tex2html2037"
+  HREF="node97.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2031"
+  HREF="node99.html">Simple formant generator</A>
+ &nbsp; <B>  <A NAME="tex2html2039"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2041"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001053000000000000000">
+Two-cosine carrier signal</A>
+</H2>
+
+<P>
+Example F08.two.cosines.pd (Figure <A HREF="#fig06.16">6.17</A>) shows how to make a carrier signal that
+cross-fades between harmonics to make continuously variable center frequencies.
+The center frequency quotient
+appears as the output of a <TT>line~</TT> object.  This is separated into its
+fractional part (using the <TT>wrap~</TT> object) and its integer part (by
+subtracting the fractional part from the original).  These are labeled as <IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.png"
+ ALT="$q$">
+and <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$"> to agree with the treatment in Section <A HREF="node95.html#sect6.carrier">6.3</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig06.16"></A><A NAME="6994"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.17:</STRONG>
+Cross-fading between sinusoids to make movable
+center frequencies.</CAPTION>
+<TR><TD><IMG
+ WIDTH="548" HEIGHT="323" BORDER="0"
+ SRC="img616.png"
+ ALT="\begin{figure}\psfig{file=figs/fig06.16.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The phase--a sawtooth wave at the fundamental frequency--is multiplied by
+both <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$"> and <IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img602.png"
+ ALT="$k+1$"> (the latter by adding the original sawtooth into the
+former), and the cosines of both are taken; they are therefore at <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$"> and <IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img602.png"
+ ALT="$k+1$">
+times the fundamental frequency and have no discontinuities at phase wrapping
+points.  The next several objects in the patch compute the weighted sum <!-- MATH
+ $p
+{c_1} + q {c_2}$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img617.png"
+ ALT="$p
+{c_1} + q {c_2}$">, where <IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img238.png"
+ ALT="$c_1$">, <IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img618.png"
+ ALT="$c_2$"> are the two sinusoids and <IMG
+ WIDTH="67" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img619.png"
+ ALT="$p=1-q$">, by
+evaluating an equivalent expression, <!-- MATH
+ ${c_1} + q ({c_2} - {c_1})$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img620.png"
+ ALT="${c_1} + q ({c_2} - {c_1})$">.  This gives
+us the desired movable-frequency carrier signal.
+
+<P>
+Example F09.declickit.pd (not shown here) shows how, by adding a
+<TT>samphold~</TT> object after the <TT>line~</TT> object controlling center
+frequency, you can avoid discontinuities in the output signal even if
+the desired center frequency changes discontinuously.  In the
+example the center frequency quotient
+alternates between 4 and 13.5.  At ramp times below about 20 msec there are
+audible artifacts when using the <TT>line~</TT> object alone which disappear
+when the <TT>samphold~</TT> object is added.
+(A disadvantage of sample-and-holding the frequency quotient is that, for
+very low fundamental frequencies, the changes can be heard as discrete
+steps.  So in situations where the fundamental frequency is low and the 
+center frequency need not change very quickly, it may be better to omit the
+sample-and-hold step.)
+
+<P>
+The next two examples demonstrate using the crossfading-oscillators
+carrier as part of the classic two-operator phase modulation technique.  The
+same modulating oscillator is added separately to the phases of the two
+cosines. The resulting spectra can be made to travel up and down in frequency,
+but because of the complicated phase relationships between neighboring peaks in
+the phase modulation spectrum, no matter how you align two such spectra you can
+never avoid getting phase cancellations where they overlap.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2042"
+  HREF="node101.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2036"
+  HREF="node97.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2030"
+  HREF="node99.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2038"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2040"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2043"
+  HREF="node101.html">The PAF generator</A>
+<B> Up:</B> <A NAME="tex2html2037"
+  HREF="node97.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2031"
+  HREF="node99.html">Simple formant generator</A>
+ &nbsp; <B>  <A NAME="tex2html2039"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2041"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

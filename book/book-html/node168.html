@@ -1,0 +1,533 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Fourier transform of DC</TITLE>
+<META NAME="description" CONTENT="Fourier transform of DC">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node169.html">
+<LINK REL="previous" HREF="node167.html">
+<LINK REL="up" HREF="node167.html">
+<LINK REL="next" HREF="node169.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3090"
+  HREF="node169.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3084"
+  HREF="node167.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3078"
+  HREF="node167.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3086"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html3088"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3091"
+  HREF="node169.html">Shifts and phase changes</A>
+<B> Up:</B> <A NAME="tex2html3085"
+  HREF="node167.html">Properties of Fourier transforms</A>
+<B> Previous:</B> <A NAME="tex2html3079"
+  HREF="node167.html">Properties of Fourier transforms</A>
+ &nbsp; <B>  <A NAME="tex2html3087"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3089"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001321000000000000000">
+Fourier transform of DC</A>
+</H2>
+
+<P>
+Let <IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1077.png"
+ ALT="$X[n]=1$"> for all <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.png"
+ ALT="$n$"> (this repeats with any desired integer period
+<IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1078.png"
+ ALT="$N&gt;1$">).  From the preceding discussion, we expect to find that
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\cal FT} \left \{ X[n] \right \} (k) = 
+    \left \{
+    \begin{array}{ll}
+        N & {k=0} \\
+        0 & {k=1, \ldots, N-1}
+    \end{array}
+    \right .
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="287" HEIGHT="45" BORDER="0"
+ SRC="img1079.png"
+ ALT="\begin{displaymath}
+{\cal FT} \left \{ X[n] \right \} (k) =
+\left \{
+\begin{...
+...}
+N &amp; {k=0} \\
+0 &amp; {k=1, \ldots, N-1}
+\end{array} \right .
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+We will often need to know the answer for non-integer values of <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$"> however,
+and for this there is nothing better to do than to calculate the value
+directly:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\cal FT} \left \{ X[n] \right \} (k) = 
+    {V ^ {0}} X[0] +
+    {V ^ {1}} X[1] +
+    \cdots +
+    {V ^ {N-1}} X[N-1]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="406" HEIGHT="28" BORDER="0"
+ SRC="img1057.png"
+ ALT="\begin{displaymath}
+{\cal FT}\left \{ X[n] \right \} (k) =
+{V ^ {0}} X[0] +
+{V ^ {1}} X[1] +
+\cdots +
+{V ^ {N-1}} X[N-1]
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1059.png"
+ ALT="$V$"> is, as before, the unit magnitude complex number with argument
+<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1055.png"
+ ALT="$-k\omega$">.  This is a geometric series; as long as <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1080.png"
+ ALT="$V \not= 1$"> we get:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\cal FT} \left \{ X[n] \right \} (k) = 
+    {{
+        {V^N} - 1
+    } \over {
+        V - 1
+    }}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="177" HEIGHT="43" BORDER="0"
+ SRC="img1081.png"
+ ALT="\begin{displaymath}
+{\cal FT} \left \{ X[n] \right \} (k) =
+{{
+{V^N} - 1
+} \over {
+V - 1
+}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+We now symmetrize the top and bottom in the same way as we earlier did in
+Section <A HREF="node108.html#sect7.network">7.3</A>.  To do this let:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\xi = \cos(\pi k / N) - i \sin(\pi k / N)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="201" HEIGHT="28" BORDER="0"
+ SRC="img1082.png"
+ ALT="\begin{displaymath}
+\xi = \cos(\pi k / N) - i \sin(\pi k / N)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+so that <IMG
+ WIDTH="52" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1083.png"
+ ALT="${\xi^2} = V$">.  Then factoring appropriate powers of <IMG
+ WIDTH="11" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1084.png"
+ ALT="$\xi$"> out of the
+numerator and denominator gives:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\cal FT} \left \{ X[n] \right \} (k) = 
+        {\xi^{N-1}}
+    {{
+        {\xi^N} - {\xi^{-N}}
+    } \over {
+        \xi - {\xi^{-1}}
+    }}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="230" HEIGHT="45" BORDER="0"
+ SRC="img1085.png"
+ ALT="\begin{displaymath}
+{\cal FT} \left \{ X[n] \right \} (k) =
+{\xi^{N-1}}
+{{
+{\xi^N} - {\xi^{-N}}
+} \over {
+\xi - {\xi^{-1}}
+}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+It's easy now to simplify the numerator:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\xi^N} - {\xi^{-N}} =
+        \left (\cos(\pi k) - i \sin(\pi k) \right ) - 
+        \left (\cos(\pi k) + i \sin(\pi k) \right )
+        = - 2 i \sin(\pi k)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="493" HEIGHT="28" BORDER="0"
+ SRC="img1086.png"
+ ALT="\begin{displaymath}
+{\xi^N} - {\xi^{-N}} =
+\left (\cos(\pi k) - i \sin(\pi k) ...
+...eft (\cos(\pi k) + i \sin(\pi k) \right )
+= - 2 i \sin(\pi k)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and similarly for the denominator, giving:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\cal FT} \left \{ X[n] \right \} (k) = 
+    \left ( {
+        \parbox[t][0.1in]{0in}{\mbox{}}
+        \cos(\pi k (N-1)/N) - i \sin(\pi k (N-1)/N)
+    } \right ) 
+    {{
+        \sin(\pi k)
+    } \over {
+        \sin(\pi k / N)
+    }}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="502" HEIGHT="44" BORDER="0"
+ SRC="img1087.png"
+ ALT="\begin{displaymath}
+{\cal FT} \left \{ X[n] \right \} (k) =
+\left ( {
+\parbo...
+...
+} \right )
+{{
+\sin(\pi k)
+} \over {
+\sin(\pi k / N)
+}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Whether <IMG
+ WIDTH="45" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1088.png"
+ ALT="$V=1$"> or not, we have
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\cal FT} \left \{ X[n] \right \} (k) = 
+    \left ( {
+        \parbox[t][0.1in]{0in}{\mbox{}}
+        \cos(\pi k (N-1)/N) - i \sin(\pi k (N-1)/N) 
+    } \right )
+        {D_N}(k)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="473" HEIGHT="35" BORDER="0"
+ SRC="img1089.png"
+ ALT="\begin{displaymath}
+{\cal FT} \left \{ X[n] \right \} (k) =
+\left ( {
+\parbo...
+...(\pi k (N-1)/N) - i \sin(\pi k (N-1)/N)
+} \right )
+{D_N}(k)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1090.png"
+ ALT="${D_N}(k)$">, known as the
+<A NAME="12394"></A><I>Dirichlet kernel</I>,
+is defined as
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{D_N}(k) = 
+    \left \{
+    \begin{array}{ll}
+        N & {k= 0} \\
+            {{
+                \sin(\pi k)
+            } \over {
+                \sin(\pi k / N)
+            }}
+        & {k\not=0,\; -N < k < N}
+    \end{array}
+    \right .
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="307" HEIGHT="54" BORDER="0"
+ SRC="img1091.png"
+ ALT="\begin{displaymath}
+{D_N}(k) =
+\left \{
+\begin{array}{ll}
+N &amp; {k= 0} \\
+{...
+...pi k / N)
+}}
+&amp; {k\not=0,\; -N &lt; k &lt; N}
+\end{array} \right .
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Figure <A HREF="#fig09.01">9.1</A> shows the Fourier transform of <IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1077.png"
+ ALT="$X[n]=1$">, with <IMG
+ WIDTH="63" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img63.png"
+ ALT="$N=100$">.  The
+transform repeats every 100 samples, with a peak at <IMG
+ WIDTH="41" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1092.png"
+ ALT="$k=0$">, another at
+<IMG
+ WIDTH="57" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1093.png"
+ ALT="$k=100$">, and so on.  The figure endeavors to show both the magnitude and phase
+behavior using a 3-dimensional graph projected onto the page.  The phase
+term
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\cos(\pi k (N-1)/N) - i \sin(\pi k (N-1)/N)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="280" HEIGHT="28" BORDER="0"
+ SRC="img1094.png"
+ ALT="\begin{displaymath}
+\cos(\pi k (N-1)/N) - i \sin(\pi k (N-1)/N)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+acts to twist the values of <!-- MATH
+ ${\cal FT} \left \{ X[n] \right \} (k)$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1095.png"
+ ALT="${\cal FT} \left \{ X[n] \right \} (k)$"> around
+the <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$"> axis with a period of approximately two.  The Dirichlet kernel
+<IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1090.png"
+ ALT="${D_N}(k)$">, shown in Figure <A HREF="#fig09.02">9.2</A>, controls the magnitude of
+<!-- MATH
+ ${\cal FT} \left \{ X[n] \right \} (k)$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1095.png"
+ ALT="${\cal FT} \left \{ X[n] \right \} (k)$">.  It has a peak, two units wide, around
+<IMG
+ WIDTH="41" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1092.png"
+ ALT="$k=0$">.  This is surrounded by one-unit-wide 
+<A NAME="12409"></A><I>sidelobes</I>,
+alternating in sign and gradually decreasing in magnitude as <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$"> increases or
+decreases away from zero.  The phase term rotates by almost <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="$\pi $"> radians
+each time the Dirichlet kernel changes sign, so that the product of the
+two stays roughly in the same complex half-plane for <IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1096.png"
+ ALT="$k&gt;1$"> (and in the
+opposite half-plane for <IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1097.png"
+ ALT="$k &lt; -1$">).  The phase rotates by almost <IMG
+ WIDTH="21" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$2\pi $">
+radians over the peak from <IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1098.png"
+ ALT="$k=-1$"> to <IMG
+ WIDTH="41" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img259.png"
+ ALT="$k=1$">.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig09.01"></A><A NAME="12413"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9.1:</STRONG>
+The Fourier transform of a signal consisting of all ones.  Here
+N=100, and values are shown for <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.png"
+ ALT="$k$"> ranging from -5 to 10.  The result
+is complex-valued and shown as a projection, with the real axis pointing up the
+page and the imaginary axis pointing away from it.</CAPTION>
+<TR><TD><IMG
+ WIDTH="470" HEIGHT="265" BORDER="0"
+ SRC="img1099.png"
+ ALT="\begin{figure}\psfig{file=figs/fig09.01.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig09.02"></A><A NAME="12418"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9.2:</STRONG>
+The Dirichlet kernel, for <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$N$"> = 100.</CAPTION>
+<TR><TD><IMG
+ WIDTH="448" HEIGHT="175" BORDER="0"
+ SRC="img1100.png"
+ ALT="\begin{figure}\psfig{file=figs/fig09.02.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3090"
+  HREF="node169.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html3084"
+  HREF="node167.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html3078"
+  HREF="node167.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html3086"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html3088"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3091"
+  HREF="node169.html">Shifts and phase changes</A>
+<B> Up:</B> <A NAME="tex2html3085"
+  HREF="node167.html">Properties of Fourier transforms</A>
+<B> Previous:</B> <A NAME="tex2html3079"
+  HREF="node167.html">Properties of Fourier transforms</A>
+ &nbsp; <B>  <A NAME="tex2html3087"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3089"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

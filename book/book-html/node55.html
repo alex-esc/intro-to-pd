@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Analog-style sequencer</TITLE>
+<META NAME="description" CONTENT="Analog-style sequencer">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node56.html">
+<LINK REL="previous" HREF="node54.html">
+<LINK REL="up" HREF="node50.html">
+<LINK REL="next" HREF="node56.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1363"
+  HREF="node56.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1357"
+  HREF="node50.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1351"
+  HREF="node54.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1359"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1361"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1364"
+  HREF="node56.html">MIDI-style synthesizer</A>
+<B> Up:</B> <A NAME="tex2html1358"
+  HREF="node50.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1352"
+  HREF="node54.html">Signals to controls</A>
+ &nbsp; <B>  <A NAME="tex2html1360"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1362"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION007105000000000000000">
+Analog-style sequencer</A>
+</H2>
+
+<P>
+Example C08.analog.sequencer.pd (Figure <A HREF="#fig03.15">3.15</A>) realizes the analog sequencer and envelope
+generation described in Section <A HREF="node47.html#sect3.analog">3.7</A>.  The ``sequence" table,
+with nine elements, holds a sequence of frequencies.  The <TT>phasor~</TT> object at top cycles through the sequence table at 0.6 Hertz.  Non-interpolating
+table lookup (<TT>tabread~</TT> instead of <TT>tabread4~</TT>) is
+used to read the frequencies in discrete steps.  (Such situations, in
+which we prefer non-interpolating table lookup, are rare.)
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig03.15"></A><A NAME="3777"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.15:</STRONG>
+An analog-synthesizer-style sequencer.</CAPTION>
+<TR><TD><IMG
+ WIDTH="463" HEIGHT="692" BORDER="0"
+ SRC="img350.png"
+ ALT="\begin{figure}\psfig{file=figs/fig03.15.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The <TT>wrap~</TT> object converts the amplitude-9 sawtooth to a unit-amplitude
+one as described earlier in Figure <A HREF="node47.html#fig03.08">3.8</A>, which is then used to obtain
+an envelope function from a second wavetable.  This is used to control grain
+size in a looping sampler (from Section <A HREF="node36.html#sect2.example.loop">2.6</A>).  Here the
+wavetable consists of six periods of a sinusoid.  The grains are smoothed by
+multiplying by a raised cosine function (<TT>cos~</TT> and <TT>+ 1</TT>).
+
+<P>
+Example C09.sample.hold.pd (not pictured here) shows a sample-and-hold unit, another
+useful device for doing control tasks in the audio signal domain.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1363"
+  HREF="node56.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1357"
+  HREF="node50.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1351"
+  HREF="node54.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1359"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1361"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1364"
+  HREF="node56.html">MIDI-style synthesizer</A>
+<B> Up:</B> <A NAME="tex2html1358"
+  HREF="node50.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1352"
+  HREF="node54.html">Signals to controls</A>
+ &nbsp; <B>  <A NAME="tex2html1360"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1362"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

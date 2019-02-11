@@ -1,0 +1,615 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Multiplying audio signals</TITLE>
+<META NAME="description" CONTENT="Multiplying audio signals">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node78.html">
+<LINK REL="previous" HREF="node76.html">
+<LINK REL="up" HREF="node75.html">
+<LINK REL="next" HREF="node78.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1697"
+  HREF="node78.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1691"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1685"
+  HREF="node76.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1693"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1695"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1698"
+  HREF="node78.html">Waveshaping</A>
+<B> Up:</B> <A NAME="tex2html1692"
+  HREF="node75.html">Modulation</A>
+<B> Previous:</B> <A NAME="tex2html1686"
+  HREF="node76.html">Taxonomy of spectra</A>
+ &nbsp; <B>  <A NAME="tex2html1694"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1696"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00920000000000000000"></A>
+<A NAME="sect5.ringmod"></A>
+<BR>
+Multiplying audio signals
+</H1>
+
+<P>
+We have been routinely adding audio signals together, and multiplying them
+by slowly-varying signals (used, for example, as amplitude envelopes) since
+Chapter 1.  For a full understanding of the algebra of audio
+signals we must also consider the situation where two audio signals,
+neither of which may be assumed to change slowly, are multiplied.  The key to understanding
+what happens is the Cosine Product Formula:
+<A NAME="eq-cosinemultiplication"></A>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\cos(a) \cos (b) = {1 \over 2}
+    { \left [
+        \parbox[t][0.1in]{0in}{\mbox{}}
+        \cos (a+b) + \cos(a-b)
+    \right ] }
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="287" HEIGHT="39" BORDER="0"
+ SRC="img411.png"
+ ALT="\begin{displaymath}
+\cos(a) \cos (b) = {1 \over 2}
+{ \left [
+\parbox[t][0.1in]{0in}{\mbox{}}
+\cos (a+b) + \cos(a-b)
+\right ] }
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+To see why this formula holds, we can use the formula for the cosine of a
+sum of two angles:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\cos(a+b) = \cos(a)\cos(b) - \sin(a) \sin(b)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="274" HEIGHT="28" BORDER="0"
+ SRC="img412.png"
+ ALT="\begin{displaymath}
+\cos(a+b) = \cos(a)\cos(b) - \sin(a) \sin(b)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+to evaluate the right hand side of the cosine product formula; it then
+simplifies to the left hand side.
+
+<P>
+We can use this formula to see what happens when we multiply two sinusoids
+(Page <A HREF="node7.html#eq-realsinusoid"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="file:/usr/local/share/lib/latex2html/icons/crossref.png"></A>):
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\cos(\alpha n + \phi) \cos (\beta n + \xi)}
+    =
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="181" HEIGHT="28" BORDER="0"
+ SRC="img413.png"
+ ALT="\begin{displaymath}
+{\cos(\alpha n + \phi) \cos (\beta n + \xi)}
+=
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+= {1 \over 2} { \left [ { 
+        \parbox[t][0.1in]{0in}{\mbox{}}
+    	{\cos \left ( (\alpha + \beta) n + (\phi + \xi) \right ) }
+	+
+    	{\cos \left ( (\alpha - \beta) n + (\phi - \xi) \right ) }
+    } \right ] }
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="391" HEIGHT="39" BORDER="0"
+ SRC="img414.png"
+ ALT="\begin{displaymath}
+= {1 \over 2} { \left [ {
+\parbox[t][0.1in]{0in}{\mbox{}}...
+...t ( (\alpha - \beta) n + (\phi - \xi) \right ) }
+} \right ] }
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+In words, multiply two sinusoids and you get a result with two partials,
+one at the sum of the two original frequencies, and one at their difference.
+(If the difference <IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img415.png"
+ ALT="$\alpha-\beta$"> happens to be negative, simply switch the
+original two sinusoids and the difference will then be positive.)  These
+two new components are called
+<A NAME="5635"></A><I>sidebands</I>.
+
+<P>
+This gives us a technique for shifting the component frequencies
+of a sound, called
+<A NAME="5637"></A><A NAME="5638"></A><I>ring modulation</I>, which is shown in its simplest form in Figure
+<A HREF="#fig05.02">5.2</A>.  An oscillator provides a
+<A NAME="5641"></A><I>carrier signal</I>, which
+is simply multiplied by the input.  In this context the input is called the
+<A NAME="5643"></A><I>modulating signal</I>.
+The term ``ring modulation" is often used
+more generally to mean multiplying any two signals together, but here we'll
+just consider using a sinusoidal carrier signal.  (The technique of ring
+modulation dates from the analog era [<A
+ HREF="node202.html#r-strange72">Str95</A>]; digital
+multipliers now replace both the VCA (Section <A HREF="node12.html#sect1.synth">1.5</A>) and the
+ring modulator.)
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig05.02"></A><A NAME="5649"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.2:</STRONG>
+Block diagram for ring modulating an input signal with a sinusoid.</CAPTION>
+<TR><TD><IMG
+ WIDTH="167" HEIGHT="121" BORDER="0"
+ SRC="img416.png"
+ ALT="\begin{figure}\psfig{file=figs/fig05.02.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Figure <A HREF="#fig05.03">5.3</A> shows a variety of results that may be obtained by
+multiplying a (modulating) sinusoid of angular frequency <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$\alpha $"> and 
+peak amplitude
+<IMG
+ WIDTH="19" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img134.png"
+ ALT="$2a$">, by a (carrier) sinusoid of angular frequency <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$\beta $"> and 
+peak amplitude 1:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\left [ 2 a \cos (\alpha n) \right ]
+	    \cdot
+    	\left [ \cos (\beta n) \right ]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="152" HEIGHT="28" BORDER="0"
+ SRC="img417.png"
+ ALT="\begin{displaymath}
+\left [ 2 a \cos (\alpha n) \right ]
+\cdot
+\left [ \cos (\beta n) \right ]
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+(For simplicity the phase terms are omitted.)  Each part of the figure
+shows both the modulation signal and the result in the same spectrum.
+The modulating signal appears as a single frequency, <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$\alpha $">, at amplitude
+<IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$a$">.
+The product in general has two component frequencies,
+each at an amplitude of <IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img409.png"
+ ALT="$a/2$">.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig05.03"></A><A NAME="5655"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.3:</STRONG>
+Sidebands arising from multiplying two sinusoids of frequency
+<IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$\alpha $"> and <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$\beta $">: (a) with <!-- MATH
+ $\alpha > \beta > 0$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$\alpha &gt; \beta &gt; 0$">;
+(b) with <!-- MATH
+ $\beta > \alpha$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$\beta &gt; \alpha $"> so that
+the lower sideband is reflected about the <IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$f=0$"> axis; (c) with <IMG
+ WIDTH="44" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$\alpha =\beta $">,
+for which the amplitude of the zero-frequency
+sideband depends on the phases of the two sinusoids; (d)
+with <IMG
+ WIDTH="42" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$\alpha =0$">.</CAPTION>
+<TR><TD><IMG
+ WIDTH="390" HEIGHT="782" BORDER="0"
+ SRC="img418.png"
+ ALT="\begin{figure}\psfig{file=figs/fig05.03.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Parts (a) and (b) of the figure show ``general" cases where <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$\alpha $"> and <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$\beta $"> are
+nonzero and different from each other.  The component frequencies of the output
+are <!-- MATH
+ $\alpha + \beta$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img419.png"
+ ALT="$\alpha + \beta$"> and <!-- MATH
+ $\alpha - \beta$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img415.png"
+ ALT="$\alpha-\beta$">.  In part (b), since <!-- MATH
+ $\alpha-\beta<0$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img420.png"
+ ALT="$\alpha-\beta&lt;0$">,
+we get a negative frequency component.  Since cosine is an even function, we
+have
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\cos((\alpha - \beta)n) = \cos((\beta - \alpha)n)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="209" HEIGHT="28" BORDER="0"
+ SRC="img421.png"
+ ALT="\begin{displaymath}
+\cos((\alpha - \beta)n) = \cos((\beta - \alpha)n)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+so the negative component is exactly equivalent to one at the positive
+frequency <IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img422.png"
+ ALT="$\beta-\alpha$">, at the same amplitude.
+
+<P>
+In the special case where <!-- MATH
+ $\alpha = \beta$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$\alpha =\beta $">, the second (difference) sideband
+has zero frequency.  In this case phase will be significant so we rewrite
+the product with explicit phases, replacing <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$\beta $"> by <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$\alpha $">, to get:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{2 a \cos(\alpha n + \phi) \cos (\alpha n + \xi)}
+    =
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="200" HEIGHT="28" BORDER="0"
+ SRC="img423.png"
+ ALT="\begin{displaymath}
+{2 a \cos(\alpha n + \phi) \cos (\alpha n + \xi)}
+=
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+= 
+    	{a \cos \left ( 2 \alpha n + (\phi + \xi) \right ) }
+	+
+    	{a \cos \left ( \phi - \xi \right ) }
+    .
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="266" HEIGHT="28" BORDER="0"
+ SRC="img424.png"
+ ALT="\begin{displaymath}
+=
+{a \cos \left ( 2 \alpha n + (\phi + \xi) \right ) }
++
+{a \cos \left ( \phi - \xi \right ) }
+.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The second term has zero frequency; its amplitude depends on the relative phase
+of the two sinusoids and
+ranges from <IMG
+ WIDTH="24" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img425.png"
+ ALT="$+a$"> to <IMG
+ WIDTH="24" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img426.png"
+ ALT="$-a$">
+as the phase difference <IMG
+ WIDTH="40" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img427.png"
+ ALT="$\phi - \xi$"> varies from <IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img179.png"
+ ALT="$0$"> to <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="$\pi $"> radians.  This
+situation is shown in part (c) of Figure <A HREF="#fig05.03">5.3</A>.
+
+<P>
+Finally, part (d) shows a carrier signal whose frequency is zero.  Its value is
+the constant <IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$a$"> (not <IMG
+ WIDTH="19" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img134.png"
+ ALT="$2a$">; zero frequency is a special case).  Here we
+get only one sideband, of amplitude <IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img409.png"
+ ALT="$a/2$"> as usual.
+
+<P>
+We can use the distributive rule for multiplication to find out what
+happens when we multiply signals together which consist of more than one
+partial each.  For example, in the situation above we can replace the
+signal of frequency <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$\alpha $"> with a sum of several sinusoids, such as:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{a_1} \cos({\alpha _1} n ) + \cdots + {a_k} \cos({\alpha _k} n )
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="214" HEIGHT="28" BORDER="0"
+ SRC="img428.png"
+ ALT="\begin{displaymath}
+{a_1} \cos({\alpha _1} n ) + \cdots + {a_k} \cos({\alpha _k} n )
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Multiplying by the signal of frequency <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$\beta $"> gives partials at frequencies
+equal to:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\alpha_1 + \beta, \alpha_1 - \beta, \ldots,
+    \alpha_k + \beta, \alpha_k - \beta
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="236" HEIGHT="27" BORDER="0"
+ SRC="img429.png"
+ ALT="\begin{displaymath}
+\alpha_1 + \beta, \alpha_1 - \beta, \ldots,
+\alpha_k + \beta, \alpha_k - \beta
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+As before if any frequency is negative we take its absolute value.
+
+<P>
+Figure <A HREF="#fig05.04">5.4</A> shows the result of multiplying a complex periodic signal
+(with several components tuned in the ratio 0:1:2:<IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img430.png"
+ ALT="$\cdots$">) by a
+sinusoid.  Both the spectral envelope and the component frequencies of the
+result are changed according to relatively simple rules.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig05.04"></A><A NAME="5669"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.4:</STRONG>
+Result of ring modulation of a complex signal by a pure sinusoid:
+(a) the original signal's spectrum and spectral envelope; (b) modulated
+by a relatively low modulating frequency (1/3 of the fundamental); (c)
+modulated by a higher frequency, 10/3 of the fundamental.</CAPTION>
+<TR><TD><IMG
+ WIDTH="431" HEIGHT="413" BORDER="0"
+ SRC="img431.png"
+ ALT="\begin{figure}\psfig{file=figs/fig05.04.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The resulting spectrum is essentially the original spectrum combined with its
+reflection about the vertical axis.  This combined spectrum is then shifted to
+the right by the carrier frequency.  Finally, if any components of the
+shifted spectrum are still left of the vertical axis, they are reflected about
+it to make positive frequencies again.
+
+<P>
+In part (b) of the figure, the carrier frequency (the frequency of the
+sinusoid) is below the fundamental frequency of the complex signal.  In this
+case the shifting is by a relatively small distance, so that re-folding the
+spectrum at the end almost places the two halves on top of each other.  The
+result is a spectral envelope roughly the same as the original (although half
+as high) and a spectrum twice as dense.
+
+<P>
+A special case, not shown, is to use a carrier frequency half the
+fundamental.  In this case, pairs of partials will fall on top of each other, 
+and will have the ratios 1/2 : 3/2 : 5/2 :<IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img430.png"
+ ALT="$\cdots$"> to give an odd-partial-only
+signal an octave below the original.  This is a very simple and effective
+octave divider for a harmonic signal, assuming you know or can find its
+fundamental frequency. If you want even partials as well as odd ones (for the
+octave-down signal), simply mix the original signal with the modulated one.
+
+<P>
+Part (c) of the figure shows the effect of using a modulating frequency 
+much higher than the fundamental frequency of the complex signal.  Here the
+unfolding effect is much more clearly visible (only one partial, the leftmost
+one, had to be reflected to make its frequency positive).  The spectral envelope
+is now widely displaced from the original; this displacement is often a more
+strongly audible effect than the relocation of partials.
+
+<P>
+As another special case, the carrier frequency may be a multiple of the
+fundamental of the complex periodic signal; then the partials
+all land back on other partials of the same fundamental, and the only effect
+is the shift in spectral envelope.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1697"
+  HREF="node78.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1691"
+  HREF="node75.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1685"
+  HREF="node76.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1693"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1695"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1698"
+  HREF="node78.html">Waveshaping</A>
+<B> Up:</B> <A NAME="tex2html1692"
+  HREF="node75.html">Modulation</A>
+<B> Previous:</B> <A NAME="tex2html1686"
+  HREF="node76.html">Taxonomy of spectra</A>
+ &nbsp; <B>  <A NAME="tex2html1694"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1696"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Low-pass and high-pass filters</TITLE>
+<META NAME="description" CONTENT="Low-pass and high-pass filters">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node130.html">
+<LINK REL="previous" HREF="node128.html">
+<LINK REL="up" HREF="node128.html">
+<LINK REL="next" HREF="node130.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2507"
+  HREF="node130.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2501"
+  HREF="node128.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2495"
+  HREF="node128.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2503"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2505"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2508"
+  HREF="node130.html">Band-pass and stop-band filters</A>
+<B> Up:</B> <A NAME="tex2html2502"
+  HREF="node128.html">Taxonomy of filters</A>
+<B> Previous:</B> <A NAME="tex2html2496"
+  HREF="node128.html">Taxonomy of filters</A>
+ &nbsp; <B>  <A NAME="tex2html2504"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2506"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001211000000000000000">
+Low-pass and high-pass filters</A>
+</H2>
+
+<P>
+By far the most frequent purpose for using a filter is extracting either
+the low-frequency or the high-frequency portion of an audio signal, attenuating
+the rest.  This is accomplished using a
+<A NAME="10062"></A><A NAME="10063"></A><I>low-pass</I> or
+<A NAME="10065"></A><A NAME="10066"></A><I>high-pass</I> 
+filter.  
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig08.02"></A><A NAME="10070"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 8.2:</STRONG>
+Terminology for describing the frequency response of low-pass and
+high-pass filters.  The horizontal axis is frequency and the vertical
+axis is gain.  A low-pass filter is shown; a high-pass filter has the same
+features switched from right to left.</CAPTION>
+<TR><TD><IMG
+ WIDTH="491" HEIGHT="318" BORDER="0"
+ SRC="img855.png"
+ ALT="\begin{figure}\psfig{file=figs/fig08.02.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Ideally, a low-pass or high-pass filter would have a frequency response of
+one up to (or down to) a specified cutoff frequency and zero past it; but
+such filters cannot be realized in practice.  Instead, we try to find
+realizable approximations to this ideal response.  The more design effort
+and computation time we put into it, the closer we can get.
+
+<P>
+Figure <A HREF="#fig08.02">8.2</A> shows the frequency response of a low-pass
+filter.  Frequency is divided into three bands, labeled on the
+horizontal axis.  The
+<A NAME="10074"></A><I>passband</I>
+is the region (frequency band) where the filter should pass its input through
+to its output with unit gain.
+For a low-pass filter (as shown), the passband reaches from a frequency of
+zero up to a certain frequency limit.  For a high-pass filter, the passband
+would appear on the right-hand side of the graph and would extend from the
+frequency limit up to the highest frequency possible.  Any
+realizable filter's passband will be only approximately flat;
+the deviation from flatness is called the
+<A NAME="10076"></A><I>ripple</I>,
+and is often specified by giving the ratio between the highest and lowest gain
+in the passband, expressed in decibels.  The ideal low-pass or high-pass filter
+would have a ripple of 0 dB.
+
+<P>
+The
+<A NAME="10078"></A><I>stopband</I>
+of a low-pass or high-pass filter is the frequency
+band over which the filter is intended not to transmit its input.
+The 
+<A NAME="10080"></A><I>stopband attenuation</I>
+is the difference, in decibels, between the lowest gain in the passband
+and the highest gain in the stopband.  Ideally this would
+be infinite; the higher the better.
+
+<P>
+Finally, a realizable filter, whose frequency response is always a 
+continuous function of frequency, must have a frequency
+band over which the gain drops from the passband gain to the stopband
+gain; this is called the
+<A NAME="10082"></A><I>transition band</I>.
+The thinner this band can be made, the more nearly ideal the filter. 
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2507"
+  HREF="node130.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2501"
+  HREF="node128.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2495"
+  HREF="node128.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2503"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2505"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2508"
+  HREF="node130.html">Band-pass and stop-band filters</A>
+<B> Up:</B> <A NAME="tex2html2502"
+  HREF="node128.html">Taxonomy of filters</A>
+<B> Previous:</B> <A NAME="tex2html2496"
+  HREF="node128.html">Taxonomy of filters</A>
+ &nbsp; <B>  <A NAME="tex2html2504"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2506"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

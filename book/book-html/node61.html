@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Continuous and discontinuous control changes</TITLE>
+<META NAME="description" CONTENT="Continuous and discontinuous control changes">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node64.html">
+<LINK REL="previous" HREF="node60.html">
+<LINK REL="up" HREF="node58.html">
+<LINK REL="next" HREF="node62.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1459"
+  HREF="node62.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1453"
+  HREF="node58.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1447"
+  HREF="node60.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1455"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1457"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1460"
+  HREF="node62.html">Muting</A>
+<B> Up:</B> <A NAME="tex2html1454"
+  HREF="node58.html">Automation and voice management</A>
+<B> Previous:</B> <A NAME="tex2html1448"
+  HREF="node60.html">Linear and Curved Amplitude</A>
+ &nbsp; <B>  <A NAME="tex2html1456"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1458"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00830000000000000000"></A>
+<A NAME="sect4.declick"></A>
+<BR>
+Continuous and discontinuous control changes
+</H1>
+
+<P>
+Synthesis algorithms vary widely in their ability to deal with discontinuously
+changing controls.  Until now in this chapter we have assumed that controls
+must change continuously, and the ADSR envelope generator turns out
+to be ideally suited for such controls.  It may even happen that
+the maximum amplitude of a note is less than the current value of the amplitude
+of its predecessor (using the same generator) and the ADSR envelope will simply
+ramp down (instead of up) to the new value for an attack.
+
+<P>
+This isn't necessarily desirable, however, in situations where an envelope
+generator is in charge of some aspect of timbre: perhaps, for example, we don't
+want the sharpness of a note to decrease during the attack to a milder one, but
+rather to jump to a much lower value so as always to be able to rise during the
+attack.
+
+<P>
+This situation also can arise with pitch envelopes: it may be desirable to
+slide pitch from one note to the next, or it may be desirable that the pitch
+trajectory of each note start anew at a point independent of the previous
+sound.
+
+<P>
+Two situations arise when we wish to make discontinuous changes to synthesis
+parameters: either we can simply make them without disruption (for instance,
+making a discontinuous change in pitch); or else we can't, such as a change in
+a wavetable index (which makes a discontinuous change in the output).   There
+are even parameters that can't <I>possibly</I> be changed continuously; for
+example, a selection among a collection of wavetables.  In general,
+discontinuously changing the phase of an oscillator or the amplitude of a
+signal will cause an audible artifact, but phase increments (such as pitches)
+may jump without bad results.
+
+<P>
+In those cases where a parameter change can't be made continuously for one
+reason or another, there are at least two strategies for making the change
+cleanly:
+<I>muting</I>  and <I>switch-and-ramp</I>.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1461"
+  HREF="node62.html">Muting</A>
+<LI><A NAME="tex2html1462"
+  HREF="node63.html">Switch-and-ramp</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1459"
+  HREF="node62.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1453"
+  HREF="node58.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1447"
+  HREF="node60.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1455"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1457"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1460"
+  HREF="node62.html">Muting</A>
+<B> Up:</B> <A NAME="tex2html1454"
+  HREF="node58.html">Automation and voice management</A>
+<B> Previous:</B> <A NAME="tex2html1448"
+  HREF="node60.html">Linear and Curved Amplitude</A>
+ &nbsp; <B>  <A NAME="tex2html1456"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1458"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

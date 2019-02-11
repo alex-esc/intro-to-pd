@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Wavetable oscillator</TITLE>
+<META NAME="description" CONTENT="Wavetable oscillator">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node34.html">
+<LINK REL="previous" HREF="node32.html">
+<LINK REL="up" HREF="node32.html">
+<LINK REL="next" HREF="node34.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1036"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1030"
+  HREF="node32.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1024"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1032"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1034"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1037"
+  HREF="node34.html">Wavetable lookup in general</A>
+<B> Up:</B> <A NAME="tex2html1031"
+  HREF="node32.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1025"
+  HREF="node32.html">Examples</A>
+ &nbsp; <B>  <A NAME="tex2html1033"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1035"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00661000000000000000">
+Wavetable oscillator</A>
+</H2>
+
+<P>
+Example B01.wavetables.pd, shown in Figure <A HREF="#fig02.12">2.12</A>, implements a wavetable
+oscillator, which plays back from a wavetable named ``table10".  Two new Pd
+primitives are shown here.  First is the wavetable itself, which appears at
+right in the figure.  You can ``mouse" on the wavetable to change its shape and
+hear the sound change as a result.  Not shown in the figure but demonstrated in
+the patch is Pd's facility for automatically calculating wavetables with
+specified partial amplitudes, which is often preferable to drawing waveforms by
+hand.  You can also read and write tables to (text or sound) files for
+interchanging data with other programs. The other novelty is an object class:
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig02.12"></A><A NAME="2400"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.12:</STRONG>
+A wavetable oscillator: B01.wavetables.pd.</CAPTION>
+<TR><TD><IMG
+ WIDTH="554" HEIGHT="194" BORDER="0"
+ SRC="img272.png"
+ ALT="\begin{figure}\psfig{file=figs/fig02.12.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><!-- MATH
+ $\fbox{ $ \mathrm{tabosc4}\sim $}$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.png"
+ ALT="\fbox{ $ \mathrm{tabosc4}\sim $}">:
+<A NAME="2554"></A>a wavetable oscillator.  The ``4" indicates that this class uses 4-point
+(cubic) interpolation.  In the example, the table's name, ``table10", is
+specified as a creation argument to the <TT>tabosc4~</TT> object.
+(You can also switch between wavetables dynamically by sending appropriate
+messages to the object.)
+
+<P>
+Wavetables used by <TT>tabosc4~</TT> must always have a period
+equal to a power of two; but as shown above, the wavetable must have three
+extra points wrapped around the ends.  Allowable table lengths are thus
+of the form <IMG
+ WIDTH="50" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img274.png"
+ ALT="${2^m} + 3$">, such as 131, 259, 515, etc.
+
+<P>
+Wavetable oscillators are not limited to use as audio oscillators.   Patch
+B02.wavetable.FM.pd (not pictured here) uses a pair of wavetable oscillators in series. 
+The first one's output is used as the input of the second one, and thus
+controls its frequency which changes periodically in time.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1036"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1030"
+  HREF="node32.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1024"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1032"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1034"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1037"
+  HREF="node34.html">Wavetable lookup in general</A>
+<B> Up:</B> <A NAME="tex2html1031"
+  HREF="node32.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html1025"
+  HREF="node32.html">Examples</A>
+ &nbsp; <B>  <A NAME="tex2html1033"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1035"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

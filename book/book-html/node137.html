@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Real outputs from complex filters</TITLE>
+<META NAME="description" CONTENT="Real outputs from complex filters">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node138.html">
+<LINK REL="previous" HREF="node136.html">
+<LINK REL="up" HREF="node132.html">
+<LINK REL="next" HREF="node138.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2623"
+  HREF="node138.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2617"
+  HREF="node132.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2611"
+  HREF="node136.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2619"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2621"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2624"
+  HREF="node138.html">Two recirculating filters for</A>
+<B> Up:</B> <A NAME="tex2html2618"
+  HREF="node132.html">Elementary filters</A>
+<B> Previous:</B> <A NAME="tex2html2612"
+  HREF="node136.html">Compound filters</A>
+ &nbsp; <B>  <A NAME="tex2html2620"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2622"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001225000000000000000">
+Real outputs from complex filters</A>
+</H2>
+
+<P>
+In most applications, we start with a real-valued signal to filter and we need
+a real-valued output, but in general, a compound filter with a transfer
+function as above will give a complex-valued output.  However, we can
+construct filters with non-real-valued coefficients which nonetheless give
+real-valued outputs, so that the analysis that we carry out using complex
+numbers can be used to predict, explain, and control real-valued output
+signals.  We do this by pairing each elementary filter (with coefficient 
+<IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img880.png"
+ ALT="$P$"> or <IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.png"
+ ALT="$Q$">) with another having as its coefficient the complex conjugate
+<IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img890.png"
+ ALT="$\overline{P}$"> or <IMG
+ WIDTH="16" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img872.png"
+ ALT="$\overline{Q}$">.
+
+<P>
+For example, putting two non-recirculating filters, with coefficients <IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.png"
+ ALT="$Q$"> and
+<IMG
+ WIDTH="16" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img872.png"
+ ALT="$\overline{Q}$">, in series gives a transfer function equal to:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+H(Z) = (1 - {Q}{Z^{-1}}) \cdot (1 - \overline{Q}{Z^{-1}})
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="233" HEIGHT="28" BORDER="0"
+ SRC="img891.png"
+ ALT="\begin{displaymath}
+H(Z) = (1 - {Q}{Z^{-1}}) \cdot (1 - \overline{Q}{Z^{-1}})
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+which has the property that:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+H(\overline{Z}) = \overline{H(Z)}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="99" HEIGHT="28" BORDER="0"
+ SRC="img892.png"
+ ALT="\begin{displaymath}
+H(\overline{Z}) = \overline{H(Z)}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Now if we put any real-valued sinusoid:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{X_n} = 2 \, \mathrm{re}(A{Z^n}) = A{Z^n} + \overline{A}
+        {{\overline{Z}}^n}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="217" HEIGHT="28" BORDER="0"
+ SRC="img893.png"
+ ALT="\begin{displaymath}
+{X_n} = 2 \, \mathrm{re}(A{Z^n}) = A{Z^n} + \overline{A}
+{{\overline{Z}}^n}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+we get out:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+A \cdot H(Z) \cdot {Z^n} +
+    \overline{A}  \cdot \overline{H(Z)}  \cdot {{\overline{Z}}^n}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="207" HEIGHT="28" BORDER="0"
+ SRC="img894.png"
+ ALT="\begin{displaymath}
+A \cdot H(Z) \cdot {Z^n} +
+\overline{A} \cdot \overline{H(Z)} \cdot {{\overline{Z}}^n}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+which, by inspection, is another real sinusoid.
+Here we're using two properties of complex conjugates.  First, you can
+add and multiply them at will:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\overline{A+B} = \overline{A} + \overline{B}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="110" HEIGHT="25" BORDER="0"
+ SRC="img895.png"
+ ALT="\begin{displaymath}
+\overline{A+B} = \overline{A} + \overline{B}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\overline{AB} = \overline{A} \cdot \overline{B}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="82" HEIGHT="24" BORDER="0"
+ SRC="img896.png"
+ ALT="\begin{displaymath}
+\overline{AB} = \overline{A} \cdot \overline{B}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and second, anything plus its complex conjugate is real, and is in fact
+twice its real part:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+A + \overline{A} = 2 \, \mathrm{re} (A)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="112" HEIGHT="28" BORDER="0"
+ SRC="img897.png"
+ ALT="\begin{displaymath}
+A + \overline{A} = 2 \, \mathrm{re} (A)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+This result for two conjugate filters extends to any compound filter; in
+general, we always get a real-valued output from a real-valued input if we
+arrange that each coefficient <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img898.png"
+ ALT="$Q_i$"> and <IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img899.png"
+ ALT="$P_i$"> in the compound filter is
+either real-valued, or else appears in a pair with its complex conjugate.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2623"
+  HREF="node138.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2617"
+  HREF="node132.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2611"
+  HREF="node136.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2619"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2621"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2624"
+  HREF="node138.html">Two recirculating filters for</A>
+<B> Up:</B> <A NAME="tex2html2618"
+  HREF="node132.html">Elementary filters</A>
+<B> Previous:</B> <A NAME="tex2html2612"
+  HREF="node136.html">Compound filters</A>
+ &nbsp; <B>  <A NAME="tex2html2620"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2622"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

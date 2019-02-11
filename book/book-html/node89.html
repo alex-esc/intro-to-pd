@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Designer spectra</TITLE>
+<META NAME="description" CONTENT="Designer spectra">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node104.html">
+<LINK REL="previous" HREF="node75.html">
+<LINK REL="up" HREF="book.html">
+<LINK REL="next" HREF="node90.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1868"
+  HREF="node90.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1862"
+  HREF="book.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1856"
+  HREF="node88.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1864"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1866"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1869"
+  HREF="node90.html">Carrier/modulator model</A>
+<B> Up:</B> <A NAME="tex2html1863"
+  HREF="book.html">book</A>
+<B> Previous:</B> <A NAME="tex2html1857"
+  HREF="node88.html">Exercises</A>
+ &nbsp; <B>  <A NAME="tex2html1865"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1867"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001000000000000000000"></A>
+<A NAME="chapter-paf"></A>
+<BR>
+Designer spectra
+</H1>
+
+<P>
+As suggested at the beginning of the previous chapter, a powerful way to 
+synthesize musical sounds is to specify--and then realize--specific
+trajectories of pitch (or more generally, frequencies of partials), along
+with trajectories of
+spectral envelope [<A
+ HREF="node202.html#r-puckette01a">Puc01</A>]. 
+The
+spectral envelope is used to determine the amplitude of the individual
+partials, as a function of their frequencies, and is thought of as controlling
+the sound's (possibly time-varying) timbre.
+
+<P>
+A simple example of this would be to imitate a plucked
+string by constructing a sound with harmonically spaced partials in which the spectral
+envelope starts out rich but then dies away exponentially with higher
+frequencies decaying faster than lower ones, so that the timbre mellows over
+time.  Spectral-evolution
+models for various acoustic instruments have been proposed 
+[<A
+ HREF="node202.html#r-grey77">GM77</A>] [<A
+ HREF="node202.html#r-risset69">RM69</A>]
+. A more complicated example is the
+spoken or sung voice, in which vowels appear as spectral envelopes, dipthongs
+and many consonants appear as time variations in the spectral envelopes, and
+other consonants appear as spectrally shaped noise.
+
+<P>
+Spectral envelopes may be obtained from analysis of recorded sounds (developed
+in Chapter <A HREF="node163.html#chapter-fourier">9</A>) or from purely synthetic criteria.
+To specify a spectral envelope from scratch for every possible frequency
+would be tedious, and in most cases you would want to describe them in
+terms of their salient features.  The most popular way of doing this is
+to specify the size and shape of the spectral envelope's peaks, which are
+called
+<A NAME="6795"></A><I>formants</I>.  Figure <A HREF="#fig06.01">6.1</A> shows a spectral envelope with two
+formants.  Although the shapes of the two peaks in the spectral envelope
+are different, they can both be roughly described by giving the coordinates
+of each apex (which give the formant's 
+<A NAME="6798"></A><I>center frequency</I>
+and amplitude) and each formant's 
+<A NAME="6800"></A><I>bandwidth</I>.  A typical measure of bandwidth would be the width of the
+peak at a level 3 decibels below its apex.
+Note that if the peak is at (or near) the <IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$f=0$"> axis, we pretend it falls
+off to the left at the same rate as (in reality) it falls off to the right.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig06.01"></A><A NAME="6804"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.1:</STRONG>
+A spectral envelope showing the frequencies, amplitudes, and
+bandwidths of two formants.</CAPTION>
+<TR><TD><IMG
+ WIDTH="467" HEIGHT="261" BORDER="0"
+ SRC="img551.png"
+ ALT="\begin{figure}\psfig{file=figs/fig06.01.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Suppose we wish to generate a harmonic sound with a specified collection of
+formants.  Independently of the fundamental frequency desired, we wish the
+spectrum to have peaks with prescribed center frequencies, amplitudes, and
+bandwidths.  Returning to the phase modulation spectra shown in Figure
+<A HREF="node87.html#fig05.16">5.16</A>, we see that, at small indices of modulation at least, the
+result has a single, well-defined spectral peak. We can imagine adding several
+of these, all sharing a fundamental (modulating) frequency but with carriers
+tuned to different harmonics to select the various desired center frequencies,
+and with indices of modulation chosen to give the desired bandwidths.  This was
+first explored by Chowning [<A
+ HREF="node202.html#r-chowning89">Cho89</A>] who arranged formants generated
+by phase modulation to synthesize singing voices.
+In this chapter we'll establish a general framework for building 
+harmonic spectra with desired, possibly time-varying, formants.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1870"
+  HREF="node90.html">Carrier/modulator model</A>
+<LI><A NAME="tex2html1871"
+  HREF="node91.html">Pulse trains</A>
+<UL>
+<LI><A NAME="tex2html1872"
+  HREF="node92.html">Pulse trains via waveshaping</A>
+<LI><A NAME="tex2html1873"
+  HREF="node93.html">Pulse trains via wavetable stretching</A>
+<LI><A NAME="tex2html1874"
+  HREF="node94.html">Resulting spectra</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1875"
+  HREF="node95.html">Movable ring modulation</A>
+<LI><A NAME="tex2html1876"
+  HREF="node96.html">Phase-aligned formant (PAF) generator</A>
+<LI><A NAME="tex2html1877"
+  HREF="node97.html">Examples</A>
+<UL>
+<LI><A NAME="tex2html1878"
+  HREF="node98.html">Wavetable pulse train</A>
+<LI><A NAME="tex2html1879"
+  HREF="node99.html">Simple formant generator</A>
+<LI><A NAME="tex2html1880"
+  HREF="node100.html">Two-cosine carrier signal</A>
+<LI><A NAME="tex2html1881"
+  HREF="node101.html">The PAF generator</A>
+<LI><A NAME="tex2html1882"
+  HREF="node102.html">Stretched wavetables</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1883"
+  HREF="node103.html">Exercises</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1868"
+  HREF="node90.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1862"
+  HREF="book.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1856"
+  HREF="node88.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1864"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html1866"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1869"
+  HREF="node90.html">Carrier/modulator model</A>
+<B> Up:</B> <A NAME="tex2html1863"
+  HREF="book.html">book</A>
+<B> Previous:</B> <A NAME="tex2html1857"
+  HREF="node88.html">Exercises</A>
+ &nbsp; <B>  <A NAME="tex2html1865"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1867"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Wavetable pulse train</TITLE>
+<META NAME="description" CONTENT="Wavetable pulse train">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node99.html">
+<LINK REL="previous" HREF="node97.html">
+<LINK REL="up" HREF="node97.html">
+<LINK REL="next" HREF="node99.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2014"
+  HREF="node99.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2008"
+  HREF="node97.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2002"
+  HREF="node97.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2010"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2012"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2015"
+  HREF="node99.html">Simple formant generator</A>
+<B> Up:</B> <A NAME="tex2html2009"
+  HREF="node97.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2003"
+  HREF="node97.html">Examples</A>
+ &nbsp; <B>  <A NAME="tex2html2011"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2013"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001051000000000000000">
+Wavetable pulse train</A>
+</H2>
+
+<P>
+Example F01.pulse.pd (Figure <A HREF="#fig06.12">6.13</A>) generates a variable-width pulse train
+using stretched wavetable lookup.  Figure
+<A HREF="#fig06.13">6.14</A> shows two intermediate products of the patch and its output.
+The patch carries out the job in the simplest possible way, placing the
+pulse at phase <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="$\pi $"> instead of phase zero; in later
+examples this will be fixed by adding 0.5 to the phase and wrapping.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig06.12"></A><A NAME="6962"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.13:</STRONG>
+Example patch F01.pulse.pd, which synthesizes a pulse train using
+stretched wavetable lookup.</CAPTION>
+<TR><TD><IMG
+ WIDTH="436" HEIGHT="408" BORDER="0"
+ SRC="img610.png"
+ ALT="\begin{figure}\psfig{file=figs/fig06.12.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig06.13"></A><A NAME="7046"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.14:</STRONG>
+Intermediate audio signals from Figure <A HREF="#fig06.12">6.13</A>: (a) the
+result of multiplying the phasor by the ``index"; (b) the same, clipped to 
+lie between -0.5 and 0.5; (c) the output.</CAPTION>
+<TR><TD><IMG
+ WIDTH="349" HEIGHT="429" BORDER="0"
+ SRC="img611.png"
+ ALT="\begin{figure}\psfig{file=figs/fig06.13.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The initial phase is adjusted to run from -0.5 to 0.5 and then scaled by a
+multiplier of at least one, resulting in the signal of Figure <A HREF="#fig06.13">6.14</A>
+(part a); this corresponds to the output of the <TT>*~</TT> object, fifth
+from bottom in the patch shown.  The graph in part (b) shows the result of
+clipping the sawtooth wave back to the interval between <IMG
+ WIDTH="36" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img612.png"
+ ALT="$-0.5$"> and <IMG
+ WIDTH="23" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img613.png"
+ ALT="$0.5$">, using the
+<TT>clip~</TT> object.  If the scaling multiplier were at its minimum (one), the
+sawtooth would only range from -0.5 to 0.5 anyway and the clipping  would have
+no effect. For any value of the scaling multiplier greater than one, the
+clipping output sits at the value -0.5, then ramps to 0.5, then sits at 0.5.
+The higher the multiplier, the faster the waveform ramps and the
+more time it spends clipped at the bottom and top.
+
+<P>
+The <TT>cos~</TT> object then converts this waveform into a pulse.  Inputs of
+both -0.5 and 0.5 go to -1 (they are one cycle apart); at the midpoint of
+the waveform, the input is 0 and the output is thus 1.  The output therefore
+sits at -1, traces a full cycle of the cosine function, then comes back to
+rest at -1.  The proportion of time the waveform spends tracing the cosine
+function is one divided by the multiplier; so it's 100% for a multiplier
+of 1, 50% for 2, and so on.
+Finally, the pulse output is adjusted to range from 0 to 1 in
+value; this is graphed in part (c) of the figure.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2014"
+  HREF="node99.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2008"
+  HREF="node97.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2002"
+  HREF="node97.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2010"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2012"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2015"
+  HREF="node99.html">Simple formant generator</A>
+<B> Up:</B> <A NAME="tex2html2009"
+  HREF="node97.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2003"
+  HREF="node97.html">Examples</A>
+ &nbsp; <B>  <A NAME="tex2html2011"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2013"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

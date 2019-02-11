@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Envelope followers</TITLE>
+<META NAME="description" CONTENT="Envelope followers">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="next" HREF="node159.html">
+<LINK REL="previous" HREF="node157.html">
+<LINK REL="up" HREF="node155.html">
+<LINK REL="next" HREF="node159.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2931"
+  HREF="node159.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2925"
+  HREF="node155.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2919"
+  HREF="node157.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2927"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2929"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2932"
+  HREF="node159.html">Single sideband modulation</A>
+<B> Up:</B> <A NAME="tex2html2926"
+  HREF="node155.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2920"
+  HREF="node157.html">Prefabricated time-varying band-pass filter</A>
+ &nbsp; <B>  <A NAME="tex2html2928"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2930"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001253000000000000000">
+Envelope followers</A>
+</H2>
+<A NAME="sect8.heterodyning"></A>
+<P>
+Example H06.envelope.follower.pd shows a simple and self-explanatory realization of the
+envelope follower described in Section <A HREF="node153.html#sect8.envelopefollower">8.4.2</A>.  An
+interesting application of envelope following is shown in Example H07.measure.spectrum.pd (Figure <A HREF="#fig08.30">8.30</A>, part a).  A famous bell sample is looped as a test
+sound.  Rather than get the overall mean square power of the bell, we would
+like to estimate the frequency and power of each of its partials.  To do this
+we sweep a band-pass filter up and down in frequency, listening to the result
+and/or watching the filter's output power using an envelope follower.  (We use
+two band-pass filters in series for better isolation of the partials; this is
+not especially good filter design practice but it will do in this context.) 
+When the filter is tuned to a partial the envelope follower reports its
+strength.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig08.30"></A><A NAME="10622"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 8.30:</STRONG>
+Analyzing the spectrum of a sound: (a) band-pass filtering a sampled
+bell sound and envelope-following the result; (b) frequency-shifting a
+partial to DC and reading off its real and imaginary part.
+</CAPTION>
+<TR><TD><IMG
+ WIDTH="524" HEIGHT="435" BORDER="0"
+ SRC="img1025.png"
+ ALT="\begin{figure}\psfig{file=figs/fig08.30.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Example H08.heterodyning.pd (part (b) of the figure) shows an alternative way of finding partial strengths of
+an incoming sound; it has the advantage of reporting the phase as well as the
+strength.  First we modulate the desired partial down to zero frequency. We use
+a complex-valued sinusoid as a modulator so that we get only one sideband for
+each component of the input.  The test frequency is the only frequency that is
+modulated to DC; others go elsewhere.  We then low-pass the resulting complex
+signal.  (We can use a real-valued low-pass filter separately on the real
+and imaginary parts.)  This essentially removes all the partials except for the
+DC one, which we then harvest.  This technique is the basis of Fourier
+analysis, the subject of Chapter 9.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2931"
+  HREF="node159.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2925"
+  HREF="node155.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2919"
+  HREF="node157.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2927"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2929"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2932"
+  HREF="node159.html">Single sideband modulation</A>
+<B> Up:</B> <A NAME="tex2html2926"
+  HREF="node155.html">Examples</A>
+<B> Previous:</B> <A NAME="tex2html2920"
+  HREF="node157.html">Prefabricated time-varying band-pass filter</A>
+ &nbsp; <B>  <A NAME="tex2html2928"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2930"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>

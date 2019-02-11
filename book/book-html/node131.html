@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Equalizing filters</TITLE>
+<META NAME="description" CONTENT="Equalizing filters">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="book.css">
+
+<LINK REL="previous" HREF="node130.html">
+<LINK REL="up" HREF="node128.html">
+<LINK REL="next" HREF="node132.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2533"
+  HREF="node132.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2527"
+  HREF="node128.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2523"
+  HREF="node130.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2529"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2531"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2534"
+  HREF="node132.html">Elementary filters</A>
+<B> Up:</B> <A NAME="tex2html2528"
+  HREF="node128.html">Taxonomy of filters</A>
+<B> Previous:</B> <A NAME="tex2html2524"
+  HREF="node130.html">Band-pass and stop-band filters</A>
+ &nbsp; <B>  <A NAME="tex2html2530"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2532"
+  HREF="node201.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION001213000000000000000"></A>
+<A NAME="sect8.equalizing"></A>
+<BR>
+Equalizing filters
+</H2>
+
+<P>
+In some applications, such as 
+<A NAME="10107"></A><I>equalization</I>,
+the goal isn't to pass signals of certain frequencies while stopping others
+altogether, but to make controllable adjustments, boosting or attenuating
+a signal, over a frequency range, by a desired gain.  Two filter types
+are useful for this.  First, a
+<A NAME="10109"></A><A NAME="10110"></A><I>shelving filter</I>
+(Figure <A HREF="#fig08.05">8.5</A>) is used for selectively boosting or reducing either the
+low or high end of the frequency range.  Below a selectable crossover frequency,
+the filter tends toward a low-frequency gain, and above it it tends toward a 
+different, high-frequency one.  The crossover frequency, low-frequency gain,
+and high-frequency gain can all be adjusted independently.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig08.05"></A><A NAME="10115"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 8.5:</STRONG>
+A shelving filter, showing low and high frequency gain, and
+crossover frequency.</CAPTION>
+<TR><TD><IMG
+ WIDTH="312" HEIGHT="211" BORDER="0"
+ SRC="img858.png"
+ ALT="\begin{figure}\psfig{file=figs/fig08.05.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Second, a 
+<A NAME="10118"></A><A NAME="10119"></A><I>peaking filter</I>
+(Figure <A HREF="#fig08.06">8.6</A>) is capable of boosting or attenuating signals within
+a range of frequencies.  The center frequency and bandwidth (which together
+control the range of frequencies affected), and the in-band and out-of-band
+gains are separately adjustible.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig08.06"></A><A NAME="10124"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 8.6:</STRONG>
+A peaking filter, with controllable center frequency, bandwidth,
+and in-band and out-of-band gains.</CAPTION>
+<TR><TD><IMG
+ WIDTH="290" HEIGHT="243" BORDER="0"
+ SRC="img859.png"
+ ALT="\begin{figure}\psfig{file=figs/fig08.06.ps}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Parametric equalizers often employ two shelving filters (one each to  adjust
+the low and high ends of the spectrum) and two or three peaking filters to
+adjust bands in between.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2533"
+  HREF="node132.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html2527"
+  HREF="node128.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html2523"
+  HREF="node130.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html2529"
+  HREF="node4.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html2531"
+  HREF="node201.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2534"
+  HREF="node132.html">Elementary filters</A>
+<B> Up:</B> <A NAME="tex2html2528"
+  HREF="node128.html">Taxonomy of filters</A>
+<B> Previous:</B> <A NAME="tex2html2524"
+  HREF="node130.html">Band-pass and stop-band filters</A>
+ &nbsp; <B>  <A NAME="tex2html2530"
+  HREF="node4.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2532"
+  HREF="node201.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Miller Puckette
+2006-12-30
+</ADDRESS>
+</BODY>
+</HTML>
