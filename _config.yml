@@ -1,16 +1,16 @@
 ###########
 # site.title, site.url, site.author.name
 
-title:   'Blog Posts By Alex-Esc'
+title:   'Introduction To Computer Music - Explained'
 author: 
-  name:  'Blog Posts'
-description:  My personal blog
+  name:  'Introduction To Computer Music - Explained'
+description:  Learn to use Pure Data with these lectures from Miller Puckette, the creator of Pure Data.
 
 ## note: 
 #  use site.path in your templates to make it work for both protocols e.g. http and https
 #  use site.url only inside the web feed template (e.g. requires full url incl. protocol)
-path: /posts 
-url:  'https://alex-esc.github.io/posts/'
+path: /intro-to-pd 
+url:  'https://alex-esc.github.io/intro-to-pd/'
 
 
 ########
