@@ -45,3 +45,50 @@ Learn more about Creative Commons [here][cclm] or read the [full license here][f
 [cclm]: https://creativecommons.org/about/
 
 [fl]: https://alex-esc.github.io/intro-to-pd/LICENSE.html
+
+# I understand the license, now what?
+
+
+
+# Attribution
+
+## Plain text attribution
+
+```
+This work, "[YOUR WORK'S NAME HERE]", is a derivative of "Introduction To Computer Music - Explained" by Alex Esc, used under  CC BY NC SA 4.0. "YOUR WORK'S NAME HERE" is licensed under CC BY NC SA 4.0 by [YOUR NAME HERE].
+
+Link to Introduction To Computer Music - Explained
+https://alex-esc.github.io/intro-to-pd/
+
+Link to original author's website
+https://alex-esc.github.io/en_us/pages/about.html
+
+Link to CC BY NC SA 4.0 license
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+```
+
+
+## HTML attribution
+
+```
+<p>This work, &quot;[YOUR WORK'S NAME HERE]&quot;, is a derivative of &quot;<a href="https://alex-esc.github.io/intro-to-pd/">Introduction To Computer Music - Explained</a>&quot; by <a href="https://alex-esc.github.io/en_us/pages/about.html">Alex Esc</a>, used under  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>. &quot;[YOUR WORK'S NAME HERE]&quot; is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a> by [YOUR NAME HERE].</p>
+```
+
+
+## Markdown attribution
+
+```
+This work, "[YOUR WORK'S NAME HERE]", is a derivative of "[Introduction To Computer Music - Explained][1]" by [Alex Esc][2], used under  [CC BY NC SA 4.0][3]. "[YOUR WORK'S NAME HERE]" is licensed under [CC BY NC SA 4.0][3] by [YOUR NAME HERE].
+
+
+[1]: https://alex-esc.github.io/intro-to-pd/
+[2]: https://alex-esc.github.io/en_us/pages/about.html
+[3]: https://creativecommons.org/licenses/by-nc-sa/4.0/
+```
+
+
+This work is a derivative of "Introduction To Computer Music - Explained" by Alex Esc, used under CC BY NC SA 4.0.
+
+![](https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.eu.png)
+
+![]()

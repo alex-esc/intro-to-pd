@@ -29,5 +29,5 @@ Meaning you are free to modify remix and adapt my work to create a course of you
 [_Learn more about how to use this course in the classroom._][class]
 
 
-[class]:
+[class]: https://alex-esc.github.io/intro-to-pd/edu/info
 
