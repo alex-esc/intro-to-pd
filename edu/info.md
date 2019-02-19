@@ -46,11 +46,13 @@ Learn more about Creative Commons [here][cclm] or read the [full license here][f
 
 [fl]: https://alex-esc.github.io/intro-to-pd/LICENSE.html
 
-# I understand the license, now what?
+
+# How to give appropriate credit - Attribution templates
 
 
 
-# Attribution
+To attribute credit please include one of the templates below. If your new transformed work is a text document use the _plain text attribution_ template, for online attribution use the _HTML_ or _Markdown_ templates and for images, powerpoint presentations or videos use the _visual attribution_ template.
+
 
 ## Plain text attribution
 
@@ -87,8 +89,11 @@ This work, "[YOUR WORK'S NAME HERE]", is a derivative of "[Introduction To Compu
 ```
 
 
+## Visual attribution
+
 This work is a derivative of "Introduction To Computer Music - Explained" by Alex Esc, used under CC BY NC SA 4.0.
 
 ![](https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.eu.png)
 
-![]()
+![](https://raw.githubusercontent.com/alex-esc/intro-to-pd/master/docs/pics/creditsQR.png)
+
